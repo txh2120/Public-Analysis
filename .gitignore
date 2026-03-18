@@ -1,0 +1,53 @@
+# Data
+data/
+*.csv
+*.tsv
+*.parquet
+*.h5
+*.hdf5
+
+# Model checkpoints
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code (local tool config)
+.claude/
+CLAUDE.md
+
+# Project docs (local only)
+docs/
+
+# Kaggle
+.kaggle/
+
+# Logs
+*.log
+wandb/
+runs/
