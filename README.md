@@ -32,6 +32,20 @@ pip install -r requirements.txt
 | **Training Script** | [src/medical_mnist_train.py](src/medical_mnist_train.py) |
 | **Kaggle** | [Kaggle Notebook](https://www.kaggle.com/code/txh2120/notebook-medical-mnist) |
 
+### 2. Breast Cancer Histopathology (IDC) Classification
+Binary classification of Invasive Ductal Carcinoma using Transfer Learning.
+
+| | |
+|---|---|
+| **Dataset** | [Breast Histopathology Images](https://www.kaggle.com/datasets/paultimothymooney/breast-histopathology-images) (277,524 patches, 50x50 RGB) |
+| **Classes** | IDC Negative vs IDC Positive (imbalanced ~1:2.5) |
+| **Model** | ResNet18 (ImageNet pretrained, fine-tuned layer4) |
+| **Techniques** | Transfer Learning, Data Augmentation, WeightedRandomSampler |
+| **Test Accuracy** | **86.4%** |
+| **AUC-ROC** | **0.939** |
+| **Notebook** | [notebooks/02_breast_cancer_classification.ipynb](notebooks/02_breast_cancer_classification.ipynb) |
+| **Training Script** | [src/breast_cancer_train.py](src/breast_cancer_train.py) |
+
 ## Environment
 
 - **Framework:** PyTorch
