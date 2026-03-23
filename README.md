@@ -46,8 +46,22 @@ Binary classification of Invasive Ductal Carcinoma using Transfer Learning.
 | **Notebook** | [notebooks/02_breast_cancer_classification.ipynb](notebooks/02_breast_cancer_classification.ipynb) |
 | **Training Script** | [src/breast_cancer_train.py](src/breast_cancer_train.py) |
 
+### 3. RL Graph Conjecture Counterexample Search
+Using Reinforcement Learning to search for counterexamples to open mathematical conjectures.
+
+| | |
+|---|---|
+| **Method** | Deep Cross-Entropy Method (Wagner 2021) ported to PyTorch |
+| **Target** | Laplacian spectral radius upper bounds (Brankov-Hansen-Stevanovic 2006) |
+| **Architecture** | MLP (128→64→4→1), SGD, BCELoss |
+| **Benchmark** | Bound 2 (disproved) — reproduced counterexample discovery |
+| **Attack** | 38 open Laplacian bounds (Bound 1, 4, 9, 33) |
+| **Status** | Kaggle execution pending |
+| **Notebook** | [notebooks/rl_graph_conjecture.ipynb](notebooks/rl_graph_conjecture.ipynb) |
+| **References** | [Wagner 2021](https://arxiv.org/abs/2104.14516), [Ghebleh et al. 2024](https://arxiv.org/abs/2403.18429) |
+
 ## Environment
 
 - **Framework:** PyTorch
 - **Datasets:** Kaggle, public medical/healthcare datasets
-- **Training:** Kaggle Notebooks (GPU)
+- **Training:** Kaggle Notebooks (GPU/CPU)
