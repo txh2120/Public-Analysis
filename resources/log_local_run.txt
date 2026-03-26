@@ -1,0 +1,1881 @@
+PyTorch version: 2.10.0+cpu
+NetworkX version: 3.6.1
+NumPy version: 1.26.4
+Device: cpu
+Default graph size N=20, decisions=190, state_dim=380
+TimeManager initialized: 11.5h budget
+Start time: 2026-03-24 14:00:13
+Model test (n=10): input_dim=90, output_shape=torch.Size([1, 2]) (2 logits)
+Default [128,64,4] architecture — Total parameters: 20174
+Alt [72,12] architecture — Total parameters: 7454
+Graph utility functions defined (NetworkX + numpy bypass).
+=================================================================
+UNIT TESTS: Laplacian Spectral Radius
+=================================================================
+  K_5: expected=5.000000, got=5.000000 -> [PASS]
+  S_5: expected=5.000000, got=5.000000 -> [PASS]
+  C_6: expected=4.000000, got=4.000000 -> [PASS]
+  P_6 (non-reg): expected=3.732051, got=3.732051 -> [PASS]
+  W_6 (non-reg): expected=6.000000, got=6.000000 -> [PASS]
+  Barbell(4,1) (non-reg): expected=5.302776, got=5.302776 -> [PASS]
+=================================================================
+All unit tests PASSED.
+
+Build-graph roundtrip test:
+  K_5 from state vector: edges=10, mu=5.000000 -> [PASS]
+  K_5 dv=[4. 4. 4. 4. 4.], mv=[4. 4. 4. 4. 4.] -> [PASS]
+  S_5 dv=[4. 1. 1. 1. 1.], mv=[1. 4. 4. 4. 4.]
+  S_5 dv/mv check -> [PASS]
+
+=================================================================
+CROSS-VERIFICATION: NetworkX vs Numpy bypass
+=================================================================
+  K_5: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+  S_5: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+  C_6: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+  P_6: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+  W_6: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+  Barbell(4,1): mu_diff=1.78e-15, dv_match=True, mv_match=True -> [PASS]
+
+  Random graph stress test (n=15, 50 graphs):
+    Results: 50/50 passed, 0 failed -> [PASS]
+=================================================================
+All numpy cross-verification tests PASSED.
+Performance benchmark: n=15, 200 connected graphs
+-------------------------------------------------------
+  NetworkX: 0.235s (1.17 ms/graph)
+  Numpy:    0.041s (0.20 ms/graph)
+  Speedup:  5.8x
+  Max result difference: 0.00e+00
+  Results match: YES
+-------------------------------------------------------
+Reward function test on K_5 (n=5, complete graph):
+  Bound 1 (OPEN): nx=-3.000000, np=-3.000000 -> [MATCH]
+  Bound 2 (DISPROVED): nx=-3.000000, np=-3.000000 -> [MATCH]
+  Bound 4 (OPEN): nx=-3.000000, np=-3.000000 -> [MATCH]
+  Bound 9 (OPEN): nx=-3.000000, np=-3.000000 -> [MATCH]
+  Bound 33 (OPEN, edge-max): nx=-3.000000, np=-3.000000 -> [MATCH]
+
+(Negative rewards on K_5 are expected — regular graphs satisfy most bounds.)
+CEM training engine defined (Ghebleh 2024 settings: Adam + CrossEntropyLoss + adaptive randomness).
+
+---------------------------------------------------
+TIME BUDGET STATUS
+  Elapsed:   0.00h (1s)
+  Remaining: 11.50h (41399s)
+  Budget:    11.5h
+  benchmark   : 0.00h used / 1.5h allocated
+  primary     : 0.00h used / 6.0h allocated
+  secondary   : 0.00h used / 3.0h allocated
+---------------------------------------------------
+
+======================================================================
+BENCHMARK: Bound 2, n=15
+Expected: Counterexample should be found (bound disproved at n=12)
+======================================================================
+Time limit for this run: 1.50h
+
+======================================================================
+CEM Training: Bound 2 (DISPROVED)
+Formula: mu <= max_v (2*m_v^2/d_v)
+N=15, decisions=105, state_dim=210
+Sessions=1000, elite=90%, super=97.5%
+Max iterations=5000, LR=0.003 (Adam)
+Loss: CrossEntropyLoss, Output: 2 logits
+Adaptive randomness: Ghebleh(2024) — init=0.005, wait=10, mult=1.1, cap=0.025
+Reward computation: numpy bypass (triu indices precomputed)
+======================================================================
+
+Iter     1 | best=-6.040630 | elite_mean=-9.930689 | loss=0.6360 | threshold=-12.1083 | rand=0.0050 | time=0.0s
+Iter    20 | best=-3.037111 | elite_mean=-8.603351 | loss=0.6473 | threshold=-11.8069 | rand=0.0050 | time=38.4s
+Iter    40 | best=-3.037111 | elite_mean=-7.802914 | loss=0.6393 | threshold=-11.0397 | rand=0.0061 | time=73.0s
+Iter    60 | best=-2.483703 | elite_mean=-7.853233 | loss=0.6201 | threshold=-11.6272 | rand=0.0050 | time=129.4s
+Iter    80 | best=-2.483703 | elite_mean=-7.839384 | loss=0.6203 | threshold=-11.1892 | rand=0.0061 | time=176.8s
+Iter   100 | best=-2.483703 | elite_mean=-7.822646 | loss=0.6147 | threshold=-11.2578 | rand=0.0073 | time=219.5s
+Iter   120 | best=-2.483703 | elite_mean=-7.842811 | loss=0.6194 | threshold=-11.0337 | rand=0.0089 | time=274.3s
+Iter   140 | best=-2.483703 | elite_mean=-8.040779 | loss=0.6282 | threshold=-11.6880 | rand=0.0107 | time=313.4s
+Iter   160 | best=-2.483703 | elite_mean=-8.133194 | loss=0.6159 | threshold=-11.5087 | rand=0.0130 | time=349.2s
+Iter   180 | best=-2.483703 | elite_mean=-8.090939 | loss=0.6179 | threshold=-11.9933 | rand=0.0157 | time=399.7s
+Iter   200 | best=-2.483703 | elite_mean=-8.013420 | loss=0.6264 | threshold=-11.4581 | rand=0.0190 | time=426.0s
+Iter   220 | best=-2.483703 | elite_mean=-8.042435 | loss=0.6202 | threshold=-11.3005 | rand=0.0230 | time=440.6s
+Iter   240 | best=-2.483703 | elite_mean=-8.001158 | loss=0.6162 | threshold=-11.3393 | rand=0.0250 | time=453.0s
+Iter   260 | best=-2.483703 | elite_mean=-7.728547 | loss=0.6146 | threshold=-10.6345 | rand=0.0250 | time=463.4s
+Iter   280 | best=-2.483703 | elite_mean=-7.947035 | loss=0.6157 | threshold=-11.2706 | rand=0.0250 | time=473.2s
+Iter   300 | best=-2.483703 | elite_mean=-7.668940 | loss=0.6182 | threshold=-11.1948 | rand=0.0250 | time=483.8s
+Iter   320 | best=-2.483703 | elite_mean=-7.869783 | loss=0.6052 | threshold=-11.3123 | rand=0.0250 | time=494.6s
+Iter   340 | best=-2.483703 | elite_mean=-7.684929 | loss=0.6116 | threshold=-11.0780 | rand=0.0250 | time=504.7s
+Iter   360 | best=-2.483703 | elite_mean=-8.111724 | loss=0.6208 | threshold=-11.4588 | rand=0.0250 | time=515.0s
+Iter   380 | best=-2.483703 | elite_mean=-8.380639 | loss=0.6038 | threshold=-11.5846 | rand=0.0250 | time=525.6s
+Iter   400 | best=-2.483703 | elite_mean=-7.962496 | loss=0.6043 | threshold=-10.9634 | rand=0.0250 | time=535.7s
+Iter   420 | best=-2.483703 | elite_mean=-8.524688 | loss=0.6054 | threshold=-12.1097 | rand=0.0250 | time=545.0s
+Iter   440 | best=-2.483703 | elite_mean=-8.084427 | loss=0.5928 | threshold=-11.6494 | rand=0.0250 | time=554.4s
+Iter   460 | best=-2.483703 | elite_mean=-7.918257 | loss=0.5929 | threshold=-11.3054 | rand=0.0250 | time=564.0s
+Iter   480 | best=-2.483703 | elite_mean=-8.538471 | loss=0.6061 | threshold=-11.8967 | rand=0.0250 | time=574.1s
+Iter   500 | best=-2.483703 | elite_mean=-8.380887 | loss=0.5927 | threshold=-11.5557 | rand=0.0250 | time=585.1s
+Iter   520 | best=-2.228775 | elite_mean=-8.493463 | loss=0.5819 | threshold=-11.9657 | rand=0.0055 | time=595.3s
+Iter   540 | best=-2.228775 | elite_mean=-8.053525 | loss=0.5825 | threshold=-11.3437 | rand=0.0067 | time=605.0s
+Iter   560 | best=-2.228775 | elite_mean=-8.085299 | loss=0.5828 | threshold=-11.4309 | rand=0.0081 | time=615.0s
+Iter   580 | best=-2.228775 | elite_mean=-8.237155 | loss=0.5708 | threshold=-11.6529 | rand=0.0097 | time=624.9s
+Iter   600 | best=-2.228775 | elite_mean=-8.252602 | loss=0.5700 | threshold=-11.4806 | rand=0.0118 | time=635.3s
+Iter   620 | best=-2.228775 | elite_mean=-8.287509 | loss=0.5723 | threshold=-11.2588 | rand=0.0143 | time=645.3s
+Iter   640 | best=-2.228775 | elite_mean=-8.529743 | loss=0.5735 | threshold=-11.6912 | rand=0.0173 | time=655.2s
+Iter   660 | best=-2.228775 | elite_mean=-8.569414 | loss=0.5669 | threshold=-11.7036 | rand=0.0209 | time=664.6s
+Iter   680 | best=-2.228775 | elite_mean=-8.092203 | loss=0.5628 | threshold=-11.4966 | rand=0.0250 | time=674.4s
+Iter   700 | best=-2.228775 | elite_mean=-8.365652 | loss=0.5709 | threshold=-11.5015 | rand=0.0250 | time=684.7s
+Iter   720 | best=-2.228775 | elite_mean=-8.261184 | loss=0.5596 | threshold=-11.6246 | rand=0.0250 | time=694.7s
+Iter   740 | best=-2.228775 | elite_mean=-8.214036 | loss=0.5582 | threshold=-11.5439 | rand=0.0250 | time=704.6s
+Iter   760 | best=-2.228775 | elite_mean=-8.442494 | loss=0.5699 | threshold=-11.5013 | rand=0.0250 | time=717.8s
+Iter   780 | best=-2.228775 | elite_mean=-8.175222 | loss=0.5604 | threshold=-11.5236 | rand=0.0250 | time=731.0s
+Iter   800 | best=-2.228775 | elite_mean=-8.392876 | loss=0.5582 | threshold=-11.9091 | rand=0.0250 | time=744.2s
+Iter   820 | best=-2.228775 | elite_mean=-8.339401 | loss=0.5600 | threshold=-11.7401 | rand=0.0250 | time=755.4s
+Iter   840 | best=-2.228775 | elite_mean=-8.062234 | loss=0.5549 | threshold=-11.5991 | rand=0.0250 | time=766.3s
+Iter   860 | best=-2.228775 | elite_mean=-8.305647 | loss=0.5531 | threshold=-11.7966 | rand=0.0250 | time=779.6s
+Iter   880 | best=-2.228775 | elite_mean=-8.211321 | loss=0.5617 | threshold=-11.6822 | rand=0.0250 | time=789.2s
+Iter   900 | best=-2.228775 | elite_mean=-8.415381 | loss=0.5605 | threshold=-11.3739 | rand=0.0250 | time=799.1s
+Iter   920 | best=-2.228775 | elite_mean=-8.073144 | loss=0.5637 | threshold=-11.5846 | rand=0.0250 | time=808.6s
+Iter   940 | best=-2.228775 | elite_mean=-8.153920 | loss=0.5574 | threshold=-11.4074 | rand=0.0250 | time=818.6s
+Iter   960 | best=-2.228775 | elite_mean=-8.107759 | loss=0.5540 | threshold=-11.3702 | rand=0.0250 | time=828.0s
+Iter   980 | best=-2.228775 | elite_mean=-8.240701 | loss=0.5625 | threshold=-11.6090 | rand=0.0250 | time=837.6s
+Iter  1000 | best=-2.228775 | elite_mean=-8.433895 | loss=0.5484 | threshold=-11.8052 | rand=0.0250 | time=848.2s
+Iter  1020 | best=-2.228775 | elite_mean=-8.091200 | loss=0.5566 | threshold=-11.2640 | rand=0.0250 | time=857.7s
+Iter  1040 | best=-2.228775 | elite_mean=-8.319134 | loss=0.5621 | threshold=-11.7188 | rand=0.0250 | time=867.2s
+Iter  1060 | best=-1.867822 | elite_mean=-7.987388 | loss=0.5350 | threshold=-11.4735 | rand=0.0055 | time=877.5s
+Iter  1080 | best=-1.352666 | elite_mean=-8.028358 | loss=0.5253 | threshold=-11.5081 | rand=0.0055 | time=887.5s
+Iter  1100 | best=-1.337724 | elite_mean=-7.966122 | loss=0.5161 | threshold=-11.6254 | rand=0.0050 | time=897.5s
+Iter  1120 | best=-1.337724 | elite_mean=-7.734839 | loss=0.5011 | threshold=-11.5658 | rand=0.0061 | time=908.0s
+Iter  1140 | best=-1.337724 | elite_mean=-8.193866 | loss=0.5123 | threshold=-11.9671 | rand=0.0073 | time=918.2s
+Iter  1160 | best=-1.337724 | elite_mean=-8.259287 | loss=0.4749 | threshold=-12.1621 | rand=0.0089 | time=928.0s
+Iter  1180 | best=-1.337724 | elite_mean=-7.671460 | loss=0.4952 | threshold=-11.4255 | rand=0.0107 | time=938.3s
+Iter  1200 | best=-1.337724 | elite_mean=-8.094339 | loss=0.4807 | threshold=-11.5532 | rand=0.0130 | time=948.4s
+Iter  1220 | best=-1.337724 | elite_mean=-8.308021 | loss=0.5032 | threshold=-11.8467 | rand=0.0157 | time=958.7s
+Iter  1240 | best=-1.337724 | elite_mean=-8.104566 | loss=0.5114 | threshold=-11.7474 | rand=0.0190 | time=968.4s
+Iter  1260 | best=-1.337724 | elite_mean=-7.999403 | loss=0.4899 | threshold=-11.3268 | rand=0.0230 | time=977.8s
+Iter  1280 | best=-1.337724 | elite_mean=-7.665154 | loss=0.4761 | threshold=-11.3336 | rand=0.0250 | time=987.4s
+Iter  1300 | best=-1.337724 | elite_mean=-7.708452 | loss=0.4787 | threshold=-11.5424 | rand=0.0250 | time=997.7s
+Iter  1320 | best=-1.337724 | elite_mean=-7.889933 | loss=0.4999 | threshold=-11.5794 | rand=0.0250 | time=1007.9s
+Iter  1340 | best=-1.337724 | elite_mean=-8.253459 | loss=0.4976 | threshold=-12.0343 | rand=0.0250 | time=1017.9s
+Iter  1360 | best=-1.337724 | elite_mean=-7.862825 | loss=0.4867 | threshold=-11.2032 | rand=0.0250 | time=1027.8s
+Iter  1380 | best=-0.678560 | elite_mean=-7.873536 | loss=0.4220 | threshold=-11.7537 | rand=0.0055 | time=1037.6s
+Iter  1400 | best=-0.678560 | elite_mean=-7.720012 | loss=0.4708 | threshold=-11.4218 | rand=0.0067 | time=1047.5s
+Iter  1420 | best=-0.678560 | elite_mean=-7.604038 | loss=0.4464 | threshold=-11.4249 | rand=0.0081 | time=1058.1s
+Iter  1440 | best=-0.678560 | elite_mean=-7.461907 | loss=0.4712 | threshold=-11.4976 | rand=0.0097 | time=1068.2s
+Iter  1460 | best=-0.678560 | elite_mean=-7.305225 | loss=0.4380 | threshold=-11.5028 | rand=0.0118 | time=1078.0s
+Iter  1480 | best=-0.678560 | elite_mean=-7.905374 | loss=0.4639 | threshold=-11.9905 | rand=0.0143 | time=1088.4s
+Iter  1500 | best=-0.678560 | elite_mean=-7.710049 | loss=0.4592 | threshold=-11.5943 | rand=0.0173 | time=1098.3s
+Iter  1520 | best=-0.530305 | elite_mean=-7.388430 | loss=0.4518 | threshold=-11.5326 | rand=0.0050 | time=1108.3s
+Iter  1540 | best=-0.530305 | elite_mean=-7.161354 | loss=0.4389 | threshold=-11.3320 | rand=0.0061 | time=1118.4s
+Iter  1560 | best=-0.530305 | elite_mean=-7.353740 | loss=0.4251 | threshold=-11.6044 | rand=0.0073 | time=1128.4s
+Iter  1580 | best=-0.530305 | elite_mean=-6.016631 | loss=0.3033 | threshold=-10.5662 | rand=0.0089 | time=1138.0s
+Iter  1600 | best=-0.530305 | elite_mean=-5.440193 | loss=0.2421 | threshold=-9.5740 | rand=0.0107 | time=1149.2s
+Iter  1620 | best=-0.475698 | elite_mean=-2.202507 | loss=0.1292 | threshold=-3.8669 | rand=0.0050 | time=1159.2s
+Iter  1640 | best=-0.389748 | elite_mean=-0.633229 | loss=0.0148 | threshold=-0.6343 | rand=0.0050 | time=1174.0s
+Iter  1660 | best=-0.385255 | elite_mean=-0.389745 | loss=0.0094 | threshold=-0.3897 | rand=0.0050 | time=1201.9s
+Iter  1680 | best=-0.367996 | elite_mean=-0.389732 | loss=0.0083 | threshold=-0.3897 | rand=0.0055 | time=1242.1s
+Iter  1700 | best=-0.367996 | elite_mean=-0.389703 | loss=0.0091 | threshold=-0.3897 | rand=0.0067 | time=1278.6s
+Iter  1720 | best=-0.348097 | elite_mean=-0.389352 | loss=0.0137 | threshold=-0.3897 | rand=0.0050 | time=1307.3s
+Iter  1740 | best=-0.348097 | elite_mean=-0.383638 | loss=0.0172 | threshold=-0.3897 | rand=0.0061 | time=1320.8s
+Iter  1760 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0426 | threshold=-0.3481 | rand=0.0073 | time=1334.2s
+Iter  1780 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0408 | threshold=-0.3481 | rand=0.0089 | time=1352.0s
+Iter  1800 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0411 | threshold=-0.3481 | rand=0.0107 | time=1374.9s
+Iter  1820 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0111 | threshold=-0.3481 | rand=0.0130 | time=1403.2s
+Iter  1840 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0075 | threshold=-0.3481 | rand=0.0157 | time=1440.3s
+Iter  1860 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0087 | threshold=-0.3481 | rand=0.0190 | time=1473.8s
+Iter  1880 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0081 | threshold=-0.3481 | rand=0.0230 | time=1504.8s
+Iter  1900 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0081 | threshold=-0.3481 | rand=0.0050 | time=1540.4s
+Iter  1920 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0075 | threshold=-0.3481 | rand=0.0061 | time=1587.4s
+Iter  1940 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0078 | threshold=-0.3481 | rand=0.0073 | time=1629.1s
+Iter  1960 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0080 | threshold=-0.3481 | rand=0.0089 | time=1669.2s
+Iter  1980 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0084 | threshold=-0.3481 | rand=0.0107 | time=1706.1s
+Iter  2000 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0074 | threshold=-0.3481 | rand=0.0130 | time=1741.5s
+Iter  2020 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0083 | threshold=-0.3481 | rand=0.0157 | time=1775.7s
+Iter  2040 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0081 | threshold=-0.3481 | rand=0.0190 | time=1809.2s
+Iter  2060 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0084 | threshold=-0.3481 | rand=0.0230 | time=1842.3s
+Iter  2080 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0080 | threshold=-0.3481 | rand=0.0250 | time=1874.8s
+Iter  2100 | best=-0.348097 | elite_mean=-0.348097 | loss=0.0082 | threshold=-0.3481 | rand=0.0250 | time=1907.0s
+Iter  2120 | best=-0.258289 | elite_mean=-0.347986 | loss=0.0081 | threshold=-0.3481 | rand=0.0055 | time=1944.9s
+Iter  2140 | best=-0.258289 | elite_mean=-0.347874 | loss=0.0073 | threshold=-0.3481 | rand=0.0067 | time=1997.5s
+Iter  2160 | best=-0.258289 | elite_mean=-0.347808 | loss=0.0084 | threshold=-0.3481 | rand=0.0081 | time=2036.6s
+Iter  2180 | best=-0.258289 | elite_mean=-0.347741 | loss=0.0088 | threshold=-0.3481 | rand=0.0097 | time=2076.1s
+Iter  2200 | best=-0.258289 | elite_mean=-0.347589 | loss=0.0080 | threshold=-0.3481 | rand=0.0118 | time=2115.8s
+Iter  2220 | best=-0.258289 | elite_mean=-0.347394 | loss=0.0096 | threshold=-0.3481 | rand=0.0143 | time=2151.6s
+Iter  2240 | best=-0.258289 | elite_mean=-0.347154 | loss=0.0085 | threshold=-0.3481 | rand=0.0173 | time=2185.8s
+Iter  2260 | best=-0.258289 | elite_mean=-0.346980 | loss=0.0091 | threshold=-0.3481 | rand=0.0209 | time=2220.1s
+Iter  2280 | best=-0.258289 | elite_mean=-0.346713 | loss=0.0099 | threshold=-0.3481 | rand=0.0250 | time=2252.9s
+Iter  2300 | best=-0.258289 | elite_mean=-0.346577 | loss=0.0102 | threshold=-0.3481 | rand=0.0250 | time=2284.2s
+Iter  2320 | best=-0.258289 | elite_mean=-0.346214 | loss=0.0098 | threshold=-0.3481 | rand=0.0250 | time=2315.3s
+Iter  2340 | best=-0.258289 | elite_mean=-0.346046 | loss=0.0110 | threshold=-0.3481 | rand=0.0250 | time=2346.2s
+Iter  2360 | best=-0.258289 | elite_mean=-0.345708 | loss=0.0115 | threshold=-0.3481 | rand=0.0250 | time=2377.6s
+Iter  2380 | best=-0.258289 | elite_mean=-0.345622 | loss=0.0111 | threshold=-0.3481 | rand=0.0250 | time=2410.4s
+Iter  2400 | best=-0.258289 | elite_mean=-0.326607 | loss=0.0179 | threshold=-0.3481 | rand=0.0250 | time=2440.4s
+Iter  2420 | best=-0.193595 | elite_mean=-0.258059 | loss=0.0437 | threshold=-0.2583 | rand=0.0050 | time=2452.3s
+Iter  2440 | best=-0.043705 | elite_mean=-0.257827 | loss=0.0435 | threshold=-0.2583 | rand=0.0050 | time=2468.4s
+Iter  2460 | best=-0.043705 | elite_mean=-0.257969 | loss=0.0425 | threshold=-0.2583 | rand=0.0061 | time=2489.9s
+Iter  2480 | best=-0.043705 | elite_mean=-0.258005 | loss=0.0424 | threshold=-0.2583 | rand=0.0073 | time=2515.6s
+Iter  2500 | best=-0.043705 | elite_mean=-0.257998 | loss=0.0423 | threshold=-0.2583 | rand=0.0089 | time=2541.7s
+Iter  2520 | best=-0.043705 | elite_mean=-0.257997 | loss=0.0425 | threshold=-0.2583 | rand=0.0107 | time=2567.6s
+Iter  2540 | best=-0.043705 | elite_mean=-0.257998 | loss=0.0422 | threshold=-0.2583 | rand=0.0130 | time=2594.4s
+Iter  2560 | best=-0.043705 | elite_mean=-0.257997 | loss=0.0423 | threshold=-0.2583 | rand=0.0157 | time=2621.2s
+Iter  2580 | best=-0.043705 | elite_mean=-0.257992 | loss=0.0420 | threshold=-0.2583 | rand=0.0190 | time=2649.5s
+Iter  2600 | best=-0.043705 | elite_mean=-0.257970 | loss=0.0428 | threshold=-0.2583 | rand=0.0230 | time=2676.1s
+Iter  2620 | best=-0.043705 | elite_mean=-0.257740 | loss=0.0433 | threshold=-0.2583 | rand=0.0250 | time=2707.6s
+Iter  2640 | best=-0.043705 | elite_mean=-0.257186 | loss=0.0443 | threshold=-0.2583 | rand=0.0250 | time=2737.4s
+Iter  2660 | best=-0.043705 | elite_mean=-0.256997 | loss=0.0433 | threshold=-0.2583 | rand=0.0250 | time=2766.0s
+Iter  2680 | best=-0.043705 | elite_mean=-0.256880 | loss=0.0441 | threshold=-0.2583 | rand=0.0250 | time=2794.5s
+Iter  2700 | best=-0.043705 | elite_mean=-0.272946 | loss=0.0422 | threshold=-0.3481 | rand=0.0250 | time=2812.6s
+Iter  2720 | best=-0.043705 | elite_mean=-0.231977 | loss=0.0468 | threshold=-0.2388 | rand=0.0250 | time=2824.5s
+Iter  2740 | best=-0.043705 | elite_mean=-0.233845 | loss=0.0455 | threshold=-0.2388 | rand=0.0250 | time=2838.4s
+Iter  2760 | best=-0.043705 | elite_mean=-0.697710 | loss=0.0403 | threshold=-0.9118 | rand=0.0250 | time=2852.6s
+Iter  2780 | best=-0.043705 | elite_mean=-0.176681 | loss=0.0454 | threshold=-0.1802 | rand=0.0050 | time=2864.3s
+Iter  2800 | best=-0.043705 | elite_mean=-0.178166 | loss=0.0453 | threshold=-0.1802 | rand=0.0061 | time=2880.0s
+Iter  2820 | best=-0.043705 | elite_mean=-0.178915 | loss=0.0419 | threshold=-0.1802 | rand=0.0073 | time=2900.4s
+Iter  2840 | best=-0.043705 | elite_mean=-0.179254 | loss=0.0417 | threshold=-0.1802 | rand=0.0089 | time=2924.1s
+Iter  2860 | best=-0.043705 | elite_mean=-0.179252 | loss=0.0421 | threshold=-0.1802 | rand=0.0107 | time=2952.0s
+Iter  2880 | best=-0.043705 | elite_mean=-0.179254 | loss=0.0423 | threshold=-0.1802 | rand=0.0130 | time=2980.2s
+Iter  2900 | best=-0.043705 | elite_mean=-0.179252 | loss=0.0422 | threshold=-0.1802 | rand=0.0157 | time=3007.9s
+Iter  2920 | best=-0.043705 | elite_mean=-0.179253 | loss=0.0420 | threshold=-0.1802 | rand=0.0190 | time=3034.6s
+Iter  2940 | best=-0.043705 | elite_mean=-0.179249 | loss=0.0416 | threshold=-0.1802 | rand=0.0230 | time=3061.1s
+Iter  2960 | best=-0.043705 | elite_mean=-0.179245 | loss=0.0431 | threshold=-0.1802 | rand=0.0250 | time=3087.7s
+Iter  2980 | best=-0.043705 | elite_mean=-0.179242 | loss=0.0431 | threshold=-0.1802 | rand=0.0250 | time=3113.4s
+Iter  3000 | best=-0.043705 | elite_mean=-0.179107 | loss=0.0422 | threshold=-0.1802 | rand=0.0250 | time=3139.3s
+Iter  3020 | best=-0.043705 | elite_mean=-0.179110 | loss=0.0432 | threshold=-0.1802 | rand=0.0250 | time=3165.9s
+Iter  3040 | best=-0.043705 | elite_mean=-0.179105 | loss=0.0433 | threshold=-0.1802 | rand=0.0250 | time=3192.3s
+Iter  3060 | best=-0.043705 | elite_mean=-0.179110 | loss=0.0429 | threshold=-0.1802 | rand=0.0250 | time=3219.4s
+Iter  3080 | best=-0.043705 | elite_mean=-0.179110 | loss=0.0426 | threshold=-0.1802 | rand=0.0250 | time=3247.2s
+Iter  3100 | best=-0.043705 | elite_mean=-0.178968 | loss=0.0431 | threshold=-0.1802 | rand=0.0250 | time=3272.4s
+Iter  3120 | best=-0.043705 | elite_mean=-0.178971 | loss=0.0438 | threshold=-0.1802 | rand=0.0250 | time=3297.5s
+Iter  3140 | best=-0.043705 | elite_mean=-0.178973 | loss=0.0433 | threshold=-0.1802 | rand=0.0250 | time=3322.6s
+Iter  3160 | best=-0.043705 | elite_mean=-0.178840 | loss=0.0430 | threshold=-0.1802 | rand=0.0250 | time=3347.5s
+Iter  3180 | best=-0.043705 | elite_mean=-0.178835 | loss=0.0434 | threshold=-0.1802 | rand=0.0250 | time=3372.2s
+Iter  3200 | best=-0.043705 | elite_mean=-0.178835 | loss=0.0434 | threshold=-0.1802 | rand=0.0250 | time=3396.6s
+Iter  3220 | best=-0.043705 | elite_mean=-0.178832 | loss=0.0435 | threshold=-0.1802 | rand=0.0250 | time=3421.4s
+Iter  3240 | best=-0.043705 | elite_mean=-0.178844 | loss=0.0436 | threshold=-0.1802 | rand=0.0250 | time=3445.5s
+Iter  3260 | best=-0.043705 | elite_mean=-0.178835 | loss=0.0435 | threshold=-0.1802 | rand=0.0250 | time=3469.7s
+Iter  3280 | best=-0.043705 | elite_mean=-0.178839 | loss=0.0434 | threshold=-0.1802 | rand=0.0250 | time=3494.2s
+Iter  3300 | best=-0.043705 | elite_mean=-0.178834 | loss=0.0432 | threshold=-0.1802 | rand=0.0250 | time=3520.0s
+Iter  3320 | best=-0.043705 | elite_mean=-0.178831 | loss=0.0438 | threshold=-0.1802 | rand=0.0250 | time=3544.2s
+Iter  3340 | best=-0.043705 | elite_mean=-0.178700 | loss=0.0442 | threshold=-0.1802 | rand=0.0250 | time=3569.4s
+Iter  3360 | best=-0.043705 | elite_mean=-0.178691 | loss=0.0436 | threshold=-0.1802 | rand=0.0250 | time=3596.0s
+Iter  3380 | best=-0.043705 | elite_mean=-0.178559 | loss=0.0440 | threshold=-0.1802 | rand=0.0250 | time=3624.4s
+Iter  3400 | best=-0.043705 | elite_mean=-0.178566 | loss=0.0435 | threshold=-0.1802 | rand=0.0250 | time=3651.8s
+Iter  3420 | best=-0.043705 | elite_mean=-0.178554 | loss=0.0436 | threshold=-0.1802 | rand=0.0250 | time=3687.9s
+Iter  3440 | best=-0.043705 | elite_mean=-0.178558 | loss=0.0441 | threshold=-0.1802 | rand=0.0250 | time=3717.3s
+Iter  3460 | best=-0.043705 | elite_mean=-0.178561 | loss=0.0439 | threshold=-0.1802 | rand=0.0250 | time=3744.8s
+Iter  3480 | best=-0.043705 | elite_mean=-0.178569 | loss=0.0434 | threshold=-0.1802 | rand=0.0250 | time=3772.7s
+Iter  3500 | best=-0.043705 | elite_mean=-0.178554 | loss=0.0442 | threshold=-0.1802 | rand=0.0250 | time=3798.8s
+Iter  3520 | best=-0.043705 | elite_mean=-0.178559 | loss=0.0438 | threshold=-0.1802 | rand=0.0250 | time=3824.8s
+Iter  3540 | best=-0.043705 | elite_mean=-0.178560 | loss=0.0440 | threshold=-0.1802 | rand=0.0250 | time=3853.3s
+Iter  3560 | best=-0.043705 | elite_mean=-0.178559 | loss=0.0445 | threshold=-0.1802 | rand=0.0250 | time=3879.4s
+Iter  3580 | best=-0.043705 | elite_mean=-0.178562 | loss=0.0442 | threshold=-0.1802 | rand=0.0250 | time=3905.6s
+Iter  3600 | best=-0.043705 | elite_mean=-0.178563 | loss=0.0444 | threshold=-0.1802 | rand=0.0250 | time=3939.7s
+Iter  3620 | best=-0.043705 | elite_mean=-0.178557 | loss=0.0440 | threshold=-0.1802 | rand=0.0250 | time=3967.5s
+Iter  3640 | best=-0.043705 | elite_mean=-0.178560 | loss=0.0443 | threshold=-0.1802 | rand=0.0250 | time=3995.2s
+Iter  3660 | best=-0.043705 | elite_mean=-0.178554 | loss=0.0453 | threshold=-0.1802 | rand=0.0250 | time=4023.6s
+Iter  3680 | best=-0.043705 | elite_mean=-0.178425 | loss=0.0445 | threshold=-0.1802 | rand=0.0250 | time=4050.3s
+Iter  3700 | best=-0.043705 | elite_mean=-0.178421 | loss=0.0440 | threshold=-0.1802 | rand=0.0250 | time=4075.9s
+Iter  3720 | best=-0.043705 | elite_mean=-0.178423 | loss=0.0448 | threshold=-0.1802 | rand=0.0250 | time=4102.4s
+Iter  3740 | best=-0.043705 | elite_mean=-0.178423 | loss=0.0442 | threshold=-0.1802 | rand=0.0250 | time=4127.5s
+Iter  3760 | best=-0.043705 | elite_mean=-0.178297 | loss=0.0445 | threshold=-0.1802 | rand=0.0250 | time=4153.3s
+Iter  3780 | best=-0.043705 | elite_mean=-0.178285 | loss=0.0449 | threshold=-0.1802 | rand=0.0250 | time=4178.7s
+Iter  3800 | best=-0.043705 | elite_mean=-0.178289 | loss=0.0446 | threshold=-0.1802 | rand=0.0250 | time=4204.2s
+Iter  3820 | best=-0.043705 | elite_mean=-0.178289 | loss=0.0449 | threshold=-0.1802 | rand=0.0250 | time=4230.7s
+Iter  3840 | best=-0.043705 | elite_mean=-0.178281 | loss=0.0444 | threshold=-0.1802 | rand=0.0250 | time=4256.2s
+Iter  3860 | best=-0.043705 | elite_mean=-0.178018 | loss=0.0446 | threshold=-0.1802 | rand=0.0250 | time=4283.3s
+Iter  3880 | best=-0.043705 | elite_mean=-0.178016 | loss=0.0448 | threshold=-0.1802 | rand=0.0250 | time=4309.2s
+Iter  3900 | best=-0.043705 | elite_mean=-0.178011 | loss=0.0450 | threshold=-0.1802 | rand=0.0250 | time=4334.4s
+Iter  3920 | best=-0.043705 | elite_mean=-0.178009 | loss=0.0446 | threshold=-0.1802 | rand=0.0250 | time=4359.5s
+Iter  3940 | best=-0.043705 | elite_mean=-0.178009 | loss=0.0450 | threshold=-0.1802 | rand=0.0250 | time=4384.9s
+Iter  3960 | best=-0.043705 | elite_mean=-0.178009 | loss=0.0447 | threshold=-0.1802 | rand=0.0250 | time=4416.1s
+Iter  3980 | best=-0.043705 | elite_mean=-0.178009 | loss=0.0451 | threshold=-0.1802 | rand=0.0250 | time=4446.0s
+Iter  4000 | best=-0.043705 | elite_mean=-0.178020 | loss=0.0453 | threshold=-0.1802 | rand=0.0250 | time=4472.0s
+Iter  4020 | best=-0.043705 | elite_mean=-0.178007 | loss=0.0449 | threshold=-0.1802 | rand=0.0250 | time=4498.5s
+Iter  4040 | best=-0.043705 | elite_mean=-0.177878 | loss=0.0448 | threshold=-0.1802 | rand=0.0250 | time=4524.5s
+Iter  4060 | best=-0.043705 | elite_mean=-0.177747 | loss=0.0452 | threshold=-0.1802 | rand=0.0250 | time=4552.7s
+Iter  4080 | best=-0.043705 | elite_mean=-0.177742 | loss=0.0450 | threshold=-0.1802 | rand=0.0250 | time=4578.3s
+Iter  4100 | best=-0.043705 | elite_mean=-0.177744 | loss=0.0457 | threshold=-0.1802 | rand=0.0250 | time=4604.2s
+Iter  4120 | best=-0.043705 | elite_mean=-0.177742 | loss=0.0450 | threshold=-0.1802 | rand=0.0250 | time=4629.5s
+Iter  4140 | best=-0.043705 | elite_mean=-0.177744 | loss=0.0449 | threshold=-0.1802 | rand=0.0250 | time=4655.0s
+Iter  4160 | best=-0.043705 | elite_mean=-0.177735 | loss=0.0451 | threshold=-0.1802 | rand=0.0250 | time=4681.2s
+Iter  4180 | best=-0.043705 | elite_mean=-0.177749 | loss=0.0450 | threshold=-0.1802 | rand=0.0250 | time=4706.5s
+Iter  4200 | best=-0.043705 | elite_mean=-0.177737 | loss=0.0456 | threshold=-0.1802 | rand=0.0250 | time=4732.4s
+Iter  4220 | best=-0.043705 | elite_mean=-0.177732 | loss=0.0453 | threshold=-0.1802 | rand=0.0250 | time=4758.7s
+Iter  4240 | best=-0.043705 | elite_mean=-0.177737 | loss=0.0455 | threshold=-0.1802 | rand=0.0250 | time=4785.8s
+Iter  4260 | best=-0.043705 | elite_mean=-0.177591 | loss=0.0457 | threshold=-0.1802 | rand=0.0250 | time=4812.6s
+Iter  4280 | best=-0.043705 | elite_mean=-0.177594 | loss=0.0459 | threshold=-0.1802 | rand=0.0250 | time=4838.6s
+Iter  4300 | best=-0.043705 | elite_mean=-0.177583 | loss=0.0451 | threshold=-0.1802 | rand=0.0250 | time=4863.9s
+Iter  4320 | best=-0.043705 | elite_mean=-0.177583 | loss=0.0456 | threshold=-0.1802 | rand=0.0250 | time=4889.4s
+Iter  4340 | best=-0.043705 | elite_mean=-0.177599 | loss=0.0460 | threshold=-0.1802 | rand=0.0250 | time=4914.3s
+Iter  4360 | best=-0.043705 | elite_mean=-0.177589 | loss=0.0454 | threshold=-0.1802 | rand=0.0250 | time=4939.8s
+Iter  4380 | best=-0.043705 | elite_mean=-0.177594 | loss=0.0455 | threshold=-0.1802 | rand=0.0250 | time=4964.9s
+Iter  4400 | best=-0.043705 | elite_mean=-0.177586 | loss=0.0457 | threshold=-0.1802 | rand=0.0250 | time=4990.1s
+Iter  4420 | best=-0.043705 | elite_mean=-0.177586 | loss=0.0463 | threshold=-0.1802 | rand=0.0250 | time=5017.8s
+Iter  4440 | best=-0.043705 | elite_mean=-0.177602 | loss=0.0465 | threshold=-0.1802 | rand=0.0250 | time=5044.2s
+Iter  4460 | best=-0.043705 | elite_mean=-0.177594 | loss=0.0458 | threshold=-0.1802 | rand=0.0250 | time=5069.5s
+Iter  4480 | best=-0.043705 | elite_mean=-0.177586 | loss=0.0466 | threshold=-0.1802 | rand=0.0250 | time=5095.2s
+Iter  4500 | best=-0.043705 | elite_mean=-0.177594 | loss=0.0460 | threshold=-0.1802 | rand=0.0250 | time=5120.0s
+Iter  4520 | best=-0.043705 | elite_mean=-0.177596 | loss=0.0457 | threshold=-0.1802 | rand=0.0250 | time=5146.3s
+Iter  4540 | best=-0.043705 | elite_mean=-0.177589 | loss=0.0460 | threshold=-0.1802 | rand=0.0250 | time=5171.4s
+Iter  4560 | best=-0.043705 | elite_mean=-0.177458 | loss=0.0461 | threshold=-0.1802 | rand=0.0250 | time=5196.3s
+Iter  4580 | best=-0.043705 | elite_mean=-0.177320 | loss=0.0461 | threshold=-0.1802 | rand=0.0250 | time=5221.0s
+Iter  4600 | best=-0.043705 | elite_mean=-1.535549 | loss=0.1354 | threshold=-2.7130 | rand=0.0250 | time=5239.0s
+Iter  4620 | best=-0.043705 | elite_mean=-1.507346 | loss=0.1262 | threshold=-2.8292 | rand=0.0250 | time=5248.1s
+Iter  4640 | best=-0.043705 | elite_mean=-1.383723 | loss=0.1226 | threshold=-2.7167 | rand=0.0250 | time=5257.4s
+Iter  4660 | best=-0.043705 | elite_mean=-1.419368 | loss=0.1130 | threshold=-2.5262 | rand=0.0250 | time=5266.7s
+Iter  4680 | best=-0.043705 | elite_mean=-1.124868 | loss=0.0973 | threshold=-2.4239 | rand=0.0250 | time=5275.9s
+Iter  4700 | best=-0.043705 | elite_mean=-0.450844 | loss=0.0840 | threshold=-1.4199 | rand=0.0055 | time=5285.3s
+Iter  4720 | best=-0.043705 | elite_mean=-0.135935 | loss=0.0608 | threshold=-0.8497 | rand=0.0067 | time=5294.7s
+Iter  4740 | best=-0.043705 | elite_mean=-0.043705 | loss=0.0409 | threshold=-0.0437 | rand=0.0081 | time=5306.6s
+Iter  4760 | best=-0.043705 | elite_mean=-0.043705 | loss=0.0087 | threshold=-0.0437 | rand=0.0097 | time=5330.3s
+Iter  4780 | best=-0.043705 | elite_mean=-0.043705 | loss=0.0083 | threshold=-0.0437 | rand=0.0118 | time=5364.7s
+Iter  4800 | best=-0.043705 | elite_mean=-0.043705 | loss=0.0078 | threshold=-0.0437 | rand=0.0143 | time=5399.1s
+
+Time limit reached (5401s / 5400.0s). Stopping.
+
+Training complete. Total time: 5400.8s
+Best reward: -0.043705
+
+Near-miss analysis (best graph, reward=-0.043705):
+  mu (spectral radius) = 3.956295
+  Edges = 15
+  Max degree = 2, Min degree = 2
+  Degree sequence: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+
+Benchmark n=15: No counterexample found (best reward: -0.043705)
+
+---------------------------------------------------
+TIME BUDGET STATUS
+  Elapsed:   1.50h (5404s)
+  Remaining: 10.00h (35996s)
+  Budget:    11.5h
+  benchmark   : 1.50h used / 1.5h allocated
+  primary     : 0.00h used / 6.0h allocated
+  secondary   : 0.00h used / 3.0h allocated
+---------------------------------------------------
+
+======================================================================
+BENCHMARK: Bound 2, n=20
+Expected: Counterexample should be found (larger search space)
+======================================================================
+Time limit for this run: 0.00h
+
+======================================================================
+CEM Training: Bound 2 (DISPROVED)
+Formula: mu <= max_v (2*m_v^2/d_v)
+N=20, decisions=190, state_dim=380
+Sessions=1000, elite=90%, super=97.5%
+Max iterations=5000, LR=0.003 (Adam)
+Loss: CrossEntropyLoss, Output: 2 logits
+Adaptive randomness: Ghebleh(2024) — init=0.005, wait=10, mult=1.1, cap=0.025
+Reward computation: numpy bypass (triu indices precomputed)
+======================================================================
+
+Iter     1 | best=-9.137892 | elite_mean=-13.438878 | loss=0.6816 | threshold=-15.4331 | rand=0.0050 | time=0.0s
+Iter    20 | best=-6.756034 | elite_mean=-11.294127 | loss=0.6616 | threshold=-14.0620 | rand=0.0050 | time=16.1s
+Iter    40 | best=-5.602014 | elite_mean=-10.850246 | loss=0.6381 | threshold=-13.7957 | rand=0.0055 | time=34.2s
+Iter    60 | best=-5.602014 | elite_mean=-10.633975 | loss=0.6060 | threshold=-13.8057 | rand=0.0067 | time=51.0s
+Iter    80 | best=-5.529938 | elite_mean=-10.556333 | loss=0.5742 | threshold=-14.2041 | rand=0.0050 | time=68.3s
+Iter   100 | best=-4.466859 | elite_mean=-5.876474 | loss=0.1663 | threshold=-6.6906 | rand=0.0050 | time=85.5s
+Iter   120 | best=-3.941757 | elite_mean=-5.064697 | loss=0.1349 | threshold=-5.6706 | rand=0.0050 | time=105.2s
+Iter   140 | best=-3.551153 | elite_mean=-3.721154 | loss=0.0280 | threshold=-3.7221 | rand=0.0050 | time=128.4s
+Iter   160 | best=-3.465252 | elite_mean=-3.706406 | loss=0.0281 | threshold=-3.7082 | rand=0.0050 | time=192.6s
+Iter   180 | best=-2.791016 | elite_mean=-3.456808 | loss=0.0325 | threshold=-3.4653 | rand=0.0050 | time=238.0s
+Iter   200 | best=-2.601980 | elite_mean=-3.134542 | loss=0.0308 | threshold=-3.2085 | rand=0.0050 | time=265.5s
+Iter   220 | best=-2.429492 | elite_mean=-2.447153 | loss=0.0259 | threshold=-2.4472 | rand=0.0050 | time=311.4s
+Iter   240 | best=-2.429492 | elite_mean=-2.447142 | loss=0.0247 | threshold=-2.4472 | rand=0.0061 | time=374.2s
+Iter   260 | best=-2.429492 | elite_mean=-2.447140 | loss=0.0248 | threshold=-2.4472 | rand=0.0073 | time=435.2s
+Iter   280 | best=-2.429492 | elite_mean=-2.447128 | loss=0.0249 | threshold=-2.4472 | rand=0.0089 | time=494.9s
+Iter   300 | best=-2.429492 | elite_mean=-2.429492 | loss=0.0295 | threshold=-2.4295 | rand=0.0107 | time=547.3s
+Iter   320 | best=-2.429492 | elite_mean=-2.429492 | loss=0.0247 | threshold=-2.4295 | rand=0.0130 | time=602.7s
+Iter   340 | best=-2.429492 | elite_mean=-2.429492 | loss=0.0253 | threshold=-2.4295 | rand=0.0157 | time=659.0s
+Iter   360 | best=-2.429492 | elite_mean=-2.429492 | loss=0.0251 | threshold=-2.4295 | rand=0.0190 | time=712.5s
+Iter   380 | best=-2.414355 | elite_mean=-2.429482 | loss=0.0250 | threshold=-2.4295 | rand=0.0050 | time=768.3s
+Iter   400 | best=-2.414355 | elite_mean=-2.429482 | loss=0.0245 | threshold=-2.4295 | rand=0.0061 | time=842.3s
+Iter   420 | best=-2.414355 | elite_mean=-2.429482 | loss=0.0248 | threshold=-2.4295 | rand=0.0073 | time=915.1s
+Iter   440 | best=-2.414355 | elite_mean=-2.429460 | loss=0.0254 | threshold=-2.4295 | rand=0.0089 | time=982.8s
+Iter   460 | best=-2.359923 | elite_mean=-2.429384 | loss=0.0250 | threshold=-2.4295 | rand=0.0055 | time=1056.5s
+Iter   480 | best=-2.359923 | elite_mean=-2.414320 | loss=0.0256 | threshold=-2.4144 | rand=0.0067 | time=1114.8s
+Iter   500 | best=-2.359923 | elite_mean=-2.414318 | loss=0.0247 | threshold=-2.4144 | rand=0.0081 | time=1179.5s
+Iter   520 | best=-2.359923 | elite_mean=-2.414316 | loss=0.0250 | threshold=-2.4144 | rand=0.0097 | time=1241.1s
+Iter   540 | best=-2.359923 | elite_mean=-2.413660 | loss=0.0257 | threshold=-2.4144 | rand=0.0118 | time=1300.7s
+Iter   560 | best=-2.237584 | elite_mean=-2.359838 | loss=0.0256 | threshold=-2.3599 | rand=0.0050 | time=1353.5s
+Iter   580 | best=-2.237584 | elite_mean=-2.359844 | loss=0.0254 | threshold=-2.3599 | rand=0.0061 | time=1429.1s
+Iter   600 | best=-2.233956 | elite_mean=-2.359530 | loss=0.0248 | threshold=-2.3599 | rand=0.0055 | time=1503.7s
+Iter   620 | best=-2.180196 | elite_mean=-2.237546 | loss=0.0249 | threshold=-2.2376 | rand=0.0050 | time=1568.1s
+Iter   640 | best=-2.075866 | elite_mean=-2.236622 | loss=0.0252 | threshold=-2.2376 | rand=0.0050 | time=1641.5s
+Iter   660 | best=-1.822278 | elite_mean=-2.073215 | loss=0.0261 | threshold=-2.0759 | rand=0.0050 | time=1705.8s
+Iter   680 | best=-1.822278 | elite_mean=-1.822278 | loss=0.0246 | threshold=-1.8223 | rand=0.0061 | time=1769.0s
+Iter   700 | best=-1.822278 | elite_mean=-1.822278 | loss=0.0245 | threshold=-1.8223 | rand=0.0073 | time=1838.8s
+Iter   720 | best=-1.822278 | elite_mean=-1.822278 | loss=0.0247 | threshold=-1.8223 | rand=0.0089 | time=1908.0s
+Iter   740 | best=-1.822278 | elite_mean=-1.822278 | loss=0.0241 | threshold=-1.8223 | rand=0.0107 | time=1974.1s
+Iter   760 | best=-1.822278 | elite_mean=-1.822278 | loss=0.0243 | threshold=-1.8223 | rand=0.0130 | time=2035.3s
+Iter   780 | best=-1.822278 | elite_mean=-1.822278 | loss=0.0244 | threshold=-1.8223 | rand=0.0157 | time=2097.7s
+Iter   800 | best=-1.822278 | elite_mean=-1.822278 | loss=0.0244 | threshold=-1.8223 | rand=0.0190 | time=2170.1s
+Iter   820 | best=-1.822278 | elite_mean=-1.822278 | loss=0.0250 | threshold=-1.8223 | rand=0.0230 | time=2225.1s
+Iter   840 | best=-1.821307 | elite_mean=-1.822277 | loss=0.0272 | threshold=-1.8223 | rand=0.0050 | time=2281.0s
+Iter   860 | best=-1.821307 | elite_mean=-1.822277 | loss=0.0247 | threshold=-1.8223 | rand=0.0061 | time=2353.8s
+Iter   880 | best=-1.821307 | elite_mean=-1.822277 | loss=0.0241 | threshold=-1.8223 | rand=0.0073 | time=2429.4s
+Iter   900 | best=-1.821307 | elite_mean=-1.822277 | loss=0.0244 | threshold=-1.8223 | rand=0.0089 | time=2502.8s
+Iter   920 | best=-1.821307 | elite_mean=-1.822277 | loss=0.0242 | threshold=-1.8223 | rand=0.0107 | time=2566.6s
+Iter   940 | best=-1.821307 | elite_mean=-1.822277 | loss=0.0249 | threshold=-1.8223 | rand=0.0130 | time=2629.0s
+Iter   960 | best=-1.821307 | elite_mean=-1.822274 | loss=0.0243 | threshold=-1.8223 | rand=0.0157 | time=2688.6s
+Iter   980 | best=-1.821307 | elite_mean=-1.822274 | loss=0.0244 | threshold=-1.8223 | rand=0.0190 | time=2750.8s
+Iter  1000 | best=-1.821307 | elite_mean=-1.822273 | loss=0.0243 | threshold=-1.8223 | rand=0.0230 | time=2810.9s
+Iter  1020 | best=-1.821307 | elite_mean=-1.822269 | loss=0.0244 | threshold=-1.8223 | rand=0.0250 | time=2867.5s
+Iter  1040 | best=-1.821307 | elite_mean=-1.822256 | loss=0.0254 | threshold=-1.8223 | rand=0.0250 | time=2919.9s
+Iter  1060 | best=-1.821307 | elite_mean=-1.821307 | loss=0.0348 | threshold=-1.8213 | rand=0.0250 | time=2958.0s
+Iter  1080 | best=-1.821307 | elite_mean=-1.821307 | loss=0.0348 | threshold=-1.8213 | rand=0.0250 | time=2985.4s
+Iter  1100 | best=-1.821307 | elite_mean=-1.821307 | loss=0.0345 | threshold=-1.8213 | rand=0.0250 | time=3025.8s
+Iter  1120 | best=-1.821307 | elite_mean=-1.821307 | loss=0.0303 | threshold=-1.8213 | rand=0.0250 | time=3076.7s
+Iter  1140 | best=-1.821307 | elite_mean=-1.821307 | loss=0.0250 | threshold=-1.8213 | rand=0.0250 | time=3128.5s
+Iter  1160 | best=-1.821307 | elite_mean=-1.821307 | loss=0.0252 | threshold=-1.8213 | rand=0.0250 | time=3180.6s
+Iter  1180 | best=-1.821307 | elite_mean=-1.821307 | loss=0.0251 | threshold=-1.8213 | rand=0.0250 | time=3234.8s
+Iter  1200 | best=-1.821307 | elite_mean=-1.821307 | loss=0.0255 | threshold=-1.8213 | rand=0.0250 | time=3288.5s
+Iter  1220 | best=-1.818959 | elite_mean=-1.821305 | loss=0.0255 | threshold=-1.8213 | rand=0.0050 | time=3350.5s
+Iter  1240 | best=-1.818959 | elite_mean=-1.821301 | loss=0.0253 | threshold=-1.8213 | rand=0.0061 | time=3428.9s
+Iter  1260 | best=-1.818959 | elite_mean=-1.821221 | loss=0.0261 | threshold=-1.8213 | rand=0.0073 | time=3503.5s
+Iter  1280 | best=-1.812155 | elite_mean=-1.818938 | loss=0.0251 | threshold=-1.8190 | rand=0.0055 | time=3567.0s
+Iter  1300 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0247 | threshold=-1.8122 | rand=0.0067 | time=3639.4s
+Iter  1320 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0241 | threshold=-1.8122 | rand=0.0081 | time=3710.2s
+Iter  1340 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0247 | threshold=-1.8122 | rand=0.0097 | time=3776.2s
+Iter  1360 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0247 | threshold=-1.8122 | rand=0.0118 | time=3849.6s
+Iter  1380 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0247 | threshold=-1.8122 | rand=0.0143 | time=3911.3s
+Iter  1400 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0245 | threshold=-1.8122 | rand=0.0173 | time=3970.1s
+Iter  1420 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0245 | threshold=-1.8122 | rand=0.0209 | time=4030.1s
+Iter  1440 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0242 | threshold=-1.8122 | rand=0.0250 | time=4082.8s
+Iter  1460 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0251 | threshold=-1.8122 | rand=0.0250 | time=4137.9s
+Iter  1480 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0242 | threshold=-1.8122 | rand=0.0250 | time=4192.8s
+Iter  1500 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0242 | threshold=-1.8122 | rand=0.0250 | time=4245.5s
+Iter  1520 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0240 | threshold=-1.8122 | rand=0.0250 | time=4301.4s
+Iter  1540 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0243 | threshold=-1.8122 | rand=0.0250 | time=4355.4s
+Iter  1560 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0240 | threshold=-1.8122 | rand=0.0250 | time=4409.3s
+Iter  1580 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0247 | threshold=-1.8122 | rand=0.0250 | time=4467.4s
+Iter  1600 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0243 | threshold=-1.8122 | rand=0.0250 | time=4522.6s
+Iter  1620 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0242 | threshold=-1.8122 | rand=0.0250 | time=4580.0s
+Iter  1640 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0240 | threshold=-1.8122 | rand=0.0250 | time=4632.3s
+Iter  1660 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0244 | threshold=-1.8122 | rand=0.0250 | time=4688.8s
+Iter  1680 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0241 | threshold=-1.8122 | rand=0.0250 | time=4745.3s
+Iter  1700 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0243 | threshold=-1.8122 | rand=0.0250 | time=4800.4s
+Iter  1720 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0241 | threshold=-1.8122 | rand=0.0250 | time=4858.5s
+Iter  1740 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0238 | threshold=-1.8122 | rand=0.0250 | time=4912.9s
+Iter  1760 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0245 | threshold=-1.8122 | rand=0.0250 | time=4968.7s
+Iter  1780 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0241 | threshold=-1.8122 | rand=0.0250 | time=5024.7s
+Iter  1800 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0243 | threshold=-1.8122 | rand=0.0250 | time=5084.0s
+Iter  1820 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0243 | threshold=-1.8122 | rand=0.0250 | time=5142.0s
+Iter  1840 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0240 | threshold=-1.8122 | rand=0.0250 | time=5198.7s
+Iter  1860 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0246 | threshold=-1.8122 | rand=0.0250 | time=5259.1s
+Iter  1880 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0245 | threshold=-1.8122 | rand=0.0250 | time=5311.7s
+Iter  1900 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0241 | threshold=-1.8122 | rand=0.0250 | time=5365.1s
+Iter  1920 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0242 | threshold=-1.8122 | rand=0.0250 | time=5420.3s
+Iter  1940 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0241 | threshold=-1.8122 | rand=0.0250 | time=5479.2s
+Iter  1960 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0246 | threshold=-1.8122 | rand=0.0250 | time=5536.8s
+Iter  1980 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0246 | threshold=-1.8122 | rand=0.0250 | time=5590.5s
+Iter  2000 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0242 | threshold=-1.8122 | rand=0.0250 | time=5647.1s
+Iter  2020 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0245 | threshold=-1.8122 | rand=0.0250 | time=5702.4s
+Iter  2040 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0236 | threshold=-1.8122 | rand=0.0250 | time=5761.6s
+Iter  2060 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0236 | threshold=-1.8122 | rand=0.0250 | time=5810.4s
+Iter  2080 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0240 | threshold=-1.8122 | rand=0.0250 | time=5860.3s
+Iter  2100 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0240 | threshold=-1.8122 | rand=0.0250 | time=5917.8s
+Iter  2120 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0239 | threshold=-1.8122 | rand=0.0250 | time=5978.8s
+Iter  2140 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0245 | threshold=-1.8122 | rand=0.0250 | time=6030.1s
+Iter  2160 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0245 | threshold=-1.8122 | rand=0.0250 | time=6080.6s
+Iter  2180 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0247 | threshold=-1.8122 | rand=0.0250 | time=6132.8s
+Iter  2200 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0247 | threshold=-1.8122 | rand=0.0250 | time=6187.1s
+Iter  2220 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0240 | threshold=-1.8122 | rand=0.0250 | time=6239.9s
+Iter  2240 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0257 | threshold=-1.8122 | rand=0.0250 | time=6295.3s
+Iter  2260 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0240 | threshold=-1.8122 | rand=0.0250 | time=6346.8s
+Iter  2280 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0241 | threshold=-1.8122 | rand=0.0250 | time=6397.2s
+Iter  2300 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0241 | threshold=-1.8122 | rand=0.0250 | time=6449.9s
+Iter  2320 | best=-1.812155 | elite_mean=-1.812155 | loss=0.0243 | threshold=-1.8122 | rand=0.0250 | time=6505.0s
+Iter  2340 | best=-1.756086 | elite_mean=-1.812121 | loss=0.0240 | threshold=-1.8122 | rand=0.0050 | time=6568.8s
+Iter  2360 | best=-1.756086 | elite_mean=-1.812083 | loss=0.0244 | threshold=-1.8122 | rand=0.0061 | time=6648.0s
+Iter  2380 | best=-1.756086 | elite_mean=-1.756086 | loss=0.0277 | threshold=-1.7561 | rand=0.0073 | time=6713.6s
+Iter  2400 | best=-1.756086 | elite_mean=-1.756086 | loss=0.0244 | threshold=-1.7561 | rand=0.0089 | time=6777.4s
+Iter  2420 | best=-1.756086 | elite_mean=-1.756086 | loss=0.0245 | threshold=-1.7561 | rand=0.0107 | time=6859.5s
+Iter  2440 | best=-1.756086 | elite_mean=-1.756086 | loss=0.0246 | threshold=-1.7561 | rand=0.0130 | time=6937.7s
+Iter  2460 | best=-1.756086 | elite_mean=-1.756086 | loss=0.0241 | threshold=-1.7561 | rand=0.0157 | time=6996.3s
+Iter  2480 | best=-1.756086 | elite_mean=-1.756086 | loss=0.0245 | threshold=-1.7561 | rand=0.0190 | time=7055.0s
+Iter  2500 | best=-1.755768 | elite_mean=-1.756086 | loss=0.0242 | threshold=-1.7561 | rand=0.0055 | time=7123.1s
+Iter  2520 | best=-1.755768 | elite_mean=-1.756086 | loss=0.0246 | threshold=-1.7561 | rand=0.0067 | time=7195.1s
+Iter  2540 | best=-1.755768 | elite_mean=-1.756081 | loss=0.0254 | threshold=-1.7561 | rand=0.0081 | time=7260.5s
+Iter  2560 | best=-1.708924 | elite_mean=-1.755738 | loss=0.0265 | threshold=-1.7558 | rand=0.0055 | time=7322.5s
+Iter  2580 | best=-1.708924 | elite_mean=-1.755616 | loss=0.0263 | threshold=-1.7558 | rand=0.0067 | time=7394.2s
+Iter  2600 | best=-1.708924 | elite_mean=-1.708924 | loss=0.0313 | threshold=-1.7089 | rand=0.0081 | time=7449.6s
+Iter  2620 | best=-1.708924 | elite_mean=-1.708924 | loss=0.0328 | threshold=-1.7089 | rand=0.0097 | time=7515.9s
+Iter  2640 | best=-1.618240 | elite_mean=-1.620459 | loss=0.0271 | threshold=-1.6205 | rand=0.0050 | time=7576.0s
+Iter  2660 | best=-1.618240 | elite_mean=-1.620459 | loss=0.0258 | threshold=-1.6205 | rand=0.0061 | time=7646.0s
+Iter  2680 | best=-1.603748 | elite_mean=-1.620446 | loss=0.0270 | threshold=-1.6205 | rand=0.0050 | time=7715.7s
+Iter  2700 | best=-1.603748 | elite_mean=-1.618222 | loss=0.0293 | threshold=-1.6182 | rand=0.0061 | time=7768.8s
+Iter  2720 | best=-1.603748 | elite_mean=-1.617727 | loss=0.0263 | threshold=-1.6182 | rand=0.0073 | time=7845.7s
+Iter  2740 | best=-1.603748 | elite_mean=-1.607278 | loss=0.0255 | threshold=-1.6073 | rand=0.0089 | time=7904.7s
+Iter  2760 | best=-1.603748 | elite_mean=-1.607275 | loss=0.0256 | threshold=-1.6073 | rand=0.0107 | time=7969.3s
+Iter  2780 | best=-1.591002 | elite_mean=-1.607266 | loss=0.0244 | threshold=-1.6073 | rand=0.0055 | time=8039.2s
+Iter  2800 | best=-1.577007 | elite_mean=-1.590933 | loss=0.0248 | threshold=-1.5910 | rand=0.0050 | time=8107.1s
+Iter  2820 | best=-1.577007 | elite_mean=-1.577007 | loss=0.0257 | threshold=-1.5770 | rand=0.0061 | time=8175.9s
+Iter  2840 | best=-1.577007 | elite_mean=-1.577007 | loss=0.0255 | threshold=-1.5770 | rand=0.0073 | time=8248.3s
+Iter  2860 | best=-1.577007 | elite_mean=-1.577007 | loss=0.0256 | threshold=-1.5770 | rand=0.0089 | time=8311.9s
+Iter  2880 | best=-1.549472 | elite_mean=-1.576990 | loss=0.0249 | threshold=-1.5770 | rand=0.0055 | time=8390.6s
+Iter  2900 | best=-1.445855 | elite_mean=-1.576907 | loss=0.0249 | threshold=-1.5770 | rand=0.0050 | time=8462.1s
+Iter  2920 | best=-1.445855 | elite_mean=-1.445855 | loss=0.0256 | threshold=-1.4459 | rand=0.0061 | time=8526.3s
+Iter  2940 | best=-1.445855 | elite_mean=-1.445855 | loss=0.0250 | threshold=-1.4459 | rand=0.0073 | time=8597.0s
+Iter  2960 | best=-1.445855 | elite_mean=-1.445855 | loss=0.0248 | threshold=-1.4459 | rand=0.0089 | time=8666.5s
+Iter  2980 | best=-1.445855 | elite_mean=-1.445855 | loss=0.0245 | threshold=-1.4459 | rand=0.0107 | time=8731.1s
+Iter  3000 | best=-1.445855 | elite_mean=-1.445855 | loss=0.0244 | threshold=-1.4459 | rand=0.0130 | time=8796.7s
+Iter  3020 | best=-1.427849 | elite_mean=-1.445844 | loss=0.0248 | threshold=-1.4459 | rand=0.0055 | time=8866.4s
+Iter  3040 | best=-1.427849 | elite_mean=-1.445843 | loss=0.0250 | threshold=-1.4459 | rand=0.0067 | time=8939.5s
+Iter  3060 | best=-1.427849 | elite_mean=-1.445830 | loss=0.0245 | threshold=-1.4459 | rand=0.0081 | time=9006.6s
+Iter  3080 | best=-1.276967 | elite_mean=-1.445717 | loss=0.0249 | threshold=-1.4459 | rand=0.0055 | time=9075.5s
+Iter  3100 | best=-1.276967 | elite_mean=-1.427519 | loss=0.0272 | threshold=-1.4278 | rand=0.0067 | time=9142.4s
+Iter  3120 | best=-1.276967 | elite_mean=-1.276967 | loss=0.0321 | threshold=-1.2770 | rand=0.0081 | time=9189.5s
+Iter  3140 | best=-1.276967 | elite_mean=-1.276967 | loss=0.0314 | threshold=-1.2770 | rand=0.0097 | time=9249.7s
+Iter  3160 | best=-1.276967 | elite_mean=-1.276967 | loss=0.0275 | threshold=-1.2770 | rand=0.0118 | time=9310.2s
+Iter  3180 | best=-1.189225 | elite_mean=-1.276911 | loss=0.0275 | threshold=-1.2770 | rand=0.0055 | time=9382.2s
+Iter  3200 | best=-1.189225 | elite_mean=-1.276908 | loss=0.0254 | threshold=-1.2770 | rand=0.0067 | time=9454.9s
+Iter  3220 | best=-1.189225 | elite_mean=-1.276907 | loss=0.0254 | threshold=-1.2770 | rand=0.0081 | time=9524.6s
+Iter  3240 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0268 | threshold=-1.1892 | rand=0.0097 | time=9586.9s
+Iter  3260 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0271 | threshold=-1.1892 | rand=0.0118 | time=9647.5s
+Iter  3280 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0268 | threshold=-1.1892 | rand=0.0143 | time=9704.5s
+Iter  3300 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0268 | threshold=-1.1892 | rand=0.0173 | time=9760.1s
+Iter  3320 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0266 | threshold=-1.1892 | rand=0.0209 | time=9814.6s
+Iter  3340 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0271 | threshold=-1.1892 | rand=0.0250 | time=9866.9s
+Iter  3360 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0273 | threshold=-1.1892 | rand=0.0250 | time=9917.7s
+Iter  3380 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0268 | threshold=-1.1892 | rand=0.0250 | time=9968.8s
+Iter  3400 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0267 | threshold=-1.1892 | rand=0.0250 | time=10020.1s
+Iter  3420 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0267 | threshold=-1.1892 | rand=0.0250 | time=10071.8s
+Iter  3440 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0273 | threshold=-1.1892 | rand=0.0250 | time=10124.2s
+Iter  3460 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0273 | threshold=-1.1892 | rand=0.0250 | time=10175.9s
+Iter  3480 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0269 | threshold=-1.1892 | rand=0.0250 | time=10226.7s
+Iter  3500 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0270 | threshold=-1.1892 | rand=0.0250 | time=10278.4s
+Iter  3520 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0267 | threshold=-1.1892 | rand=0.0250 | time=10329.1s
+Iter  3540 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0270 | threshold=-1.1892 | rand=0.0250 | time=10385.4s
+Iter  3560 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0267 | threshold=-1.1892 | rand=0.0250 | time=10437.4s
+Iter  3580 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0269 | threshold=-1.1892 | rand=0.0250 | time=10487.6s
+Iter  3600 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0270 | threshold=-1.1892 | rand=0.0250 | time=10535.6s
+Iter  3620 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0267 | threshold=-1.1892 | rand=0.0250 | time=10584.0s
+Iter  3640 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0265 | threshold=-1.1892 | rand=0.0250 | time=10632.0s
+Iter  3660 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0264 | threshold=-1.1892 | rand=0.0250 | time=10679.6s
+Iter  3680 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0277 | threshold=-1.1892 | rand=0.0250 | time=10733.0s
+Iter  3700 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0261 | threshold=-1.1892 | rand=0.0250 | time=10790.8s
+Iter  3720 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0268 | threshold=-1.1892 | rand=0.0250 | time=10840.3s
+Iter  3740 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0268 | threshold=-1.1892 | rand=0.0250 | time=10890.4s
+Iter  3760 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0268 | threshold=-1.1892 | rand=0.0250 | time=10942.2s
+Iter  3780 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0274 | threshold=-1.1892 | rand=0.0250 | time=10991.4s
+Iter  3800 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0269 | threshold=-1.1892 | rand=0.0250 | time=11041.0s
+Iter  3820 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0269 | threshold=-1.1892 | rand=0.0250 | time=11092.4s
+Iter  3840 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0266 | threshold=-1.1892 | rand=0.0250 | time=11141.6s
+Iter  3860 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0264 | threshold=-1.1892 | rand=0.0250 | time=11191.3s
+Iter  3880 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0262 | threshold=-1.1892 | rand=0.0250 | time=11240.5s
+Iter  3900 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0264 | threshold=-1.1892 | rand=0.0250 | time=11290.1s
+Iter  3920 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0264 | threshold=-1.1892 | rand=0.0250 | time=11340.0s
+Iter  3940 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0275 | threshold=-1.1892 | rand=0.0250 | time=11390.3s
+Iter  3960 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0268 | threshold=-1.1892 | rand=0.0250 | time=11440.4s
+Iter  3980 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0270 | threshold=-1.1892 | rand=0.0250 | time=11490.0s
+Iter  4000 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0268 | threshold=-1.1892 | rand=0.0250 | time=11539.5s
+Iter  4020 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0272 | threshold=-1.1892 | rand=0.0250 | time=11588.8s
+Iter  4040 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0265 | threshold=-1.1892 | rand=0.0250 | time=11638.9s
+Iter  4060 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0267 | threshold=-1.1892 | rand=0.0250 | time=11689.4s
+Iter  4080 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0265 | threshold=-1.1892 | rand=0.0250 | time=11738.5s
+Iter  4100 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0262 | threshold=-1.1892 | rand=0.0250 | time=11789.0s
+Iter  4120 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0261 | threshold=-1.1892 | rand=0.0250 | time=11839.5s
+Iter  4140 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0270 | threshold=-1.1892 | rand=0.0250 | time=11888.9s
+Iter  4160 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0261 | threshold=-1.1892 | rand=0.0250 | time=11938.9s
+Iter  4180 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0269 | threshold=-1.1892 | rand=0.0250 | time=11988.5s
+Iter  4200 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0265 | threshold=-1.1892 | rand=0.0250 | time=12038.3s
+Iter  4220 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0273 | threshold=-1.1892 | rand=0.0250 | time=12088.2s
+Iter  4240 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0265 | threshold=-1.1892 | rand=0.0250 | time=12138.0s
+Iter  4260 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0270 | threshold=-1.1892 | rand=0.0250 | time=12187.1s
+Iter  4280 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0264 | threshold=-1.1892 | rand=0.0250 | time=12236.5s
+Iter  4300 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0268 | threshold=-1.1892 | rand=0.0250 | time=12288.0s
+Iter  4320 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0268 | threshold=-1.1892 | rand=0.0250 | time=12337.6s
+Iter  4340 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0269 | threshold=-1.1892 | rand=0.0250 | time=12387.3s
+Iter  4360 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0260 | threshold=-1.1892 | rand=0.0250 | time=12436.5s
+Iter  4380 | best=-1.189225 | elite_mean=-1.189225 | loss=0.0270 | threshold=-1.1892 | rand=0.0250 | time=12485.4s
+Iter  4400 | best=-1.104506 | elite_mean=-1.189173 | loss=0.0264 | threshold=-1.1892 | rand=0.0050 | time=12542.4s
+Iter  4420 | best=-1.104506 | elite_mean=-1.189170 | loss=0.0261 | threshold=-1.1892 | rand=0.0061 | time=12609.1s
+Iter  4440 | best=-1.104506 | elite_mean=-1.189111 | loss=0.0257 | threshold=-1.1892 | rand=0.0073 | time=12672.1s
+Iter  4460 | best=-1.104506 | elite_mean=-1.188637 | loss=0.0255 | threshold=-1.1892 | rand=0.0089 | time=12732.3s
+Iter  4480 | best=-1.104506 | elite_mean=-1.187330 | loss=0.0265 | threshold=-1.1892 | rand=0.0107 | time=12789.4s
+Iter  4500 | best=-1.104506 | elite_mean=-1.104506 | loss=0.0277 | threshold=-1.1045 | rand=0.0130 | time=12830.4s
+Iter  4520 | best=-1.104506 | elite_mean=-1.104506 | loss=0.0270 | threshold=-1.1045 | rand=0.0157 | time=12884.6s
+Iter  4540 | best=-1.104506 | elite_mean=-1.104506 | loss=0.0267 | threshold=-1.1045 | rand=0.0190 | time=12938.8s
+Iter  4560 | best=-0.867605 | elite_mean=-1.104358 | loss=0.0267 | threshold=-1.1045 | rand=0.0055 | time=12996.2s
+Iter  4580 | best=-0.867605 | elite_mean=-1.104286 | loss=0.0263 | threshold=-1.1045 | rand=0.0067 | time=13060.3s
+Iter  4600 | best=-0.867605 | elite_mean=-1.103192 | loss=0.0271 | threshold=-1.1045 | rand=0.0081 | time=13121.5s
+Iter  4620 | best=-0.867605 | elite_mean=-1.003540 | loss=0.0337 | threshold=-1.0047 | rand=0.0097 | time=13165.1s
+Iter  4640 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0249 | threshold=-0.8676 | rand=0.0118 | time=13208.4s
+Iter  4660 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0247 | threshold=-0.8676 | rand=0.0143 | time=13262.6s
+Iter  4680 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0254 | threshold=-0.8676 | rand=0.0173 | time=13314.7s
+Iter  4700 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0252 | threshold=-0.8676 | rand=0.0055 | time=13374.2s
+Iter  4720 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0252 | threshold=-0.8676 | rand=0.0067 | time=13438.6s
+Iter  4740 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0272 | threshold=-0.8676 | rand=0.0081 | time=13493.9s
+Iter  4760 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0274 | threshold=-0.8676 | rand=0.0097 | time=13552.8s
+Iter  4780 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0272 | threshold=-0.8676 | rand=0.0118 | time=13607.5s
+Iter  4800 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0277 | threshold=-0.8676 | rand=0.0143 | time=13659.8s
+Iter  4820 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0279 | threshold=-0.8676 | rand=0.0173 | time=13710.4s
+Iter  4840 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0276 | threshold=-0.8676 | rand=0.0209 | time=13759.8s
+Iter  4860 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0268 | threshold=-0.8676 | rand=0.0250 | time=13807.8s
+Iter  4880 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0259 | threshold=-0.8676 | rand=0.0250 | time=13855.2s
+Iter  4900 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0259 | threshold=-0.8676 | rand=0.0250 | time=13902.5s
+Iter  4920 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0262 | threshold=-0.8676 | rand=0.0250 | time=13949.9s
+Iter  4940 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0271 | threshold=-0.8676 | rand=0.0250 | time=13997.2s
+Iter  4960 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0266 | threshold=-0.8676 | rand=0.0250 | time=14045.3s
+Iter  4980 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0256 | threshold=-0.8676 | rand=0.0250 | time=14092.8s
+Iter  5000 | best=-0.867605 | elite_mean=-0.867605 | loss=0.0261 | threshold=-0.8676 | rand=0.0250 | time=14140.9s
+
+Training complete. Total time: 14143.3s
+Best reward: -0.867605
+
+Near-miss analysis (best graph, reward=-0.867605):
+  mu (spectral radius) = 11.808321
+  Edges = 55
+  Max degree = 7, Min degree = 2
+  Degree sequence: [7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 4, 4, 3, 2]
+
+Benchmark n=20: No counterexample found (best reward: -0.867605)
+
+---------------------------------------------------
+TIME BUDGET STATUS
+  Elapsed:   5.43h (19547s)
+  Remaining: 6.07h (21853s)
+  Budget:    11.5h
+  benchmark   : 5.43h used / 1.5h allocated
+  primary     : 0.00h used / 6.0h allocated
+  secondary   : 0.00h used / 3.0h allocated
+---------------------------------------------------
+
+
+---------------------------------------------------
+TIME BUDGET STATUS
+  Elapsed:   5.43h (19547s)
+  Remaining: 6.07h (21853s)
+  Budget:    11.5h
+  benchmark   : 5.43h used / 1.5h allocated
+  primary     : 0.00h used / 6.0h allocated
+  secondary   : 0.00h used / 3.0h allocated
+---------------------------------------------------
+
+======================================================================
+ATTACK: Bound 1 (OPEN), n=20
+Target: Find counterexample to unsolved conjecture
+======================================================================
+Time limit for this run: 6.00h
+Estimated time per iteration (from benchmark): 2.8s
+Estimated total for 5000 iterations: 3.9h
+
+======================================================================
+CEM Training: Bound 1 (OPEN)
+Formula: mu <= max_v sqrt(4*d_v^3/m_v)
+N=20, decisions=190, state_dim=380
+Sessions=1000, elite=90%, super=97.5%
+Max iterations=5000, LR=0.003 (Adam)
+Loss: CrossEntropyLoss, Output: 2 logits
+Adaptive randomness: Ghebleh(2024) — init=0.005, wait=10, mult=1.1, cap=0.025
+Reward computation: numpy bypass (triu indices precomputed)
+======================================================================
+
+Iter     1 | best=-8.913866 | elite_mean=-11.851914 | loss=0.6931 | threshold=-12.8963 | rand=0.0050 | time=0.0s
+Iter    20 | best=-5.231957 | elite_mean=-6.808092 | loss=0.5776 | threshold=-7.9175 | rand=0.0050 | time=14.7s
+Iter    40 | best=-1.831422 | elite_mean=-4.830948 | loss=0.4612 | threshold=-6.3182 | rand=0.0050 | time=29.7s
+Iter    60 | best=-1.831422 | elite_mean=-4.926864 | loss=0.4231 | threshold=-6.6767 | rand=0.0061 | time=44.3s
+Iter    80 | best=-1.831422 | elite_mean=-5.579138 | loss=0.4471 | threshold=-7.3642 | rand=0.0073 | time=59.3s
+Iter   100 | best=-1.831422 | elite_mean=-5.571273 | loss=0.4281 | threshold=-7.3444 | rand=0.0089 | time=74.4s
+Iter   120 | best=-1.831422 | elite_mean=-5.140320 | loss=0.4100 | threshold=-6.8828 | rand=0.0107 | time=89.6s
+Iter   140 | best=-1.713170 | elite_mean=-4.848216 | loss=0.3924 | threshold=-6.5526 | rand=0.0055 | time=104.5s
+Iter   160 | best=-1.033553 | elite_mean=-4.978314 | loss=0.3883 | threshold=-6.7214 | rand=0.0055 | time=119.4s
+Iter   180 | best=-1.033553 | elite_mean=-4.484903 | loss=0.3726 | threshold=-6.0519 | rand=0.0067 | time=134.1s
+Iter   200 | best=-1.033553 | elite_mean=-4.912936 | loss=0.3981 | threshold=-6.6044 | rand=0.0081 | time=148.8s
+Iter   220 | best=-1.033553 | elite_mean=-4.877521 | loss=0.3876 | threshold=-6.5991 | rand=0.0097 | time=163.6s
+Iter   240 | best=-1.033553 | elite_mean=-4.924972 | loss=0.3963 | threshold=-6.7606 | rand=0.0118 | time=178.4s
+Iter   260 | best=-1.033553 | elite_mean=-4.754332 | loss=0.3973 | threshold=-6.5581 | rand=0.0143 | time=193.2s
+Iter   280 | best=-1.033553 | elite_mean=-5.038011 | loss=0.4143 | threshold=-7.0288 | rand=0.0173 | time=208.3s
+Iter   300 | best=-1.033553 | elite_mean=-5.404921 | loss=0.4237 | threshold=-7.3728 | rand=0.0209 | time=223.3s
+Iter   320 | best=-1.033553 | elite_mean=-5.608024 | loss=0.4249 | threshold=-7.8579 | rand=0.0250 | time=238.5s
+Iter   340 | best=-1.033553 | elite_mean=-5.746860 | loss=0.4181 | threshold=-7.9356 | rand=0.0250 | time=253.6s
+Iter   360 | best=-1.033553 | elite_mean=-5.175689 | loss=0.4068 | threshold=-7.3371 | rand=0.0250 | time=269.2s
+Iter   380 | best=-1.033553 | elite_mean=-5.211947 | loss=0.4074 | threshold=-7.1553 | rand=0.0250 | time=284.2s
+Iter   400 | best=-1.033553 | elite_mean=-5.266613 | loss=0.4025 | threshold=-7.3393 | rand=0.0250 | time=299.2s
+Iter   420 | best=-1.033553 | elite_mean=-5.252275 | loss=0.4028 | threshold=-7.1275 | rand=0.0250 | time=314.6s
+Iter   440 | best=-1.033553 | elite_mean=-5.520494 | loss=0.4250 | threshold=-7.5673 | rand=0.0250 | time=329.9s
+Iter   460 | best=-1.033553 | elite_mean=-5.245027 | loss=0.4096 | threshold=-7.1287 | rand=0.0250 | time=345.0s
+Iter   480 | best=-1.033553 | elite_mean=-5.211275 | loss=0.4031 | threshold=-7.1095 | rand=0.0250 | time=360.0s
+Iter   500 | best=-1.033553 | elite_mean=-4.923852 | loss=0.3946 | threshold=-6.9990 | rand=0.0250 | time=375.0s
+Iter   520 | best=-1.033553 | elite_mean=-5.297554 | loss=0.4060 | threshold=-7.1525 | rand=0.0250 | time=391.0s
+Iter   540 | best=-1.033553 | elite_mean=-4.897507 | loss=0.4055 | threshold=-6.8574 | rand=0.0250 | time=406.2s
+Iter   560 | best=-1.033553 | elite_mean=-5.375078 | loss=0.4091 | threshold=-7.3617 | rand=0.0250 | time=421.2s
+Iter   580 | best=-1.033553 | elite_mean=-5.126132 | loss=0.4115 | threshold=-7.1605 | rand=0.0250 | time=436.4s
+Iter   600 | best=-1.033553 | elite_mean=-4.976575 | loss=0.3990 | threshold=-7.0454 | rand=0.0250 | time=451.4s
+Iter   620 | best=-1.033553 | elite_mean=-5.255342 | loss=0.4121 | threshold=-7.3196 | rand=0.0250 | time=466.4s
+Iter   640 | best=-1.033553 | elite_mean=-4.678558 | loss=0.3858 | threshold=-6.7052 | rand=0.0250 | time=483.1s
+Iter   660 | best=-1.033553 | elite_mean=-4.923896 | loss=0.3987 | threshold=-6.8091 | rand=0.0250 | time=498.2s
+Iter   680 | best=-1.033553 | elite_mean=-5.148593 | loss=0.4055 | threshold=-7.1345 | rand=0.0250 | time=514.3s
+Iter   700 | best=-1.033553 | elite_mean=-4.706171 | loss=0.3978 | threshold=-6.4990 | rand=0.0250 | time=529.3s
+Iter   720 | best=-1.033553 | elite_mean=-5.130882 | loss=0.4055 | threshold=-7.1704 | rand=0.0250 | time=544.3s
+Iter   740 | best=-1.033553 | elite_mean=-4.739088 | loss=0.3818 | threshold=-6.7091 | rand=0.0250 | time=559.4s
+Iter   760 | best=-1.033553 | elite_mean=-5.040903 | loss=0.3995 | threshold=-6.9017 | rand=0.0250 | time=574.6s
+Iter   780 | best=-1.033553 | elite_mean=-4.764214 | loss=0.3918 | threshold=-6.5985 | rand=0.0250 | time=589.5s
+Iter   800 | best=-1.033553 | elite_mean=-4.820679 | loss=0.3993 | threshold=-6.7179 | rand=0.0250 | time=604.4s
+Iter   820 | best=-1.033553 | elite_mean=-5.097918 | loss=0.3942 | threshold=-7.1887 | rand=0.0250 | time=619.4s
+Iter   840 | best=-1.033553 | elite_mean=-4.855366 | loss=0.3786 | threshold=-6.8437 | rand=0.0250 | time=634.5s
+Iter   860 | best=-1.033553 | elite_mean=-5.156217 | loss=0.4077 | threshold=-7.0922 | rand=0.0250 | time=649.5s
+Iter   880 | best=-1.033553 | elite_mean=-5.309819 | loss=0.4018 | threshold=-7.4304 | rand=0.0250 | time=664.5s
+Iter   900 | best=-1.033553 | elite_mean=-5.267489 | loss=0.4181 | threshold=-7.2554 | rand=0.0250 | time=679.7s
+Iter   920 | best=-1.033553 | elite_mean=-5.428034 | loss=0.4091 | threshold=-7.5803 | rand=0.0250 | time=695.0s
+Iter   940 | best=-1.033553 | elite_mean=-5.393154 | loss=0.4153 | threshold=-7.2855 | rand=0.0250 | time=710.0s
+Iter   960 | best=-1.033553 | elite_mean=-5.386871 | loss=0.4227 | threshold=-7.5410 | rand=0.0250 | time=725.1s
+Iter   980 | best=-1.033553 | elite_mean=-5.319660 | loss=0.4108 | threshold=-7.4881 | rand=0.0250 | time=740.3s
+Iter  1000 | best=-1.033553 | elite_mean=-5.318359 | loss=0.4174 | threshold=-7.4329 | rand=0.0250 | time=755.5s
+Iter  1020 | best=-1.033553 | elite_mean=-5.357083 | loss=0.4144 | threshold=-7.4074 | rand=0.0250 | time=770.7s
+Iter  1040 | best=-1.033553 | elite_mean=-5.186686 | loss=0.3929 | threshold=-7.1730 | rand=0.0250 | time=785.9s
+Iter  1060 | best=-1.033553 | elite_mean=-5.329225 | loss=0.4105 | threshold=-7.3194 | rand=0.0250 | time=801.0s
+Iter  1080 | best=-1.033553 | elite_mean=-5.182826 | loss=0.4029 | threshold=-7.1031 | rand=0.0250 | time=816.3s
+Iter  1100 | best=-1.033553 | elite_mean=-5.171053 | loss=0.4032 | threshold=-7.1917 | rand=0.0250 | time=831.4s
+Iter  1120 | best=-1.033553 | elite_mean=-5.257403 | loss=0.4033 | threshold=-7.5848 | rand=0.0250 | time=846.5s
+Iter  1140 | best=-1.033553 | elite_mean=-5.318975 | loss=0.3990 | threshold=-7.3807 | rand=0.0250 | time=861.9s
+Iter  1160 | best=-1.033553 | elite_mean=-5.334031 | loss=0.4141 | threshold=-7.3901 | rand=0.0250 | time=877.2s
+Iter  1180 | best=-1.033553 | elite_mean=-5.300566 | loss=0.4083 | threshold=-7.3913 | rand=0.0250 | time=892.4s
+Iter  1200 | best=-1.033553 | elite_mean=-5.003870 | loss=0.4104 | threshold=-7.1433 | rand=0.0250 | time=907.4s
+Iter  1220 | best=-1.033553 | elite_mean=-5.169091 | loss=0.4265 | threshold=-7.2450 | rand=0.0250 | time=922.7s
+Iter  1240 | best=-1.033553 | elite_mean=-5.503435 | loss=0.4229 | threshold=-7.5625 | rand=0.0250 | time=938.0s
+Iter  1260 | best=-1.033553 | elite_mean=-5.406187 | loss=0.4228 | threshold=-7.6392 | rand=0.0250 | time=953.2s
+Iter  1280 | best=-1.033553 | elite_mean=-5.329479 | loss=0.4178 | threshold=-7.5036 | rand=0.0250 | time=968.4s
+Iter  1300 | best=-1.033553 | elite_mean=-5.352882 | loss=0.4149 | threshold=-7.5451 | rand=0.0250 | time=984.2s
+Iter  1320 | best=-1.033553 | elite_mean=-5.401149 | loss=0.4231 | threshold=-7.5943 | rand=0.0250 | time=999.6s
+Iter  1340 | best=-1.033553 | elite_mean=-5.341880 | loss=0.4176 | threshold=-7.6282 | rand=0.0250 | time=1014.9s
+Iter  1360 | best=-1.033553 | elite_mean=-5.371392 | loss=0.4042 | threshold=-7.6438 | rand=0.0250 | time=1030.1s
+Iter  1380 | best=-1.033553 | elite_mean=-5.415245 | loss=0.4286 | threshold=-7.6214 | rand=0.0250 | time=1045.3s
+Iter  1400 | best=-1.033553 | elite_mean=-5.591172 | loss=0.4303 | threshold=-7.7649 | rand=0.0250 | time=1060.7s
+Iter  1420 | best=-1.033553 | elite_mean=-5.480010 | loss=0.4270 | threshold=-7.6495 | rand=0.0250 | time=1075.8s
+Iter  1440 | best=-1.033553 | elite_mean=-5.594976 | loss=0.4233 | threshold=-7.8664 | rand=0.0250 | time=1091.1s
+Iter  1460 | best=-1.033553 | elite_mean=-5.459262 | loss=0.4243 | threshold=-7.8347 | rand=0.0250 | time=1107.0s
+Iter  1480 | best=-1.033553 | elite_mean=-5.160961 | loss=0.4153 | threshold=-7.3551 | rand=0.0250 | time=1122.2s
+Iter  1500 | best=-1.033553 | elite_mean=-5.443844 | loss=0.4260 | threshold=-7.6641 | rand=0.0250 | time=1137.4s
+Iter  1520 | best=-1.033553 | elite_mean=-5.607724 | loss=0.4244 | threshold=-7.8263 | rand=0.0250 | time=1152.6s
+Iter  1540 | best=-1.033553 | elite_mean=-5.319919 | loss=0.4228 | threshold=-7.5596 | rand=0.0250 | time=1167.9s
+Iter  1560 | best=-1.033553 | elite_mean=-5.291018 | loss=0.4160 | threshold=-7.4304 | rand=0.0250 | time=1183.5s
+Iter  1580 | best=-1.033553 | elite_mean=-5.481459 | loss=0.4302 | threshold=-7.5929 | rand=0.0250 | time=1198.7s
+Iter  1600 | best=-1.033553 | elite_mean=-5.433514 | loss=0.4139 | threshold=-7.5767 | rand=0.0250 | time=1213.9s
+Iter  1620 | best=-1.033553 | elite_mean=-5.477931 | loss=0.4221 | threshold=-7.6206 | rand=0.0250 | time=1229.1s
+Iter  1640 | best=-1.033553 | elite_mean=-5.286166 | loss=0.4056 | threshold=-7.4779 | rand=0.0250 | time=1245.2s
+Iter  1660 | best=-1.033553 | elite_mean=-5.312971 | loss=0.4176 | threshold=-7.4116 | rand=0.0250 | time=1260.5s
+Iter  1680 | best=-1.033553 | elite_mean=-5.256647 | loss=0.4102 | threshold=-7.3645 | rand=0.0250 | time=1275.7s
+Iter  1700 | best=-1.033553 | elite_mean=-5.216597 | loss=0.4218 | threshold=-7.2849 | rand=0.0250 | time=1291.0s
+Iter  1720 | best=-1.033553 | elite_mean=-5.317199 | loss=0.4049 | threshold=-7.4811 | rand=0.0250 | time=1306.3s
+Iter  1740 | best=-1.033553 | elite_mean=-5.635201 | loss=0.4262 | threshold=-7.7936 | rand=0.0250 | time=1321.5s
+Iter  1760 | best=-1.033553 | elite_mean=-5.083208 | loss=0.4128 | threshold=-7.0329 | rand=0.0250 | time=1336.7s
+Iter  1780 | best=-1.033553 | elite_mean=-5.164808 | loss=0.4063 | threshold=-7.2835 | rand=0.0250 | time=1351.9s
+Iter  1800 | best=-1.033553 | elite_mean=-5.067930 | loss=0.4011 | threshold=-7.2246 | rand=0.0250 | time=1367.0s
+Iter  1820 | best=-1.033553 | elite_mean=-5.056315 | loss=0.3925 | threshold=-7.1724 | rand=0.0250 | time=1382.2s
+Iter  1840 | best=-1.033553 | elite_mean=-5.119144 | loss=0.4054 | threshold=-7.2408 | rand=0.0250 | time=1397.4s
+Iter  1860 | best=-1.033553 | elite_mean=-5.431621 | loss=0.4202 | threshold=-7.5449 | rand=0.0250 | time=1412.7s
+Iter  1880 | best=-1.033553 | elite_mean=-5.293534 | loss=0.4084 | threshold=-7.4842 | rand=0.0250 | time=1428.5s
+Iter  1900 | best=-1.033553 | elite_mean=-5.038259 | loss=0.4084 | threshold=-7.1465 | rand=0.0250 | time=1443.7s
+Iter  1920 | best=-1.033553 | elite_mean=-5.339267 | loss=0.4217 | threshold=-7.4069 | rand=0.0250 | time=1458.9s
+Iter  1940 | best=-1.033553 | elite_mean=-5.218981 | loss=0.4201 | threshold=-7.3639 | rand=0.0250 | time=1474.1s
+Iter  1960 | best=-1.033553 | elite_mean=-5.497505 | loss=0.4270 | threshold=-7.5803 | rand=0.0250 | time=1489.2s
+Iter  1980 | best=-1.033553 | elite_mean=-5.051059 | loss=0.4050 | threshold=-7.3294 | rand=0.0250 | time=1504.3s
+Iter  2000 | best=-1.033553 | elite_mean=-5.089096 | loss=0.4125 | threshold=-7.2262 | rand=0.0250 | time=1519.8s
+Iter  2020 | best=-1.033553 | elite_mean=-5.192401 | loss=0.4199 | threshold=-7.4256 | rand=0.0250 | time=1535.1s
+Iter  2040 | best=-1.033553 | elite_mean=-5.164942 | loss=0.4215 | threshold=-7.2892 | rand=0.0250 | time=1550.3s
+Iter  2060 | best=-1.033553 | elite_mean=-5.293507 | loss=0.4193 | threshold=-7.4011 | rand=0.0250 | time=1565.5s
+Iter  2080 | best=-1.033553 | elite_mean=-5.426152 | loss=0.4166 | threshold=-7.6182 | rand=0.0250 | time=1580.8s
+Iter  2100 | best=-1.033553 | elite_mean=-5.137770 | loss=0.4201 | threshold=-7.1581 | rand=0.0250 | time=1596.4s
+Iter  2120 | best=-1.033553 | elite_mean=-5.496213 | loss=0.4318 | threshold=-7.7472 | rand=0.0250 | time=1611.6s
+Iter  2140 | best=-1.033553 | elite_mean=-5.683305 | loss=0.4278 | threshold=-7.7952 | rand=0.0250 | time=1626.9s
+Iter  2160 | best=-1.033553 | elite_mean=-5.335682 | loss=0.4352 | threshold=-7.4352 | rand=0.0250 | time=1642.4s
+Iter  2180 | best=-1.033553 | elite_mean=-5.424593 | loss=0.4340 | threshold=-7.6661 | rand=0.0250 | time=1657.9s
+Iter  2200 | best=-1.033553 | elite_mean=-5.480158 | loss=0.4307 | threshold=-7.6839 | rand=0.0250 | time=1673.2s
+Iter  2220 | best=-1.033553 | elite_mean=-5.320981 | loss=0.4179 | threshold=-7.4524 | rand=0.0250 | time=1688.3s
+Iter  2240 | best=-1.033553 | elite_mean=-5.530074 | loss=0.4381 | threshold=-7.9882 | rand=0.0250 | time=1704.3s
+Iter  2260 | best=-1.033553 | elite_mean=-5.470875 | loss=0.4309 | threshold=-7.7557 | rand=0.0250 | time=1719.7s
+Iter  2280 | best=-1.033553 | elite_mean=-5.299094 | loss=0.4144 | threshold=-7.3894 | rand=0.0250 | time=1735.2s
+Iter  2300 | best=-1.033553 | elite_mean=-5.176552 | loss=0.4086 | threshold=-7.3973 | rand=0.0250 | time=1750.6s
+Iter  2320 | best=-1.033553 | elite_mean=-5.182317 | loss=0.4230 | threshold=-7.3682 | rand=0.0250 | time=1766.0s
+Iter  2340 | best=-1.033553 | elite_mean=-5.151204 | loss=0.4143 | threshold=-7.3368 | rand=0.0250 | time=1781.4s
+Iter  2360 | best=-1.033553 | elite_mean=-5.175355 | loss=0.4197 | threshold=-7.3018 | rand=0.0250 | time=1797.0s
+Iter  2380 | best=-1.033553 | elite_mean=-5.425608 | loss=0.4322 | threshold=-7.5562 | rand=0.0250 | time=1812.3s
+Iter  2400 | best=-1.033553 | elite_mean=-5.735493 | loss=0.4317 | threshold=-7.9270 | rand=0.0250 | time=1827.8s
+Iter  2420 | best=-1.033553 | elite_mean=-5.445791 | loss=0.4236 | threshold=-7.6838 | rand=0.0250 | time=1843.4s
+Iter  2440 | best=-1.033553 | elite_mean=-5.451402 | loss=0.4241 | threshold=-7.7128 | rand=0.0250 | time=1858.7s
+Iter  2460 | best=-1.033553 | elite_mean=-5.232586 | loss=0.4229 | threshold=-7.5144 | rand=0.0250 | time=1873.9s
+Iter  2480 | best=-1.033553 | elite_mean=-5.660174 | loss=0.4426 | threshold=-7.8730 | rand=0.0250 | time=1889.3s
+Iter  2500 | best=-1.033553 | elite_mean=-5.339780 | loss=0.4239 | threshold=-7.5518 | rand=0.0250 | time=1905.0s
+Iter  2520 | best=-0.841895 | elite_mean=-4.708095 | loss=0.3799 | threshold=-6.7689 | rand=0.0055 | time=1920.0s
+Iter  2540 | best=-0.841895 | elite_mean=-4.519334 | loss=0.3808 | threshold=-6.4068 | rand=0.0067 | time=1934.9s
+Iter  2560 | best=-0.841895 | elite_mean=-4.774002 | loss=0.3881 | threshold=-6.7425 | rand=0.0081 | time=1949.7s
+Iter  2580 | best=-0.841895 | elite_mean=-4.741523 | loss=0.3893 | threshold=-6.6615 | rand=0.0097 | time=1964.7s
+Iter  2600 | best=-0.841895 | elite_mean=-4.657868 | loss=0.3805 | threshold=-6.5435 | rand=0.0118 | time=1979.5s
+Iter  2620 | best=-0.841895 | elite_mean=-4.843487 | loss=0.4007 | threshold=-6.8432 | rand=0.0143 | time=1995.0s
+Iter  2640 | best=-0.841895 | elite_mean=-5.042021 | loss=0.4032 | threshold=-7.1784 | rand=0.0173 | time=2009.9s
+Iter  2660 | best=-0.841895 | elite_mean=-4.977019 | loss=0.4056 | threshold=-6.9848 | rand=0.0209 | time=2025.3s
+Iter  2680 | best=-0.841895 | elite_mean=-5.191921 | loss=0.4261 | threshold=-7.2042 | rand=0.0250 | time=2040.5s
+Iter  2700 | best=-0.841895 | elite_mean=-5.280916 | loss=0.4326 | threshold=-7.6485 | rand=0.0250 | time=2055.7s
+Iter  2720 | best=-0.841895 | elite_mean=-5.162481 | loss=0.4070 | threshold=-7.3785 | rand=0.0250 | time=2071.0s
+Iter  2740 | best=-0.841895 | elite_mean=-5.304178 | loss=0.4203 | threshold=-7.3683 | rand=0.0250 | time=2086.3s
+Iter  2760 | best=-0.841895 | elite_mean=-4.968709 | loss=0.4048 | threshold=-6.9688 | rand=0.0250 | time=2101.5s
+Iter  2780 | best=-0.841895 | elite_mean=-5.248579 | loss=0.4237 | threshold=-7.5015 | rand=0.0250 | time=2117.3s
+Iter  2800 | best=-0.841895 | elite_mean=-5.008415 | loss=0.4124 | threshold=-7.0437 | rand=0.0250 | time=2132.6s
+Iter  2820 | best=-0.841895 | elite_mean=-5.113202 | loss=0.4226 | threshold=-7.2941 | rand=0.0250 | time=2147.9s
+Iter  2840 | best=-0.841895 | elite_mean=-5.405141 | loss=0.4244 | threshold=-7.6845 | rand=0.0250 | time=2163.2s
+Iter  2860 | best=-0.841895 | elite_mean=-5.293887 | loss=0.4239 | threshold=-7.3656 | rand=0.0250 | time=2178.5s
+Iter  2880 | best=-0.841895 | elite_mean=-5.259332 | loss=0.4236 | threshold=-7.4705 | rand=0.0250 | time=2194.0s
+Iter  2900 | best=-0.841895 | elite_mean=-5.243384 | loss=0.4207 | threshold=-7.3919 | rand=0.0250 | time=2209.4s
+Iter  2920 | best=-0.841895 | elite_mean=-5.395410 | loss=0.4239 | threshold=-7.4377 | rand=0.0250 | time=2224.7s
+Iter  2940 | best=-0.841895 | elite_mean=-5.299665 | loss=0.4134 | threshold=-7.4290 | rand=0.0250 | time=2239.9s
+Iter  2960 | best=-0.841895 | elite_mean=-5.501372 | loss=0.4291 | threshold=-7.7709 | rand=0.0250 | time=2255.5s
+Iter  2980 | best=-0.841895 | elite_mean=-5.498939 | loss=0.4368 | threshold=-7.8582 | rand=0.0250 | time=2270.9s
+Iter  3000 | best=-0.841895 | elite_mean=-5.084074 | loss=0.4092 | threshold=-7.2914 | rand=0.0250 | time=2286.2s
+Iter  3020 | best=-0.841895 | elite_mean=-4.855082 | loss=0.4092 | threshold=-6.9559 | rand=0.0250 | time=2302.2s
+Iter  3040 | best=-0.841895 | elite_mean=-5.349640 | loss=0.4247 | threshold=-7.5813 | rand=0.0250 | time=2317.9s
+Iter  3060 | best=-0.841895 | elite_mean=-5.229715 | loss=0.4126 | threshold=-7.4347 | rand=0.0250 | time=2333.3s
+Iter  3080 | best=-0.841895 | elite_mean=-5.441367 | loss=0.4235 | threshold=-7.5673 | rand=0.0250 | time=2348.5s
+Iter  3100 | best=-0.841895 | elite_mean=-5.177234 | loss=0.4185 | threshold=-7.4034 | rand=0.0250 | time=2364.3s
+Iter  3120 | best=-0.841895 | elite_mean=-5.201800 | loss=0.4212 | threshold=-7.4622 | rand=0.0250 | time=2379.6s
+Iter  3140 | best=-0.841895 | elite_mean=-5.126605 | loss=0.4129 | threshold=-7.3426 | rand=0.0250 | time=2395.0s
+Iter  3160 | best=-0.841895 | elite_mean=-5.220749 | loss=0.4177 | threshold=-7.2806 | rand=0.0250 | time=2410.2s
+Iter  3180 | best=-0.841895 | elite_mean=-5.224114 | loss=0.4175 | threshold=-7.2962 | rand=0.0250 | time=2425.4s
+Iter  3200 | best=-0.841895 | elite_mean=-5.368587 | loss=0.4271 | threshold=-7.3723 | rand=0.0250 | time=2440.6s
+Iter  3220 | best=-0.841895 | elite_mean=-5.160054 | loss=0.4233 | threshold=-7.2866 | rand=0.0250 | time=2455.9s
+Iter  3240 | best=-0.841895 | elite_mean=-4.849977 | loss=0.4071 | threshold=-7.0100 | rand=0.0250 | time=2471.4s
+Iter  3260 | best=-0.841895 | elite_mean=-5.244407 | loss=0.4195 | threshold=-7.2717 | rand=0.0250 | time=2486.7s
+Iter  3280 | best=-0.841895 | elite_mean=-5.262457 | loss=0.4238 | threshold=-7.3619 | rand=0.0250 | time=2501.9s
+Iter  3300 | best=-0.841895 | elite_mean=-5.226805 | loss=0.4288 | threshold=-7.4809 | rand=0.0250 | time=2517.6s
+Iter  3320 | best=-0.841895 | elite_mean=-5.379166 | loss=0.4197 | threshold=-7.5447 | rand=0.0250 | time=2532.8s
+Iter  3340 | best=-0.841895 | elite_mean=-5.101154 | loss=0.4214 | threshold=-7.2614 | rand=0.0250 | time=2548.0s
+Iter  3360 | best=-0.841895 | elite_mean=-5.176125 | loss=0.4238 | threshold=-7.3573 | rand=0.0250 | time=2563.3s
+Iter  3380 | best=-0.841895 | elite_mean=-5.415809 | loss=0.4277 | threshold=-7.7891 | rand=0.0250 | time=2578.7s
+Iter  3400 | best=-0.841895 | elite_mean=-4.978638 | loss=0.4154 | threshold=-7.2001 | rand=0.0250 | time=2594.2s
+Iter  3420 | best=-0.841895 | elite_mean=-5.153629 | loss=0.4276 | threshold=-7.3073 | rand=0.0250 | time=2609.6s
+Iter  3440 | best=-0.841895 | elite_mean=-5.241035 | loss=0.4308 | threshold=-7.4415 | rand=0.0250 | time=2624.8s
+Iter  3460 | best=-0.841895 | elite_mean=-5.367193 | loss=0.4165 | threshold=-7.5484 | rand=0.0250 | time=2640.6s
+Iter  3480 | best=-0.841895 | elite_mean=-4.976207 | loss=0.4067 | threshold=-7.1138 | rand=0.0250 | time=2655.7s
+Iter  3500 | best=-0.841895 | elite_mean=-5.060106 | loss=0.4104 | threshold=-7.2204 | rand=0.0250 | time=2671.5s
+Iter  3520 | best=-0.841895 | elite_mean=-5.002291 | loss=0.4216 | threshold=-7.3275 | rand=0.0250 | time=2686.7s
+Iter  3540 | best=-0.841895 | elite_mean=-5.212973 | loss=0.4272 | threshold=-7.4610 | rand=0.0250 | time=2702.0s
+Iter  3560 | best=-0.841895 | elite_mean=-5.185278 | loss=0.4189 | threshold=-7.3276 | rand=0.0250 | time=2717.6s
+Iter  3580 | best=-0.841895 | elite_mean=-5.015931 | loss=0.4102 | threshold=-7.1661 | rand=0.0250 | time=2732.8s
+Iter  3600 | best=-0.841895 | elite_mean=-4.947292 | loss=0.4052 | threshold=-7.0636 | rand=0.0250 | time=2748.0s
+Iter  3620 | best=-0.841895 | elite_mean=-5.275846 | loss=0.4188 | threshold=-7.5148 | rand=0.0250 | time=2763.6s
+Iter  3640 | best=-0.841895 | elite_mean=-5.285065 | loss=0.4271 | threshold=-7.5439 | rand=0.0250 | time=2778.8s
+Iter  3660 | best=-0.841895 | elite_mean=-5.204537 | loss=0.4192 | threshold=-7.4388 | rand=0.0250 | time=2794.4s
+Iter  3680 | best=-0.841895 | elite_mean=-5.262666 | loss=0.4212 | threshold=-7.5417 | rand=0.0250 | time=2809.5s
+Iter  3700 | best=-0.841895 | elite_mean=-5.175448 | loss=0.4129 | threshold=-7.3446 | rand=0.0250 | time=2824.9s
+Iter  3720 | best=-0.841895 | elite_mean=-4.938917 | loss=0.3968 | threshold=-6.9663 | rand=0.0250 | time=2840.0s
+Iter  3740 | best=-0.841895 | elite_mean=-5.192802 | loss=0.4104 | threshold=-7.3338 | rand=0.0250 | time=2855.2s
+Iter  3760 | best=-0.841895 | elite_mean=-5.314204 | loss=0.4201 | threshold=-7.5002 | rand=0.0250 | time=2870.7s
+Iter  3780 | best=-0.841895 | elite_mean=-5.210660 | loss=0.4179 | threshold=-7.3598 | rand=0.0250 | time=2886.1s
+Iter  3800 | best=-0.841895 | elite_mean=-5.344453 | loss=0.4200 | threshold=-7.4863 | rand=0.0250 | time=2902.2s
+Iter  3820 | best=-0.841895 | elite_mean=-4.944609 | loss=0.3939 | threshold=-6.9210 | rand=0.0250 | time=2917.3s
+Iter  3840 | best=-0.841895 | elite_mean=-5.390056 | loss=0.4294 | threshold=-7.6225 | rand=0.0250 | time=2933.0s
+Iter  3860 | best=-0.841895 | elite_mean=-5.282283 | loss=0.4273 | threshold=-7.4587 | rand=0.0250 | time=2948.2s
+Iter  3880 | best=-0.841895 | elite_mean=-5.248236 | loss=0.4246 | threshold=-7.4443 | rand=0.0250 | time=2963.8s
+Iter  3900 | best=-0.841895 | elite_mean=-5.140155 | loss=0.4188 | threshold=-7.5394 | rand=0.0250 | time=2979.1s
+Iter  3920 | best=-0.841895 | elite_mean=-5.361422 | loss=0.4262 | threshold=-7.7899 | rand=0.0250 | time=2994.5s
+Iter  3940 | best=-0.841895 | elite_mean=-5.238118 | loss=0.4252 | threshold=-7.6383 | rand=0.0250 | time=3009.7s
+Iter  3960 | best=-0.841895 | elite_mean=-5.214925 | loss=0.4196 | threshold=-7.4614 | rand=0.0250 | time=3024.9s
+Iter  3980 | best=-0.841895 | elite_mean=-5.109513 | loss=0.4187 | threshold=-7.4496 | rand=0.0250 | time=3040.1s
+Iter  4000 | best=-0.841895 | elite_mean=-5.058445 | loss=0.4131 | threshold=-7.2170 | rand=0.0250 | time=3055.3s
+Iter  4020 | best=-0.841895 | elite_mean=-5.221997 | loss=0.4190 | threshold=-7.4830 | rand=0.0250 | time=3070.5s
+Iter  4040 | best=-0.841895 | elite_mean=-5.188614 | loss=0.4212 | threshold=-7.3814 | rand=0.0250 | time=3085.7s
+Iter  4060 | best=-0.841895 | elite_mean=-5.196056 | loss=0.4241 | threshold=-7.3343 | rand=0.0250 | time=3101.1s
+Iter  4080 | best=-0.841895 | elite_mean=-5.066314 | loss=0.4106 | threshold=-7.1333 | rand=0.0250 | time=3116.6s
+Iter  4100 | best=-0.841895 | elite_mean=-5.217369 | loss=0.4212 | threshold=-7.4368 | rand=0.0250 | time=3131.9s
+Iter  4120 | best=-0.841895 | elite_mean=-5.302456 | loss=0.4373 | threshold=-7.3405 | rand=0.0250 | time=3147.2s
+Iter  4140 | best=-0.841895 | elite_mean=-5.283873 | loss=0.4268 | threshold=-7.5362 | rand=0.0250 | time=3162.5s
+Iter  4160 | best=-0.841895 | elite_mean=-5.448999 | loss=0.4143 | threshold=-7.7472 | rand=0.0250 | time=3177.7s
+Iter  4180 | best=-0.841895 | elite_mean=-5.304304 | loss=0.4217 | threshold=-7.5789 | rand=0.0250 | time=3193.2s
+Iter  4200 | best=-0.841895 | elite_mean=-5.441215 | loss=0.4255 | threshold=-7.7820 | rand=0.0250 | time=3208.6s
+Iter  4220 | best=-0.841895 | elite_mean=-5.375530 | loss=0.4239 | threshold=-7.5323 | rand=0.0250 | time=3224.0s
+Iter  4240 | best=-0.841895 | elite_mean=-5.478582 | loss=0.4274 | threshold=-7.7104 | rand=0.0250 | time=3239.3s
+Iter  4260 | best=-0.841895 | elite_mean=-5.208652 | loss=0.4233 | threshold=-7.2026 | rand=0.0250 | time=3254.6s
+Iter  4280 | best=-0.841895 | elite_mean=-5.377477 | loss=0.4337 | threshold=-7.7228 | rand=0.0250 | time=3270.0s
+Iter  4300 | best=-0.841895 | elite_mean=-5.443061 | loss=0.4372 | threshold=-7.8441 | rand=0.0250 | time=3285.2s
+Iter  4320 | best=-0.841895 | elite_mean=-5.301373 | loss=0.4278 | threshold=-7.3722 | rand=0.0250 | time=3300.6s
+Iter  4340 | best=-0.841895 | elite_mean=-5.244758 | loss=0.4226 | threshold=-7.5975 | rand=0.0250 | time=3315.8s
+Iter  4360 | best=-0.841895 | elite_mean=-5.259728 | loss=0.4266 | threshold=-7.4788 | rand=0.0250 | time=3331.3s
+Iter  4380 | best=-0.841895 | elite_mean=-5.117260 | loss=0.4275 | threshold=-7.3067 | rand=0.0250 | time=3346.6s
+Iter  4400 | best=-0.841895 | elite_mean=-5.364182 | loss=0.4373 | threshold=-7.7971 | rand=0.0250 | time=3362.0s
+Iter  4420 | best=-0.841895 | elite_mean=-5.425245 | loss=0.4245 | threshold=-7.7475 | rand=0.0250 | time=3377.2s
+Iter  4440 | best=-0.841895 | elite_mean=-5.306547 | loss=0.4200 | threshold=-7.5328 | rand=0.0250 | time=3392.5s
+Iter  4460 | best=-0.841895 | elite_mean=-5.335686 | loss=0.4271 | threshold=-7.5526 | rand=0.0250 | time=3407.8s
+Iter  4480 | best=-0.841895 | elite_mean=-5.137368 | loss=0.4177 | threshold=-7.3927 | rand=0.0250 | time=3423.3s
+Iter  4500 | best=-0.841895 | elite_mean=-5.228784 | loss=0.4177 | threshold=-7.3185 | rand=0.0250 | time=3438.5s
+Iter  4520 | best=-0.841895 | elite_mean=-5.217663 | loss=0.4089 | threshold=-7.1992 | rand=0.0250 | time=3454.0s
+Iter  4540 | best=-0.841895 | elite_mean=-5.200536 | loss=0.4137 | threshold=-7.3585 | rand=0.0250 | time=3469.2s
+Iter  4560 | best=-0.841895 | elite_mean=-4.918337 | loss=0.4081 | threshold=-6.9825 | rand=0.0250 | time=3484.5s
+Iter  4580 | best=-0.841895 | elite_mean=-5.192525 | loss=0.4172 | threshold=-7.4134 | rand=0.0250 | time=3500.5s
+Iter  4600 | best=-0.841895 | elite_mean=-5.197477 | loss=0.4241 | threshold=-7.4158 | rand=0.0250 | time=3515.7s
+Iter  4620 | best=-0.841895 | elite_mean=-4.899652 | loss=0.4033 | threshold=-6.9312 | rand=0.0250 | time=3530.9s
+Iter  4640 | best=-0.841895 | elite_mean=-5.506323 | loss=0.4214 | threshold=-7.7818 | rand=0.0250 | time=3546.9s
+Iter  4660 | best=-0.841895 | elite_mean=-5.508801 | loss=0.4230 | threshold=-7.8345 | rand=0.0250 | time=3562.2s
+Iter  4680 | best=-0.841895 | elite_mean=-4.649544 | loss=0.4063 | threshold=-6.7961 | rand=0.0250 | time=3577.7s
+Iter  4700 | best=-0.841895 | elite_mean=-5.455870 | loss=0.4195 | threshold=-7.8192 | rand=0.0250 | time=3593.2s
+Iter  4720 | best=-0.841895 | elite_mean=-5.246956 | loss=0.4226 | threshold=-7.5637 | rand=0.0250 | time=3608.6s
+Iter  4740 | best=-0.841895 | elite_mean=-5.219083 | loss=0.4226 | threshold=-7.4346 | rand=0.0250 | time=3623.8s
+Iter  4760 | best=-0.841895 | elite_mean=-5.159836 | loss=0.4095 | threshold=-7.3570 | rand=0.0250 | time=3639.5s
+Iter  4780 | best=-0.841895 | elite_mean=-4.904454 | loss=0.3991 | threshold=-7.0332 | rand=0.0250 | time=3654.7s
+Iter  4800 | best=-0.841895 | elite_mean=-5.245608 | loss=0.4197 | threshold=-7.5786 | rand=0.0250 | time=3669.9s
+Iter  4820 | best=-0.841895 | elite_mean=-5.008017 | loss=0.3961 | threshold=-7.1890 | rand=0.0250 | time=3685.6s
+Iter  4840 | best=-0.841895 | elite_mean=-5.301780 | loss=0.4144 | threshold=-7.5500 | rand=0.0250 | time=3700.8s
+Iter  4860 | best=-0.841895 | elite_mean=-5.033898 | loss=0.4026 | threshold=-7.1951 | rand=0.0250 | time=3716.1s
+Iter  4880 | best=-0.841895 | elite_mean=-5.107945 | loss=0.4012 | threshold=-7.3932 | rand=0.0250 | time=3731.4s
+Iter  4900 | best=-0.841895 | elite_mean=-5.192047 | loss=0.4200 | threshold=-7.4821 | rand=0.0250 | time=3746.7s
+Iter  4920 | best=-0.841895 | elite_mean=-5.082954 | loss=0.4207 | threshold=-7.4483 | rand=0.0250 | time=3761.9s
+Iter  4940 | best=-0.841895 | elite_mean=-5.308107 | loss=0.4056 | threshold=-7.7174 | rand=0.0250 | time=3777.2s
+Iter  4960 | best=-0.841895 | elite_mean=-4.857355 | loss=0.3997 | threshold=-7.0155 | rand=0.0250 | time=3792.5s
+Iter  4980 | best=-0.841895 | elite_mean=-5.192344 | loss=0.4100 | threshold=-7.4912 | rand=0.0250 | time=3807.8s
+Iter  5000 | best=-0.841895 | elite_mean=-5.258949 | loss=0.4210 | threshold=-7.5513 | rand=0.0250 | time=3823.2s
+
+Training complete. Total time: 3824.0s
+Best reward: -0.841895
+
+Near-miss analysis (best graph, reward=-0.841895):
+  mu (spectral radius) = 5.522067
+  Edges = 25
+  Max degree = 3, Min degree = 1
+  Degree sequence: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 1]
+
+Attack n=20: No counterexample found (best reward: -0.841895)
+This is expected -- the bound may be true, or counterexamples may exist at larger n.
+
+---------------------------------------------------
+TIME BUDGET STATUS
+  Elapsed:   6.49h (23372s)
+  Remaining: 5.01h (18028s)
+  Budget:    11.5h
+  benchmark   : 5.43h used / 1.5h allocated
+  primary     : 1.06h used / 6.0h allocated
+  secondary   : 0.00h used / 3.0h allocated
+---------------------------------------------------
+
+======================================================================
+ATTACK: Bound 1 (OPEN), n=25
+Larger search space -- 300 edge decisions per graph
+Time limit: 4.94h
+======================================================================
+
+======================================================================
+CEM Training: Bound 1 (OPEN)
+Formula: mu <= max_v sqrt(4*d_v^3/m_v)
+N=25, decisions=300, state_dim=600
+Sessions=1000, elite=90%, super=97.5%
+Max iterations=5000, LR=0.003 (Adam)
+Loss: CrossEntropyLoss, Output: 2 logits
+Adaptive randomness: Ghebleh(2024) — init=0.005, wait=10, mult=1.1, cap=0.025
+Reward computation: numpy bypass (triu indices precomputed)
+======================================================================
+
+Iter     1 | best=-15.874660 | elite_mean=-19.390471 | loss=0.6329 | threshold=-20.4103 | rand=0.0050 | time=0.0s
+Iter    20 | best=-12.970321 | elite_mean=-15.549701 | loss=0.6921 | threshold=-17.0773 | rand=0.0050 | time=25.7s
+Iter    40 | best=-8.354181 | elite_mean=-10.724932 | loss=0.6312 | threshold=-12.0580 | rand=0.0050 | time=52.2s
+Iter    60 | best=-4.215444 | elite_mean=-6.409801 | loss=0.4513 | threshold=-7.7759 | rand=0.0050 | time=78.6s
+Iter    80 | best=-2.842523 | elite_mean=-5.531918 | loss=0.4114 | threshold=-7.0873 | rand=0.0050 | time=104.8s
+Iter   100 | best=-2.711828 | elite_mean=-5.488873 | loss=0.4015 | threshold=-7.2048 | rand=0.0050 | time=130.0s
+Iter   120 | best=-2.711828 | elite_mean=-5.415651 | loss=0.3948 | threshold=-7.1558 | rand=0.0061 | time=154.7s
+Iter   140 | best=-2.711828 | elite_mean=-5.341043 | loss=0.3879 | threshold=-7.1333 | rand=0.0073 | time=179.8s
+Iter   160 | best=-2.440192 | elite_mean=-5.307772 | loss=0.3976 | threshold=-7.1199 | rand=0.0050 | time=204.7s
+Iter   180 | best=-2.440192 | elite_mean=-5.268880 | loss=0.3784 | threshold=-7.2423 | rand=0.0061 | time=230.0s
+Iter   200 | best=-2.440192 | elite_mean=-5.166148 | loss=0.3840 | threshold=-6.8955 | rand=0.0073 | time=254.7s
+Iter   220 | best=-2.440192 | elite_mean=-5.273022 | loss=0.3876 | threshold=-7.2690 | rand=0.0089 | time=280.5s
+Iter   240 | best=-2.245033 | elite_mean=-5.286084 | loss=0.3830 | threshold=-7.4126 | rand=0.0050 | time=305.5s
+Iter   260 | best=-2.245033 | elite_mean=-5.260721 | loss=0.3867 | threshold=-7.1813 | rand=0.0061 | time=332.6s
+Iter   280 | best=-2.245033 | elite_mean=-5.239367 | loss=0.3981 | threshold=-7.1763 | rand=0.0073 | time=358.3s
+Iter   300 | best=-2.245033 | elite_mean=-5.274390 | loss=0.3919 | threshold=-7.2578 | rand=0.0089 | time=382.8s
+Iter   320 | best=-2.245033 | elite_mean=-5.273194 | loss=0.3944 | threshold=-7.3505 | rand=0.0107 | time=407.6s
+Iter   340 | best=-2.245033 | elite_mean=-5.291293 | loss=0.3937 | threshold=-7.2091 | rand=0.0130 | time=432.4s
+Iter   360 | best=-2.245033 | elite_mean=-5.276687 | loss=0.3939 | threshold=-7.2218 | rand=0.0157 | time=457.7s
+Iter   380 | best=-2.245033 | elite_mean=-5.345282 | loss=0.4024 | threshold=-7.0534 | rand=0.0190 | time=482.6s
+Iter   400 | best=-2.245033 | elite_mean=-5.270900 | loss=0.3998 | threshold=-7.1928 | rand=0.0230 | time=507.8s
+Iter   420 | best=-2.245033 | elite_mean=-5.337588 | loss=0.4013 | threshold=-7.3401 | rand=0.0250 | time=532.7s
+Iter   440 | best=-2.245033 | elite_mean=-5.596689 | loss=0.3983 | threshold=-7.7437 | rand=0.0250 | time=558.3s
+Iter   460 | best=-2.245033 | elite_mean=-5.332046 | loss=0.3975 | threshold=-7.2452 | rand=0.0250 | time=584.0s
+Iter   480 | best=-2.245033 | elite_mean=-5.451896 | loss=0.3967 | threshold=-7.2770 | rand=0.0250 | time=609.2s
+Iter   500 | best=-2.245033 | elite_mean=-5.470618 | loss=0.4002 | threshold=-7.4293 | rand=0.0250 | time=634.8s
+Iter   520 | best=-2.245033 | elite_mean=-5.302127 | loss=0.4046 | threshold=-7.3210 | rand=0.0250 | time=660.3s
+Iter   540 | best=-2.245033 | elite_mean=-5.469173 | loss=0.4071 | threshold=-7.4425 | rand=0.0250 | time=685.4s
+Iter   560 | best=-2.245033 | elite_mean=-5.321829 | loss=0.3982 | threshold=-7.3583 | rand=0.0250 | time=710.7s
+Iter   580 | best=-2.245033 | elite_mean=-5.291362 | loss=0.4047 | threshold=-7.3017 | rand=0.0250 | time=736.2s
+Iter   600 | best=-2.245033 | elite_mean=-5.649893 | loss=0.4037 | threshold=-7.6069 | rand=0.0250 | time=761.6s
+Iter   620 | best=-2.245033 | elite_mean=-5.385307 | loss=0.4065 | threshold=-7.3636 | rand=0.0250 | time=786.6s
+Iter   640 | best=-2.245033 | elite_mean=-5.343294 | loss=0.4058 | threshold=-7.2453 | rand=0.0250 | time=812.0s
+Iter   660 | best=-2.245033 | elite_mean=-5.109306 | loss=0.3987 | threshold=-6.9043 | rand=0.0250 | time=837.1s
+Iter   680 | best=-2.245033 | elite_mean=-5.344136 | loss=0.4033 | threshold=-7.3935 | rand=0.0250 | time=862.5s
+Iter   700 | best=-2.245033 | elite_mean=-5.498121 | loss=0.4069 | threshold=-7.3959 | rand=0.0250 | time=888.8s
+Iter   720 | best=-2.245033 | elite_mean=-5.556178 | loss=0.3995 | threshold=-7.4605 | rand=0.0250 | time=913.9s
+Iter   740 | best=-2.245033 | elite_mean=-5.310269 | loss=0.4050 | threshold=-7.2893 | rand=0.0250 | time=939.4s
+Iter   760 | best=-2.245033 | elite_mean=-5.251765 | loss=0.4018 | threshold=-7.0180 | rand=0.0250 | time=964.7s
+Iter   780 | best=-2.245033 | elite_mean=-5.226479 | loss=0.4011 | threshold=-7.1787 | rand=0.0250 | time=989.8s
+Iter   800 | best=-2.245033 | elite_mean=-5.629223 | loss=0.4046 | threshold=-7.5301 | rand=0.0250 | time=1015.3s
+Iter   820 | best=-2.245033 | elite_mean=-5.386256 | loss=0.3962 | threshold=-7.3495 | rand=0.0250 | time=1040.4s
+Iter   840 | best=-2.245033 | elite_mean=-5.389663 | loss=0.4028 | threshold=-7.4248 | rand=0.0250 | time=1065.8s
+Iter   860 | best=-2.245033 | elite_mean=-5.316904 | loss=0.4017 | threshold=-7.2290 | rand=0.0250 | time=1091.0s
+Iter   880 | best=-2.245033 | elite_mean=-5.299037 | loss=0.4067 | threshold=-7.0823 | rand=0.0250 | time=1116.8s
+Iter   900 | best=-2.245033 | elite_mean=-5.384632 | loss=0.3963 | threshold=-7.2488 | rand=0.0250 | time=1141.8s
+Iter   920 | best=-2.245033 | elite_mean=-5.362435 | loss=0.4104 | threshold=-7.2594 | rand=0.0250 | time=1167.0s
+Iter   940 | best=-2.245033 | elite_mean=-5.515272 | loss=0.4040 | threshold=-7.2602 | rand=0.0250 | time=1192.6s
+Iter   960 | best=-2.245033 | elite_mean=-5.140356 | loss=0.4018 | threshold=-6.8441 | rand=0.0250 | time=1218.8s
+Iter   980 | best=-2.245033 | elite_mean=-5.432765 | loss=0.3947 | threshold=-7.2329 | rand=0.0250 | time=1244.1s
+Iter  1000 | best=-2.245033 | elite_mean=-5.338539 | loss=0.3974 | threshold=-7.2616 | rand=0.0250 | time=1269.3s
+Iter  1020 | best=-2.245033 | elite_mean=-5.260817 | loss=0.4048 | threshold=-7.2281 | rand=0.0250 | time=1294.7s
+Iter  1040 | best=-2.215914 | elite_mean=-5.061569 | loss=0.3896 | threshold=-7.0670 | rand=0.0050 | time=1320.1s
+Iter  1060 | best=-2.215914 | elite_mean=-5.495075 | loss=0.3905 | threshold=-7.4737 | rand=0.0061 | time=1344.9s
+Iter  1080 | best=-2.215914 | elite_mean=-5.096950 | loss=0.3877 | threshold=-7.0857 | rand=0.0073 | time=1369.6s
+Iter  1100 | best=-2.215914 | elite_mean=-5.347011 | loss=0.3845 | threshold=-7.2720 | rand=0.0089 | time=1394.4s
+Iter  1120 | best=-2.215914 | elite_mean=-5.291085 | loss=0.3920 | threshold=-7.1852 | rand=0.0107 | time=1419.6s
+Iter  1140 | best=-2.215914 | elite_mean=-5.280763 | loss=0.3910 | threshold=-7.2267 | rand=0.0130 | time=1444.5s
+Iter  1160 | best=-2.215914 | elite_mean=-5.271099 | loss=0.3995 | threshold=-7.1642 | rand=0.0157 | time=1469.5s
+Iter  1180 | best=-2.215914 | elite_mean=-5.117511 | loss=0.3906 | threshold=-6.9462 | rand=0.0190 | time=1495.6s
+Iter  1200 | best=-2.215914 | elite_mean=-5.314939 | loss=0.4008 | threshold=-7.1618 | rand=0.0230 | time=1520.8s
+Iter  1220 | best=-2.215914 | elite_mean=-5.249318 | loss=0.3997 | threshold=-7.1617 | rand=0.0250 | time=1546.4s
+Iter  1240 | best=-2.215914 | elite_mean=-5.261796 | loss=0.3986 | threshold=-6.9810 | rand=0.0250 | time=1572.0s
+Iter  1260 | best=-2.215914 | elite_mean=-5.194428 | loss=0.4020 | threshold=-7.1314 | rand=0.0250 | time=1597.3s
+Iter  1280 | best=-2.215914 | elite_mean=-5.559504 | loss=0.4023 | threshold=-7.4710 | rand=0.0250 | time=1622.6s
+Iter  1300 | best=-2.215914 | elite_mean=-5.077038 | loss=0.4054 | threshold=-6.9517 | rand=0.0250 | time=1647.7s
+Iter  1320 | best=-2.215914 | elite_mean=-5.084796 | loss=0.3995 | threshold=-6.9193 | rand=0.0250 | time=1673.2s
+Iter  1340 | best=-2.215914 | elite_mean=-5.299402 | loss=0.4065 | threshold=-7.3255 | rand=0.0250 | time=1698.2s
+Iter  1360 | best=-2.215914 | elite_mean=-5.565387 | loss=0.4031 | threshold=-7.5315 | rand=0.0250 | time=1723.7s
+Iter  1380 | best=-2.037061 | elite_mean=-5.111744 | loss=0.3847 | threshold=-7.2333 | rand=0.0055 | time=1748.7s
+Iter  1400 | best=-2.037061 | elite_mean=-5.068860 | loss=0.3850 | threshold=-7.0977 | rand=0.0067 | time=1773.6s
+Iter  1420 | best=-2.037061 | elite_mean=-4.946360 | loss=0.3876 | threshold=-6.8076 | rand=0.0081 | time=1798.8s
+Iter  1440 | best=-2.037061 | elite_mean=-5.168051 | loss=0.3932 | threshold=-7.2365 | rand=0.0097 | time=1823.5s
+Iter  1460 | best=-2.037061 | elite_mean=-5.255627 | loss=0.3929 | threshold=-7.2945 | rand=0.0118 | time=1848.9s
+Iter  1480 | best=-2.037061 | elite_mean=-5.187207 | loss=0.3935 | threshold=-7.2131 | rand=0.0143 | time=1873.6s
+Iter  1500 | best=-2.037061 | elite_mean=-5.213567 | loss=0.3922 | threshold=-7.1754 | rand=0.0173 | time=1898.8s
+Iter  1520 | best=-2.037061 | elite_mean=-5.326290 | loss=0.4027 | threshold=-7.2482 | rand=0.0209 | time=1924.0s
+Iter  1540 | best=-2.037061 | elite_mean=-5.289200 | loss=0.4042 | threshold=-7.2478 | rand=0.0250 | time=1949.1s
+Iter  1560 | best=-2.037061 | elite_mean=-5.200960 | loss=0.4013 | threshold=-7.1332 | rand=0.0250 | time=1974.3s
+Iter  1580 | best=-2.037061 | elite_mean=-5.283866 | loss=0.4069 | threshold=-7.3875 | rand=0.0250 | time=1999.4s
+Iter  1600 | best=-2.037061 | elite_mean=-5.369753 | loss=0.4023 | threshold=-7.5528 | rand=0.0250 | time=2024.6s
+Iter  1620 | best=-2.037061 | elite_mean=-5.087824 | loss=0.4015 | threshold=-7.0079 | rand=0.0250 | time=2049.9s
+Iter  1640 | best=-2.037061 | elite_mean=-5.182380 | loss=0.4038 | threshold=-7.0748 | rand=0.0250 | time=2075.8s
+Iter  1660 | best=-2.037061 | elite_mean=-5.279090 | loss=0.4057 | threshold=-7.0535 | rand=0.0250 | time=2101.5s
+Iter  1680 | best=-2.037061 | elite_mean=-5.356035 | loss=0.4031 | threshold=-7.3900 | rand=0.0250 | time=2126.7s
+Iter  1700 | best=-2.037061 | elite_mean=-5.253616 | loss=0.4001 | threshold=-7.1423 | rand=0.0250 | time=2152.2s
+Iter  1720 | best=-2.037061 | elite_mean=-5.191717 | loss=0.4035 | threshold=-6.9849 | rand=0.0250 | time=2177.6s
+Iter  1740 | best=-2.037061 | elite_mean=-5.130510 | loss=0.4051 | threshold=-6.9182 | rand=0.0250 | time=2202.8s
+Iter  1760 | best=-2.037061 | elite_mean=-5.509209 | loss=0.4145 | threshold=-7.5723 | rand=0.0250 | time=2228.1s
+Iter  1780 | best=-2.037061 | elite_mean=-5.186935 | loss=0.3999 | threshold=-7.1442 | rand=0.0250 | time=2253.4s
+Iter  1800 | best=-2.037061 | elite_mean=-5.249306 | loss=0.4094 | threshold=-7.1943 | rand=0.0250 | time=2278.7s
+Iter  1820 | best=-2.037061 | elite_mean=-5.363388 | loss=0.4039 | threshold=-7.3217 | rand=0.0250 | time=2303.8s
+Iter  1840 | best=-2.037061 | elite_mean=-5.202904 | loss=0.4009 | threshold=-7.1770 | rand=0.0250 | time=2329.3s
+Iter  1860 | best=-2.037061 | elite_mean=-5.391634 | loss=0.4107 | threshold=-7.2693 | rand=0.0250 | time=2355.8s
+Iter  1880 | best=-2.037061 | elite_mean=-5.245928 | loss=0.4037 | threshold=-7.1238 | rand=0.0250 | time=2381.0s
+Iter  1900 | best=-2.037061 | elite_mean=-5.374117 | loss=0.4013 | threshold=-7.3933 | rand=0.0250 | time=2406.9s
+Iter  1920 | best=-2.037061 | elite_mean=-5.361173 | loss=0.4013 | threshold=-7.3061 | rand=0.0250 | time=2432.0s
+Iter  1940 | best=-2.037061 | elite_mean=-5.276724 | loss=0.3998 | threshold=-7.2662 | rand=0.0250 | time=2457.8s
+Iter  1960 | best=-2.037061 | elite_mean=-5.189234 | loss=0.4013 | threshold=-7.0791 | rand=0.0250 | time=2483.3s
+Iter  1980 | best=-2.037061 | elite_mean=-5.454727 | loss=0.4104 | threshold=-7.5740 | rand=0.0250 | time=2508.5s
+Iter  2000 | best=-2.037061 | elite_mean=-5.327693 | loss=0.4036 | threshold=-7.1181 | rand=0.0250 | time=2533.7s
+Iter  2020 | best=-2.037061 | elite_mean=-5.179971 | loss=0.3972 | threshold=-6.9768 | rand=0.0250 | time=2558.9s
+Iter  2040 | best=-2.037061 | elite_mean=-5.358400 | loss=0.4027 | threshold=-7.3004 | rand=0.0250 | time=2584.1s
+Iter  2060 | best=-2.037061 | elite_mean=-5.285644 | loss=0.4006 | threshold=-7.2681 | rand=0.0250 | time=2609.3s
+Iter  2080 | best=-2.037061 | elite_mean=-5.295411 | loss=0.3994 | threshold=-7.1748 | rand=0.0250 | time=2634.5s
+Iter  2100 | best=-2.037061 | elite_mean=-5.183313 | loss=0.3997 | threshold=-7.1036 | rand=0.0250 | time=2660.0s
+Iter  2120 | best=-2.037061 | elite_mean=-5.259232 | loss=0.3955 | threshold=-7.2396 | rand=0.0250 | time=2686.0s
+Iter  2140 | best=-2.037061 | elite_mean=-5.112880 | loss=0.4018 | threshold=-7.1905 | rand=0.0250 | time=2711.2s
+Iter  2160 | best=-2.037061 | elite_mean=-5.165170 | loss=0.4011 | threshold=-6.9953 | rand=0.0250 | time=2736.3s
+Iter  2180 | best=-2.037061 | elite_mean=-5.068309 | loss=0.4004 | threshold=-6.8839 | rand=0.0250 | time=2762.3s
+Iter  2200 | best=-2.037061 | elite_mean=-5.241592 | loss=0.3945 | threshold=-7.3841 | rand=0.0250 | time=2787.3s
+Iter  2220 | best=-2.037061 | elite_mean=-5.309671 | loss=0.4003 | threshold=-7.1858 | rand=0.0250 | time=2812.4s
+Iter  2240 | best=-2.037061 | elite_mean=-5.224875 | loss=0.3987 | threshold=-7.0780 | rand=0.0250 | time=2837.5s
+Iter  2260 | best=-2.037061 | elite_mean=-5.503716 | loss=0.4097 | threshold=-7.5508 | rand=0.0250 | time=2864.2s
+Iter  2280 | best=-2.037061 | elite_mean=-5.305708 | loss=0.3996 | threshold=-7.1989 | rand=0.0250 | time=2889.5s
+Iter  2300 | best=-2.037061 | elite_mean=-5.341739 | loss=0.3987 | threshold=-7.3044 | rand=0.0250 | time=2914.6s
+Iter  2320 | best=-2.037061 | elite_mean=-5.165853 | loss=0.4029 | threshold=-7.3327 | rand=0.0250 | time=2940.2s
+Iter  2340 | best=-2.037061 | elite_mean=-5.240602 | loss=0.4032 | threshold=-7.2026 | rand=0.0250 | time=2965.4s
+Iter  2360 | best=-2.037061 | elite_mean=-5.387163 | loss=0.3995 | threshold=-7.2949 | rand=0.0250 | time=2991.1s
+Iter  2380 | best=-2.037061 | elite_mean=-5.239133 | loss=0.4068 | threshold=-7.2088 | rand=0.0250 | time=3016.5s
+Iter  2400 | best=-2.037061 | elite_mean=-5.203191 | loss=0.4027 | threshold=-7.0717 | rand=0.0250 | time=3041.6s
+Iter  2420 | best=-2.037061 | elite_mean=-5.325594 | loss=0.3952 | threshold=-7.2008 | rand=0.0250 | time=3066.9s
+Iter  2440 | best=-2.037061 | elite_mean=-5.271239 | loss=0.3986 | threshold=-7.1911 | rand=0.0250 | time=3092.0s
+Iter  2460 | best=-2.037061 | elite_mean=-5.151219 | loss=0.3984 | threshold=-7.0413 | rand=0.0250 | time=3117.1s
+Iter  2480 | best=-2.037061 | elite_mean=-5.167929 | loss=0.4024 | threshold=-7.1347 | rand=0.0250 | time=3142.3s
+Iter  2500 | best=-2.037061 | elite_mean=-5.132949 | loss=0.3979 | threshold=-7.2155 | rand=0.0250 | time=3167.3s
+Iter  2520 | best=-2.017174 | elite_mean=-5.327976 | loss=0.3866 | threshold=-7.3993 | rand=0.0050 | time=3192.4s
+Iter  2540 | best=-2.003526 | elite_mean=-5.120717 | loss=0.3949 | threshold=-7.0797 | rand=0.0055 | time=3217.0s
+Iter  2560 | best=-2.003526 | elite_mean=-4.955737 | loss=0.3864 | threshold=-7.0363 | rand=0.0067 | time=3241.8s
+Iter  2580 | best=-2.003526 | elite_mean=-5.105676 | loss=0.3943 | threshold=-7.2618 | rand=0.0081 | time=3266.7s
+Iter  2600 | best=-2.003526 | elite_mean=-5.179815 | loss=0.3928 | threshold=-7.2935 | rand=0.0097 | time=3292.3s
+Iter  2620 | best=-2.003526 | elite_mean=-5.005492 | loss=0.3992 | threshold=-6.9166 | rand=0.0118 | time=3317.3s
+Iter  2640 | best=-2.003526 | elite_mean=-5.186296 | loss=0.3964 | threshold=-7.1666 | rand=0.0143 | time=3342.1s
+Iter  2660 | best=-2.003526 | elite_mean=-5.090954 | loss=0.3979 | threshold=-7.1340 | rand=0.0173 | time=3367.5s
+Iter  2680 | best=-2.003526 | elite_mean=-5.267622 | loss=0.3945 | threshold=-7.3058 | rand=0.0209 | time=3392.7s
+Iter  2700 | best=-2.003526 | elite_mean=-5.440143 | loss=0.4033 | threshold=-7.4626 | rand=0.0250 | time=3417.7s
+Iter  2720 | best=-2.003526 | elite_mean=-5.344216 | loss=0.4059 | threshold=-7.4286 | rand=0.0250 | time=3442.9s
+Iter  2740 | best=-2.003526 | elite_mean=-5.300407 | loss=0.4005 | threshold=-7.1487 | rand=0.0250 | time=3468.0s
+Iter  2760 | best=-2.003526 | elite_mean=-5.114269 | loss=0.4047 | threshold=-7.0301 | rand=0.0250 | time=3493.1s
+Iter  2780 | best=-2.003526 | elite_mean=-5.346826 | loss=0.4101 | threshold=-7.2297 | rand=0.0250 | time=3518.3s
+Iter  2800 | best=-2.003526 | elite_mean=-5.149753 | loss=0.4031 | threshold=-7.0000 | rand=0.0250 | time=3543.4s
+Iter  2820 | best=-2.003526 | elite_mean=-5.149998 | loss=0.4067 | threshold=-7.1182 | rand=0.0250 | time=3568.7s
+Iter  2840 | best=-2.003526 | elite_mean=-5.140482 | loss=0.3979 | threshold=-7.1609 | rand=0.0250 | time=3594.4s
+Iter  2860 | best=-2.003526 | elite_mean=-5.193231 | loss=0.4054 | threshold=-7.2097 | rand=0.0250 | time=3619.8s
+Iter  2880 | best=-2.003526 | elite_mean=-5.148565 | loss=0.4020 | threshold=-7.2270 | rand=0.0250 | time=3645.1s
+Iter  2900 | best=-2.003526 | elite_mean=-5.367864 | loss=0.4003 | threshold=-7.3730 | rand=0.0250 | time=3670.4s
+Iter  2920 | best=-2.003526 | elite_mean=-5.233160 | loss=0.4010 | threshold=-7.1223 | rand=0.0250 | time=3695.9s
+Iter  2940 | best=-2.003526 | elite_mean=-5.152804 | loss=0.4031 | threshold=-7.2840 | rand=0.0250 | time=3721.3s
+Iter  2960 | best=-2.003526 | elite_mean=-5.182230 | loss=0.3982 | threshold=-7.1598 | rand=0.0250 | time=3746.5s
+Iter  2980 | best=-2.003526 | elite_mean=-5.240312 | loss=0.4020 | threshold=-7.0975 | rand=0.0250 | time=3771.8s
+Iter  3000 | best=-2.003526 | elite_mean=-5.401431 | loss=0.4016 | threshold=-7.6104 | rand=0.0250 | time=3797.1s
+Iter  3020 | best=-2.003526 | elite_mean=-5.136821 | loss=0.4063 | threshold=-7.0341 | rand=0.0250 | time=3822.3s
+Iter  3040 | best=-2.003526 | elite_mean=-5.531917 | loss=0.4028 | threshold=-7.5786 | rand=0.0250 | time=3847.5s
+Iter  3060 | best=-2.003526 | elite_mean=-5.118145 | loss=0.4076 | threshold=-7.0957 | rand=0.0250 | time=3872.8s
+Iter  3080 | best=-2.003526 | elite_mean=-5.204880 | loss=0.3975 | threshold=-7.1169 | rand=0.0250 | time=3899.0s
+Iter  3100 | best=-2.003526 | elite_mean=-5.231630 | loss=0.4040 | threshold=-7.2089 | rand=0.0250 | time=3924.2s
+Iter  3120 | best=-2.003526 | elite_mean=-5.224318 | loss=0.4066 | threshold=-7.1975 | rand=0.0250 | time=3949.4s
+Iter  3140 | best=-2.003526 | elite_mean=-5.182634 | loss=0.3959 | threshold=-6.9350 | rand=0.0250 | time=3974.6s
+Iter  3160 | best=-2.003526 | elite_mean=-5.289318 | loss=0.4075 | threshold=-7.1688 | rand=0.0250 | time=3999.7s
+Iter  3180 | best=-2.003526 | elite_mean=-5.258301 | loss=0.4029 | threshold=-7.4253 | rand=0.0250 | time=4024.8s
+Iter  3200 | best=-2.003526 | elite_mean=-5.159848 | loss=0.4055 | threshold=-7.2125 | rand=0.0250 | time=4050.0s
+Iter  3220 | best=-2.003526 | elite_mean=-5.215196 | loss=0.4009 | threshold=-7.1081 | rand=0.0250 | time=4075.2s
+Iter  3240 | best=-2.003526 | elite_mean=-5.287356 | loss=0.4002 | threshold=-7.2761 | rand=0.0250 | time=4100.5s
+Iter  3260 | best=-2.003526 | elite_mean=-5.187701 | loss=0.4006 | threshold=-7.0786 | rand=0.0250 | time=4125.7s
+Iter  3280 | best=-2.003526 | elite_mean=-5.435598 | loss=0.4016 | threshold=-7.5357 | rand=0.0250 | time=4151.0s
+Iter  3300 | best=-1.968004 | elite_mean=-5.069573 | loss=0.3843 | threshold=-7.0278 | rand=0.0050 | time=4176.0s
+Iter  3320 | best=-1.968004 | elite_mean=-5.350315 | loss=0.3947 | threshold=-7.4457 | rand=0.0061 | time=4200.7s
+Iter  3340 | best=-1.968004 | elite_mean=-5.092949 | loss=0.3963 | threshold=-7.4214 | rand=0.0073 | time=4225.4s
+Iter  3360 | best=-1.968004 | elite_mean=-5.062863 | loss=0.3961 | threshold=-7.1291 | rand=0.0089 | time=4250.5s
+Iter  3380 | best=-1.968004 | elite_mean=-5.186837 | loss=0.3963 | threshold=-7.2187 | rand=0.0107 | time=4275.4s
+Iter  3400 | best=-1.968004 | elite_mean=-5.051087 | loss=0.3951 | threshold=-6.9769 | rand=0.0130 | time=4300.4s
+Iter  3420 | best=-1.968004 | elite_mean=-5.427294 | loss=0.4046 | threshold=-7.4991 | rand=0.0157 | time=4325.4s
+Iter  3440 | best=-1.968004 | elite_mean=-5.436981 | loss=0.4027 | threshold=-7.3923 | rand=0.0190 | time=4351.0s
+Iter  3460 | best=-1.968004 | elite_mean=-5.203167 | loss=0.4052 | threshold=-7.2091 | rand=0.0230 | time=4376.2s
+Iter  3480 | best=-1.968004 | elite_mean=-5.250045 | loss=0.3931 | threshold=-7.0561 | rand=0.0250 | time=4401.5s
+Iter  3500 | best=-1.968004 | elite_mean=-5.190938 | loss=0.4032 | threshold=-7.2636 | rand=0.0250 | time=4427.1s
+Iter  3520 | best=-1.968004 | elite_mean=-5.266916 | loss=0.4097 | threshold=-7.1148 | rand=0.0250 | time=4452.4s
+Iter  3540 | best=-1.968004 | elite_mean=-5.233119 | loss=0.4057 | threshold=-7.3870 | rand=0.0250 | time=4478.8s
+Iter  3560 | best=-1.968004 | elite_mean=-5.286132 | loss=0.4049 | threshold=-7.1088 | rand=0.0250 | time=4504.1s
+Iter  3580 | best=-1.968004 | elite_mean=-5.393914 | loss=0.4089 | threshold=-7.4739 | rand=0.0250 | time=4529.4s
+Iter  3600 | best=-1.968004 | elite_mean=-5.147368 | loss=0.3991 | threshold=-7.0443 | rand=0.0250 | time=4555.2s
+Iter  3620 | best=-1.968004 | elite_mean=-5.183835 | loss=0.3956 | threshold=-7.0290 | rand=0.0250 | time=4580.5s
+Iter  3640 | best=-1.968004 | elite_mean=-5.343708 | loss=0.3994 | threshold=-7.2905 | rand=0.0250 | time=4605.7s
+Iter  3660 | best=-1.968004 | elite_mean=-5.169880 | loss=0.4087 | threshold=-6.9640 | rand=0.0250 | time=4633.5s
+Iter  3680 | best=-1.968004 | elite_mean=-5.254703 | loss=0.4021 | threshold=-7.1526 | rand=0.0250 | time=4660.9s
+Iter  3700 | best=-1.968004 | elite_mean=-5.138086 | loss=0.3999 | threshold=-7.2102 | rand=0.0250 | time=4688.2s
+Iter  3720 | best=-1.968004 | elite_mean=-5.070923 | loss=0.3975 | threshold=-6.9521 | rand=0.0250 | time=4714.1s
+Iter  3740 | best=-1.968004 | elite_mean=-5.250419 | loss=0.4063 | threshold=-7.2972 | rand=0.0250 | time=4739.4s
+Iter  3760 | best=-1.968004 | elite_mean=-5.310345 | loss=0.4047 | threshold=-7.3085 | rand=0.0250 | time=4764.9s
+Iter  3780 | best=-1.968004 | elite_mean=-5.237595 | loss=0.3979 | threshold=-7.2982 | rand=0.0250 | time=4790.8s
+Iter  3800 | best=-1.968004 | elite_mean=-5.301907 | loss=0.4029 | threshold=-7.2264 | rand=0.0250 | time=4816.1s
+Iter  3820 | best=-1.968004 | elite_mean=-5.264097 | loss=0.4004 | threshold=-7.2744 | rand=0.0250 | time=4841.4s
+Iter  3840 | best=-1.968004 | elite_mean=-5.431080 | loss=0.4082 | threshold=-7.4646 | rand=0.0250 | time=4866.7s
+Iter  3860 | best=-1.968004 | elite_mean=-5.328061 | loss=0.4025 | threshold=-7.2864 | rand=0.0250 | time=4892.2s
+Iter  3880 | best=-1.968004 | elite_mean=-5.370455 | loss=0.3961 | threshold=-7.3369 | rand=0.0250 | time=4917.4s
+Iter  3900 | best=-1.968004 | elite_mean=-5.173839 | loss=0.3986 | threshold=-7.1086 | rand=0.0250 | time=4942.6s
+Iter  3920 | best=-1.968004 | elite_mean=-5.243629 | loss=0.3978 | threshold=-7.2347 | rand=0.0250 | time=4967.9s
+Iter  3940 | best=-1.968004 | elite_mean=-5.272625 | loss=0.3940 | threshold=-7.2453 | rand=0.0250 | time=4993.2s
+Iter  3960 | best=-1.968004 | elite_mean=-5.245760 | loss=0.3998 | threshold=-7.1729 | rand=0.0250 | time=5018.9s
+Iter  3980 | best=-1.968004 | elite_mean=-5.250037 | loss=0.4068 | threshold=-7.1969 | rand=0.0250 | time=5044.2s
+Iter  4000 | best=-1.968004 | elite_mean=-5.133613 | loss=0.3967 | threshold=-7.0999 | rand=0.0250 | time=5069.5s
+Iter  4020 | best=-1.968004 | elite_mean=-5.397638 | loss=0.4019 | threshold=-7.4755 | rand=0.0250 | time=5096.4s
+Iter  4040 | best=-1.968004 | elite_mean=-5.264242 | loss=0.4037 | threshold=-7.1921 | rand=0.0250 | time=5121.9s
+Iter  4060 | best=-1.968004 | elite_mean=-5.351072 | loss=0.3957 | threshold=-7.4559 | rand=0.0250 | time=5147.2s
+Iter  4080 | best=-1.968004 | elite_mean=-5.188574 | loss=0.4031 | threshold=-7.2854 | rand=0.0250 | time=5173.0s
+Iter  4100 | best=-1.968004 | elite_mean=-5.240109 | loss=0.3996 | threshold=-7.2533 | rand=0.0250 | time=5198.6s
+Iter  4120 | best=-1.968004 | elite_mean=-5.142365 | loss=0.4060 | threshold=-7.1046 | rand=0.0250 | time=5224.1s
+Iter  4140 | best=-1.968004 | elite_mean=-5.218485 | loss=0.3996 | threshold=-7.0716 | rand=0.0250 | time=5249.4s
+Iter  4160 | best=-1.968004 | elite_mean=-5.357945 | loss=0.4008 | threshold=-7.5651 | rand=0.0250 | time=5274.6s
+Iter  4180 | best=-1.968004 | elite_mean=-5.155727 | loss=0.3950 | threshold=-7.0550 | rand=0.0250 | time=5300.2s
+Iter  4200 | best=-1.968004 | elite_mean=-5.088101 | loss=0.4016 | threshold=-7.0885 | rand=0.0250 | time=5325.7s
+Iter  4220 | best=-1.968004 | elite_mean=-5.292521 | loss=0.3997 | threshold=-7.4281 | rand=0.0250 | time=5351.4s
+Iter  4240 | best=-1.968004 | elite_mean=-5.224082 | loss=0.4081 | threshold=-7.1835 | rand=0.0250 | time=5376.9s
+Iter  4260 | best=-1.968004 | elite_mean=-5.421952 | loss=0.3997 | threshold=-7.4946 | rand=0.0250 | time=5402.2s
+Iter  4280 | best=-1.968004 | elite_mean=-5.188793 | loss=0.4102 | threshold=-7.1275 | rand=0.0250 | time=5427.5s
+Iter  4300 | best=-1.968004 | elite_mean=-5.186945 | loss=0.4047 | threshold=-7.2371 | rand=0.0250 | time=5453.4s
+Iter  4320 | best=-1.968004 | elite_mean=-5.381746 | loss=0.4034 | threshold=-7.4649 | rand=0.0250 | time=5478.8s
+Iter  4340 | best=-1.968004 | elite_mean=-4.961524 | loss=0.3993 | threshold=-6.9234 | rand=0.0250 | time=5504.8s
+Iter  4360 | best=-1.968004 | elite_mean=-5.107267 | loss=0.3964 | threshold=-7.1208 | rand=0.0250 | time=5530.1s
+Iter  4380 | best=-1.968004 | elite_mean=-5.236811 | loss=0.4042 | threshold=-7.2569 | rand=0.0250 | time=5555.5s
+Iter  4400 | best=-1.968004 | elite_mean=-5.130662 | loss=0.3966 | threshold=-7.1560 | rand=0.0250 | time=5581.2s
+Iter  4420 | best=-1.968004 | elite_mean=-5.274827 | loss=0.4021 | threshold=-7.2659 | rand=0.0250 | time=5606.5s
+Iter  4440 | best=-1.968004 | elite_mean=-5.392724 | loss=0.3934 | threshold=-7.3642 | rand=0.0250 | time=5631.9s
+Iter  4460 | best=-1.968004 | elite_mean=-5.027905 | loss=0.3938 | threshold=-7.0203 | rand=0.0250 | time=5657.5s
+Iter  4480 | best=-1.968004 | elite_mean=-5.182487 | loss=0.3936 | threshold=-7.0701 | rand=0.0250 | time=5684.1s
+Iter  4500 | best=-1.968004 | elite_mean=-5.234617 | loss=0.4035 | threshold=-7.3054 | rand=0.0250 | time=5710.0s
+Iter  4520 | best=-1.968004 | elite_mean=-5.096572 | loss=0.4025 | threshold=-7.1451 | rand=0.0250 | time=5738.3s
+Iter  4540 | best=-1.968004 | elite_mean=-5.112307 | loss=0.3924 | threshold=-7.2231 | rand=0.0250 | time=5764.3s
+Iter  4560 | best=-1.968004 | elite_mean=-5.134181 | loss=0.4004 | threshold=-7.0985 | rand=0.0250 | time=5789.7s
+Iter  4580 | best=-1.968004 | elite_mean=-5.149052 | loss=0.4042 | threshold=-7.0292 | rand=0.0250 | time=5815.0s
+Iter  4600 | best=-1.968004 | elite_mean=-5.062904 | loss=0.4064 | threshold=-7.0934 | rand=0.0250 | time=5840.3s
+Iter  4620 | best=-1.968004 | elite_mean=-5.146856 | loss=0.3965 | threshold=-7.2247 | rand=0.0250 | time=5865.8s
+Iter  4640 | best=-1.968004 | elite_mean=-5.242953 | loss=0.3966 | threshold=-7.3006 | rand=0.0250 | time=5891.2s
+Iter  4660 | best=-1.968004 | elite_mean=-5.163600 | loss=0.4005 | threshold=-7.2516 | rand=0.0250 | time=5917.6s
+Iter  4680 | best=-1.968004 | elite_mean=-5.349600 | loss=0.3960 | threshold=-7.2553 | rand=0.0250 | time=5943.3s
+Iter  4700 | best=-1.968004 | elite_mean=-5.249590 | loss=0.4067 | threshold=-7.1390 | rand=0.0250 | time=5971.5s
+Iter  4720 | best=-1.968004 | elite_mean=-5.224811 | loss=0.4022 | threshold=-7.1924 | rand=0.0250 | time=5998.3s
+Iter  4740 | best=-1.968004 | elite_mean=-4.951936 | loss=0.4016 | threshold=-6.7573 | rand=0.0250 | time=6024.9s
+Iter  4760 | best=-1.968004 | elite_mean=-5.227859 | loss=0.3965 | threshold=-7.2835 | rand=0.0250 | time=6051.6s
+Iter  4780 | best=-1.968004 | elite_mean=-5.223559 | loss=0.4025 | threshold=-7.2562 | rand=0.0250 | time=6077.8s
+Iter  4800 | best=-1.968004 | elite_mean=-5.331407 | loss=0.4038 | threshold=-7.2885 | rand=0.0250 | time=6103.6s
+Iter  4820 | best=-1.968004 | elite_mean=-5.113765 | loss=0.4019 | threshold=-6.9201 | rand=0.0250 | time=6128.9s
+Iter  4840 | best=-1.968004 | elite_mean=-5.209420 | loss=0.3969 | threshold=-7.3539 | rand=0.0250 | time=6154.2s
+Iter  4860 | best=-1.968004 | elite_mean=-5.105980 | loss=0.4015 | threshold=-6.9438 | rand=0.0250 | time=6180.0s
+Iter  4880 | best=-1.968004 | elite_mean=-5.158769 | loss=0.4090 | threshold=-7.2385 | rand=0.0250 | time=6205.2s
+Iter  4900 | best=-1.968004 | elite_mean=-5.093400 | loss=0.3996 | threshold=-7.0682 | rand=0.0250 | time=6230.6s
+Iter  4920 | best=-1.968004 | elite_mean=-5.088147 | loss=0.4019 | threshold=-7.0496 | rand=0.0250 | time=6256.3s
+Iter  4940 | best=-1.968004 | elite_mean=-5.245119 | loss=0.4106 | threshold=-7.2919 | rand=0.0250 | time=6282.6s
+Iter  4960 | best=-1.968004 | elite_mean=-5.056305 | loss=0.3993 | threshold=-7.1001 | rand=0.0250 | time=6307.9s
+Iter  4980 | best=-1.968004 | elite_mean=-5.229735 | loss=0.3993 | threshold=-7.2069 | rand=0.0250 | time=6333.4s
+Iter  5000 | best=-1.968004 | elite_mean=-5.448014 | loss=0.4076 | threshold=-7.5057 | rand=0.0250 | time=6358.9s
+
+Training complete. Total time: 6360.1s
+Best reward: -1.968004
+
+Near-miss analysis (best graph, reward=-1.968004):
+  mu (spectral radius) = 6.907200
+  Edges = 40
+  Max degree = 4, Min degree = 1
+  Degree sequence: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 1, 1]
+
+Attack n=25: No counterexample found (best reward: -1.968004)
+
+---------------------------------------------------
+TIME BUDGET STATUS
+  Elapsed:   8.26h (29732s)
+  Remaining: 3.24h (11668s)
+  Budget:    11.5h
+  benchmark   : 5.43h used / 1.5h allocated
+  primary     : 2.83h used / 6.0h allocated
+  secondary   : 0.00h used / 3.0h allocated
+---------------------------------------------------
+
+
+---------------------------------------------------
+TIME BUDGET STATUS
+  Elapsed:   8.26h (29732s)
+  Remaining: 3.24h (11668s)
+  Budget:    11.5h
+  benchmark   : 5.43h used / 1.5h allocated
+  primary     : 2.83h used / 6.0h allocated
+  secondary   : 0.00h used / 3.0h allocated
+---------------------------------------------------
+
+
+======================================================================
+SECONDARY ATTACK: Bound 4 (OPEN), n=20
+Time limit: 1.08h
+======================================================================
+
+======================================================================
+CEM Training: Bound 4 (OPEN)
+Formula: mu <= max_v (2*d_v^2/m_v)
+N=20, decisions=190, state_dim=380
+Sessions=1000, elite=90%, super=97.5%
+Max iterations=5000, LR=0.003 (Adam)
+Loss: CrossEntropyLoss, Output: 2 logits
+Adaptive randomness: Ghebleh(2024) — init=0.005, wait=10, mult=1.1, cap=0.025
+Reward computation: numpy bypass (triu indices precomputed)
+======================================================================
+
+Iter     1 | best=-10.109166 | elite_mean=-15.341362 | loss=0.6933 | threshold=-17.0116 | rand=0.0050 | time=0.0s
+Iter    20 | best=-7.500203 | elite_mean=-11.384656 | loss=0.6446 | threshold=-13.5736 | rand=0.0050 | time=14.7s
+Iter    40 | best=-4.270952 | elite_mean=-8.781586 | loss=0.5294 | threshold=-11.0323 | rand=0.0050 | time=30.4s
+Iter    60 | best=-3.933147 | elite_mean=-7.396204 | loss=0.4680 | threshold=-9.6544 | rand=0.0055 | time=45.4s
+Iter    80 | best=-3.933147 | elite_mean=-7.659146 | loss=0.4486 | threshold=-10.2040 | rand=0.0067 | time=60.1s
+Iter   100 | best=-3.933147 | elite_mean=-8.323585 | loss=0.4652 | threshold=-10.9773 | rand=0.0081 | time=75.6s
+Iter   120 | best=-3.228702 | elite_mean=-7.782623 | loss=0.4119 | threshold=-10.4745 | rand=0.0050 | time=90.8s
+Iter   140 | best=-2.622942 | elite_mean=-7.153775 | loss=0.3694 | threshold=-9.8966 | rand=0.0050 | time=105.8s
+Iter   160 | best=-2.078618 | elite_mean=-5.546603 | loss=0.2024 | threshold=-8.2802 | rand=0.0050 | time=120.3s
+Iter   180 | best=-1.014528 | elite_mean=-1.380454 | loss=0.0546 | threshold=-2.0994 | rand=0.0050 | time=134.5s
+Iter   200 | best=-0.946146 | elite_mean=-1.007944 | loss=0.0198 | threshold=-1.0082 | rand=0.0050 | time=165.2s
+Iter   220 | best=-0.943588 | elite_mean=-0.986869 | loss=0.0193 | threshold=-0.9871 | rand=0.0050 | time=209.2s
+Iter   240 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0179 | threshold=-0.2071 | rand=0.0055 | time=257.4s
+Iter   260 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0179 | threshold=-0.2071 | rand=0.0067 | time=322.2s
+Iter   280 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0174 | threshold=-0.2071 | rand=0.0081 | time=386.2s
+Iter   300 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0179 | threshold=-0.2071 | rand=0.0097 | time=447.3s
+Iter   320 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0181 | threshold=-0.2071 | rand=0.0118 | time=505.4s
+Iter   340 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0176 | threshold=-0.2071 | rand=0.0143 | time=562.0s
+Iter   360 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0181 | threshold=-0.2071 | rand=0.0173 | time=615.2s
+Iter   380 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0182 | threshold=-0.2071 | rand=0.0209 | time=666.2s
+Iter   400 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0170 | threshold=-0.2071 | rand=0.0250 | time=715.6s
+Iter   420 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0179 | threshold=-0.2071 | rand=0.0250 | time=766.8s
+Iter   440 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0176 | threshold=-0.2071 | rand=0.0250 | time=818.1s
+Iter   460 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0180 | threshold=-0.2071 | rand=0.0250 | time=869.1s
+Iter   480 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0177 | threshold=-0.2071 | rand=0.0250 | time=921.0s
+Iter   500 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0178 | threshold=-0.2071 | rand=0.0250 | time=974.3s
+Iter   520 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0183 | threshold=-0.2071 | rand=0.0250 | time=1025.4s
+Iter   540 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0176 | threshold=-0.2071 | rand=0.0250 | time=1073.5s
+Iter   560 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0184 | threshold=-0.2071 | rand=0.0250 | time=1121.7s
+Iter   580 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0172 | threshold=-0.2071 | rand=0.0250 | time=1171.2s
+Iter   600 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0180 | threshold=-0.2071 | rand=0.0250 | time=1220.1s
+Iter   620 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0183 | threshold=-0.2071 | rand=0.0250 | time=1269.5s
+Iter   640 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0175 | threshold=-0.2071 | rand=0.0250 | time=1320.3s
+Iter   660 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0174 | threshold=-0.2071 | rand=0.0250 | time=1376.7s
+Iter   680 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0182 | threshold=-0.2071 | rand=0.0250 | time=1432.3s
+Iter   700 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0182 | threshold=-0.2071 | rand=0.0250 | time=1487.3s
+Iter   720 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0176 | threshold=-0.2071 | rand=0.0250 | time=1538.2s
+Iter   740 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0176 | threshold=-0.2071 | rand=0.0250 | time=1588.8s
+Iter   760 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0173 | threshold=-0.2071 | rand=0.0250 | time=1643.6s
+Iter   780 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0181 | threshold=-0.2071 | rand=0.0250 | time=1700.1s
+Iter   800 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0177 | threshold=-0.2071 | rand=0.0250 | time=1757.8s
+Iter   820 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0179 | threshold=-0.2071 | rand=0.0250 | time=1808.3s
+Iter   840 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0181 | threshold=-0.2071 | rand=0.0250 | time=1859.2s
+Iter   860 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0177 | threshold=-0.2071 | rand=0.0250 | time=1909.5s
+Iter   880 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0178 | threshold=-0.2071 | rand=0.0250 | time=1958.4s
+Iter   900 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0174 | threshold=-0.2071 | rand=0.0250 | time=2007.8s
+Iter   920 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0180 | threshold=-0.2071 | rand=0.0250 | time=2057.5s
+Iter   940 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0176 | threshold=-0.2071 | rand=0.0250 | time=2106.6s
+Iter   960 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0185 | threshold=-0.2071 | rand=0.0250 | time=2156.0s
+Iter   980 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0175 | threshold=-0.2071 | rand=0.0250 | time=2205.5s
+Iter  1000 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0176 | threshold=-0.2071 | rand=0.0250 | time=2255.0s
+Iter  1020 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0176 | threshold=-0.2071 | rand=0.0250 | time=2303.4s
+Iter  1040 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0174 | threshold=-0.2071 | rand=0.0250 | time=2356.6s
+Iter  1060 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0181 | threshold=-0.2071 | rand=0.0250 | time=2412.6s
+Iter  1080 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0177 | threshold=-0.2071 | rand=0.0250 | time=2468.2s
+Iter  1100 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0177 | threshold=-0.2071 | rand=0.0250 | time=2523.0s
+Iter  1120 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0184 | threshold=-0.2071 | rand=0.0250 | time=2577.3s
+Iter  1140 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0180 | threshold=-0.2071 | rand=0.0250 | time=2628.2s
+Iter  1160 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0179 | threshold=-0.2071 | rand=0.0250 | time=2678.3s
+Iter  1180 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0183 | threshold=-0.2071 | rand=0.0250 | time=2728.3s
+Iter  1200 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0180 | threshold=-0.2071 | rand=0.0250 | time=2777.9s
+Iter  1220 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0178 | threshold=-0.2071 | rand=0.0250 | time=2827.5s
+Iter  1240 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0181 | threshold=-0.2071 | rand=0.0250 | time=2877.0s
+Iter  1260 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0177 | threshold=-0.2071 | rand=0.0250 | time=2931.3s
+Iter  1280 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0181 | threshold=-0.2071 | rand=0.0250 | time=2987.7s
+Iter  1300 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0181 | threshold=-0.2071 | rand=0.0250 | time=3037.4s
+Iter  1320 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0188 | threshold=-0.2071 | rand=0.0250 | time=3088.0s
+Iter  1340 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0178 | threshold=-0.2071 | rand=0.0250 | time=3139.7s
+Iter  1360 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0178 | threshold=-0.2071 | rand=0.0250 | time=3191.3s
+Iter  1380 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0180 | threshold=-0.2071 | rand=0.0250 | time=3242.7s
+Iter  1400 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0181 | threshold=-0.2071 | rand=0.0250 | time=3296.6s
+Iter  1420 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0178 | threshold=-0.2071 | rand=0.0250 | time=3350.6s
+Iter  1440 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0177 | threshold=-0.2071 | rand=0.0250 | time=3403.9s
+Iter  1460 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0180 | threshold=-0.2071 | rand=0.0250 | time=3454.4s
+Iter  1480 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0183 | threshold=-0.2071 | rand=0.0250 | time=3503.9s
+Iter  1500 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0182 | threshold=-0.2071 | rand=0.0250 | time=3553.5s
+Iter  1520 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0175 | threshold=-0.2071 | rand=0.0250 | time=3602.5s
+Iter  1540 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0175 | threshold=-0.2071 | rand=0.0250 | time=3650.6s
+Iter  1560 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0178 | threshold=-0.2071 | rand=0.0250 | time=3698.7s
+Iter  1580 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0179 | threshold=-0.2071 | rand=0.0250 | time=3746.1s
+Iter  1600 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0179 | threshold=-0.2071 | rand=0.0250 | time=3793.6s
+Iter  1620 | best=-0.207117 | elite_mean=-0.207117 | loss=0.0176 | threshold=-0.2071 | rand=0.0250 | time=3842.0s
+
+Time limit reached (3890s / 3889.410742441813s). Stopping.
+
+Training complete. Total time: 3889.7s
+Best reward: -0.207117
+
+Near-miss analysis (best graph, reward=-0.207117):
+  mu (spectral radius) = 5.792883
+  Edges = 30
+  Max degree = 3, Min degree = 3
+  Degree sequence: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+
+Bound 4 (OPEN): Best reward = -0.207117
+
+======================================================================
+SECONDARY ATTACK: Bound 9 (OPEN), n=20
+Time limit: 1.08h
+======================================================================
+
+======================================================================
+CEM Training: Bound 9 (OPEN)
+Formula: mu <= max_v (m_v+3*d_v)/2
+N=20, decisions=190, state_dim=380
+Sessions=1000, elite=90%, super=97.5%
+Max iterations=5000, LR=0.003 (Adam)
+Loss: CrossEntropyLoss, Output: 2 logits
+Adaptive randomness: Ghebleh(2024) — init=0.005, wait=10, mult=1.1, cap=0.025
+Reward computation: numpy bypass (triu indices precomputed)
+======================================================================
+
+Iter     1 | best=-5.522849 | elite_mean=-6.689672 | loss=0.6800 | threshold=-7.1550 | rand=0.0050 | time=0.0s
+Iter    20 | best=-1.442845 | elite_mean=-2.087324 | loss=0.4551 | threshold=-2.6156 | rand=0.0050 | time=14.1s
+Iter    40 | best=-0.704523 | elite_mean=-1.616434 | loss=0.4040 | threshold=-2.1326 | rand=0.0050 | time=27.9s
+Iter    60 | best=-0.704523 | elite_mean=-1.754940 | loss=0.3880 | threshold=-2.2844 | rand=0.0061 | time=41.4s
+Iter    80 | best=-0.622896 | elite_mean=-1.610920 | loss=0.3407 | threshold=-2.2328 | rand=0.0055 | time=55.4s
+Iter   100 | best=-0.255237 | elite_mean=-0.399555 | loss=0.0844 | threshold=-0.4382 | rand=0.0050 | time=69.7s
+Iter   120 | best=-0.106376 | elite_mean=-0.131882 | loss=0.0472 | threshold=-0.1338 | rand=0.0050 | time=90.4s
+Iter   140 | best=-0.050387 | elite_mean=-0.052937 | loss=0.0469 | threshold=-0.0529 | rand=0.0050 | time=126.9s
+Iter   160 | best=-0.050387 | elite_mean=-0.050387 | loss=0.0470 | threshold=-0.0504 | rand=0.0061 | time=182.4s
+Iter   180 | best=-0.050387 | elite_mean=-0.050387 | loss=0.0448 | threshold=-0.0504 | rand=0.0073 | time=244.3s
+Iter   200 | best=-0.050387 | elite_mean=-0.050387 | loss=0.0447 | threshold=-0.0504 | rand=0.0089 | time=309.2s
+Iter   220 | best=-0.050387 | elite_mean=-0.050387 | loss=0.0450 | threshold=-0.0504 | rand=0.0107 | time=371.8s
+Iter   240 | best=-0.050387 | elite_mean=-0.050387 | loss=0.0452 | threshold=-0.0504 | rand=0.0130 | time=430.5s
+Iter   260 | best=-0.050387 | elite_mean=-0.050387 | loss=0.0174 | threshold=-0.0504 | rand=0.0050 | time=489.2s
+Iter   280 | best=-0.050387 | elite_mean=-0.050387 | loss=0.0198 | threshold=-0.0504 | rand=0.0061 | time=557.3s
+Iter   300 | best=-0.050387 | elite_mean=-0.050387 | loss=0.0179 | threshold=-0.0504 | rand=0.0073 | time=610.5s
+Iter   320 | best=-0.050387 | elite_mean=-0.050387 | loss=0.0180 | threshold=-0.0504 | rand=0.0089 | time=671.9s
+Iter   340 | best=-0.050387 | elite_mean=-0.050387 | loss=0.0182 | threshold=-0.0504 | rand=0.0107 | time=731.3s
+Iter   360 | best=-0.050387 | elite_mean=-0.050387 | loss=0.0173 | threshold=-0.0504 | rand=0.0130 | time=788.1s
+Iter   380 | best=-0.000000 | elite_mean=-0.050356 | loss=0.0178 | threshold=-0.0504 | rand=0.0050 | time=847.8s
+Iter   400 | best=-0.000000 | elite_mean=-0.049832 | loss=0.0184 | threshold=-0.0504 | rand=0.0061 | time=916.4s
+Iter   420 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0177 | threshold=-0.0000 | rand=0.0073 | time=973.1s
+Iter   440 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0177 | threshold=-0.0000 | rand=0.0089 | time=1042.0s
+Iter   460 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0179 | threshold=-0.0000 | rand=0.0107 | time=1108.2s
+Iter   480 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0183 | threshold=-0.0000 | rand=0.0130 | time=1170.3s
+Iter   500 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0178 | threshold=-0.0000 | rand=0.0157 | time=1229.3s
+Iter   520 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0175 | threshold=-0.0000 | rand=0.0190 | time=1285.6s
+Iter   540 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0183 | threshold=-0.0000 | rand=0.0230 | time=1341.3s
+Iter   560 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0178 | threshold=-0.0000 | rand=0.0250 | time=1396.8s
+Iter   580 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0175 | threshold=-0.0000 | rand=0.0250 | time=1451.8s
+Iter   600 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0176 | threshold=-0.0000 | rand=0.0250 | time=1506.5s
+Iter   620 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0175 | threshold=-0.0000 | rand=0.0250 | time=1560.8s
+Iter   640 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0174 | threshold=-0.0000 | rand=0.0250 | time=1615.8s
+Iter   660 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0172 | threshold=-0.0000 | rand=0.0250 | time=1668.9s
+Iter   680 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0180 | threshold=-0.0000 | rand=0.0250 | time=1720.1s
+Iter   700 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0179 | threshold=-0.0000 | rand=0.0250 | time=1770.3s
+Iter   720 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0175 | threshold=-0.0000 | rand=0.0250 | time=1821.2s
+Iter   740 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0179 | threshold=-0.0000 | rand=0.0250 | time=1871.4s
+Iter   760 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0169 | threshold=-0.0000 | rand=0.0250 | time=1921.1s
+Iter   780 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0179 | threshold=-0.0000 | rand=0.0250 | time=1969.6s
+Iter   800 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0176 | threshold=-0.0000 | rand=0.0250 | time=2018.0s
+Iter   820 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0176 | threshold=-0.0000 | rand=0.0250 | time=2067.6s
+Iter   840 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0173 | threshold=-0.0000 | rand=0.0250 | time=2116.5s
+Iter   860 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0184 | threshold=-0.0000 | rand=0.0250 | time=2164.3s
+Iter   880 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0176 | threshold=-0.0000 | rand=0.0250 | time=2215.5s
+Iter   900 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0182 | threshold=-0.0000 | rand=0.0250 | time=2271.0s
+Iter   920 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0180 | threshold=-0.0000 | rand=0.0250 | time=2326.2s
+Iter   940 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0180 | threshold=-0.0000 | rand=0.0250 | time=2382.5s
+Iter   960 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0177 | threshold=-0.0000 | rand=0.0250 | time=2437.4s
+Iter   980 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0182 | threshold=-0.0000 | rand=0.0250 | time=2493.1s
+Iter  1000 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0176 | threshold=-0.0000 | rand=0.0250 | time=2549.8s
+Iter  1020 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0180 | threshold=-0.0000 | rand=0.0250 | time=2605.8s
+Iter  1040 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0176 | threshold=-0.0000 | rand=0.0250 | time=2657.9s
+Iter  1060 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0177 | threshold=-0.0000 | rand=0.0250 | time=2705.4s
+Iter  1080 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0177 | threshold=-0.0000 | rand=0.0250 | time=2753.2s
+Iter  1100 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0175 | threshold=-0.0000 | rand=0.0250 | time=2801.0s
+Iter  1120 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0179 | threshold=-0.0000 | rand=0.0250 | time=2849.0s
+Iter  1140 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0177 | threshold=-0.0000 | rand=0.0250 | time=2896.5s
+Iter  1160 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0177 | threshold=-0.0000 | rand=0.0250 | time=2944.9s
+Iter  1180 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0175 | threshold=-0.0000 | rand=0.0250 | time=2992.8s
+Iter  1200 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0180 | threshold=-0.0000 | rand=0.0250 | time=3040.4s
+Iter  1220 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0180 | threshold=-0.0000 | rand=0.0250 | time=3089.2s
+Iter  1240 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0173 | threshold=-0.0000 | rand=0.0250 | time=3139.2s
+Iter  1260 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0184 | threshold=-0.0000 | rand=0.0250 | time=3189.9s
+Iter  1280 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0177 | threshold=-0.0000 | rand=0.0250 | time=3241.3s
+Iter  1300 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0179 | threshold=-0.0000 | rand=0.0250 | time=3291.8s
+Iter  1320 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0186 | threshold=-0.0000 | rand=0.0250 | time=3343.2s
+Iter  1340 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0181 | threshold=-0.0000 | rand=0.0250 | time=3393.6s
+Iter  1360 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0180 | threshold=-0.0000 | rand=0.0250 | time=3444.5s
+Iter  1380 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0179 | threshold=-0.0000 | rand=0.0250 | time=3495.6s
+Iter  1400 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0176 | threshold=-0.0000 | rand=0.0250 | time=3546.2s
+Iter  1420 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0172 | threshold=-0.0000 | rand=0.0250 | time=3596.9s
+Iter  1440 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0177 | threshold=-0.0000 | rand=0.0250 | time=3647.3s
+Iter  1460 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0183 | threshold=-0.0000 | rand=0.0250 | time=3696.8s
+Iter  1480 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0179 | threshold=-0.0000 | rand=0.0250 | time=3746.0s
+Iter  1500 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0187 | threshold=-0.0000 | rand=0.0250 | time=3795.3s
+Iter  1520 | best=-0.000000 | elite_mean=-0.000000 | loss=0.0182 | threshold=-0.0000 | rand=0.0250 | time=3845.1s
+
+Time limit reached (3890s / 3889.1902775764465s). Stopping.
+
+Training complete. Total time: 3890.1s
+Best reward: -0.000000
+
+Near-miss analysis (best graph, reward=-0.000000):
+  mu (spectral radius) = 6.000000
+  Edges = 30
+  Max degree = 3, Min degree = 3
+  Degree sequence: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+
+Bound 9 (OPEN): Best reward = -0.000000
+
+======================================================================
+SECONDARY ATTACK: Bound 33 (OPEN, edge-max), n=20
+Time limit: 1.08h
+======================================================================
+
+======================================================================
+CEM Training: Bound 33 (OPEN, edge-max)
+Formula: mu <= max_{vi~vj} (2*(d_i+d_j)-(m_i+m_j))
+N=20, decisions=190, state_dim=380
+Sessions=1000, elite=90%, super=97.5%
+Max iterations=5000, LR=0.003 (Adam)
+Loss: CrossEntropyLoss, Output: 2 logits
+Adaptive randomness: Ghebleh(2024) — init=0.005, wait=10, mult=1.1, cap=0.025
+Reward computation: numpy bypass (triu indices precomputed)
+======================================================================
+
+Iter     1 | best=-5.677908 | elite_mean=-10.300155 | loss=0.6599 | threshold=-11.3257 | rand=0.0050 | time=0.0s
+Iter    20 | best=-2.673145 | elite_mean=-4.359496 | loss=0.4364 | threshold=-5.3734 | rand=0.0050 | time=14.4s
+Iter    40 | best=-1.664725 | elite_mean=-3.939375 | loss=0.3962 | threshold=-5.4013 | rand=0.0050 | time=28.7s
+Iter    60 | best=-1.664725 | elite_mean=-4.237788 | loss=0.3878 | threshold=-5.4564 | rand=0.0061 | time=44.7s
+Iter    80 | best=-1.383311 | elite_mean=-4.036962 | loss=0.3794 | threshold=-5.3475 | rand=0.0055 | time=59.3s
+Iter   100 | best=-1.383311 | elite_mean=-4.169826 | loss=0.3798 | threshold=-5.7573 | rand=0.0067 | time=73.8s
+Iter   120 | best=-1.383311 | elite_mean=-4.044640 | loss=0.3742 | threshold=-5.3719 | rand=0.0081 | time=88.5s
+Iter   140 | best=-1.383311 | elite_mean=-3.946960 | loss=0.3748 | threshold=-5.4301 | rand=0.0097 | time=103.4s
+Iter   160 | best=-1.383311 | elite_mean=-4.031842 | loss=0.3768 | threshold=-5.3741 | rand=0.0118 | time=117.8s
+Iter   180 | best=-1.383311 | elite_mean=-4.150225 | loss=0.3845 | threshold=-5.5789 | rand=0.0143 | time=132.4s
+Iter   200 | best=-1.383311 | elite_mean=-4.372335 | loss=0.3818 | threshold=-5.8786 | rand=0.0173 | time=147.1s
+Iter   220 | best=-1.383311 | elite_mean=-4.345928 | loss=0.3871 | threshold=-5.8962 | rand=0.0209 | time=161.9s
+Iter   240 | best=-1.383311 | elite_mean=-4.253302 | loss=0.3873 | threshold=-5.8448 | rand=0.0250 | time=177.0s
+Iter   260 | best=-1.383311 | elite_mean=-4.225040 | loss=0.3900 | threshold=-5.8481 | rand=0.0250 | time=191.7s
+Iter   280 | best=-1.383311 | elite_mean=-4.447860 | loss=0.4012 | threshold=-6.0025 | rand=0.0250 | time=206.7s
+Iter   300 | best=-1.383311 | elite_mean=-4.281446 | loss=0.3947 | threshold=-5.8837 | rand=0.0250 | time=221.7s
+Iter   320 | best=-1.383311 | elite_mean=-4.435348 | loss=0.3952 | threshold=-6.0827 | rand=0.0250 | time=236.6s
+Iter   340 | best=-1.383311 | elite_mean=-4.293507 | loss=0.3822 | threshold=-5.9771 | rand=0.0250 | time=251.5s
+Iter   360 | best=-1.383311 | elite_mean=-4.356772 | loss=0.3896 | threshold=-5.8360 | rand=0.0250 | time=266.3s
+Iter   380 | best=-1.383311 | elite_mean=-4.479414 | loss=0.3938 | threshold=-6.0758 | rand=0.0250 | time=281.2s
+Iter   400 | best=-1.383311 | elite_mean=-4.549319 | loss=0.3943 | threshold=-6.1557 | rand=0.0250 | time=296.2s
+Iter   420 | best=-1.383311 | elite_mean=-4.350806 | loss=0.3841 | threshold=-5.8979 | rand=0.0250 | time=311.1s
+Iter   440 | best=-1.383311 | elite_mean=-4.395052 | loss=0.3880 | threshold=-5.9940 | rand=0.0250 | time=326.1s
+Iter   460 | best=-1.383311 | elite_mean=-4.382389 | loss=0.3935 | threshold=-5.9215 | rand=0.0250 | time=341.1s
+Iter   480 | best=-1.383311 | elite_mean=-4.289510 | loss=0.3841 | threshold=-5.8516 | rand=0.0250 | time=357.2s
+Iter   500 | best=-1.383311 | elite_mean=-4.495996 | loss=0.3884 | threshold=-6.1318 | rand=0.0250 | time=372.7s
+Iter   520 | best=-1.383311 | elite_mean=-4.451925 | loss=0.3866 | threshold=-6.0239 | rand=0.0250 | time=387.6s
+Iter   540 | best=-1.383311 | elite_mean=-4.374406 | loss=0.3847 | threshold=-5.9673 | rand=0.0250 | time=402.4s
+Iter   560 | best=-1.383311 | elite_mean=-4.253057 | loss=0.3779 | threshold=-5.6937 | rand=0.0250 | time=417.5s
+Iter   580 | best=-1.383311 | elite_mean=-4.368203 | loss=0.3733 | threshold=-6.0157 | rand=0.0250 | time=432.2s
+Iter   600 | best=-1.383311 | elite_mean=-4.421712 | loss=0.3866 | threshold=-6.0153 | rand=0.0250 | time=447.1s
+Iter   620 | best=-1.224397 | elite_mean=-4.146024 | loss=0.3732 | threshold=-5.7052 | rand=0.0050 | time=462.2s
+Iter   640 | best=-1.224397 | elite_mean=-4.028121 | loss=0.3676 | threshold=-5.4301 | rand=0.0061 | time=476.7s
+Iter   660 | best=-1.224397 | elite_mean=-4.006073 | loss=0.3668 | threshold=-5.6623 | rand=0.0073 | time=491.4s
+Iter   680 | best=-1.224397 | elite_mean=-4.109569 | loss=0.3770 | threshold=-5.6528 | rand=0.0089 | time=505.8s
+Iter   700 | best=-1.224397 | elite_mean=-3.976199 | loss=0.3807 | threshold=-5.5632 | rand=0.0107 | time=520.6s
+Iter   720 | best=-1.224397 | elite_mean=-4.272609 | loss=0.3810 | threshold=-5.8253 | rand=0.0130 | time=536.2s
+Iter   740 | best=-1.224397 | elite_mean=-4.165459 | loss=0.3796 | threshold=-5.7469 | rand=0.0157 | time=551.0s
+Iter   760 | best=-1.224397 | elite_mean=-4.263145 | loss=0.3770 | threshold=-5.8837 | rand=0.0190 | time=565.8s
+Iter   780 | best=-1.224397 | elite_mean=-4.208896 | loss=0.3839 | threshold=-5.8228 | rand=0.0230 | time=580.9s
+Iter   800 | best=-1.224397 | elite_mean=-4.304572 | loss=0.3877 | threshold=-6.0599 | rand=0.0250 | time=595.9s
+Iter   820 | best=-1.224397 | elite_mean=-4.399616 | loss=0.3922 | threshold=-6.1245 | rand=0.0250 | time=610.8s
+Iter   840 | best=-1.224397 | elite_mean=-4.426627 | loss=0.3875 | threshold=-6.0097 | rand=0.0250 | time=625.7s
+Iter   860 | best=-1.224397 | elite_mean=-4.365327 | loss=0.3872 | threshold=-5.9586 | rand=0.0250 | time=640.7s
+Iter   880 | best=-1.224397 | elite_mean=-4.350441 | loss=0.3871 | threshold=-6.0433 | rand=0.0250 | time=656.2s
+Iter   900 | best=-1.224397 | elite_mean=-4.736727 | loss=0.3960 | threshold=-6.6149 | rand=0.0250 | time=671.2s
+Iter   920 | best=-1.224397 | elite_mean=-4.515205 | loss=0.3904 | threshold=-6.2439 | rand=0.0250 | time=686.2s
+Iter   940 | best=-1.224397 | elite_mean=-4.254792 | loss=0.3849 | threshold=-6.0137 | rand=0.0250 | time=701.2s
+Iter   960 | best=-1.224397 | elite_mean=-3.920198 | loss=0.3176 | threshold=-5.6896 | rand=0.0250 | time=716.1s
+Iter   980 | best=-0.642982 | elite_mean=-0.748882 | loss=0.0311 | threshold=-0.7509 | rand=0.0050 | time=731.9s
+Iter  1000 | best=-0.519668 | elite_mean=-0.555717 | loss=0.0293 | threshold=-0.5560 | rand=0.0055 | time=759.2s
+Iter  1020 | best=-0.519668 | elite_mean=-0.554619 | loss=0.0245 | threshold=-0.5556 | rand=0.0067 | time=811.6s
+Iter  1040 | best=-0.519668 | elite_mean=-0.519668 | loss=0.0167 | threshold=-0.5197 | rand=0.0081 | time=858.6s
+Iter  1060 | best=-0.519668 | elite_mean=-0.519668 | loss=0.0169 | threshold=-0.5197 | rand=0.0050 | time=917.7s
+Iter  1080 | best=-0.519668 | elite_mean=-0.519668 | loss=0.0204 | threshold=-0.5197 | rand=0.0061 | time=975.8s
+Iter  1100 | best=-0.519668 | elite_mean=-0.519668 | loss=0.0186 | threshold=-0.5197 | rand=0.0073 | time=1036.5s
+Iter  1120 | best=-0.511914 | elite_mean=-0.519663 | loss=0.0182 | threshold=-0.5197 | rand=0.0050 | time=1099.3s
+Iter  1140 | best=-0.511914 | elite_mean=-0.519658 | loss=0.0166 | threshold=-0.5197 | rand=0.0061 | time=1166.2s
+Iter  1160 | best=-0.511914 | elite_mean=-0.519647 | loss=0.0173 | threshold=-0.5197 | rand=0.0073 | time=1231.3s
+Iter  1180 | best=-0.511914 | elite_mean=-0.511914 | loss=0.0243 | threshold=-0.5119 | rand=0.0050 | time=1283.2s
+Iter  1200 | best=-0.511914 | elite_mean=-0.511914 | loss=0.0168 | threshold=-0.5119 | rand=0.0061 | time=1338.5s
+Iter  1220 | best=-0.511914 | elite_mean=-0.511914 | loss=0.0168 | threshold=-0.5119 | rand=0.0073 | time=1403.5s
+Iter  1240 | best=-0.511914 | elite_mean=-0.511914 | loss=0.0164 | threshold=-0.5119 | rand=0.0089 | time=1465.4s
+Iter  1260 | best=-0.511914 | elite_mean=-0.511914 | loss=0.0167 | threshold=-0.5119 | rand=0.0107 | time=1524.6s
+Iter  1280 | best=-0.511914 | elite_mean=-0.511914 | loss=0.0166 | threshold=-0.5119 | rand=0.0130 | time=1580.3s
+Iter  1300 | best=-0.511914 | elite_mean=-0.511914 | loss=0.0173 | threshold=-0.5119 | rand=0.0157 | time=1632.9s
+Iter  1320 | best=+0.000000 | elite_mean=-0.511594 | loss=0.0174 | threshold=-0.5119 | rand=0.0050 | time=1690.1s
+Iter  1340 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0217 | threshold=+0.0000 | rand=0.0061 | time=1759.4s
+Iter  1360 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0168 | threshold=+0.0000 | rand=0.0073 | time=1825.6s
+Iter  1380 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0170 | threshold=+0.0000 | rand=0.0050 | time=1893.3s
+Iter  1400 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0171 | threshold=+0.0000 | rand=0.0061 | time=1961.2s
+Iter  1420 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0169 | threshold=+0.0000 | rand=0.0073 | time=2030.8s
+Iter  1440 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0175 | threshold=+0.0000 | rand=0.0089 | time=2096.2s
+Iter  1460 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0269 | threshold=+0.0000 | rand=0.0107 | time=2136.4s
+Iter  1480 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0167 | threshold=+0.0000 | rand=0.0130 | time=2182.9s
+Iter  1500 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0166 | threshold=+0.0000 | rand=0.0157 | time=2236.1s
+Iter  1520 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0170 | threshold=+0.0000 | rand=0.0190 | time=2287.6s
+Iter  1540 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0175 | threshold=+0.0000 | rand=0.0230 | time=2338.6s
+Iter  1560 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0170 | threshold=+0.0000 | rand=0.0250 | time=2389.4s
+Iter  1580 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0171 | threshold=+0.0000 | rand=0.0250 | time=2439.1s
+Iter  1600 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0169 | threshold=+0.0000 | rand=0.0250 | time=2487.6s
+Iter  1620 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0171 | threshold=+0.0000 | rand=0.0250 | time=2536.4s
+Iter  1640 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0170 | threshold=+0.0000 | rand=0.0250 | time=2585.1s
+Iter  1660 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0170 | threshold=+0.0000 | rand=0.0250 | time=2633.1s
+Iter  1680 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0170 | threshold=+0.0000 | rand=0.0055 | time=2694.4s
+Iter  1700 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0169 | threshold=+0.0000 | rand=0.0067 | time=2757.4s
+Iter  1720 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0171 | threshold=+0.0000 | rand=0.0081 | time=2826.7s
+Iter  1740 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0168 | threshold=+0.0000 | rand=0.0097 | time=2891.3s
+Iter  1760 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0169 | threshold=+0.0000 | rand=0.0118 | time=2951.7s
+Iter  1780 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0169 | threshold=+0.0000 | rand=0.0143 | time=3006.6s
+Iter  1800 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0168 | threshold=+0.0000 | rand=0.0173 | time=3060.5s
+Iter  1820 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0167 | threshold=+0.0000 | rand=0.0209 | time=3113.1s
+Iter  1840 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0171 | threshold=+0.0000 | rand=0.0250 | time=3162.7s
+Iter  1860 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0167 | threshold=+0.0000 | rand=0.0250 | time=3216.7s
+Iter  1880 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0168 | threshold=+0.0000 | rand=0.0250 | time=3269.4s
+Iter  1900 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0169 | threshold=+0.0000 | rand=0.0250 | time=3320.5s
+Iter  1920 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0167 | threshold=+0.0000 | rand=0.0250 | time=3373.3s
+Iter  1940 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0169 | threshold=+0.0000 | rand=0.0250 | time=3426.6s
+Iter  1960 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0166 | threshold=+0.0000 | rand=0.0250 | time=3478.0s
+Iter  1980 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0170 | threshold=+0.0000 | rand=0.0250 | time=3526.1s
+Iter  2000 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0173 | threshold=+0.0000 | rand=0.0250 | time=3576.0s
+Iter  2020 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0169 | threshold=+0.0000 | rand=0.0250 | time=3624.7s
+Iter  2040 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0167 | threshold=+0.0000 | rand=0.0250 | time=3673.2s
+Iter  2060 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0170 | threshold=+0.0000 | rand=0.0250 | time=3721.4s
+Iter  2080 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0171 | threshold=+0.0000 | rand=0.0250 | time=3769.6s
+Iter  2100 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0166 | threshold=+0.0000 | rand=0.0250 | time=3818.1s
+Iter  2120 | best=+0.000000 | elite_mean=+0.000000 | loss=0.0163 | threshold=+0.0000 | rand=0.0250 | time=3865.5s
+
+Time limit reached (3889s / 3888.168268918991s). Stopping.
+
+Training complete. Total time: 3889.3s
+Best reward: +0.000000
+
+Near-miss analysis (best graph, reward=0.000000):
+  mu (spectral radius) = 5.000000
+  Edges = 24
+  Max degree = 3, Min degree = 2
+  Degree sequence: [3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+
+Bound 33 (OPEN, edge-max): Best reward = 0.000000
+
+Secondary attacks complete.
+
+---------------------------------------------------
+TIME BUDGET STATUS
+  Elapsed:   11.50h (41401s)
+  Remaining: 0.00h (0s)
+  Budget:    11.5h
+  benchmark   : 5.43h used / 1.5h allocated
+  primary     : 2.83h used / 6.0h allocated
+  secondary   : 3.24h used / 3.0h allocated
+---------------------------------------------------
+
+
+---------------------------------------------------
+TIME BUDGET STATUS
+  Elapsed:   11.50h (41401s)
+  Remaining: 0.00h (0s)
+  Budget:    11.5h
+  benchmark   : 5.43h used / 1.5h allocated
+  primary     : 2.83h used / 6.0h allocated
+  secondary   : 3.24h used / 3.0h allocated
+---------------------------------------------------
+
+==========================================================================================
+RESULTS SUMMARY
+==========================================================================================
+Run                    N Bound                 Best Reward  Found  Iters     Time
+------------------------------------------------------------------------------------------
+bound2_n15            15 Bound 2 (DISPROVED)     -0.043705     no   4800  5399.1s
+bound2_n20            20 Bound 2 (DISPROVED)     -0.867605     no   5000 14140.9s
+bound1_n20            20 Bound 1 (OPEN)          -0.841895     no   5000  3823.2s
+bound1_n25            25 Bound 1 (OPEN)          -1.968004     no   5000  6358.9s
+bound4_n20            20 Bound 4 (OPEN)          -0.207117     no   1639  3887.4s
+bound9_n20            20 Bound 9 (OPEN)          -0.000000     no   1537  3887.7s
+bound33_n20           20 Bound 33 (OPEN, edge-max)    +0.000000     no   2129  3886.9s
+==========================================================================================
+
+Counterexamples found: 0 / 7
+Total notebook time: 11.50h
+Saved: reward_curves.png
+Saved: nearmiss_graphs.png
+
+================================================================================
+NEAR-MISS ANALYSIS -- Structural Properties
+================================================================================
+
+------------------------------------------------------------------------
+  bound2_n15 (n=15, bound=Bound 2 (DISPROVED))
+------------------------------------------------------------------------
+  Best reward:        -0.043705
+  Gap to violation:   0.043705
+  mu (spectral rad.): 3.956295
+  Bound formula:      mu <= max_v (2*m_v^2/d_v)
+
+  --- Graph Structure ---
+  Vertices:           15
+  Edges:              15
+  Density:            0.1429
+  Diameter:           7
+  Radius:             7
+  Avg clustering:     0.0000
+  Transitivity:       0.0000
+
+  --- Degree Stats ---
+  Degree sequence:    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+  Max degree:         2
+  Min degree:         2
+  Mean degree:        2.00
+  Degree std:         0.00
+
+  --- Avg Neighbor Degree ---
+  Max m_v:            2.0000
+  Min m_v:            2.0000
+  Mean m_v:           2.0000
+
+  --- Tightest Bound Vertex ---
+  Vertex 0: bound_value=4.000000, d_v=2, m_v=2.0000
+  mu - bound_at_v = -0.043705
+
+------------------------------------------------------------------------
+  bound2_n20 (n=20, bound=Bound 2 (DISPROVED))
+------------------------------------------------------------------------
+  Best reward:        -0.867605
+  Gap to violation:   0.867605
+  mu (spectral rad.): 11.808321
+  Bound formula:      mu <= max_v (2*m_v^2/d_v)
+
+  --- Graph Structure ---
+  Vertices:           20
+  Edges:              55
+  Density:            0.2895
+  Diameter:           4
+  Radius:             3
+  Avg clustering:     0.1171
+  Transitivity:       0.1132
+
+  --- Degree Stats ---
+  Degree sequence:    [7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 4, 4, 3, 2]
+  Max degree:         7
+  Min degree:         2
+  Mean degree:        5.50
+  Degree std:         1.32
+
+  --- Avg Neighbor Degree ---
+  Max m_v:            6.2857
+  Min m_v:            3.5000
+  Mean m_v:           5.6449
+
+  --- Tightest Bound Vertex ---
+  Vertex 6: bound_value=10.285714, d_v=7, m_v=6.0000
+  mu - bound_at_v = +1.522607
+
+------------------------------------------------------------------------
+  bound1_n20 (n=20, bound=Bound 1 (OPEN))
+------------------------------------------------------------------------
+  Best reward:        -0.841895
+  Gap to violation:   0.841895
+  mu (spectral rad.): 5.522067
+  Bound formula:      mu <= max_v sqrt(4*d_v^3/m_v)
+
+  --- Graph Structure ---
+  Vertices:           20
+  Edges:              25
+  Density:            0.1316
+  Diameter:           10
+  Radius:             5
+  Avg clustering:     0.1333
+  Transitivity:       0.1463
+
+  --- Degree Stats ---
+  Degree sequence:    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 1]
+  Max degree:         3
+  Min degree:         1
+  Mean degree:        2.50
+  Degree std:         0.59
+
+  --- Avg Neighbor Degree ---
+  Max m_v:            3.0000
+  Min m_v:            1.5000
+  Mean m_v:           2.5833
+
+  --- Tightest Bound Vertex ---
+  Vertex 19: bound_value=1.414214, d_v=1, m_v=2.0000
+  mu - bound_at_v = +4.107853
+
+------------------------------------------------------------------------
+  bound1_n25 (n=25, bound=Bound 1 (OPEN))
+------------------------------------------------------------------------
+  Best reward:        -1.968004
+  Gap to violation:   1.968004
+  mu (spectral rad.): 6.907200
+  Bound formula:      mu <= max_v sqrt(4*d_v^3/m_v)
+
+  --- Graph Structure ---
+  Vertices:           25
+  Edges:              40
+  Density:            0.1333
+  Diameter:           6
+  Radius:             4
+  Avg clustering:     0.0600
+  Transitivity:       0.0306
+
+  --- Degree Stats ---
+  Degree sequence:    [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 1, 1]
+  Max degree:         4
+  Min degree:         1
+  Mean degree:        3.20
+  Degree std:         0.89
+
+  --- Avg Neighbor Degree ---
+  Max m_v:            4.0000
+  Min m_v:            2.6667
+  Mean m_v:           3.4167
+
+  --- Tightest Bound Vertex ---
+  Vertex 22: bound_value=1.154701, d_v=1, m_v=3.0000
+  mu - bound_at_v = +5.752499
+
+------------------------------------------------------------------------
+  bound4_n20 (n=20, bound=Bound 4 (OPEN))
+------------------------------------------------------------------------
+  Best reward:        -0.207117
+  Gap to violation:   0.207117
+  mu (spectral rad.): 5.792883
+  Bound formula:      mu <= max_v (2*d_v^2/m_v)
+
+  --- Graph Structure ---
+  Vertices:           20
+  Edges:              30
+  Density:            0.1579
+  Diameter:           4
+  Radius:             4
+  Avg clustering:     0.0000
+  Transitivity:       0.0000
+
+  --- Degree Stats ---
+  Degree sequence:    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+  Max degree:         3
+  Min degree:         3
+  Mean degree:        3.00
+  Degree std:         0.00
+
+  --- Avg Neighbor Degree ---
+  Max m_v:            3.0000
+  Min m_v:            3.0000
+  Mean m_v:           3.0000
+
+  --- Tightest Bound Vertex ---
+  Vertex 0: bound_value=6.000000, d_v=3, m_v=3.0000
+  mu - bound_at_v = -0.207117
+
+------------------------------------------------------------------------
+  bound9_n20 (n=20, bound=Bound 9 (OPEN))
+------------------------------------------------------------------------
+  Best reward:        -0.000000
+  Gap to violation:   0.000000
+  mu (spectral rad.): 6.000000
+  Bound formula:      mu <= max_v (m_v+3*d_v)/2
+
+  --- Graph Structure ---
+  Vertices:           20
+  Edges:              30
+  Density:            0.1579
+  Diameter:           6
+  Radius:             4
+  Avg clustering:     0.0000
+  Transitivity:       0.0000
+
+  --- Degree Stats ---
+  Degree sequence:    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+  Max degree:         3
+  Min degree:         3
+  Mean degree:        3.00
+  Degree std:         0.00
+
+  --- Avg Neighbor Degree ---
+  Max m_v:            3.0000
+  Min m_v:            3.0000
+  Mean m_v:           3.0000
+
+  --- Tightest Bound Vertex ---
+  Vertex 0: bound_value=6.000000, d_v=3, m_v=3.0000
+  mu - bound_at_v = -0.000000
+
+------------------------------------------------------------------------
+  bound33_n20 (n=20, bound=Bound 33 (OPEN, edge-max))
+------------------------------------------------------------------------
+  Best reward:        +0.000000
+  Gap to violation:   0.000000
+  mu (spectral rad.): 5.000000
+  Bound formula:      mu <= max_{vi~vj} (2*(d_i+d_j)-(m_i+m_j))
+
+  --- Graph Structure ---
+  Vertices:           20
+  Edges:              24
+  Density:            0.1263
+  Diameter:           7
+  Radius:             5
+  Avg clustering:     0.0000
+  Transitivity:       0.0000
+
+  --- Degree Stats ---
+  Degree sequence:    [3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+  Max degree:         3
+  Min degree:         2
+  Mean degree:        2.40
+  Degree std:         0.49
+
+  --- Avg Neighbor Degree ---
+  Max m_v:            3.0000
+  Min m_v:            2.0000
+  Mean m_v:           2.6000
+
+================================================================================
+Analysis complete.
+================================================================================

@@ -1,0 +1,575 @@
+Time
+#
+Log Message
+6.2s	0	/usr/local/lib/python3.12/dist-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+6.2s	1	  validate(nb)
+7.3s	2	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.3s	3	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.3s	4	0.00s - to python to disable frozen modules.
+7.3s	5	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.0s	6	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.0s	7	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.0s	8	0.00s - to python to disable frozen modules.
+8.0s	9	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+13.3s	10	PyTorch version: 2.10.0+cpu
+13.3s	11	NetworkX version: 3.6.1
+13.3s	12	NumPy version: 2.0.2
+13.3s	13	Device: cpu
+13.3s	14	Default graph size N=20, decisions=190, state_dim=380
+13.3s	15	TimeManager initialized: 11.5h budget
+13.3s	16	Start time: 2026-03-24 19:08:11
+13.4s	17	Model test (n=10): input_dim=90, output_shape=torch.Size([1, 2]) (2 logits)
+13.4s	18	Default [128,64,4] architecture — Total parameters: 20174
+13.4s	19	Alt [72,12] architecture — Total parameters: 7454
+13.5s	20	Graph utility functions defined (NetworkX + numpy bypass).
+13.8s	21	=================================================================
+13.8s	22	UNIT TESTS: Laplacian Spectral Radius
+13.8s	23	=================================================================
+13.8s	24	  K_5: expected=5.000000, got=5.000000 -> [PASS]
+13.8s	25	  S_5: expected=5.000000, got=5.000000 -> [PASS]
+13.8s	26	  C_6: expected=4.000000, got=4.000000 -> [PASS]
+13.8s	27	  P_6 (non-reg): expected=3.732051, got=3.732051 -> [PASS]
+13.8s	28	  W_6 (non-reg): expected=6.000000, got=6.000000 -> [PASS]
+13.8s	29	  Barbell(4,1) (non-reg): expected=5.302776, got=5.302776 -> [PASS]
+13.8s	30	=================================================================
+13.8s	31	All unit tests PASSED.
+13.8s	32	
+13.8s	33	Build-graph roundtrip test:
+13.8s	34	  K_5 from state vector: edges=10, mu=5.000000 -> [PASS]
+13.8s	35	  K_5 dv=[4. 4. 4. 4. 4.], mv=[4. 4. 4. 4. 4.] -> [PASS]
+13.8s	36	  S_5 dv=[4. 1. 1. 1. 1.], mv=[1. 4. 4. 4. 4.]
+13.8s	37	  S_5 dv/mv check -> [PASS]
+13.8s	38	
+13.8s	39	=================================================================
+13.8s	40	CROSS-VERIFICATION: NetworkX vs Numpy bypass
+13.8s	41	=================================================================
+13.8s	42	  K_5: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+13.8s	43	  S_5: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+13.8s	44	  C_6: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+13.8s	45	  P_6: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+13.8s	46	  W_6: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+13.8s	47	  Barbell(4,1): mu_diff=1.78e-15, dv_match=True, mv_match=True -> [PASS]
+13.8s	48	
+13.8s	49	  Random graph stress test (n=15, 50 graphs):
+13.8s	50	    Results: 50/50 passed, 0 failed -> [PASS]
+13.8s	51	=================================================================
+13.8s	52	All numpy cross-verification tests PASSED.
+14.0s	53	Performance benchmark: n=15, 200 connected graphs
+14.0s	54	-------------------------------------------------------
+14.0s	55	  NetworkX: 0.136s (0.68 ms/graph)
+14.0s	56	  Numpy:    0.024s (0.12 ms/graph)
+14.0s	57	  Speedup:  5.7x
+14.0s	58	  Max result difference: 0.00e+00
+14.0s	59	  Results match: YES
+14.0s	60	-------------------------------------------------------
+14.1s	61	Reward function test on K_5 (n=5, complete graph):
+14.1s	62	  Bound 1 (OPEN): nx=-3.000000, np=-3.000000 -> [MATCH]
+14.1s	63	  Bound 2 (DISPROVED): nx=-3.000000, np=-3.000000 -> [MATCH]
+14.1s	64	  Bound 4 (OPEN): nx=-3.000000, np=-3.000000 -> [MATCH]
+14.1s	65	  Bound 9 (OPEN): nx=-3.000000, np=-3.000000 -> [MATCH]
+14.1s	66	  Bound 33 (OPEN, edge-max): nx=-3.000000, np=-3.000000 -> [MATCH]
+14.1s	67	
+14.1s	68	(Negative rewards on K_5 are expected — regular graphs satisfy most bounds.)
+14.1s	69	CEM training engine defined (Ghebleh 2024 settings: Adam + CrossEntropyLoss + adaptive randomness).
+14.2s	70	
+14.2s	71	---------------------------------------------------
+14.2s	72	TIME BUDGET STATUS
+14.2s	73	  Elapsed:   0.00h (1s)
+14.2s	74	  Remaining: 11.50h (41399s)
+14.2s	75	  Budget:    11.5h
+14.2s	76	  benchmark   : 0.00h used / 1.5h allocated
+14.2s	77	  primary     : 0.00h used / 6.0h allocated
+14.2s	78	  secondary   : 0.00h used / 3.0h allocated
+14.2s	79	---------------------------------------------------
+14.2s	80	
+14.2s	81	======================================================================
+14.2s	82	BENCHMARK: Bound 2, n=15
+14.2s	83	Expected: Counterexample should be found (bound disproved at n=12)
+14.2s	84	======================================================================
+14.2s	85	Time limit for this run: 1.50h
+14.2s	86	
+14.2s	87	======================================================================
+14.2s	88	CEM Training: Bound 2 (DISPROVED)
+14.2s	89	Formula: mu <= max_v (2*m_v^2/d_v)
+14.2s	90	N=15, decisions=105, state_dim=210
+14.2s	91	Sessions=1000, elite=90%, super=97.5%
+14.2s	92	Max iterations=5000, LR=0.003 (Adam)
+14.2s	93	Loss: CrossEntropyLoss, Output: 2 logits
+14.2s	94	Adaptive randomness: Ghebleh(2024) — init=0.005, wait=10, mult=1.1, cap=0.025
+14.2s	95	Reward computation: numpy bypass (triu indices precomputed)
+14.2s	96	======================================================================
+14.2s	97	
+19.6s	98	Iter     1 | best=-6.040630 | elite_mean=-9.930689 | loss=0.6360 | threshold=-12.1083 | rand=0.0050 | time=0.0s
+26.5s	99	Iter    20 | best=-3.037111 | elite_mean=-8.603351 | loss=0.6473 | threshold=-11.8069 | rand=0.0050 | time=7.0s
+33.7s	100	Iter    40 | best=-3.037111 | elite_mean=-7.802914 | loss=0.6393 | threshold=-11.0397 | rand=0.0061 | time=14.2s
+40.8s	101	Iter    60 | best=-2.894588 | elite_mean=-8.013326 | loss=0.6298 | threshold=-11.6573 | rand=0.0050 | time=21.3s
+48.2s	102	Iter    80 | best=-2.894588 | elite_mean=-7.946562 | loss=0.6173 | threshold=-11.2848 | rand=0.0061 | time=28.6s
+55.8s	103	Iter   100 | best=-2.894588 | elite_mean=-7.717119 | loss=0.6198 | threshold=-10.8137 | rand=0.0073 | time=36.2s
+63.1s	104	Iter   120 | best=-2.894588 | elite_mean=-7.977473 | loss=0.6145 | threshold=-11.1760 | rand=0.0089 | time=43.6s
+70.3s	105	Iter   140 | best=-2.894588 | elite_mean=-7.727583 | loss=0.6026 | threshold=-11.2224 | rand=0.0107 | time=50.7s
+77.5s	106	Iter   160 | best=-2.894588 | elite_mean=-8.025076 | loss=0.5998 | threshold=-11.1857 | rand=0.0130 | time=57.9s
+85.0s	107	Iter   180 | best=-2.894588 | elite_mean=-8.391552 | loss=0.6061 | threshold=-12.0877 | rand=0.0157 | time=65.4s
+92.2s	108	Iter   200 | best=-2.277570 | elite_mean=-7.719878 | loss=0.5649 | threshold=-11.3939 | rand=0.0050 | time=72.7s
+99.7s	109	Iter   220 | best=-2.277570 | elite_mean=-8.125429 | loss=0.5661 | threshold=-11.3400 | rand=0.0061 | time=80.1s
+107.2s	110	Iter   240 | best=-2.277570 | elite_mean=-8.029759 | loss=0.5658 | threshold=-11.3371 | rand=0.0073 | time=87.7s
+114.7s	111	Iter   260 | best=-2.277570 | elite_mean=-7.786647 | loss=0.5408 | threshold=-10.8561 | rand=0.0089 | time=95.1s
+122.1s	112	Iter   280 | best=-2.277570 | elite_mean=-7.976688 | loss=0.5528 | threshold=-11.3094 | rand=0.0107 | time=102.6s
+129.5s	113	Iter   300 | best=-2.277570 | elite_mean=-8.203920 | loss=0.5497 | threshold=-11.6375 | rand=0.0130 | time=110.0s
+136.9s	114	Iter   320 | best=-2.277570 | elite_mean=-8.025417 | loss=0.5443 | threshold=-11.0989 | rand=0.0157 | time=117.4s
+144.2s	115	Iter   340 | best=-2.001629 | elite_mean=-8.212628 | loss=0.5272 | threshold=-11.6450 | rand=0.0050 | time=124.7s
+151.7s	116	Iter   360 | best=-2.001629 | elite_mean=-7.836735 | loss=0.4802 | threshold=-11.6458 | rand=0.0061 | time=132.1s
+159.3s	117	Iter   380 | best=-0.613964 | elite_mean=-8.080724 | loss=0.4519 | threshold=-11.9634 | rand=0.0055 | time=139.7s
+166.6s	118	Iter   400 | best=-0.613964 | elite_mean=-6.554083 | loss=0.3241 | threshold=-10.2730 | rand=0.0067 | time=147.0s
+173.6s	119	Iter   420 | best=-0.613964 | elite_mean=-3.801670 | loss=0.2049 | threshold=-5.7617 | rand=0.0081 | time=154.1s
+180.7s	120	Iter   440 | best=-0.613964 | elite_mean=-2.947815 | loss=0.1740 | threshold=-4.5613 | rand=0.0097 | time=161.2s
+187.8s	121	Iter   460 | best=-0.573031 | elite_mean=-2.127235 | loss=0.1106 | threshold=-2.9709 | rand=0.0050 | time=168.2s
+194.8s	122	Iter   480 | best=-0.573031 | elite_mean=-2.008034 | loss=0.0777 | threshold=-2.7160 | rand=0.0061 | time=175.3s
+202.4s	123	Iter   500 | best=-0.378378 | elite_mean=-0.662610 | loss=0.0266 | threshold=-0.7292 | rand=0.0055 | time=182.8s
+219.2s	124	Iter   520 | best=-0.378378 | elite_mean=-0.378378 | loss=0.0092 | threshold=-0.3784 | rand=0.0050 | time=198.7s
+238.3s	125	Iter   540 | best=-0.378378 | elite_mean=-0.378378 | loss=0.0522 | threshold=-0.3784 | rand=0.0061 | time=218.8s
+246.9s	126	Iter   560 | best=-0.368305 | elite_mean=-0.378265 | loss=0.0457 | threshold=-0.3784 | rand=0.0050 | time=227.3s
+255.7s	127	Iter   580 | best=-0.368305 | elite_mean=-0.368305 | loss=0.0430 | threshold=-0.3683 | rand=0.0061 | time=236.1s
+266.5s	128	Iter   600 | best=-0.368305 | elite_mean=-0.368305 | loss=0.0425 | threshold=-0.3683 | rand=0.0073 | time=246.7s
+280.2s	129	Iter   620 | best=-0.336577 | elite_mean=-0.368264 | loss=0.0422 | threshold=-0.3683 | rand=0.0050 | time=260.2s
+296.9s	130	Iter   640 | best=-0.336577 | elite_mean=-0.367931 | loss=0.0432 | threshold=-0.3683 | rand=0.0061 | time=276.8s
+314.7s	131	Iter   660 | best=-0.336577 | elite_mean=-0.366965 | loss=0.0438 | threshold=-0.3683 | rand=0.0073 | time=294.7s
+326.9s	132	Iter   680 | best=-0.336577 | elite_mean=-0.372742 | loss=0.0205 | threshold=-0.3784 | rand=0.0089 | time=307.1s
+337.8s	133	Iter   700 | best=-0.336577 | elite_mean=-0.370334 | loss=0.0235 | threshold=-0.3784 | rand=0.0107 | time=318.1s
+347.4s	134	Iter   720 | best=-0.336577 | elite_mean=-0.368393 | loss=0.0260 | threshold=-0.3784 | rand=0.0130 | time=327.8s
+355.1s	135	Iter   740 | best=-0.336577 | elite_mean=-0.339082 | loss=0.0648 | threshold=-0.3683 | rand=0.0157 | time=335.6s
+362.2s	136	Iter   760 | best=-0.336577 | elite_mean=-0.336577 | loss=0.0660 | threshold=-0.3366 | rand=0.0190 | time=342.7s
+369.5s	137	Iter   780 | best=-0.336577 | elite_mean=-0.336577 | loss=0.0655 | threshold=-0.3366 | rand=0.0230 | time=350.0s
+377.1s	138	Iter   800 | best=-0.336577 | elite_mean=-0.336577 | loss=0.0683 | threshold=-0.3366 | rand=0.0250 | time=357.6s
+385.0s	139	Iter   820 | best=-0.336577 | elite_mean=-0.336577 | loss=0.0668 | threshold=-0.3366 | rand=0.0250 | time=365.4s
+392.9s	140	Iter   840 | best=-0.309549 | elite_mean=-0.336471 | loss=0.0524 | threshold=-0.3366 | rand=0.0055 | time=373.3s
+404.7s	141	Iter   860 | best=-0.309549 | elite_mean=-0.336542 | loss=0.0426 | threshold=-0.3366 | rand=0.0067 | time=384.8s
+421.9s	142	Iter   880 | best=-0.309549 | elite_mean=-0.336524 | loss=0.0425 | threshold=-0.3366 | rand=0.0081 | time=401.8s
+440.3s	143	Iter   900 | best=-0.309549 | elite_mean=-0.336418 | loss=0.0436 | threshold=-0.3366 | rand=0.0097 | time=420.2s
+458.4s	144	Iter   920 | best=-0.309549 | elite_mean=-0.336312 | loss=0.0433 | threshold=-0.3366 | rand=0.0118 | time=438.4s
+476.3s	145	Iter   940 | best=-0.309549 | elite_mean=-0.336206 | loss=0.0432 | threshold=-0.3366 | rand=0.0143 | time=456.3s
+494.1s	146	Iter   960 | best=-0.309549 | elite_mean=-0.336127 | loss=0.0434 | threshold=-0.3366 | rand=0.0173 | time=474.1s
+512.0s	147	Iter   980 | best=-0.309549 | elite_mean=-0.336018 | loss=0.0440 | threshold=-0.3366 | rand=0.0209 | time=492.0s
+529.7s	148	Iter  1000 | best=-0.309549 | elite_mean=-0.335799 | loss=0.0442 | threshold=-0.3366 | rand=0.0250 | time=509.7s
+546.0s	149	Iter  1020 | best=-0.309549 | elite_mean=-0.309549 | loss=0.0097 | threshold=-0.3095 | rand=0.0250 | time=525.9s
+555.1s	150	Iter  1040 | best=-0.309549 | elite_mean=-0.309549 | loss=0.0431 | threshold=-0.3095 | rand=0.0250 | time=535.5s
+571.9s	151	Iter  1060 | best=-0.309549 | elite_mean=-0.309549 | loss=0.0100 | threshold=-0.3095 | rand=0.0250 | time=551.7s
+592.2s	152	Iter  1080 | best=-0.309549 | elite_mean=-0.309549 | loss=0.0097 | threshold=-0.3095 | rand=0.0250 | time=572.0s
+613.1s	153	Iter  1100 | best=-0.309549 | elite_mean=-0.309549 | loss=0.0105 | threshold=-0.3095 | rand=0.0250 | time=592.8s
+634.2s	154	Iter  1120 | best=-0.309549 | elite_mean=-0.309549 | loss=0.0104 | threshold=-0.3095 | rand=0.0250 | time=614.0s
+655.8s	155	Iter  1140 | best=-0.309549 | elite_mean=-0.309549 | loss=0.0096 | threshold=-0.3095 | rand=0.0250 | time=635.5s
+676.8s	156	Iter  1160 | best=-0.309549 | elite_mean=-0.309549 | loss=0.0101 | threshold=-0.3095 | rand=0.0250 | time=656.6s
+698.2s	157	Iter  1180 | best=-0.309549 | elite_mean=-0.309549 | loss=0.0100 | threshold=-0.3095 | rand=0.0250 | time=678.0s
+721.0s	158	Iter  1200 | best=-0.272302 | elite_mean=-0.309526 | loss=0.0087 | threshold=-0.3095 | rand=0.0050 | time=700.4s
+747.4s	159	Iter  1220 | best=-0.272302 | elite_mean=-0.308520 | loss=0.0109 | threshold=-0.3095 | rand=0.0061 | time=726.8s
+771.3s	160	Iter  1240 | best=-0.272302 | elite_mean=-0.272302 | loss=0.0075 | threshold=-0.2723 | rand=0.0055 | time=750.8s
+797.1s	161	Iter  1260 | best=-0.272302 | elite_mean=-0.272302 | loss=0.0080 | threshold=-0.2723 | rand=0.0067 | time=776.6s
+822.4s	162	Iter  1280 | best=-0.272302 | elite_mean=-0.272302 | loss=0.0092 | threshold=-0.2723 | rand=0.0081 | time=801.9s
+846.9s	163	Iter  1300 | best=-0.272302 | elite_mean=-0.272302 | loss=0.0081 | threshold=-0.2723 | rand=0.0097 | time=826.5s
+870.2s	164	Iter  1320 | best=-0.272302 | elite_mean=-0.272302 | loss=0.0087 | threshold=-0.2723 | rand=0.0118 | time=849.8s
+893.8s	165	Iter  1340 | best=-0.272302 | elite_mean=-0.272302 | loss=0.0082 | threshold=-0.2723 | rand=0.0143 | time=873.5s
+916.3s	166	Iter  1360 | best=-0.272302 | elite_mean=-0.272302 | loss=0.0076 | threshold=-0.2723 | rand=0.0173 | time=896.0s
+938.4s	167	Iter  1380 | best=-0.272302 | elite_mean=-0.272302 | loss=0.0091 | threshold=-0.2723 | rand=0.0209 | time=918.2s
+960.3s	168	Iter  1400 | best=-0.272302 | elite_mean=-0.272302 | loss=0.0087 | threshold=-0.2723 | rand=0.0250 | time=940.0s
+984.0s	169	Iter  1420 | best=-0.270777 | elite_mean=-0.272301 | loss=0.0091 | threshold=-0.2723 | rand=0.0055 | time=963.5s
+1009.7s	170	Iter  1440 | best=-0.270777 | elite_mean=-0.272300 | loss=0.0087 | threshold=-0.2723 | rand=0.0067 | time=989.2s
+1035.0s	171	Iter  1460 | best=-0.270777 | elite_mean=-0.272300 | loss=0.0092 | threshold=-0.2723 | rand=0.0081 | time=1014.5s
+1059.2s	172	Iter  1480 | best=-0.270777 | elite_mean=-0.272300 | loss=0.0082 | threshold=-0.2723 | rand=0.0097 | time=1038.8s
+1083.8s	173	Iter  1500 | best=-0.270777 | elite_mean=-0.272299 | loss=0.0097 | threshold=-0.2723 | rand=0.0118 | time=1063.4s
+1106.9s	174	Iter  1520 | best=-0.270777 | elite_mean=-0.272293 | loss=0.0089 | threshold=-0.2723 | rand=0.0143 | time=1086.7s
+1129.7s	175	Iter  1540 | best=-0.270777 | elite_mean=-0.272291 | loss=0.0102 | threshold=-0.2723 | rand=0.0173 | time=1109.4s
+1151.6s	176	Iter  1560 | best=-0.270777 | elite_mean=-0.272290 | loss=0.0099 | threshold=-0.2723 | rand=0.0209 | time=1131.3s
+1176.0s	177	Iter  1580 | best=-0.270777 | elite_mean=-0.272291 | loss=0.0093 | threshold=-0.2723 | rand=0.0055 | time=1155.5s
+1202.0s	178	Iter  1600 | best=-0.270777 | elite_mean=-0.272288 | loss=0.0100 | threshold=-0.2723 | rand=0.0067 | time=1181.5s
+1227.6s	179	Iter  1620 | best=-0.270777 | elite_mean=-0.272287 | loss=0.0097 | threshold=-0.2723 | rand=0.0081 | time=1207.1s
+1252.2s	180	Iter  1640 | best=-0.270777 | elite_mean=-0.272284 | loss=0.0104 | threshold=-0.2723 | rand=0.0097 | time=1231.9s
+1276.6s	181	Iter  1660 | best=-0.270777 | elite_mean=-0.272280 | loss=0.0101 | threshold=-0.2723 | rand=0.0118 | time=1256.2s
+1299.6s	182	Iter  1680 | best=-0.270777 | elite_mean=-0.272278 | loss=0.0108 | threshold=-0.2723 | rand=0.0143 | time=1279.2s
+1322.3s	183	Iter  1700 | best=-0.270777 | elite_mean=-0.272273 | loss=0.0118 | threshold=-0.2723 | rand=0.0173 | time=1302.0s
+1344.6s	184	Iter  1720 | best=-0.270777 | elite_mean=-0.272264 | loss=0.0121 | threshold=-0.2723 | rand=0.0209 | time=1324.3s
+1354.1s	185	Iter  1740 | best=-0.270777 | elite_mean=-0.272005 | loss=0.0239 | threshold=-0.2723 | rand=0.0250 | time=1334.5s
+1362.6s	186	Iter  1760 | best=-0.270777 | elite_mean=-0.271962 | loss=0.0260 | threshold=-0.2723 | rand=0.0250 | time=1343.0s
+1370.9s	187	Iter  1780 | best=-0.270777 | elite_mean=-0.271919 | loss=0.0283 | threshold=-0.2723 | rand=0.0250 | time=1351.3s
+1379.3s	188	Iter  1800 | best=-0.270777 | elite_mean=-0.271865 | loss=0.0314 | threshold=-0.2723 | rand=0.0250 | time=1359.7s
+1388.0s	189	Iter  1820 | best=-0.270777 | elite_mean=-0.271745 | loss=0.0347 | threshold=-0.2723 | rand=0.0250 | time=1368.4s
+1396.3s	190	Iter  1840 | best=-0.270777 | elite_mean=-0.272029 | loss=0.0202 | threshold=-0.2723 | rand=0.0250 | time=1376.7s
+1404.6s	191	Iter  1860 | best=-0.270777 | elite_mean=-0.272054 | loss=0.0218 | threshold=-0.2723 | rand=0.0250 | time=1385.0s
+1412.9s	192	Iter  1880 | best=-0.270777 | elite_mean=-0.272004 | loss=0.0246 | threshold=-0.2723 | rand=0.0250 | time=1393.3s
+1421.4s	193	Iter  1900 | best=-0.270777 | elite_mean=-0.271995 | loss=0.0236 | threshold=-0.2723 | rand=0.0250 | time=1401.8s
+1432.3s	194	Iter  1920 | best=-0.270777 | elite_mean=-0.272187 | loss=0.0161 | threshold=-0.2723 | rand=0.0055 | time=1412.4s
+1445.1s	195	Iter  1940 | best=-0.270777 | elite_mean=-0.272162 | loss=0.0126 | threshold=-0.2723 | rand=0.0067 | time=1425.2s
+1455.1s	196	Iter  1960 | best=-0.270777 | elite_mean=-0.270777 | loss=0.0439 | threshold=-0.2708 | rand=0.0081 | time=1435.4s
+1465.8s	197	Iter  1980 | best=-0.270777 | elite_mean=-0.270777 | loss=0.0447 | threshold=-0.2708 | rand=0.0097 | time=1446.0s
+1480.0s	198	Iter  2000 | best=-0.270777 | elite_mean=-0.270777 | loss=0.0456 | threshold=-0.2708 | rand=0.0118 | time=1460.0s
+1492.9s	199	Iter  2020 | best=-0.198430 | elite_mean=-0.272020 | loss=0.0164 | threshold=-0.2723 | rand=0.0055 | time=1473.0s
+1505.4s	200	Iter  2040 | best=-0.198430 | elite_mean=-0.272016 | loss=0.0161 | threshold=-0.2723 | rand=0.0067 | time=1485.5s
+1517.7s	201	Iter  2060 | best=-0.198430 | elite_mean=-0.271994 | loss=0.0160 | threshold=-0.2723 | rand=0.0081 | time=1497.9s
+1529.8s	202	Iter  2080 | best=-0.198430 | elite_mean=-0.271954 | loss=0.0183 | threshold=-0.2723 | rand=0.0097 | time=1510.0s
+1540.9s	203	Iter  2100 | best=-0.198430 | elite_mean=-0.271889 | loss=0.0222 | threshold=-0.2723 | rand=0.0118 | time=1521.1s
+1551.3s	204	Iter  2120 | best=-0.198430 | elite_mean=-0.271766 | loss=0.0241 | threshold=-0.2723 | rand=0.0143 | time=1531.6s
+1561.2s	205	Iter  2140 | best=-0.198430 | elite_mean=-0.271658 | loss=0.0288 | threshold=-0.2723 | rand=0.0173 | time=1541.5s
+1570.7s	206	Iter  2160 | best=-0.198430 | elite_mean=-0.271501 | loss=0.0313 | threshold=-0.2723 | rand=0.0209 | time=1551.0s
+1579.2s	207	Iter  2180 | best=-0.198430 | elite_mean=-0.271319 | loss=0.0383 | threshold=-0.2723 | rand=0.0250 | time=1559.6s
+1587.3s	208	Iter  2200 | best=-0.198430 | elite_mean=-0.270976 | loss=0.0488 | threshold=-0.2723 | rand=0.0250 | time=1567.7s
+1595.4s	209	Iter  2220 | best=-0.198430 | elite_mean=-0.271072 | loss=0.0452 | threshold=-0.2723 | rand=0.0250 | time=1575.8s
+1603.6s	210	Iter  2240 | best=-0.198430 | elite_mean=-0.271072 | loss=0.0467 | threshold=-0.2723 | rand=0.0250 | time=1584.0s
+1611.6s	211	Iter  2260 | best=-0.198430 | elite_mean=-0.271123 | loss=0.0455 | threshold=-0.2723 | rand=0.0250 | time=1592.0s
+1619.5s	212	Iter  2280 | best=-0.198430 | elite_mean=-0.269777 | loss=0.0725 | threshold=-0.2723 | rand=0.0250 | time=1600.0s
+1627.0s	213	Iter  2300 | best=-0.198430 | elite_mean=-0.269847 | loss=0.0726 | threshold=-0.2708 | rand=0.0250 | time=1607.4s
+1634.8s	214	Iter  2320 | best=-0.198430 | elite_mean=-0.269956 | loss=0.0821 | threshold=-0.2708 | rand=0.0250 | time=1615.3s
+1642.5s	215	Iter  2340 | best=-0.198430 | elite_mean=-0.888389 | loss=0.0909 | threshold=-1.6293 | rand=0.0250 | time=1622.9s
+1649.8s	216	Iter  2360 | best=-0.198430 | elite_mean=-0.789794 | loss=0.0729 | threshold=-1.3640 | rand=0.0250 | time=1630.2s
+1657.3s	217	Iter  2380 | best=-0.198430 | elite_mean=-0.270915 | loss=0.0370 | threshold=-0.2723 | rand=0.0250 | time=1637.7s
+1665.2s	218	Iter  2400 | best=-0.198430 | elite_mean=-0.271017 | loss=0.0358 | threshold=-0.2723 | rand=0.0250 | time=1645.6s
+1673.3s	219	Iter  2420 | best=-0.198430 | elite_mean=-0.271223 | loss=0.0315 | threshold=-0.2723 | rand=0.0250 | time=1653.7s
+1681.3s	220	Iter  2440 | best=-0.198430 | elite_mean=-0.271137 | loss=0.0367 | threshold=-0.2723 | rand=0.0250 | time=1661.7s
+1689.5s	221	Iter  2460 | best=-0.198430 | elite_mean=-0.271148 | loss=0.0359 | threshold=-0.2723 | rand=0.0250 | time=1669.9s
+1697.6s	222	Iter  2480 | best=-0.198430 | elite_mean=-0.270874 | loss=0.0419 | threshold=-0.2723 | rand=0.0250 | time=1678.0s
+1705.9s	223	Iter  2500 | best=-0.198430 | elite_mean=-0.271057 | loss=0.0383 | threshold=-0.2723 | rand=0.0250 | time=1686.3s
+1714.1s	224	Iter  2520 | best=-0.198430 | elite_mean=-0.270969 | loss=0.0385 | threshold=-0.2723 | rand=0.0250 | time=1694.5s
+1722.1s	225	Iter  2540 | best=-0.198430 | elite_mean=-0.270860 | loss=0.0439 | threshold=-0.2723 | rand=0.0250 | time=1702.5s
+1732.9s	226	Iter  2560 | best=-0.179082 | elite_mean=-0.271677 | loss=0.0221 | threshold=-0.2723 | rand=0.0055 | time=1713.1s
+1744.9s	227	Iter  2580 | best=-0.179082 | elite_mean=-0.268954 | loss=0.0776 | threshold=-0.2708 | rand=0.0067 | time=1725.3s
+1752.9s	228	Iter  2600 | best=-0.179082 | elite_mean=-0.270448 | loss=0.0484 | threshold=-0.2723 | rand=0.0081 | time=1733.3s
+1760.2s	229	Iter  2620 | best=-0.179082 | elite_mean=-0.269046 | loss=0.0780 | threshold=-0.2708 | rand=0.0097 | time=1740.6s
+1767.7s	230	Iter  2640 | best=-0.179082 | elite_mean=-0.268637 | loss=0.0705 | threshold=-0.2708 | rand=0.0118 | time=1748.1s
+1775.4s	231	Iter  2660 | best=-0.179082 | elite_mean=-0.268777 | loss=0.0686 | threshold=-0.2708 | rand=0.0143 | time=1755.8s
+1783.1s	232	Iter  2680 | best=-0.179082 | elite_mean=-0.268860 | loss=0.0709 | threshold=-0.2708 | rand=0.0173 | time=1763.6s
+1790.8s	233	Iter  2700 | best=-0.179082 | elite_mean=-0.268973 | loss=0.0700 | threshold=-0.2708 | rand=0.0209 | time=1771.2s
+1798.6s	234	Iter  2720 | best=-0.179082 | elite_mean=-0.269041 | loss=0.0709 | threshold=-0.2708 | rand=0.0250 | time=1779.0s
+1806.5s	235	Iter  2740 | best=-0.179082 | elite_mean=-0.268601 | loss=0.0724 | threshold=-0.2708 | rand=0.0250 | time=1786.9s
+1814.4s	236	Iter  2760 | best=-0.179082 | elite_mean=-0.268651 | loss=0.0720 | threshold=-0.2708 | rand=0.0250 | time=1794.8s
+1822.5s	237	Iter  2780 | best=-0.179082 | elite_mean=-0.268734 | loss=0.0713 | threshold=-0.2708 | rand=0.0250 | time=1802.9s
+1830.6s	238	Iter  2800 | best=-0.179082 | elite_mean=-0.268831 | loss=0.0719 | threshold=-0.2708 | rand=0.0250 | time=1811.0s
+1838.8s	239	Iter  2820 | best=-0.179082 | elite_mean=-0.268891 | loss=0.0710 | threshold=-0.2708 | rand=0.0250 | time=1819.2s
+1847.3s	240	Iter  2840 | best=-0.179082 | elite_mean=-0.268957 | loss=0.0724 | threshold=-0.2708 | rand=0.0250 | time=1827.7s
+1855.7s	241	Iter  2860 | best=-0.179082 | elite_mean=-0.268648 | loss=0.0727 | threshold=-0.2708 | rand=0.0250 | time=1836.1s
+1864.2s	242	Iter  2880 | best=-0.179082 | elite_mean=-0.268688 | loss=0.0710 | threshold=-0.2708 | rand=0.0250 | time=1844.6s
+1872.8s	243	Iter  2900 | best=-0.179082 | elite_mean=-0.268453 | loss=0.0724 | threshold=-0.2708 | rand=0.0250 | time=1853.2s
+1881.6s	244	Iter  2920 | best=-0.179082 | elite_mean=-0.268514 | loss=0.0713 | threshold=-0.2708 | rand=0.0250 | time=1862.0s
+1890.5s	245	Iter  2940 | best=-0.179082 | elite_mean=-0.268590 | loss=0.0733 | threshold=-0.2708 | rand=0.0250 | time=1870.8s
+1899.6s	246	Iter  2960 | best=-0.179082 | elite_mean=-0.268653 | loss=0.0707 | threshold=-0.2708 | rand=0.0250 | time=1879.9s
+1908.5s	247	Iter  2980 | best=-0.179082 | elite_mean=-0.268561 | loss=0.0719 | threshold=-0.2708 | rand=0.0250 | time=1888.9s
+1917.7s	248	Iter  3000 | best=-0.179082 | elite_mean=-0.268612 | loss=0.0731 | threshold=-0.2708 | rand=0.0250 | time=1898.1s
+1927.0s	249	Iter  3020 | best=-0.179082 | elite_mean=-0.268645 | loss=0.0711 | threshold=-0.2708 | rand=0.0250 | time=1907.4s
+1936.1s	250	Iter  3040 | best=-0.179082 | elite_mean=-0.268716 | loss=0.0709 | threshold=-0.2708 | rand=0.0250 | time=1916.5s
+1945.4s	251	Iter  3060 | best=-0.179082 | elite_mean=-0.268768 | loss=0.0710 | threshold=-0.2708 | rand=0.0250 | time=1925.8s
+1954.9s	252	Iter  3080 | best=-0.179082 | elite_mean=-0.268740 | loss=0.0714 | threshold=-0.2708 | rand=0.0250 | time=1935.3s
+1964.8s	253	Iter  3100 | best=-0.179082 | elite_mean=-0.268808 | loss=0.0713 | threshold=-0.2708 | rand=0.0250 | time=1945.1s
+1974.5s	254	Iter  3120 | best=-0.179082 | elite_mean=-0.268859 | loss=0.0712 | threshold=-0.2708 | rand=0.0250 | time=1954.9s
+1984.5s	255	Iter  3140 | best=-0.179082 | elite_mean=-0.268926 | loss=0.0722 | threshold=-0.2708 | rand=0.0250 | time=1964.8s
+1994.3s	256	Iter  3160 | best=-0.179082 | elite_mean=-0.268865 | loss=0.0726 | threshold=-0.2708 | rand=0.0250 | time=1974.7s
+2004.1s	257	Iter  3180 | best=-0.179082 | elite_mean=-0.268917 | loss=0.0727 | threshold=-0.2708 | rand=0.0250 | time=1984.4s
+2013.9s	258	Iter  3200 | best=-0.179082 | elite_mean=-0.268782 | loss=0.0729 | threshold=-0.2708 | rand=0.0250 | time=1994.2s
+2023.9s	259	Iter  3220 | best=-0.179082 | elite_mean=-0.268596 | loss=0.0716 | threshold=-0.2708 | rand=0.0250 | time=2004.2s
+2034.1s	260	Iter  3240 | best=-0.179082 | elite_mean=-0.268648 | loss=0.0725 | threshold=-0.2708 | rand=0.0250 | time=2014.4s
+2044.2s	261	Iter  3260 | best=-0.179082 | elite_mean=-0.268695 | loss=0.0722 | threshold=-0.2708 | rand=0.0250 | time=2024.5s
+2055.0s	262	Iter  3280 | best=-0.179082 | elite_mean=-0.268737 | loss=0.0720 | threshold=-0.2708 | rand=0.0250 | time=2035.3s
+2066.0s	263	Iter  3300 | best=-0.179082 | elite_mean=-0.268594 | loss=0.0717 | threshold=-0.2708 | rand=0.0250 | time=2046.3s
+2077.0s	264	Iter  3320 | best=-0.179082 | elite_mean=-0.268460 | loss=0.0720 | threshold=-0.2708 | rand=0.0250 | time=2057.3s
+2088.1s	265	Iter  3340 | best=-0.179082 | elite_mean=-0.268491 | loss=0.0730 | threshold=-0.2708 | rand=0.0250 | time=2068.4s
+2099.6s	266	Iter  3360 | best=-0.179082 | elite_mean=-0.268180 | loss=0.0727 | threshold=-0.2708 | rand=0.0250 | time=2079.8s
+2110.8s	267	Iter  3380 | best=-0.179082 | elite_mean=-0.268227 | loss=0.0732 | threshold=-0.2708 | rand=0.0250 | time=2091.1s
+2122.0s	268	Iter  3400 | best=-0.179082 | elite_mean=-0.268262 | loss=0.0730 | threshold=-0.2708 | rand=0.0250 | time=2102.3s
+2133.5s	269	Iter  3420 | best=-0.179082 | elite_mean=-0.268319 | loss=0.0725 | threshold=-0.2708 | rand=0.0250 | time=2113.7s
+2144.8s	270	Iter  3440 | best=-0.179082 | elite_mean=-0.268198 | loss=0.0739 | threshold=-0.2708 | rand=0.0250 | time=2125.0s
+2156.1s	271	Iter  3460 | best=-0.179082 | elite_mean=-0.268238 | loss=0.0731 | threshold=-0.2708 | rand=0.0250 | time=2136.4s
+2167.8s	272	Iter  3480 | best=-0.179082 | elite_mean=-0.268018 | loss=0.0732 | threshold=-0.2708 | rand=0.0250 | time=2148.0s
+2175.1s	273	Iter  3500 | best=-0.179082 | elite_mean=-1.061394 | loss=0.1226 | threshold=-2.1647 | rand=0.0250 | time=2155.6s
+2182.1s	274	Iter  3520 | best=-0.179082 | elite_mean=-0.992358 | loss=0.1160 | threshold=-2.0749 | rand=0.0250 | time=2162.6s
+2189.2s	275	Iter  3540 | best=-0.179082 | elite_mean=-0.894556 | loss=0.1108 | threshold=-1.9784 | rand=0.0250 | time=2169.7s
+2196.3s	276	Iter  3560 | best=-0.179082 | elite_mean=-1.237442 | loss=0.1258 | threshold=-2.1527 | rand=0.0250 | time=2176.8s
+2203.3s	277	Iter  3580 | best=-0.179082 | elite_mean=-1.075983 | loss=0.1169 | threshold=-2.0946 | rand=0.0250 | time=2183.8s
+2210.3s	278	Iter  3600 | best=-0.179082 | elite_mean=-1.096117 | loss=0.1219 | threshold=-2.0416 | rand=0.0250 | time=2190.8s
+2217.3s	279	Iter  3620 | best=-0.179082 | elite_mean=-0.917338 | loss=0.1064 | threshold=-1.9277 | rand=0.0250 | time=2197.8s
+2224.4s	280	Iter  3640 | best=-0.179082 | elite_mean=-0.783352 | loss=0.1075 | threshold=-1.7842 | rand=0.0250 | time=2204.8s
+2231.6s	281	Iter  3660 | best=-0.179082 | elite_mean=-1.005941 | loss=0.1030 | threshold=-1.9262 | rand=0.0250 | time=2212.0s
+2238.8s	282	Iter  3680 | best=-0.179082 | elite_mean=-0.885739 | loss=0.0987 | threshold=-1.8459 | rand=0.0250 | time=2219.2s
+2245.9s	283	Iter  3700 | best=-0.179082 | elite_mean=-0.980136 | loss=0.1025 | threshold=-1.8999 | rand=0.0250 | time=2226.4s
+2253.1s	284	Iter  3720 | best=-0.179082 | elite_mean=-0.912253 | loss=0.1016 | threshold=-1.8485 | rand=0.0250 | time=2233.6s
+2260.2s	285	Iter  3740 | best=-0.179082 | elite_mean=-1.081031 | loss=0.1075 | threshold=-2.0147 | rand=0.0250 | time=2240.7s
+2267.5s	286	Iter  3760 | best=-0.179082 | elite_mean=-0.818553 | loss=0.1060 | threshold=-1.8872 | rand=0.0250 | time=2248.0s
+2274.6s	287	Iter  3780 | best=-0.179082 | elite_mean=-0.799981 | loss=0.1103 | threshold=-1.8378 | rand=0.0250 | time=2255.1s
+2281.7s	288	Iter  3800 | best=-0.179082 | elite_mean=-0.904815 | loss=0.1078 | threshold=-1.8897 | rand=0.0250 | time=2262.2s
+2288.9s	289	Iter  3820 | best=-0.179082 | elite_mean=-1.000279 | loss=0.1148 | threshold=-1.9324 | rand=0.0250 | time=2269.4s
+2296.0s	290	Iter  3840 | best=-0.179082 | elite_mean=-0.699065 | loss=0.1117 | threshold=-1.7174 | rand=0.0250 | time=2276.5s
+2303.2s	291	Iter  3860 | best=-0.179082 | elite_mean=-0.787722 | loss=0.1089 | threshold=-1.8914 | rand=0.0250 | time=2283.7s
+2310.4s	292	Iter  3880 | best=-0.179082 | elite_mean=-1.084648 | loss=0.1155 | threshold=-2.0224 | rand=0.0250 | time=2290.8s
+2317.3s	293	Iter  3900 | best=-0.179082 | elite_mean=-1.073815 | loss=0.1120 | threshold=-2.0147 | rand=0.0250 | time=2297.7s
+2324.2s	294	Iter  3920 | best=-0.179082 | elite_mean=-1.012363 | loss=0.1035 | threshold=-1.8999 | rand=0.0250 | time=2304.7s
+2331.5s	295	Iter  3940 | best=-0.179082 | elite_mean=-1.033384 | loss=0.0959 | threshold=-1.8988 | rand=0.0250 | time=2312.0s
+2338.9s	296	Iter  3960 | best=-0.179082 | elite_mean=-0.998524 | loss=0.1038 | threshold=-1.9114 | rand=0.0250 | time=2319.3s
+2346.3s	297	Iter  3980 | best=-0.179082 | elite_mean=-0.918379 | loss=0.1052 | threshold=-1.8257 | rand=0.0250 | time=2326.7s
+2353.4s	298	Iter  4000 | best=-0.179082 | elite_mean=-0.726723 | loss=0.0901 | threshold=-1.7118 | rand=0.0250 | time=2333.8s
+2360.4s	299	Iter  4020 | best=-0.179082 | elite_mean=-0.792983 | loss=0.0915 | threshold=-1.7490 | rand=0.0250 | time=2340.8s
+2367.5s	300	Iter  4040 | best=-0.179082 | elite_mean=-0.690989 | loss=0.0873 | threshold=-1.6785 | rand=0.0250 | time=2348.0s
+2374.8s	301	Iter  4060 | best=-0.179082 | elite_mean=-0.559641 | loss=0.0870 | threshold=-1.6003 | rand=0.0250 | time=2355.3s
+2381.9s	302	Iter  4080 | best=-0.179082 | elite_mean=-0.871226 | loss=0.1054 | threshold=-1.7999 | rand=0.0250 | time=2362.4s
+2389.0s	303	Iter  4100 | best=-0.179082 | elite_mean=-0.645368 | loss=0.0883 | threshold=-1.6785 | rand=0.0250 | time=2369.5s
+2396.1s	304	Iter  4120 | best=-0.179082 | elite_mean=-0.929586 | loss=0.1050 | threshold=-1.9410 | rand=0.0250 | time=2376.6s
+2403.4s	305	Iter  4140 | best=-0.179082 | elite_mean=-0.839178 | loss=0.0969 | threshold=-1.8317 | rand=0.0250 | time=2383.8s
+2410.7s	306	Iter  4160 | best=-0.179082 | elite_mean=-0.759932 | loss=0.0857 | threshold=-1.7826 | rand=0.0250 | time=2391.2s
+2417.9s	307	Iter  4180 | best=-0.179082 | elite_mean=-0.253345 | loss=0.0476 | threshold=-0.2723 | rand=0.0050 | time=2398.3s
+2427.5s	308	Iter  4200 | best=-0.179082 | elite_mean=-0.267570 | loss=0.0178 | threshold=-0.2723 | rand=0.0061 | time=2407.8s
+2439.2s	309	Iter  4220 | best=-0.179082 | elite_mean=-0.267872 | loss=0.0170 | threshold=-0.2723 | rand=0.0073 | time=2419.4s
+2450.7s	310	Iter  4240 | best=-0.179082 | elite_mean=-0.266911 | loss=0.0199 | threshold=-0.2723 | rand=0.0089 | time=2431.0s
+2461.7s	311	Iter  4260 | best=-0.179082 | elite_mean=-0.266772 | loss=0.0188 | threshold=-0.2723 | rand=0.0107 | time=2442.0s
+2472.6s	312	Iter  4280 | best=-0.179082 | elite_mean=-0.266181 | loss=0.0173 | threshold=-0.2723 | rand=0.0130 | time=2452.8s
+2482.3s	313	Iter  4300 | best=-0.179082 | elite_mean=-0.192260 | loss=0.0521 | threshold=-0.1936 | rand=0.0157 | time=2462.7s
+2491.4s	314	Iter  4320 | best=-0.179082 | elite_mean=-0.192880 | loss=0.0467 | threshold=-0.1936 | rand=0.0190 | time=2471.7s
+2502.5s	315	Iter  4340 | best=-0.179082 | elite_mean=-0.193049 | loss=0.0456 | threshold=-0.1936 | rand=0.0230 | time=2482.7s
+2515.5s	316	Iter  4360 | best=-0.179082 | elite_mean=-0.193156 | loss=0.0446 | threshold=-0.1936 | rand=0.0250 | time=2495.7s
+2525.5s	317	Iter  4380 | best=-0.179082 | elite_mean=-0.193240 | loss=0.0137 | threshold=-0.1936 | rand=0.0250 | time=2505.5s
+2546.2s	318	Iter  4400 | best=-0.179082 | elite_mean=-0.193372 | loss=0.0107 | threshold=-0.1936 | rand=0.0250 | time=2525.9s
+2563.5s	319	Iter  4420 | best=-0.179082 | elite_mean=-0.193346 | loss=0.0104 | threshold=-0.1936 | rand=0.0250 | time=2543.2s
+2580.2s	320	Iter  4440 | best=-0.179082 | elite_mean=-0.188525 | loss=0.0297 | threshold=-0.1936 | rand=0.0250 | time=2560.6s
+2588.6s	321	Iter  4460 | best=-0.043705 | elite_mean=-0.179683 | loss=0.0480 | threshold=-0.1802 | rand=0.0055 | time=2569.0s
+2600.2s	322	Iter  4480 | best=-0.043705 | elite_mean=-0.179931 | loss=0.0445 | threshold=-0.1802 | rand=0.0067 | time=2580.3s
+2613.4s	323	Iter  4500 | best=-0.043705 | elite_mean=-0.189724 | loss=0.0183 | threshold=-0.1936 | rand=0.0081 | time=2593.7s
+2622.5s	324	Iter  4520 | best=-0.043705 | elite_mean=-0.176319 | loss=0.0416 | threshold=-0.1791 | rand=0.0097 | time=2602.9s
+2633.8s	325	Iter  4540 | best=-0.043705 | elite_mean=-0.176937 | loss=0.0421 | threshold=-0.1791 | rand=0.0118 | time=2614.0s
+2648.3s	326	Iter  4560 | best=-0.043705 | elite_mean=-0.177028 | loss=0.0427 | threshold=-0.1791 | rand=0.0143 | time=2628.3s
+2665.8s	327	Iter  4580 | best=-0.043705 | elite_mean=-0.177006 | loss=0.0430 | threshold=-0.1791 | rand=0.0173 | time=2645.7s
+2684.3s	328	Iter  4600 | best=-0.043705 | elite_mean=-0.176674 | loss=0.0434 | threshold=-0.1791 | rand=0.0209 | time=2664.2s
+2703.1s	329	Iter  4620 | best=-0.043705 | elite_mean=-0.176520 | loss=0.0432 | threshold=-0.1791 | rand=0.0250 | time=2683.0s
+2722.5s	330	Iter  4640 | best=-0.043705 | elite_mean=-0.176518 | loss=0.0435 | threshold=-0.1791 | rand=0.0250 | time=2702.3s
+2741.2s	331	Iter  4660 | best=-0.043705 | elite_mean=-0.176256 | loss=0.0426 | threshold=-0.1791 | rand=0.0250 | time=2721.1s
+2762.0s	332	Iter  4680 | best=-0.043705 | elite_mean=-0.176357 | loss=0.0114 | threshold=-0.1791 | rand=0.0250 | time=2741.7s
+2773.1s	333	Iter  4700 | best=-0.043705 | elite_mean=-0.159098 | loss=0.0212 | threshold=-0.1791 | rand=0.0250 | time=2753.5s
+2781.4s	334	Iter  4720 | best=-0.043705 | elite_mean=-0.152262 | loss=0.0257 | threshold=-0.1791 | rand=0.0250 | time=2761.8s
+2789.7s	335	Iter  4740 | best=-0.043705 | elite_mean=-0.159837 | loss=0.0208 | threshold=-0.1791 | rand=0.0250 | time=2770.1s
+2798.1s	336	Iter  4760 | best=-0.043705 | elite_mean=-0.157268 | loss=0.0243 | threshold=-0.1791 | rand=0.0250 | time=2778.5s
+2806.4s	337	Iter  4780 | best=-0.043705 | elite_mean=-0.152289 | loss=0.0267 | threshold=-0.1791 | rand=0.0250 | time=2786.8s
+2814.7s	338	Iter  4800 | best=-0.043705 | elite_mean=-0.147583 | loss=0.0302 | threshold=-0.1791 | rand=0.0250 | time=2795.1s
+2822.8s	339	Iter  4820 | best=-0.043705 | elite_mean=-0.136290 | loss=0.0316 | threshold=-0.1791 | rand=0.0250 | time=2803.2s
+2830.9s	340	Iter  4840 | best=-0.043705 | elite_mean=-0.130116 | loss=0.0370 | threshold=-0.1791 | rand=0.0250 | time=2811.3s
+2838.9s	341	Iter  4860 | best=-0.043705 | elite_mean=-0.119487 | loss=0.0391 | threshold=-0.1791 | rand=0.0250 | time=2819.4s
+2846.8s	342	Iter  4880 | best=-0.043705 | elite_mean=-0.102982 | loss=0.0457 | threshold=-0.1791 | rand=0.0250 | time=2827.2s
+2854.5s	343	Iter  4900 | best=-0.043705 | elite_mean=-0.046144 | loss=0.0619 | threshold=-0.1791 | rand=0.0250 | time=2835.0s
+2861.5s	344	Iter  4920 | best=-0.043705 | elite_mean=-0.043705 | loss=0.0600 | threshold=-0.0437 | rand=0.0250 | time=2842.0s
+2868.7s	345	Iter  4940 | best=-0.043705 | elite_mean=-0.043705 | loss=0.0663 | threshold=-0.0437 | rand=0.0250 | time=2849.2s
+2876.1s	346	Iter  4960 | best=-0.043705 | elite_mean=-0.043705 | loss=0.0636 | threshold=-0.0437 | rand=0.0250 | time=2856.6s
+2883.4s	347	Iter  4980 | best=-0.043705 | elite_mean=-0.043705 | loss=0.0602 | threshold=-0.0437 | rand=0.0250 | time=2863.9s
+2890.8s	348	Iter  5000 | best=-0.043705 | elite_mean=-0.043705 | loss=0.0618 | threshold=-0.0437 | rand=0.0250 | time=2871.4s
+2890.8s	349	
+2890.8s	350	Training complete. Total time: 2871.8s
+2890.8s	351	Best reward: -0.043705
+2890.8s	352	
+2890.8s	353	Near-miss analysis (best graph, reward=-0.043705):
+2890.8s	354	  mu (spectral radius) = 3.956295
+2890.8s	355	  Edges = 15
+2890.8s	356	  Max degree = 2, Min degree = 2
+2890.8s	357	  Degree sequence: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+2890.8s	358	
+2890.8s	359	Benchmark n=15: No counterexample found (best reward: -0.043705)
+2890.8s	360	
+2890.8s	361	---------------------------------------------------
+2890.8s	362	TIME BUDGET STATUS
+2890.8s	363	  Elapsed:   0.80h (2877s)
+2890.8s	364	  Remaining: 10.70h (38523s)
+2890.8s	365	  Budget:    11.5h
+2890.8s	366	  benchmark   : 0.80h used / 1.5h allocated
+2890.8s	367	  primary     : 0.00h used / 6.0h allocated
+2890.8s	368	  secondary   : 0.00h used / 3.0h allocated
+2890.8s	369	---------------------------------------------------
+2890.8s	370	
+2891.0s	371	======================================================================
+2891.0s	372	BENCHMARK: Bound 2, n=20
+2891.0s	373	Expected: Counterexample should be found (larger search space)
+2891.0s	374	======================================================================
+2891.0s	375	Time limit for this run: 0.70h
+2891.0s	376	
+2891.0s	377	======================================================================
+2891.0s	378	CEM Training: Bound 2 (DISPROVED)
+2891.0s	379	Formula: mu <= max_v (2*m_v^2/d_v)
+2891.0s	380	N=20, decisions=190, state_dim=380
+2891.0s	381	Sessions=1000, elite=90%, super=97.5%
+2891.0s	382	Max iterations=5000, LR=0.003 (Adam)
+2891.0s	383	Loss: CrossEntropyLoss, Output: 2 logits
+2891.0s	384	Adaptive randomness: Ghebleh(2024) — init=0.005, wait=10, mult=1.1, cap=0.025
+2891.0s	385	Reward computation: numpy bypass (triu indices precomputed)
+2891.0s	386	======================================================================
+2891.0s	387	
+2891.8s	388	Iter     1 | best=-9.829202 | elite_mean=-13.871961 | loss=0.6928 | threshold=-15.9633 | rand=0.0050 | time=0.0s
+2906.4s	389	Iter    20 | best=-6.902650 | elite_mean=-11.953833 | loss=0.6900 | threshold=-14.7044 | rand=0.0050 | time=14.5s
+2921.8s	390	Iter    40 | best=-6.902650 | elite_mean=-11.722264 | loss=0.6830 | threshold=-14.5376 | rand=0.0061 | time=29.9s
+2937.2s	391	Iter    60 | best=-6.902650 | elite_mean=-12.058653 | loss=0.6818 | threshold=-15.2255 | rand=0.0073 | time=45.4s
+2952.7s	392	Iter    80 | best=-6.902650 | elite_mean=-11.229241 | loss=0.6775 | threshold=-13.9539 | rand=0.0089 | time=60.8s
+2968.5s	393	Iter   100 | best=-6.902650 | elite_mean=-11.276170 | loss=0.6760 | threshold=-13.9782 | rand=0.0107 | time=76.7s
+2984.1s	394	Iter   120 | best=-6.902650 | elite_mean=-11.428439 | loss=0.6691 | threshold=-14.2275 | rand=0.0130 | time=92.3s
+3000.1s	395	Iter   140 | best=-6.902650 | elite_mean=-10.851037 | loss=0.6276 | threshold=-14.4103 | rand=0.0157 | time=108.2s
+3015.7s	396	Iter   160 | best=-5.327157 | elite_mean=-8.008566 | loss=0.2538 | threshold=-10.5351 | rand=0.0055 | time=123.9s
+3039.1s	397	Iter   180 | best=-4.072621 | elite_mean=-4.239089 | loss=0.0289 | threshold=-4.2408 | rand=0.0050 | time=145.4s
+3077.0s	398	Iter   200 | best=-3.114651 | elite_mean=-3.299648 | loss=0.0399 | threshold=-3.3107 | rand=0.0050 | time=185.1s
+3122.0s	399	Iter   220 | best=-2.344163 | elite_mean=-2.682171 | loss=0.0409 | threshold=-2.7072 | rand=0.0050 | time=230.2s
+3176.9s	400	Iter   240 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0290 | threshold=-2.3442 | rand=0.0061 | time=282.9s
+3233.8s	401	Iter   260 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0283 | threshold=-2.3442 | rand=0.0073 | time=340.0s
+3288.5s	402	Iter   280 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0289 | threshold=-2.3442 | rand=0.0089 | time=394.9s
+3339.8s	403	Iter   300 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0274 | threshold=-2.3442 | rand=0.0107 | time=446.2s
+3388.3s	404	Iter   320 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0283 | threshold=-2.3442 | rand=0.0130 | time=494.9s
+3435.5s	405	Iter   340 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0276 | threshold=-2.3442 | rand=0.0157 | time=542.1s
+3480.6s	406	Iter   360 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0274 | threshold=-2.3442 | rand=0.0190 | time=587.3s
+3523.7s	407	Iter   380 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0279 | threshold=-2.3442 | rand=0.0230 | time=630.6s
+3566.0s	408	Iter   400 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0281 | threshold=-2.3442 | rand=0.0250 | time=672.9s
+3607.9s	409	Iter   420 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0281 | threshold=-2.3442 | rand=0.0250 | time=714.9s
+3649.4s	410	Iter   440 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0274 | threshold=-2.3442 | rand=0.0250 | time=756.3s
+3691.0s	411	Iter   460 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0278 | threshold=-2.3442 | rand=0.0250 | time=797.8s
+3734.1s	412	Iter   480 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0290 | threshold=-2.3442 | rand=0.0250 | time=840.9s
+3776.7s	413	Iter   500 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0279 | threshold=-2.3442 | rand=0.0250 | time=883.6s
+3819.1s	414	Iter   520 | best=-2.344163 | elite_mean=-2.344163 | loss=0.0277 | threshold=-2.3442 | rand=0.0250 | time=925.9s
+3871.5s	415	Iter   540 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0284 | threshold=-2.3442 | rand=0.0055 | time=977.7s
+3925.8s	416	Iter   560 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0281 | threshold=-2.3442 | rand=0.0067 | time=1032.1s
+3978.0s	417	Iter   580 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0277 | threshold=-2.3442 | rand=0.0081 | time=1084.5s
+4027.0s	418	Iter   600 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0279 | threshold=-2.3442 | rand=0.0097 | time=1133.4s
+4075.7s	419	Iter   620 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0277 | threshold=-2.3442 | rand=0.0118 | time=1182.3s
+4122.3s	420	Iter   640 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0280 | threshold=-2.3442 | rand=0.0143 | time=1229.0s
+4167.7s	421	Iter   660 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0279 | threshold=-2.3442 | rand=0.0173 | time=1274.3s
+4212.3s	422	Iter   680 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0276 | threshold=-2.3442 | rand=0.0209 | time=1319.0s
+4255.4s	423	Iter   700 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0277 | threshold=-2.3442 | rand=0.0250 | time=1362.2s
+4297.9s	424	Iter   720 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0283 | threshold=-2.3442 | rand=0.0250 | time=1404.8s
+4340.8s	425	Iter   740 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0281 | threshold=-2.3442 | rand=0.0250 | time=1447.6s
+4383.9s	426	Iter   760 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0277 | threshold=-2.3442 | rand=0.0250 | time=1490.7s
+4426.4s	427	Iter   780 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0285 | threshold=-2.3442 | rand=0.0250 | time=1533.3s
+4469.7s	428	Iter   800 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0276 | threshold=-2.3442 | rand=0.0250 | time=1576.6s
+4512.2s	429	Iter   820 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0281 | threshold=-2.3442 | rand=0.0250 | time=1619.0s
+4556.1s	430	Iter   840 | best=-2.344124 | elite_mean=-2.344163 | loss=0.0281 | threshold=-2.3442 | rand=0.0250 | time=1662.7s
+4599.0s	431	Iter   860 | best=-2.344124 | elite_mean=-2.344162 | loss=0.0277 | threshold=-2.3442 | rand=0.0250 | time=1705.9s
+4642.1s	432	Iter   880 | best=-2.344124 | elite_mean=-2.344162 | loss=0.0290 | threshold=-2.3442 | rand=0.0250 | time=1748.9s
+4669.6s	433	Iter   900 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0317 | threshold=-2.3441 | rand=0.0250 | time=1777.2s
+4709.0s	434	Iter   920 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0284 | threshold=-2.3441 | rand=0.0250 | time=1815.8s
+4752.1s	435	Iter   940 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0285 | threshold=-2.3441 | rand=0.0250 | time=1858.9s
+4795.6s	436	Iter   960 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0285 | threshold=-2.3441 | rand=0.0250 | time=1902.4s
+4838.4s	437	Iter   980 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0285 | threshold=-2.3441 | rand=0.0250 | time=1945.3s
+4881.5s	438	Iter  1000 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0288 | threshold=-2.3441 | rand=0.0250 | time=1988.3s
+4924.4s	439	Iter  1020 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0283 | threshold=-2.3441 | rand=0.0250 | time=2031.1s
+4967.6s	440	Iter  1040 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0285 | threshold=-2.3441 | rand=0.0250 | time=2074.4s
+5010.0s	441	Iter  1060 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0280 | threshold=-2.3441 | rand=0.0250 | time=2116.8s
+5052.3s	442	Iter  1080 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0282 | threshold=-2.3441 | rand=0.0250 | time=2159.1s
+5095.3s	443	Iter  1100 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0280 | threshold=-2.3441 | rand=0.0250 | time=2202.1s
+5139.0s	444	Iter  1120 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0276 | threshold=-2.3441 | rand=0.0250 | time=2245.7s
+5182.8s	445	Iter  1140 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0278 | threshold=-2.3441 | rand=0.0250 | time=2289.6s
+5226.8s	446	Iter  1160 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0289 | threshold=-2.3441 | rand=0.0250 | time=2333.4s
+5270.9s	447	Iter  1180 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0279 | threshold=-2.3441 | rand=0.0250 | time=2377.6s
+5315.3s	448	Iter  1200 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0282 | threshold=-2.3441 | rand=0.0250 | time=2421.9s
+5359.2s	449	Iter  1220 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0282 | threshold=-2.3441 | rand=0.0250 | time=2466.0s
+5404.1s	450	Iter  1240 | best=-2.344124 | elite_mean=-2.344124 | loss=0.0276 | threshold=-2.3441 | rand=0.0250 | time=2510.6s
+5415.6s	451	
+5415.6s	452	Time limit reached (2525s / 2523.3177695274353s). Stopping.
+5415.6s	453	
+5415.6s	454	Training complete. Total time: 2524.7s
+5415.6s	455	Best reward: -2.344124
+5415.6s	456	
+5415.6s	457	Near-miss analysis (best graph, reward=-2.344124):
+5415.6s	458	  mu (spectral radius) = 19.046501
+5415.6s	459	  Edges = 85
+5415.6s	460	  Max degree = 18, Min degree = 8
+5415.6s	461	  Degree sequence: [18, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+5415.6s	462	
+5415.6s	463	Benchmark n=20: No counterexample found (best reward: -2.344124)
+5415.6s	464	
+5415.6s	465	---------------------------------------------------
+5415.6s	466	TIME BUDGET STATUS
+5415.6s	467	  Elapsed:   1.50h (5402s)
+5415.6s	468	  Remaining: 10.00h (35998s)
+5415.6s	469	  Budget:    11.5h
+5415.6s	470	  benchmark   : 1.50h used / 1.5h allocated
+5415.6s	471	  primary     : 0.00h used / 6.0h allocated
+5415.6s	472	  secondary   : 0.00h used / 3.0h allocated
+5415.6s	473	---------------------------------------------------
+5415.6s	474	
+5415.8s	475	
+5415.8s	476	---------------------------------------------------
+5415.8s	477	TIME BUDGET STATUS
+5415.8s	478	  Elapsed:   1.50h (5402s)
+5415.8s	479	  Remaining: 10.00h (35998s)
+5415.8s	480	  Budget:    11.5h
+5415.8s	481	  benchmark   : 1.50h used / 1.5h allocated
+5415.8s	482	  primary     : 0.00h used / 6.0h allocated
+5415.8s	483	  secondary   : 0.00h used / 3.0h allocated
+5415.8s	484	---------------------------------------------------
+5415.8s	485	
+5415.8s	486	======================================================================
+5415.8s	487	ATTACK: Bound 1 (OPEN), n=20
+5415.8s	488	Target: Find counterexample to unsolved conjecture
+5415.8s	489	======================================================================
+5415.8s	490	Time limit for this run: 6.00h
+5415.8s	491	Estimated time per iteration (from benchmark): 2.0s
+5415.8s	492	Estimated total for 5000 iterations: 2.8h
+5415.8s	493	
+5415.8s	494	======================================================================
+5415.8s	495	CEM Training: Bound 1 (OPEN)
+5415.8s	496	Formula: mu <= max_v sqrt(4*d_v^3/m_v)
+5415.8s	497	N=20, decisions=190, state_dim=380
+5415.8s	498	Sessions=1000, elite=90%, super=97.5%
+5415.8s	499	Max iterations=5000, LR=0.003 (Adam)
+5415.8s	500	Loss: CrossEntropyLoss, Output: 2 logits
+5415.8s	501	Adaptive randomness: Ghebleh(2024) — init=0.005, wait=10, mult=1.1, cap=0.025
+5415.8s	502	Reward computation: numpy bypass (triu indices precomputed)
+5415.8s	503	======================================================================
+5415.8s	504	
+5416.7s	505	Iter     1 | best=-5.438646 | elite_mean=-8.411365 | loss=0.6214 | threshold=-9.4205 | rand=0.0050 | time=0.0s
+5431.3s	506	Iter    20 | best=-3.221564 | elite_mean=-5.023799 | loss=0.4666 | threshold=-6.3611 | rand=0.0055 | time=14.7s
+5445.9s	507	Iter    40 | best=-2.444310 | elite_mean=-4.625252 | loss=0.4216 | threshold=-6.4435 | rand=0.0050 | time=29.3s
+5460.5s	508	Iter    60 | best=-1.993528 | elite_mean=-4.388578 | loss=0.3923 | threshold=-5.9820 | rand=0.0055 | time=43.9s
+5475.3s	509	Iter    80 | best=-1.046314 | elite_mean=-1.214412 | loss=0.0717 | threshold=-1.3126 | rand=0.0050 | time=58.6s
+5503.8s	510	Iter   100 | best=-0.560067 | elite_mean=-0.599787 | loss=0.0165 | threshold=-0.5999 | rand=0.0055 | time=85.1s
+5544.5s	511	Iter   120 | best=-0.427829 | elite_mean=-0.516462 | loss=0.0288 | threshold=-0.5223 | rand=0.0055 | time=127.7s
+5574.6s	512	Iter   140 | best=-0.129890 | elite_mean=-0.376507 | loss=0.0248 | threshold=-0.4278 | rand=0.0050 | time=157.6s
+5586.0s	513	
+5586.0s	514	*** COUNTEREXAMPLE FOUND at iteration 146! ***
+5586.0s	515	    Reward = 0.000000
+5586.0s	516	    Time = 170.3s
+5586.0s	517	    VERIFIED: mu=6.000000, reward=0.000000
+5586.0s	518	    Vertices=20, Edges=30
+5586.0s	519	    Degrees: [3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0]
+5586.0s	520	
+5586.0s	521	Training complete. Total time: 170.3s
+5586.0s	522	Best reward: +0.000000
+5586.0s	523	
+5586.0s	524	*** BREAKTHROUGH: Bound 1 counterexample found at n=20! ***
+5586.0s	525	  VERIFIED: mu=6.000000, reward=0.000000
+5586.0s	526	  Graph: 30 edges
+5586.0s	527	  Degree sequence: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+5586.0s	528	
+5586.0s	529	---------------------------------------------------
+5586.0s	530	TIME BUDGET STATUS
+5586.0s	531	  Elapsed:   1.55h (5573s)
+5586.0s	532	  Remaining: 9.95h (35827s)
+5586.0s	533	  Budget:    11.5h
+5586.0s	534	  benchmark   : 1.50h used / 1.5h allocated
+5586.0s	535	  primary     : 0.05h used / 6.0h allocated
+5586.0s	536	  secondary   : 0.00h used / 3.0h allocated
+5586.0s	537	---------------------------------------------------
+5586.0s	538	
+5586.2s	539	======================================================================
+5586.2s	540	ATTACK: Bound 1 (OPEN), n=25
+5586.2s	541	Larger search space -- 300 edge decisions per graph
+5586.2s	542	Time limit: 5.95h
+5586.2s	543	======================================================================
+5586.2s	544	
+5586.2s	545	======================================================================
+5586.2s	546	CEM Training: Bound 1 (OPEN)
+5586.2s	547	Formula: mu <= max_v sqrt(4*d_v^3/m_v)
+5586.2s	548	N=25, decisions=300, state_dim=600
+5586.2s	549	Sessions=1000, elite=90%, super=97.5%
+5586.2s	550	Max iterations=5000, LR=0.003 (Adam)
+5586.2s	551	Loss: CrossEntropyLoss, Output: 2 logits
+5586.2s	552	Adaptive randomness: Ghebleh(2024) — init=0.005, wait=10, mult=1.1, cap=0.025
+5586.2s	553	Reward computation: numpy bypass (triu indices precomputed)
+5586.2s	554	======================================================================
+5586.2s	555	
+5587.7s	556	Iter     1 | best=-11.360750 | elite_mean=-14.306826 | loss=0.6853 | threshold=-15.4381 | rand=0.0050 | time=0.0s
+5618.2s	557	Iter    20 | best=-6.556603 | elite_mean=-9.090743 | loss=0.5683 | threshold=-10.3151 | rand=0.0050 | time=30.3s
+5649.5s	558	Iter    40 | best=-3.806983 | elite_mean=-6.040354 | loss=0.4377 | threshold=-7.3488 | rand=0.0050 | time=61.7s
+5680.1s	559	Iter    60 | best=-2.934809 | elite_mean=-5.753116 | loss=0.4010 | threshold=-7.3946 | rand=0.0050 | time=92.3s
+5708.7s	560	Iter    80 | best=-2.242109 | elite_mean=-5.385370 | loss=0.3881 | threshold=-7.2555 | rand=0.0055 | time=121.0s
+5738.9s	561	Iter   100 | best=-2.242109 | elite_mean=-5.176721 | loss=0.3705 | threshold=-7.0839 | rand=0.0067 | time=151.1s
+5769.5s	562	Iter   120 | best=-2.242109 | elite_mean=-5.348805 | loss=0.3856 | threshold=-7.3927 | rand=0.0081 | time=181.7s
+5799.6s	563	Iter   140 | best=-2.242109 | elite_mean=-5.275065 | loss=0.3811 | threshold=-7.1367 | rand=0.0097 | time=211.8s
+5830.3s	564	Iter   160 | best=-2.242109 | elite_mean=-5.168768 | loss=0.3881 | threshold=-7.0918 | rand=0.0118 | time=242.3s
+5861.4s	565	Iter   180 | best=-2.242109 | elite_mean=-5.223889 | loss=0.3801 | threshold=-7.0183 | rand=0.0143 | time=273.6s
+5891.6s	566	Iter   200 | best=-2.242109 | elite_mean=-5.270232 | loss=0.3862 | threshold=-7.2330 | rand=0.0173 | time=303.8s
+5921.4s	567	Iter   220 | best=-2.242109 | elite_mean=-5.312615 | loss=0.3959 | threshold=-7.3696 | rand=0.0209 | time=333.6s
+5951.7s	568	Iter   240 | best=-2.242109 | elite_mean=-5.023058 | loss=0.3979 | threshold=-6.8629 | rand=0.0250 | time=363.9s
+5982.1s	569	Iter   260 | best=-2.242109 | elite_mean=-5.265802 | loss=0.3940 | threshold=-7.1246 | rand=0.0250 | time=394.3s
+6012.6s	570	Iter   280 | best=-2.242109 | elite_mean=-5.161968 | loss=0.3960 | threshold=-7.0727 | rand=0.0250 | time=424.9s
+6042.7s	571	Iter   300 | best=-2.242109 | elite_mean=-5.371071 | loss=0.3903 | threshold=-7.2131 | rand=0.0250 | time=455.0s

@@ -1,0 +1,866 @@
+6.8s 1 /usr/local/lib/python3.12/dist-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+6.8s 2 validate(nb)
+8.0s 3 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.0s 4 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.0s 5 0.00s - to python to disable frozen modules.
+8.0s 6 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.8s 7 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.8s 8 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.8s 9 0.00s - to python to disable frozen modules.
+8.8s 10 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+14.4s 11 PyTorch version: 2.10.0+cpu
+14.4s 12 NetworkX version: 3.6.1
+14.4s 13 NumPy version: 2.0.2
+14.4s 14 Device: cpu
+14.4s 15 Default graph size N=20, decisions=190, state_dim=380
+14.4s 16 TimeManager initialized: 11.5h budget
+14.4s 17 Start time: 2026-03-24 00:06:25
+14.5s 18 Model test (n=10): input_dim=90, output=0.4294
+14.5s 19 Total parameters: 20169
+14.5s 20 Graph utility functions defined (NetworkX + numpy bypass).
+14.9s 21 =================================================================
+14.9s 22 UNIT TESTS: Laplacian Spectral Radius
+14.9s 23 =================================================================
+14.9s 24 K_5: expected=5.000000, got=5.000000 -> [PASS]
+14.9s 25 S_5: expected=5.000000, got=5.000000 -> [PASS]
+14.9s 26 C_6: expected=4.000000, got=4.000000 -> [PASS]
+14.9s 27 P_6 (non-reg): expected=3.732051, got=3.732051 -> [PASS]
+14.9s 28 W_6 (non-reg): expected=6.000000, got=6.000000 -> [PASS]
+14.9s 29 Barbell(4,1) (non-reg): expected=5.302776, got=5.302776 -> [PASS]
+14.9s 30 =================================================================
+14.9s 31 All unit tests PASSED.
+14.9s 32 
+14.9s 33 Build-graph roundtrip test:
+14.9s 34 K_5 from state vector: edges=10, mu=5.000000 -> [PASS]
+14.9s 35 K_5 dv=[4. 4. 4. 4. 4.], mv=[4. 4. 4. 4. 4.] -> [PASS]
+14.9s 36 S_5 dv=[4. 1. 1. 1. 1.], mv=[1. 4. 4. 4. 4.]
+14.9s 37 S_5 dv/mv check -> [PASS]
+14.9s 38 
+14.9s 39 =================================================================
+14.9s 40 CROSS-VERIFICATION: NetworkX vs Numpy bypass
+14.9s 41 =================================================================
+14.9s 42 K_5: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+14.9s 43 S_5: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+14.9s 44 C_6: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+14.9s 45 P_6: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+14.9s 46 W_6: mu_diff=0.00e+00, dv_match=True, mv_match=True -> [PASS]
+14.9s 47 Barbell(4,1): mu_diff=1.78e-15, dv_match=True, mv_match=True -> [PASS]
+14.9s 48 
+14.9s 49 Random graph stress test (n=15, 50 graphs):
+14.9s 50 Results: 50/50 passed, 0 failed -> [PASS]
+14.9s 51 =================================================================
+14.9s 52 All numpy cross-verification tests PASSED.
+15.0s 53 Performance benchmark: n=15, 200 connected graphs
+15.0s 54 -------------------------------------------------------
+15.2s 55 NetworkX: 0.187s (0.94 ms/graph)
+15.2s 56 Numpy:    0.033s (0.16 ms/graph)
+15.2s 57 Speedup:  5.8x
+15.2s 58 Max result difference: 0.00e+00
+15.2s 59 Results match: YES
+15.2s 60 -------------------------------------------------------
+15.2s 61 Reward function test on K_5 (n=5, complete graph):
+15.2s 62 Bound 1 (OPEN): nx=-3.000000, np=-3.000000 -> [MATCH]
+15.2s 63 Bound 2 (DISPROVED): nx=-3.000000, np=-3.000000 -> [MATCH]
+15.2s 64 Bound 4 (OPEN): nx=-3.000000, np=-3.000000 -> [MATCH]
+15.2s 65 Bound 9 (OPEN): nx=-3.000000, np=-3.000000 -> [MATCH]
+15.2s 66 Bound 33 (OPEN, edge-max): nx=-3.000000, np=-3.000000 -> [MATCH]
+15.2s 67 
+15.2s 68 (Negative rewards on K_5 are expected — regular graphs satisfy most bounds.)
+15.3s 69 CEM training engine defined (numpy bypass integrated).
+15.4s 70 
+15.4s 71 ---------------------------------------------------
+15.4s 72 TIME BUDGET STATUS
+15.4s 73 Elapsed:   0.00h (1s)
+15.4s 74 Remaining: 11.50h (41399s)
+15.4s 75 Budget:    11.5h
+15.4s 76 benchmark   : 0.00h used / 2.0h allocated
+15.4s 77 primary     : 0.00h used / 5.0h allocated
+15.4s 78 secondary   : 0.00h used / 3.0h allocated
+15.4s 79 ---------------------------------------------------
+15.4s 80 
+15.4s 81 ======================================================================
+15.4s 82 BENCHMARK: Bound 2, n=15
+15.4s 83 Expected: Counterexample should be found (bound disproved at n=12)
+15.4s 84 ======================================================================
+15.4s 85 Time limit for this run: 2.00h
+15.4s 86 
+15.4s 87 ======================================================================
+15.4s 88 CEM Training: Bound 2 (DISPROVED)
+15.4s 89 Formula: mu <= max_v (2*m_v^2/d_v)
+15.4s 90 N=15, decisions=105, state_dim=210
+15.4s 91 Sessions=1000, elite=93%, super=94%
+15.4s 92 Max iterations=500, LR=0.0001
+15.4s 93 Reward computation: numpy bypass (triu indices precomputed)
+15.4s 94 ======================================================================
+15.4s 95 
+21.7s 96 Iter     1 | best=-6.869753 | elite_mean=-9.939441 | loss=0.6843 | threshold=-11.3531 | time=0.0s
+30.1s 97 Iter    20 | best=-5.169193 | elite_mean=-7.656675 | loss=0.6949 | threshold=-9.3080 | time=8.5s
+39.0s 98 Iter    40 | best=-5.169193 | elite_mean=-7.288461 | loss=0.6934 | threshold=-8.6555 | time=17.4s
+47.8s 99 Iter    60 | best=-5.169193 | elite_mean=-7.208532 | loss=0.6932 | threshold=-9.2983 | time=26.2s
+56.8s 100 Iter    80 | best=-5.169193 | elite_mean=-7.084886 | loss=0.6942 | threshold=-8.8512 | time=35.2s
+65.7s 101 Iter   100 | best=-5.169193 | elite_mean=-6.999760 | loss=0.6930 | threshold=-9.1003 | time=44.1s
+74.6s 102 Iter   120 | best=-5.169193 | elite_mean=-6.881011 | loss=0.6960 | threshold=-8.9250 | time=53.0s
+83.5s 103 Iter   140 | best=-5.169193 | elite_mean=-6.869965 | loss=0.6961 | threshold=-9.4561 | time=61.9s
+92.4s 104 Iter   160 | best=-5.169193 | elite_mean=-6.737741 | loss=0.6959 | threshold=-8.5377 | time=70.8s
+101.5s 105 Iter   180 | best=-5.169193 | elite_mean=-6.715424 | loss=0.6974 | threshold=-9.0904 | time=79.9s
+110.4s 106 Iter   200 | best=-5.169193 | elite_mean=-6.686740 | loss=0.6989 | threshold=-9.1021 | time=88.8s
+119.3s 107 Iter   220 | best=-5.169193 | elite_mean=-6.600656 | loss=0.6994 | threshold=-8.9222 | time=97.7s
+128.1s 108 Iter   240 | best=-5.169193 | elite_mean=-6.554045 | loss=0.6994 | threshold=-9.0277 | time=106.5s
+137.0s 109 Iter   260 | best=-5.169193 | elite_mean=-6.484048 | loss=0.7010 | threshold=-8.6530 | time=115.4s
+146.0s 110 Iter   280 | best=-5.169193 | elite_mean=-6.555917 | loss=0.7004 | threshold=-8.9533 | time=124.4s
+154.9s 111 Iter   300 | best=-5.169193 | elite_mean=-6.586944 | loss=0.7008 | threshold=-9.4328 | time=133.3s
+163.8s 112 Iter   320 | best=-5.169193 | elite_mean=-6.560104 | loss=0.7007 | threshold=-9.3285 | time=142.2s
+172.6s 113 Iter   340 | best=-5.169193 | elite_mean=-6.513748 | loss=0.7011 | threshold=-9.1948 | time=151.0s
+181.4s 114 Iter   360 | best=-4.821535 | elite_mean=-6.528787 | loss=0.7012 | threshold=-9.5563 | time=159.8s
+190.2s 115 Iter   380 | best=-4.821535 | elite_mean=-6.448168 | loss=0.7013 | threshold=-9.3833 | time=168.6s
+199.0s 116 Iter   400 | best=-4.821535 | elite_mean=-6.437136 | loss=0.6997 | threshold=-9.5393 | time=177.5s
+207.9s 117 Iter   420 | best=-4.738394 | elite_mean=-6.315252 | loss=0.7016 | threshold=-8.8979 | time=186.3s
+216.8s 118 Iter   440 | best=-4.738394 | elite_mean=-6.379747 | loss=0.7013 | threshold=-9.4903 | time=195.2s
+225.6s 119 Iter   460 | best=-4.738394 | elite_mean=-6.328369 | loss=0.7021 | threshold=-9.2343 | time=204.0s
+234.5s 120 Iter   480 | best=-4.738394 | elite_mean=-6.361484 | loss=0.7023 | threshold=-9.5462 | time=212.9s
+243.2s 121 Iter   500 | best=-4.738394 | elite_mean=-6.314569 | loss=0.7031 | threshold=-9.3073 | time=221.8s
+243.2s 122 
+243.2s 123 Training complete. Total time: 222.2s
+243.2s 124 Best reward: -4.738394
+243.2s 125 
+243.2s 126 Near-miss analysis (best graph, reward=-4.738394):
+243.2s 127 mu (spectral radius) = 11.645606
+243.2s 128 Edges = 49
+243.2s 129 Max degree = 8, Min degree = 5
+243.2s 130 Degree sequence: [8, 8, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 5, 5]
+243.2s 131 
+243.2s 132 Benchmark n=15: No counterexample found (best reward: -4.738394)
+243.2s 133 
+243.2s 134 ---------------------------------------------------
+243.2s 135 TIME BUDGET STATUS
+243.2s 136 Elapsed:   0.06h (229s)
+243.2s 137 Remaining: 11.44h (41171s)
+243.2s 138 Budget:    11.5h
+243.2s 139 benchmark   : 0.06h used / 2.0h allocated
+243.2s 140 primary     : 0.00h used / 5.0h allocated
+243.2s 141 secondary   : 0.00h used / 3.0h allocated
+243.2s 142 ---------------------------------------------------
+243.2s 143 
+243.4s 144 ======================================================================
+243.4s 145 BENCHMARK: Bound 2, n=20
+243.4s 146 Expected: Counterexample should be found (larger search space)
+243.4s 147 ======================================================================
+243.4s 148 Time limit for this run: 1.94h
+243.4s 149 
+243.4s 150 ======================================================================
+243.4s 151 CEM Training: Bound 2 (DISPROVED)
+243.4s 152 Formula: mu <= max_v (2*m_v^2/d_v)
+243.4s 153 N=20, decisions=190, state_dim=380
+243.4s 154 Sessions=1000, elite=93%, super=94%
+243.4s 155 Max iterations=1000, LR=0.0001
+243.4s 156 Reward computation: numpy bypass (triu indices precomputed)
+243.4s 157 ======================================================================
+243.4s 158 
+244.3s 159 Iter     1 | best=-8.849927 | elite_mean=-12.311423 | loss=0.6784 | threshold=-14.0375 | time=0.0s
+262.4s 160 Iter    20 | best=-6.738074 | elite_mean=-8.777730 | loss=0.6729 | threshold=-10.5282 | time=18.0s
+281.3s 161 Iter    40 | best=-6.667136 | elite_mean=-8.441003 | loss=0.6720 | threshold=-10.6116 | time=36.9s
+300.4s 162 Iter    60 | best=-6.667136 | elite_mean=-8.392466 | loss=0.6705 | threshold=-11.1839 | time=56.0s
+319.5s 163 Iter    80 | best=-6.318668 | elite_mean=-8.230195 | loss=0.6717 | threshold=-11.3863 | time=75.1s
+338.6s 164 Iter   100 | best=-6.318668 | elite_mean=-8.002371 | loss=0.6707 | threshold=-10.9324 | time=94.2s
+357.8s 165 Iter   120 | best=-6.318668 | elite_mean=-7.982350 | loss=0.6702 | threshold=-10.5024 | time=113.4s
+376.8s 166 Iter   140 | best=-6.318668 | elite_mean=-7.969078 | loss=0.6695 | threshold=-10.8748 | time=132.4s
+395.9s 167 Iter   160 | best=-6.318668 | elite_mean=-7.847394 | loss=0.6686 | threshold=-10.8185 | time=151.5s
+415.0s 168 Iter   180 | best=-6.318668 | elite_mean=-7.879782 | loss=0.6676 | threshold=-10.8648 | time=170.5s
+434.2s 169 Iter   200 | best=-6.318668 | elite_mean=-7.729315 | loss=0.6692 | threshold=-10.3733 | time=189.8s
+453.2s 170 Iter   220 | best=-6.318668 | elite_mean=-7.670904 | loss=0.6696 | threshold=-10.1571 | time=208.8s
+472.2s 171 Iter   240 | best=-6.318668 | elite_mean=-7.786903 | loss=0.6695 | threshold=-11.2314 | time=227.8s
+491.2s 172 Iter   260 | best=-6.318668 | elite_mean=-7.646663 | loss=0.6688 | threshold=-10.2072 | time=246.8s
+510.3s 173 Iter   280 | best=-6.318668 | elite_mean=-7.745314 | loss=0.6695 | threshold=-11.3110 | time=265.9s
+529.4s 174 Iter   300 | best=-6.070496 | elite_mean=-7.647634 | loss=0.6691 | threshold=-11.1831 | time=285.0s
+548.7s 175 Iter   320 | best=-6.070496 | elite_mean=-7.609330 | loss=0.6688 | threshold=-10.9033 | time=304.2s
+568.1s 176 Iter   340 | best=-6.070496 | elite_mean=-7.495275 | loss=0.6689 | threshold=-10.5249 | time=323.7s
+587.4s 177 Iter   360 | best=-6.070496 | elite_mean=-7.738756 | loss=0.6686 | threshold=-11.7236 | time=343.0s
+606.8s 178 Iter   380 | best=-6.070496 | elite_mean=-7.464783 | loss=0.6687 | threshold=-10.1344 | time=362.4s
+625.8s 179 Iter   400 | best=-6.070496 | elite_mean=-7.613433 | loss=0.6689 | threshold=-11.0317 | time=381.4s
+644.7s 180 Iter   420 | best=-5.161640 | elite_mean=-7.545134 | loss=0.6681 | threshold=-11.2498 | time=400.3s
+663.8s 181 Iter   440 | best=-5.161640 | elite_mean=-7.455251 | loss=0.6677 | threshold=-10.5687 | time=419.4s
+683.0s 182 Iter   460 | best=-5.161640 | elite_mean=-7.374256 | loss=0.6674 | threshold=-10.4498 | time=438.6s
+702.1s 183 Iter   480 | best=-5.161640 | elite_mean=-7.443542 | loss=0.6663 | threshold=-11.2251 | time=457.7s
+721.1s 184 Iter   500 | best=-5.161640 | elite_mean=-7.263976 | loss=0.6667 | threshold=-10.1755 | time=476.7s
+740.2s 185 Iter   520 | best=-5.161640 | elite_mean=-7.365122 | loss=0.6669 | threshold=-11.1808 | time=495.8s
+759.7s 186 Iter   540 | best=-5.161640 | elite_mean=-7.345411 | loss=0.6676 | threshold=-11.0498 | time=515.3s
+778.8s 187 Iter   560 | best=-5.161640 | elite_mean=-7.324962 | loss=0.6676 | threshold=-10.9704 | time=534.4s
+798.0s 188 Iter   580 | best=-5.161640 | elite_mean=-7.355385 | loss=0.6668 | threshold=-11.2095 | time=553.6s
+817.2s 189 Iter   600 | best=-5.161640 | elite_mean=-7.167209 | loss=0.6664 | threshold=-10.0951 | time=572.8s
+836.4s 190 Iter   620 | best=-5.161640 | elite_mean=-7.215423 | loss=0.6661 | threshold=-10.1444 | time=592.0s
+855.7s 191 Iter   640 | best=-5.161640 | elite_mean=-7.172245 | loss=0.6661 | threshold=-10.4549 | time=611.3s
+875.0s 192 Iter   660 | best=-5.161640 | elite_mean=-7.266413 | loss=0.6672 | threshold=-10.6228 | time=630.5s
+894.2s 193 Iter   680 | best=-5.161640 | elite_mean=-7.209629 | loss=0.6675 | threshold=-10.3047 | time=649.8s
+913.3s 194 Iter   700 | best=-5.161640 | elite_mean=-7.222958 | loss=0.6676 | threshold=-10.8632 | time=668.9s
+932.4s 195 Iter   720 | best=-5.161640 | elite_mean=-7.230695 | loss=0.6675 | threshold=-10.6969 | time=688.0s
+951.7s 196 Iter   740 | best=-5.161640 | elite_mean=-7.188215 | loss=0.6675 | threshold=-11.1674 | time=707.3s
+970.9s 197 Iter   760 | best=-5.161640 | elite_mean=-7.142954 | loss=0.6673 | threshold=-10.3932 | time=726.5s
+989.9s 198 Iter   780 | best=-5.161640 | elite_mean=-7.148458 | loss=0.6667 | threshold=-10.5972 | time=745.5s
+1008.9s 199 Iter   800 | best=-5.161640 | elite_mean=-7.240458 | loss=0.6670 | threshold=-10.9054 | time=764.6s
+1028.0s 200 Iter   820 | best=-5.161640 | elite_mean=-7.178235 | loss=0.6662 | threshold=-11.2572 | time=783.5s
+1047.0s 201 Iter   840 | best=-5.161640 | elite_mean=-7.129358 | loss=0.6674 | threshold=-11.0159 | time=802.6s
+1066.1s 202 Iter   860 | best=-5.161640 | elite_mean=-7.169730 | loss=0.6663 | threshold=-10.9842 | time=821.7s
+1085.4s 203 Iter   880 | best=-5.161640 | elite_mean=-7.240185 | loss=0.6667 | threshold=-11.2026 | time=841.0s
+1104.5s 204 Iter   900 | best=-5.161640 | elite_mean=-7.199637 | loss=0.6671 | threshold=-11.0799 | time=860.1s
+1123.6s 205 Iter   920 | best=-5.161640 | elite_mean=-7.158917 | loss=0.6661 | threshold=-10.5126 | time=879.2s
+1142.8s 206 Iter   940 | best=-5.161640 | elite_mean=-7.093035 | loss=0.6661 | threshold=-10.3922 | time=898.3s
+1162.1s 207 Iter   960 | best=-5.161640 | elite_mean=-7.053854 | loss=0.6658 | threshold=-10.5987 | time=917.7s
+1181.3s 208 Iter   980 | best=-5.161640 | elite_mean=-7.096751 | loss=0.6661 | threshold=-11.1450 | time=936.9s
+1200.2s 209 Iter  1000 | best=-5.161640 | elite_mean=-7.109949 | loss=0.6657 | threshold=-10.6752 | time=956.0s
+1200.2s 210 
+1200.2s 211 Training complete. Total time: 956.9s
+1200.2s 212 Best reward: -5.161640
+1200.2s 213 
+1200.2s 214 Near-miss analysis (best graph, reward=-5.161640):
+1200.2s 215 mu (spectral radius) = 11.505027
+1200.2s 216 Edges = 54
+1200.2s 217 Max degree = 10, Min degree = 3
+1200.2s 218 Degree sequence: [10, 8, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 4, 4, 4, 3, 3]
+1200.2s 219 
+1200.2s 220 Benchmark n=20: No counterexample found (best reward: -5.161640)
+1200.2s 221 
+1200.2s 222 ---------------------------------------------------
+1200.2s 223 TIME BUDGET STATUS
+1200.2s 224 Elapsed:   0.33h (1186s)
+1200.2s 225 Remaining: 11.17h (40214s)
+1200.2s 226 Budget:    11.5h
+1200.2s 227 benchmark   : 0.33h used / 2.0h allocated
+1200.2s 228 primary     : 0.00h used / 5.0h allocated
+1200.2s 229 secondary   : 0.00h used / 3.0h allocated
+1200.2s 230 ---------------------------------------------------
+1200.2s 231 
+1200.4s 232 
+1200.4s 233 ---------------------------------------------------
+1200.4s 234 TIME BUDGET STATUS
+1200.4s 235 Elapsed:   0.33h (1186s)
+1200.4s 236 Remaining: 11.17h (40214s)
+1200.4s 237 Budget:    11.5h
+1200.4s 238 benchmark   : 0.33h used / 2.0h allocated
+1200.4s 239 primary     : 0.00h used / 5.0h allocated
+1200.4s 240 secondary   : 0.00h used / 3.0h allocated
+1200.4s 241 ---------------------------------------------------
+1200.4s 242 
+1200.4s 243 ======================================================================
+1200.4s 244 ATTACK: Bound 1 (OPEN), n=20
+1200.4s 245 Target: Find counterexample to unsolved conjecture
+1200.4s 246 ======================================================================
+1200.4s 247 Time limit for this run: 5.00h
+1200.4s 248 Estimated time per iteration (from benchmark): 1.0s
+1200.4s 249 Estimated total for 1500 iterations: 0.4h
+1200.4s 250 
+1200.4s 251 ======================================================================
+1200.4s 252 CEM Training: Bound 1 (OPEN)
+1200.4s 253 Formula: mu <= max_v sqrt(4*d_v^3/m_v)
+1200.4s 254 N=20, decisions=190, state_dim=380
+1200.4s 255 Sessions=1000, elite=93%, super=94%
+1200.4s 256 Max iterations=1500, LR=0.0001
+1200.4s 257 Reward computation: numpy bypass (triu indices precomputed)
+1200.4s 258 ======================================================================
+1200.4s 259 
+1201.3s 260 Iter     1 | best=-7.664568 | elite_mean=-10.249555 | loss=0.6787 | threshold=-11.1923 | time=0.0s
+1219.5s 261 Iter    20 | best=-5.440791 | elite_mean=-8.054385 | loss=0.6717 | threshold=-8.9845 | time=18.1s
+1238.7s 262 Iter    40 | best=-5.440791 | elite_mean=-7.813413 | loss=0.6715 | threshold=-9.2039 | time=37.3s
+1258.0s 263 Iter    60 | best=-5.440791 | elite_mean=-7.659934 | loss=0.6711 | threshold=-9.6135 | time=56.5s
+1277.2s 264 Iter    80 | best=-5.440791 | elite_mean=-7.572520 | loss=0.6718 | threshold=-9.2660 | time=75.8s
+1296.6s 265 Iter   100 | best=-5.440791 | elite_mean=-7.391155 | loss=0.6701 | threshold=-8.9285 | time=95.2s
+1316.0s 266 Iter   120 | best=-5.440791 | elite_mean=-7.386555 | loss=0.6703 | threshold=-9.2623 | time=114.5s
+1335.3s 267 Iter   140 | best=-5.440791 | elite_mean=-7.385816 | loss=0.6701 | threshold=-9.4695 | time=133.8s
+1354.7s 268 Iter   160 | best=-5.440791 | elite_mean=-7.341408 | loss=0.6708 | threshold=-9.6376 | time=153.3s
+1374.1s 269 Iter   180 | best=-5.440791 | elite_mean=-7.205547 | loss=0.6708 | threshold=-8.6816 | time=172.6s
+1393.7s 270 Iter   200 | best=-5.440791 | elite_mean=-7.233577 | loss=0.6704 | threshold=-9.3873 | time=192.3s
+1413.1s 271 Iter   220 | best=-5.440791 | elite_mean=-7.166528 | loss=0.6697 | threshold=-9.4874 | time=211.6s
+1432.3s 272 Iter   240 | best=-5.440791 | elite_mean=-7.198047 | loss=0.6693 | threshold=-9.2656 | time=230.9s
+1451.7s 273 Iter   260 | best=-5.440791 | elite_mean=-7.091756 | loss=0.6697 | threshold=-9.1267 | time=250.3s
+1471.2s 274 Iter   280 | best=-5.440791 | elite_mean=-7.173972 | loss=0.6689 | threshold=-9.5219 | time=269.8s
+1490.7s 275 Iter   300 | best=-5.440791 | elite_mean=-7.138315 | loss=0.6691 | threshold=-9.5937 | time=289.3s
+1510.3s 276 Iter   320 | best=-5.440791 | elite_mean=-7.096260 | loss=0.6696 | threshold=-9.2310 | time=308.9s
+1530.0s 277 Iter   340 | best=-5.440791 | elite_mean=-7.057377 | loss=0.6683 | threshold=-9.3447 | time=328.6s
+1549.5s 278 Iter   360 | best=-5.440791 | elite_mean=-7.079447 | loss=0.6685 | threshold=-9.6607 | time=348.1s
+1568.9s 279 Iter   380 | best=-5.440791 | elite_mean=-7.111266 | loss=0.6688 | threshold=-9.7875 | time=367.5s
+1588.4s 280 Iter   400 | best=-5.440791 | elite_mean=-7.004860 | loss=0.6688 | threshold=-9.5182 | time=387.0s
+1607.7s 281 Iter   420 | best=-5.440791 | elite_mean=-7.014275 | loss=0.6680 | threshold=-9.3199 | time=406.3s
+1627.4s 282 Iter   440 | best=-5.440791 | elite_mean=-6.964780 | loss=0.6682 | threshold=-9.1091 | time=425.9s
+1647.1s 283 Iter   460 | best=-5.440791 | elite_mean=-6.957369 | loss=0.6684 | threshold=-9.4158 | time=445.7s
+1666.7s 284 Iter   480 | best=-5.440791 | elite_mean=-6.873283 | loss=0.6679 | threshold=-9.0779 | time=465.2s
+1686.2s 285 Iter   500 | best=-5.440791 | elite_mean=-6.911407 | loss=0.6672 | threshold=-9.2057 | time=484.7s
+1705.8s 286 Iter   520 | best=-5.440791 | elite_mean=-6.880137 | loss=0.6670 | threshold=-9.3305 | time=504.3s
+1725.3s 287 Iter   540 | best=-5.440791 | elite_mean=-6.803271 | loss=0.6682 | threshold=-8.9333 | time=523.9s
+1744.9s 288 Iter   560 | best=-5.161285 | elite_mean=-6.774240 | loss=0.6664 | threshold=-9.1670 | time=543.4s
+1764.4s 289 Iter   580 | best=-5.161285 | elite_mean=-6.826288 | loss=0.6653 | threshold=-9.4160 | time=563.0s
+1783.9s 290 Iter   600 | best=-5.161285 | elite_mean=-6.786557 | loss=0.6664 | threshold=-9.2322 | time=582.5s
+1803.4s 291 Iter   620 | best=-5.161285 | elite_mean=-6.796288 | loss=0.6668 | threshold=-9.6133 | time=601.9s
+1823.1s 292 Iter   640 | best=-5.161285 | elite_mean=-6.745286 | loss=0.6666 | threshold=-9.3087 | time=621.6s
+1842.3s 293 Iter   660 | best=-5.161285 | elite_mean=-6.791122 | loss=0.6664 | threshold=-9.3359 | time=640.9s
+1861.8s 294 Iter   680 | best=-5.161285 | elite_mean=-6.757577 | loss=0.6665 | threshold=-9.3502 | time=660.3s
+1881.3s 295 Iter   700 | best=-5.161285 | elite_mean=-6.727597 | loss=0.6653 | threshold=-9.4929 | time=679.8s
+1901.0s 296 Iter   720 | best=-5.161285 | elite_mean=-6.687056 | loss=0.6645 | threshold=-9.1662 | time=699.5s
+1920.6s 297 Iter   740 | best=-5.161285 | elite_mean=-6.701057 | loss=0.6638 | threshold=-9.2327 | time=719.2s
+1940.1s 298 Iter   760 | best=-5.161285 | elite_mean=-6.658288 | loss=0.6648 | threshold=-9.3099 | time=738.6s
+1959.5s 299 Iter   780 | best=-5.161285 | elite_mean=-6.635417 | loss=0.6635 | threshold=-9.5268 | time=758.1s
+1979.1s 300 Iter   800 | best=-5.161285 | elite_mean=-6.659174 | loss=0.6636 | threshold=-9.2686 | time=777.6s
+1998.4s 301 Iter   820 | best=-5.161285 | elite_mean=-6.627059 | loss=0.6634 | threshold=-9.2965 | time=797.0s
+2018.0s 302 Iter   840 | best=-5.161285 | elite_mean=-6.592883 | loss=0.6632 | threshold=-9.1177 | time=816.5s
+2037.5s 303 Iter   860 | best=-5.161285 | elite_mean=-6.551775 | loss=0.6645 | threshold=-8.6038 | time=836.0s
+2057.1s 304 Iter   880 | best=-5.040427 | elite_mean=-6.614134 | loss=0.6633 | threshold=-9.1189 | time=855.6s
+2076.6s 305 Iter   900 | best=-5.040427 | elite_mean=-6.547511 | loss=0.6635 | threshold=-8.8616 | time=875.1s
+2096.3s 306 Iter   920 | best=-5.040427 | elite_mean=-6.538307 | loss=0.6634 | threshold=-8.8473 | time=894.9s
+2116.1s 307 Iter   940 | best=-5.040427 | elite_mean=-6.456814 | loss=0.6618 | threshold=-8.6897 | time=914.6s
+2135.5s 308 Iter   960 | best=-5.040427 | elite_mean=-6.488184 | loss=0.6630 | threshold=-8.7427 | time=934.0s
+2155.0s 309 Iter   980 | best=-5.040427 | elite_mean=-6.452164 | loss=0.6625 | threshold=-8.8764 | time=953.5s
+2174.5s 310 Iter  1000 | best=-5.040427 | elite_mean=-6.537641 | loss=0.6623 | threshold=-9.1081 | time=973.1s
+2194.1s 311 Iter  1020 | best=-5.040427 | elite_mean=-6.538781 | loss=0.6622 | threshold=-9.5051 | time=992.6s
+2213.4s 312 Iter  1040 | best=-5.040427 | elite_mean=-6.503868 | loss=0.6607 | threshold=-9.0479 | time=1011.9s
+2232.9s 313 Iter  1060 | best=-5.040427 | elite_mean=-6.474268 | loss=0.6625 | threshold=-9.1802 | time=1031.4s
+2252.4s 314 Iter  1080 | best=-5.040427 | elite_mean=-6.424570 | loss=0.6610 | threshold=-9.1138 | time=1050.9s
+2271.8s 315 Iter  1100 | best=-5.040427 | elite_mean=-6.479132 | loss=0.6613 | threshold=-9.2041 | time=1070.3s
+2291.2s 316 Iter  1120 | best=-5.040427 | elite_mean=-6.444029 | loss=0.6612 | threshold=-8.8307 | time=1089.7s
+2310.6s 317 Iter  1140 | best=-5.040427 | elite_mean=-6.398426 | loss=0.6610 | threshold=-9.0591 | time=1109.2s
+2329.9s 318 Iter  1160 | best=-5.040427 | elite_mean=-6.426657 | loss=0.6609 | threshold=-9.2717 | time=1128.5s
+2349.8s 319 Iter  1180 | best=-5.040427 | elite_mean=-6.465507 | loss=0.6614 | threshold=-9.3519 | time=1148.3s
+2370.0s 320 Iter  1200 | best=-5.040427 | elite_mean=-6.408614 | loss=0.6609 | threshold=-8.9304 | time=1168.5s
+2389.8s 321 Iter  1220 | best=-5.040427 | elite_mean=-6.465849 | loss=0.6617 | threshold=-9.3076 | time=1188.3s
+2409.4s 322 Iter  1240 | best=-5.040427 | elite_mean=-6.347863 | loss=0.6609 | threshold=-8.8383 | time=1207.9s
+2429.1s 323 Iter  1260 | best=-5.040427 | elite_mean=-6.384325 | loss=0.6596 | threshold=-8.9856 | time=1227.6s
+2448.7s 324 Iter  1280 | best=-5.040427 | elite_mean=-6.396956 | loss=0.6600 | threshold=-9.1275 | time=1247.2s
+2468.3s 325 Iter  1300 | best=-5.040427 | elite_mean=-6.459290 | loss=0.6605 | threshold=-9.3149 | time=1266.8s
+2487.9s 326 Iter  1320 | best=-5.040427 | elite_mean=-6.419031 | loss=0.6597 | threshold=-9.2014 | time=1286.5s
+2507.4s 327 Iter  1340 | best=-5.040427 | elite_mean=-6.358475 | loss=0.6596 | threshold=-8.9647 | time=1306.0s
+2527.0s 328 Iter  1360 | best=-5.040427 | elite_mean=-6.417550 | loss=0.6595 | threshold=-9.0590 | time=1325.5s
+2546.3s 329 Iter  1380 | best=-4.594634 | elite_mean=-6.339795 | loss=0.6589 | threshold=-8.8356 | time=1344.9s
+2565.9s 330 Iter  1400 | best=-4.594634 | elite_mean=-6.322979 | loss=0.6600 | threshold=-8.9142 | time=1364.4s
+2585.1s 331 Iter  1420 | best=-4.594634 | elite_mean=-6.306636 | loss=0.6594 | threshold=-8.7661 | time=1383.7s
+2604.7s 332 Iter  1440 | best=-4.594634 | elite_mean=-6.323685 | loss=0.6597 | threshold=-9.0236 | time=1403.2s
+2624.2s 333 Iter  1460 | best=-4.594634 | elite_mean=-6.295625 | loss=0.6604 | threshold=-8.9185 | time=1422.7s
+2643.6s 334 Iter  1480 | best=-4.594634 | elite_mean=-6.308837 | loss=0.6594 | threshold=-8.6973 | time=1442.2s
+2663.0s 335 Iter  1500 | best=-4.594634 | elite_mean=-6.362873 | loss=0.6599 | threshold=-9.1576 | time=1461.6s
+2663.0s 336 
+2663.0s 337 Training complete. Total time: 1462.7s
+2663.0s 338 Best reward: -4.594634
+2663.0s 339 
+2663.0s 340 Near-miss analysis (best graph, reward=-4.594634):
+2663.0s 341 mu (spectral radius) = 12.359380
+2663.0s 342 Edges = 74
+2663.0s 343 Max degree = 8, Min degree = 5
+2663.0s 344 Degree sequence: [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 7, 7, 7, 7, 6, 6, 5]
+2663.0s 345 
+2663.0s 346 Attack n=20: No counterexample found (best reward: -4.594634)
+2663.0s 347 This is expected -- the bound may be true, or counterexamples may exist at larger n.
+2663.0s 348 
+2663.0s 349 ---------------------------------------------------
+2663.0s 350 TIME BUDGET STATUS
+2663.0s 351 Elapsed:   0.74h (2649s)
+2663.0s 352 Remaining: 10.76h (38751s)
+2663.0s 353 Budget:    11.5h
+2663.0s 354 benchmark   : 0.33h used / 2.0h allocated
+2663.0s 355 primary     : 0.41h used / 5.0h allocated
+2663.0s 356 secondary   : 0.00h used / 3.0h allocated
+2663.0s 357 ---------------------------------------------------
+2663.0s 358 
+2663.1s 359 ======================================================================
+2663.2s 360 ATTACK: Bound 1 (OPEN), n=25
+2663.2s 361 Larger search space -- 300 edge decisions per graph
+2663.2s 362 Time limit: 4.59h
+2663.2s 363 ======================================================================
+2663.2s 364 
+2663.2s 365 ======================================================================
+2663.2s 366 CEM Training: Bound 1 (OPEN)
+2663.2s 367 Formula: mu <= max_v sqrt(4*d_v^3/m_v)
+2663.2s 368 N=25, decisions=300, state_dim=600
+2663.2s 369 Sessions=1000, elite=93%, super=94%
+2663.2s 370 Max iterations=1000, LR=0.0001
+2663.2s 371 Reward computation: numpy bypass (triu indices precomputed)
+2663.2s 372 ======================================================================
+2663.2s 373 
+2664.9s 374 Iter     1 | best=-10.694923 | elite_mean=-13.422354 | loss=0.6791 | threshold=-14.4127 | time=0.0s
+2703.3s 375 Iter    20 | best=-9.404692 | elite_mean=-11.122684 | loss=0.6755 | threshold=-12.0630 | time=38.0s
+2743.8s 376 Iter    40 | best=-8.774609 | elite_mean=-10.605843 | loss=0.6734 | threshold=-12.4401 | time=78.6s
+2783.5s 377 Iter    60 | best=-8.774609 | elite_mean=-10.469455 | loss=0.6732 | threshold=-12.6194 | time=118.2s
+2823.7s 378 Iter    80 | best=-8.774609 | elite_mean=-10.389294 | loss=0.6725 | threshold=-12.3634 | time=158.4s
+2864.0s 379 Iter   100 | best=-8.774609 | elite_mean=-10.332430 | loss=0.6723 | threshold=-12.5677 | time=198.7s
+2904.1s 380 Iter   120 | best=-8.774609 | elite_mean=-10.185951 | loss=0.6732 | threshold=-12.3881 | time=238.9s
+2943.8s 381 Iter   140 | best=-8.774609 | elite_mean=-10.160661 | loss=0.6729 | threshold=-12.3604 | time=278.5s
+2984.1s 382 Iter   160 | best=-8.774609 | elite_mean=-10.112359 | loss=0.6726 | threshold=-12.2032 | time=318.8s
+3024.5s 383 Iter   180 | best=-8.774609 | elite_mean=-10.112410 | loss=0.6716 | threshold=-12.7416 | time=359.2s
+3064.2s 384 Iter   200 | best=-8.774609 | elite_mean=-10.060497 | loss=0.6716 | threshold=-12.3817 | time=399.0s
+3104.2s 385 Iter   220 | best=-8.774609 | elite_mean=-10.006325 | loss=0.6719 | threshold=-12.2695 | time=438.9s
+3143.9s 386 Iter   240 | best=-8.774609 | elite_mean=-9.986898 | loss=0.6707 | threshold=-12.7554 | time=478.6s
+3183.8s 387 Iter   260 | best=-8.774609 | elite_mean=-9.885991 | loss=0.6709 | threshold=-12.2012 | time=518.5s
+3223.9s 388 Iter   280 | best=-8.774609 | elite_mean=-9.890337 | loss=0.6705 | threshold=-11.9350 | time=558.7s
+3264.4s 389 Iter   300 | best=-8.684592 | elite_mean=-9.869232 | loss=0.6702 | threshold=-12.4671 | time=599.1s
+3304.7s 390 Iter   320 | best=-8.684592 | elite_mean=-9.921855 | loss=0.6718 | threshold=-12.5659 | time=639.4s
+3345.1s 391 Iter   340 | best=-8.684592 | elite_mean=-9.885367 | loss=0.6710 | threshold=-12.4645 | time=679.8s
+3385.3s 392 Iter   360 | best=-8.684592 | elite_mean=-9.892367 | loss=0.6717 | threshold=-12.6208 | time=720.1s
+3425.4s 393 Iter   380 | best=-8.684592 | elite_mean=-9.821515 | loss=0.6703 | threshold=-12.3303 | time=760.2s
+3465.8s 394 Iter   400 | best=-8.684592 | elite_mean=-9.775875 | loss=0.6702 | threshold=-11.9209 | time=800.5s
+3506.1s 395 Iter   420 | best=-8.684592 | elite_mean=-9.799282 | loss=0.6705 | threshold=-12.2317 | time=840.9s
+3546.1s 396 Iter   440 | best=-8.684592 | elite_mean=-9.783818 | loss=0.6703 | threshold=-12.3480 | time=880.9s
+3586.4s 397 Iter   460 | best=-8.684592 | elite_mean=-9.733609 | loss=0.6707 | threshold=-12.2852 | time=921.1s
+3626.7s 398 Iter   480 | best=-8.684592 | elite_mean=-9.742505 | loss=0.6707 | threshold=-12.1062 | time=961.4s
+3666.7s 399 Iter   500 | best=-8.684592 | elite_mean=-9.706907 | loss=0.6708 | threshold=-12.2609 | time=1001.5s
+3706.9s 400 Iter   520 | best=-8.684592 | elite_mean=-9.703308 | loss=0.6708 | threshold=-12.5353 | time=1041.7s
+3746.8s 401 Iter   540 | best=-8.684592 | elite_mean=-9.706425 | loss=0.6702 | threshold=-12.3417 | time=1081.6s
+3786.8s 402 Iter   560 | best=-8.684592 | elite_mean=-9.676064 | loss=0.6709 | threshold=-12.1988 | time=1121.5s
+3826.8s 403 Iter   580 | best=-8.684592 | elite_mean=-9.673482 | loss=0.6701 | threshold=-12.0676 | time=1161.6s
+3866.8s 404 Iter   600 | best=-8.684592 | elite_mean=-9.615929 | loss=0.6701 | threshold=-11.9258 | time=1201.6s
+3906.9s 405 Iter   620 | best=-8.684592 | elite_mean=-9.645505 | loss=0.6704 | threshold=-12.2059 | time=1241.6s
+3947.0s 406 Iter   640 | best=-8.684592 | elite_mean=-9.744039 | loss=0.6704 | threshold=-12.8512 | time=1281.8s
+3987.6s 407 Iter   660 | best=-8.684592 | elite_mean=-9.702797 | loss=0.6696 | threshold=-12.3481 | time=1322.4s
+4027.7s 408 Iter   680 | best=-8.684592 | elite_mean=-9.667647 | loss=0.6698 | threshold=-12.4264 | time=1362.5s
+4067.9s 409 Iter   700 | best=-8.617439 | elite_mean=-9.662844 | loss=0.6693 | threshold=-12.5810 | time=1402.6s
+4108.0s 410 Iter   720 | best=-8.091473 | elite_mean=-9.578244 | loss=0.6697 | threshold=-12.4426 | time=1442.7s
+4148.0s 411 Iter   740 | best=-8.091473 | elite_mean=-9.611117 | loss=0.6697 | threshold=-12.6572 | time=1482.8s
+4188.5s 412 Iter   760 | best=-8.091473 | elite_mean=-9.600701 | loss=0.6691 | threshold=-12.6961 | time=1523.2s
+4228.9s 413 Iter   780 | best=-8.091473 | elite_mean=-9.603752 | loss=0.6696 | threshold=-12.4905 | time=1563.6s
+4269.1s 414 Iter   800 | best=-8.091473 | elite_mean=-9.558570 | loss=0.6687 | threshold=-12.5832 | time=1603.9s
+4309.6s 415 Iter   820 | best=-8.091473 | elite_mean=-9.541134 | loss=0.6693 | threshold=-12.2208 | time=1644.4s
+4349.6s 416 Iter   840 | best=-8.091473 | elite_mean=-9.490066 | loss=0.6693 | threshold=-12.0896 | time=1684.3s
+4389.7s 417 Iter   860 | best=-8.091473 | elite_mean=-9.499924 | loss=0.6685 | threshold=-11.9483 | time=1724.4s
+4429.7s 418 Iter   880 | best=-8.091473 | elite_mean=-9.493314 | loss=0.6682 | threshold=-12.1653 | time=1764.5s
+4469.9s 419 Iter   900 | best=-8.091473 | elite_mean=-9.530166 | loss=0.6682 | threshold=-12.2995 | time=1804.7s
+4510.0s 420 Iter   920 | best=-8.091473 | elite_mean=-9.515727 | loss=0.6687 | threshold=-11.9747 | time=1844.7s
+4550.1s 421 Iter   940 | best=-8.091473 | elite_mean=-9.537003 | loss=0.6687 | threshold=-12.4631 | time=1884.9s
+4590.7s 422 Iter   960 | best=-8.091473 | elite_mean=-9.433963 | loss=0.6678 | threshold=-12.0322 | time=1925.4s
+4630.9s 423 Iter   980 | best=-8.091473 | elite_mean=-9.441959 | loss=0.6684 | threshold=-11.8809 | time=1965.7s
+4670.9s 424 Iter  1000 | best=-8.091473 | elite_mean=-9.347309 | loss=0.6681 | threshold=-11.7159 | time=2005.8s
+4670.9s 425 
+4670.9s 426 Training complete. Total time: 2007.8s
+4670.9s 427 Best reward: -8.091473
+4670.9s 428 
+4670.9s 429 Near-miss analysis (best graph, reward=-8.091473):
+4670.9s 430 mu (spectral radius) = 13.601573
+4670.9s 431 Edges = 106
+4670.9s 432 Max degree = 10, Min degree = 3
+4670.9s 433 Degree sequence: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 8, 8, 8, 8, 8, 8, 7, 6, 6, 6, 3]
+4670.9s 434 
+4670.9s 435 Attack n=25: No counterexample found (best reward: -8.091473)
+4670.9s 436 
+4670.9s 437 ---------------------------------------------------
+4670.9s 438 TIME BUDGET STATUS
+4670.9s 439 Elapsed:   1.29h (4656s)
+4670.9s 440 Remaining: 10.21h (36744s)
+4670.9s 441 Budget:    11.5h
+4670.9s 442 benchmark   : 0.33h used / 2.0h allocated
+4670.9s 443 primary     : 0.96h used / 5.0h allocated
+4670.9s 444 secondary   : 0.00h used / 3.0h allocated
+4670.9s 445 ---------------------------------------------------
+4670.9s 446 
+4671.0s 447 
+4671.0s 448 ---------------------------------------------------
+4671.0s 449 TIME BUDGET STATUS
+4671.0s 450 Elapsed:   1.29h (4657s)
+4671.0s 451 Remaining: 10.21h (36743s)
+4671.0s 452 Budget:    11.5h
+4671.0s 453 benchmark   : 0.33h used / 2.0h allocated
+4671.0s 454 primary     : 0.96h used / 5.0h allocated
+4671.0s 455 secondary   : 0.00h used / 3.0h allocated
+4671.0s 456 ---------------------------------------------------
+4671.0s 457 
+4671.0s 458 
+4671.0s 459 ======================================================================
+4671.0s 460 SECONDARY ATTACK: Bound 4 (OPEN), n=20
+4671.0s 461 Time limit: 3.00h
+4671.0s 462 ======================================================================
+4671.0s 463 
+4671.0s 464 ======================================================================
+4671.0s 465 CEM Training: Bound 4 (OPEN)
+4671.0s 466 Formula: mu <= max_v (2*d_v^2/m_v)
+4671.0s 467 N=20, decisions=190, state_dim=380
+4671.0s 468 Sessions=1000, elite=93%, super=94%
+4671.0s 469 Max iterations=300, LR=0.0001
+4671.0s 470 Reward computation: numpy bypass (triu indices precomputed)
+4671.0s 471 ======================================================================
+4671.0s 472 
+4672.0s 473 Iter     1 | best=-12.355806 | elite_mean=-15.679216 | loss=0.6866 | threshold=-16.8989 | time=0.0s
+4690.6s 474 Iter    20 | best=-10.668951 | elite_mean=-12.725166 | loss=0.6928 | threshold=-14.0165 | time=18.4s
+4710.2s 475 Iter    40 | best=-9.744696 | elite_mean=-12.449634 | loss=0.6913 | threshold=-14.3477 | time=38.1s
+4729.9s 476 Iter    60 | best=-9.744696 | elite_mean=-12.222917 | loss=0.6903 | threshold=-14.6612 | time=57.8s
+4749.6s 477 Iter    80 | best=-9.744696 | elite_mean=-12.075290 | loss=0.6896 | threshold=-14.6213 | time=77.4s
+4769.4s 478 Iter   100 | best=-9.744696 | elite_mean=-11.871491 | loss=0.6916 | threshold=-14.2973 | time=97.3s
+4789.2s 479 Iter   120 | best=-9.744696 | elite_mean=-11.930307 | loss=0.6914 | threshold=-14.9615 | time=117.1s
+4809.2s 480 Iter   140 | best=-9.744696 | elite_mean=-11.740908 | loss=0.6913 | threshold=-14.2890 | time=137.1s
+4828.8s 481 Iter   160 | best=-9.333614 | elite_mean=-11.653296 | loss=0.6925 | threshold=-14.6572 | time=156.7s
+4848.5s 482 Iter   180 | best=-9.333614 | elite_mean=-11.658404 | loss=0.6926 | threshold=-14.4206 | time=176.4s
+4868.3s 483 Iter   200 | best=-9.333614 | elite_mean=-11.528957 | loss=0.6937 | threshold=-13.9807 | time=196.1s
+4888.1s 484 Iter   220 | best=-9.333614 | elite_mean=-11.528170 | loss=0.6927 | threshold=-14.4714 | time=216.0s
+4907.9s 485 Iter   240 | best=-9.333614 | elite_mean=-11.403252 | loss=0.6932 | threshold=-14.0635 | time=235.7s
+4927.8s 486 Iter   260 | best=-9.333614 | elite_mean=-11.458649 | loss=0.6932 | threshold=-14.3276 | time=255.6s
+4947.5s 487 Iter   280 | best=-9.333614 | elite_mean=-11.490211 | loss=0.6931 | threshold=-14.6862 | time=275.3s
+4967.1s 488 Iter   300 | best=-9.333614 | elite_mean=-11.409849 | loss=0.6924 | threshold=-14.5811 | time=295.0s
+4967.1s 489 
+4967.1s 490 Training complete. Total time: 295.9s
+4967.1s 491 Best reward: -9.333614
+4967.1s 492 
+4967.1s 493 Near-miss analysis (best graph, reward=-9.333614):
+4967.1s 494 mu (spectral radius) = 15.088405
+4967.1s 495 Edges = 100
+4967.1s 496 Max degree = 11, Min degree = 6
+4967.1s 497 Degree sequence: [11, 11, 11, 11, 11, 11, 11, 11, 11, 10, 10, 10, 10, 10, 10, 10, 9, 9, 7, 6]
+4967.1s 498 
+4967.1s 499 Bound 4 (OPEN): Best reward = -9.333614
+4967.1s 500 
+4967.1s 501 ======================================================================
+4967.1s 502 SECONDARY ATTACK: Bound 9 (OPEN), n=20
+4967.1s 503 Time limit: 3.00h
+4967.1s 504 ======================================================================
+4967.1s 505 
+4967.1s 506 ======================================================================
+4967.1s 507 CEM Training: Bound 9 (OPEN)
+4967.1s 508 Formula: mu <= max_v (m_v+3*d_v)/2
+4967.1s 509 N=20, decisions=190, state_dim=380
+4967.1s 510 Sessions=1000, elite=93%, super=94%
+4967.1s 511 Max iterations=300, LR=0.0001
+4967.1s 512 Reward computation: numpy bypass (triu indices precomputed)
+4967.1s 513 ======================================================================
+4967.1s 514 
+4968.0s 515 Iter     1 | best=-6.356713 | elite_mean=-7.881541 | loss=0.6961 | threshold=-8.2945 | time=0.0s
+4986.4s 516 Iter    20 | best=-6.120232 | elite_mean=-6.837982 | loss=0.6990 | threshold=-7.3203 | time=18.3s
+5005.8s 517 Iter    40 | best=-5.718884 | elite_mean=-6.700944 | loss=0.6996 | threshold=-7.3772 | time=37.7s
+5025.2s 518 Iter    60 | best=-5.718884 | elite_mean=-6.540223 | loss=0.6993 | threshold=-7.4688 | time=57.1s
+5044.6s 519 Iter    80 | best=-5.718884 | elite_mean=-6.476613 | loss=0.6995 | threshold=-7.3477 | time=76.5s
+5064.2s 520 Iter   100 | best=-5.262196 | elite_mean=-6.385755 | loss=0.6997 | threshold=-7.3645 | time=96.1s
+5083.8s 521 Iter   120 | best=-5.262196 | elite_mean=-6.396479 | loss=0.6997 | threshold=-7.6678 | time=115.7s
+5103.5s 522 Iter   140 | best=-5.262196 | elite_mean=-6.289147 | loss=0.7001 | threshold=-7.4701 | time=135.3s
+5122.9s 523 Iter   160 | best=-5.262196 | elite_mean=-6.280697 | loss=0.6999 | threshold=-7.3991 | time=154.8s
+5142.4s 524 Iter   180 | best=-5.262196 | elite_mean=-6.246027 | loss=0.7001 | threshold=-7.2413 | time=174.2s
+5161.9s 525 Iter   200 | best=-5.262196 | elite_mean=-6.294564 | loss=0.6999 | threshold=-7.6588 | time=193.7s
+5181.5s 526 Iter   220 | best=-5.262196 | elite_mean=-6.247881 | loss=0.6997 | threshold=-7.6084 | time=213.3s
+5201.0s 527 Iter   240 | best=-5.262196 | elite_mean=-6.226093 | loss=0.7000 | threshold=-7.5449 | time=232.9s
+5220.6s 528 Iter   260 | best=-5.190005 | elite_mean=-6.115029 | loss=0.7003 | threshold=-7.0747 | time=252.4s
+5240.2s 529 Iter   280 | best=-5.190005 | elite_mean=-6.109392 | loss=0.7001 | threshold=-7.4358 | time=272.1s
+5259.9s 530 Iter   300 | best=-5.190005 | elite_mean=-6.104813 | loss=0.6999 | threshold=-7.3950 | time=291.8s
+5259.9s 531 
+5259.9s 532 Training complete. Total time: 292.8s
+5259.9s 533 Best reward: -5.190005
+5259.9s 534 
+5259.9s 535 Near-miss analysis (best graph, reward=-5.190005):
+5259.9s 536 mu (spectral radius) = 13.909995
+5259.9s 537 Edges = 79
+5259.9s 538 Max degree = 10, Min degree = 5
+5259.9s 539 Degree sequence: [10, 10, 10, 10, 10, 9, 9, 8, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 5, 5]
+5259.9s 540 
+5259.9s 541 Bound 9 (OPEN): Best reward = -5.190005
+5259.9s 542 
+5259.9s 543 ======================================================================
+5259.9s 544 SECONDARY ATTACK: Bound 33 (OPEN, edge-max), n=20
+5259.9s 545 Time limit: 3.00h
+5259.9s 546 ======================================================================
+5259.9s 547 
+5259.9s 548 ======================================================================
+5259.9s 549 CEM Training: Bound 33 (OPEN, edge-max)
+5259.9s 550 Formula: mu <= max_{vi~vj} (2*(d_i+d_j)-(m_i+m_j))
+5259.9s 551 N=20, decisions=190, state_dim=380
+5259.9s 552 Sessions=1000, elite=93%, super=94%
+5259.9s 553 Max iterations=200, LR=0.0001
+5259.9s 554 Reward computation: numpy bypass (triu indices precomputed)
+5259.9s 555 ======================================================================
+5259.9s 556 
+5260.8s 557 Iter     1 | best=-8.731724 | elite_mean=-11.034512 | loss=0.6809 | threshold=-12.0147 | time=0.0s
+5279.7s 558 Iter    20 | best=-7.236896 | elite_mean=-8.945182 | loss=0.6765 | threshold=-10.2528 | time=18.8s
+5299.6s 559 Iter    40 | best=-7.236896 | elite_mean=-8.766420 | loss=0.6755 | threshold=-10.5805 | time=38.6s
+5319.4s 560 Iter    60 | best=-7.236896 | elite_mean=-8.637553 | loss=0.6742 | threshold=-10.5809 | time=58.5s
+5339.3s 561 Iter    80 | best=-6.861679 | elite_mean=-8.505780 | loss=0.6742 | threshold=-10.3308 | time=78.3s
+5359.2s 562 Iter   100 | best=-6.861679 | elite_mean=-8.391435 | loss=0.6737 | threshold=-10.3717 | time=98.3s
+5379.1s 563 Iter   120 | best=-6.729323 | elite_mean=-8.252886 | loss=0.6733 | threshold=-10.0069 | time=118.2s
+5399.1s 564 Iter   140 | best=-6.729323 | elite_mean=-8.271002 | loss=0.6730 | threshold=-10.7167 | time=138.2s
+5418.9s 565 Iter   160 | best=-6.729323 | elite_mean=-8.145103 | loss=0.6721 | threshold=-10.2142 | time=158.0s
+5438.9s 566 Iter   180 | best=-6.729323 | elite_mean=-8.039155 | loss=0.6725 | threshold=-10.0849 | time=178.0s
+5458.7s 567 Iter   200 | best=-6.729323 | elite_mean=-8.152443 | loss=0.6716 | threshold=-10.6933 | time=197.9s
+5458.7s 568 
+5458.7s 569 Training complete. Total time: 198.9s
+5458.7s 570 Best reward: -6.729323
+5458.7s 571 
+5458.7s 572 Near-miss analysis (best graph, reward=-6.729323):
+5458.7s 573 mu (spectral radius) = 11.520677
+5458.7s 574 Edges = 71
+5458.7s 575 Max degree = 8, Min degree = 5
+5458.7s 576 Degree sequence: [8, 8, 8, 8, 8, 8, 8, 8, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 5]
+5458.7s 577 
+5458.7s 578 Bound 33 (OPEN, edge-max): Best reward = -6.729323
+5458.7s 579 
+5458.7s 580 Secondary attacks complete.
+5458.7s 581 
+5458.7s 582 ---------------------------------------------------
+5458.7s 583 TIME BUDGET STATUS
+5458.7s 584 Elapsed:   1.51h (5444s)
+5458.7s 585 Remaining: 9.99h (35956s)
+5458.7s 586 Budget:    11.5h
+5458.7s 587 benchmark   : 0.33h used / 2.0h allocated
+5458.7s 588 primary     : 0.96h used / 5.0h allocated
+5458.7s 589 secondary   : 0.22h used / 3.0h allocated
+5458.7s 590 ---------------------------------------------------
+5458.7s 591 
+5459.0s 592 
+5459.0s 593 ---------------------------------------------------
+5459.0s 594 TIME BUDGET STATUS
+5459.0s 595 Elapsed:   1.51h (5444s)
+5459.0s 596 Remaining: 9.99h (35956s)
+5459.0s 597 Budget:    11.5h
+5459.0s 598 benchmark   : 0.33h used / 2.0h allocated
+5459.0s 599 primary     : 0.96h used / 5.0h allocated
+5459.0s 600 secondary   : 0.22h used / 3.0h allocated
+5459.0s 601 ---------------------------------------------------
+5459.0s 602 
+5459.0s 603 ==========================================================================================
+5459.0s 604 RESULTS SUMMARY
+5459.0s 605 ==========================================================================================
+5459.0s 606 Run                    N Bound                 Best Reward  Found  Iters     Time
+5459.0s 607 ------------------------------------------------------------------------------------------
+5459.0s 608 bound2_n15            15 Bound 2 (DISPROVED)     -4.738394     no    500   221.8s
+5459.0s 609 bound2_n20            20 Bound 2 (DISPROVED)     -5.161640     no   1000   956.0s
+5459.0s 610 bound1_n20            20 Bound 1 (OPEN)          -4.594634     no   1500  1461.6s
+5459.0s 611 bound1_n25            25 Bound 1 (OPEN)          -8.091473     no   1000  2005.8s
+5459.0s 612 bound4_n20            20 Bound 4 (OPEN)          -9.333614     no    300   295.0s
+5459.0s 613 bound9_n20            20 Bound 9 (OPEN)          -5.190005     no    300   291.8s
+5459.0s 614 bound33_n20           20 Bound 33 (OPEN, edge-max)    -6.729323     no    200   197.9s
+5459.0s 615 ==========================================================================================
+5459.0s 616 
+5459.0s 617 Counterexamples found: 0 / 7
+5459.0s 618 Total notebook time: 1.51h
+5461.3s 619 Saved: reward_curves.png
+5461.9s 620 Saved: nearmiss_graphs.png
+5461.9s 621 
+5461.9s 622 ================================================================================
+5461.9s 623 NEAR-MISS ANALYSIS -- Structural Properties
+5461.9s 624 ================================================================================
+5461.9s 625 
+5461.9s 626 ------------------------------------------------------------------------
+5461.9s 627 bound2_n15 (n=15, bound=Bound 2 (DISPROVED))
+5461.9s 628 ------------------------------------------------------------------------
+5461.9s 629 Best reward:        -4.738394
+5461.9s 630 Gap to violation:   4.738394
+5461.9s 631 mu (spectral rad.): 11.645606
+5461.9s 632 Bound formula:      mu <= max_v (2*m_v^2/d_v)
+5461.9s 633 
+5461.9s 634 --- Graph Structure ---
+5461.9s 635 Vertices:           15
+5461.9s 636 Edges:              49
+5461.9s 637 Density:            0.4667
+5461.9s 638 Diameter:           3
+5461.9s 639 Radius:             2
+5461.9s 640 Avg clustering:     0.3148
+5461.9s 641 Transitivity:       0.3141
+5461.9s 642 
+5461.9s 643 --- Degree Stats ---
+5461.9s 644 Degree sequence:    [8, 8, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 5, 5]
+5461.9s 645 Max degree:         8
+5461.9s 646 Min degree:         5
+5461.9s 647 Mean degree:        6.53
+5461.9s 648 Degree std:         0.88
+5461.9s 649 
+5461.9s 650 --- Avg Neighbor Degree ---
+5461.9s 651 Max m_v:            7.0000
+5461.9s 652 Min m_v:            6.2857
+5461.9s 653 Mean m_v:           6.6533
+5461.9s 654 
+5461.9s 655 --- Tightest Bound Vertex ---
+5461.9s 656 Vertex 5: bound_value=10.562500, d_v=8, m_v=6.5000
+5461.9s 657 mu - bound_at_v = +1.083106
+5461.9s 658 
+5461.9s 659 ------------------------------------------------------------------------
+5461.9s 660 bound2_n20 (n=20, bound=Bound 2 (DISPROVED))
+5461.9s 661 ------------------------------------------------------------------------
+5461.9s 662 Best reward:        -5.161640
+5461.9s 663 Gap to violation:   5.161640
+5461.9s 664 mu (spectral rad.): 11.505027
+5461.9s 665 Bound formula:      mu <= max_v (2*m_v^2/d_v)
+5461.9s 666 
+5461.9s 667 --- Graph Structure ---
+5461.9s 668 Vertices:           20
+5461.9s 669 Edges:              54
+5461.9s 670 Density:            0.2842
+5461.9s 671 Diameter:           3
+5461.9s 672 Radius:             2
+5461.9s 673 Avg clustering:     0.2555
+5461.9s 674 Transitivity:       0.2863
+5461.9s 675 
+5461.9s 676 --- Degree Stats ---
+5461.9s 677 Degree sequence:    [10, 8, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 4, 4, 4, 3, 3]
+5461.9s 678 Max degree:         10
+5461.9s 679 Min degree:         3
+5461.9s 680 Mean degree:        5.40
+5461.9s 681 Degree std:         1.56
+5461.9s 682 
+5461.9s 683 --- Avg Neighbor Degree ---
+5461.9s 684 Max m_v:            7.0000
+5461.9s 685 Min m_v:            4.3333
+5461.9s 686 Mean m_v:           5.7663
+5461.9s 687 
+5461.9s 688 --- Tightest Bound Vertex ---
+5461.9s 689 Vertex 19: bound_value=6.728000, d_v=10, m_v=5.8000
+5461.9s 690 mu - bound_at_v = +4.777027
+5461.9s 691 
+5461.9s 692 ------------------------------------------------------------------------
+5461.9s 693 bound1_n20 (n=20, bound=Bound 1 (OPEN))
+5461.9s 694 ------------------------------------------------------------------------
+5461.9s 695 Best reward:        -4.594634
+5461.9s 696 Gap to violation:   4.594634
+5461.9s 697 mu (spectral rad.): 12.359380
+5461.9s 698 Bound formula:      mu <= max_v sqrt(4*d_v^3/m_v)
+5461.9s 699 
+5461.9s 700 --- Graph Structure ---
+5461.9s 701 Vertices:           20
+5461.9s 702 Edges:              74
+5461.9s 703 Density:            0.3895
+5461.9s 704 Diameter:           3
+5461.9s 705 Radius:             2
+5461.9s 706 Avg clustering:     0.2740
+5461.9s 707 Transitivity:       0.2869
+5461.9s 708 
+5461.9s 709 --- Degree Stats ---
+5461.9s 710 Degree sequence:    [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 7, 7, 7, 7, 6, 6, 5]
+5461.9s 711 Max degree:         8
+5461.9s 712 Min degree:         5
+5461.9s 713 Mean degree:        7.40
+5461.9s 714 Degree std:         0.86
+5461.9s 715 
+5461.9s 716 --- Avg Neighbor Degree ---
+5461.9s 717 Max m_v:            7.8571
+5461.9s 718 Min m_v:            7.0000
+5461.9s 719 Mean m_v:           7.4874
+5461.9s 720 
+5461.9s 721 --- Tightest Bound Vertex ---
+5461.9s 722 Vertex 19: bound_value=8.333333, d_v=5, m_v=7.2000
+5461.9s 723 mu - bound_at_v = +4.026046
+5461.9s 724 
+5461.9s 725 ------------------------------------------------------------------------
+5461.9s 726 bound1_n25 (n=25, bound=Bound 1 (OPEN))
+5461.9s 727 ------------------------------------------------------------------------
+5461.9s 728 Best reward:        -8.091473
+5461.9s 729 Gap to violation:   8.091473
+5461.9s 730 mu (spectral rad.): 13.601573
+5461.9s 731 Bound formula:      mu <= max_v sqrt(4*d_v^3/m_v)
+5461.9s 732 
+5461.9s 733 --- Graph Structure ---
+5461.9s 734 Vertices:           25
+5461.9s 735 Edges:              106
+5461.9s 736 Density:            0.3533
+5461.9s 737 Diameter:           3
+5461.9s 738 Radius:             2
+5461.9s 739 Avg clustering:     0.3303
+5461.9s 740 Transitivity:       0.3538
+5461.9s 741 
+5461.9s 742 --- Degree Stats ---
+5461.9s 743 Degree sequence:    [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 8, 8, 8, 8, 8, 8, 7, 6, 6, 6, 3]
+5461.9s 744 Max degree:         10
+5461.9s 745 Min degree:         3
+5461.9s 746 Mean degree:        8.48
+5461.9s 747 Degree std:         1.75
+5461.9s 748 
+5461.9s 749 --- Avg Neighbor Degree ---
+5461.9s 750 Max m_v:            9.5000
+5461.9s 751 Min m_v:            7.0000
+5461.9s 752 Mean m_v:           8.7740
+5461.9s 753 
+5461.9s 754 --- Tightest Bound Vertex ---
+5461.9s 755 Vertex 0: bound_value=3.674235, d_v=3, m_v=8.0000
+5461.9s 756 mu - bound_at_v = +9.927338
+5461.9s 757 
+5461.9s 758 ------------------------------------------------------------------------
+5461.9s 759 bound4_n20 (n=20, bound=Bound 4 (OPEN))
+5461.9s 760 ------------------------------------------------------------------------
+5461.9s 761 Best reward:        -9.333614
+5461.9s 762 Gap to violation:   9.333614
+5461.9s 763 mu (spectral rad.): 15.088405
+5461.9s 764 Bound formula:      mu <= max_v (2*d_v^2/m_v)
+5461.9s 765 
+5461.9s 766 --- Graph Structure ---
+5461.9s 767 Vertices:           20
+5461.9s 768 Edges:              100
+5461.9s 769 Density:            0.5263
+5461.9s 770 Diameter:           2
+5461.9s 771 Radius:             2
+5461.9s 772 Avg clustering:     0.4822
+5461.9s 773 Transitivity:       0.4804
+5461.9s 774 
+5461.9s 775 --- Degree Stats ---
+5461.9s 776 Degree sequence:    [11, 11, 11, 11, 11, 11, 11, 11, 11, 10, 10, 10, 10, 10, 10, 10, 9, 9, 7, 6]
+5461.9s 777 Max degree:         11
+5461.9s 778 Min degree:         6
+5461.9s 779 Mean degree:        10.00
+5461.9s 780 Degree std:         1.34
+5461.9s 781 
+5461.9s 782 --- Avg Neighbor Degree ---
+5461.9s 783 Max m_v:            10.6667
+5461.9s 784 Min m_v:            9.6000
+5461.9s 785 Mean m_v:           10.1954
+5461.9s 786 
+5461.9s 787 --- Tightest Bound Vertex ---
+5461.9s 788 Vertex 14: bound_value=6.967742, d_v=6, m_v=10.3333
+5461.9s 789 mu - bound_at_v = +8.120663
+5461.9s 790 
+5461.9s 791 ------------------------------------------------------------------------
+5461.9s 792 bound9_n20 (n=20, bound=Bound 9 (OPEN))
+5461.9s 793 ------------------------------------------------------------------------
+5461.9s 794 Best reward:        -5.190005
+5461.9s 795 Gap to violation:   5.190005
+5461.9s 796 mu (spectral rad.): 13.909995
+5461.9s 797 Bound formula:      mu <= max_v (m_v+3*d_v)/2
+5461.9s 798 
+5461.9s 799 --- Graph Structure ---
+5461.9s 800 Vertices:           20
+5461.9s 801 Edges:              79
+5461.9s 802 Density:            0.4158
+5461.9s 803 Diameter:           3
+5461.9s 804 Radius:             2
+5461.9s 805 Avg clustering:     0.3500
+5461.9s 806 Transitivity:       0.3357
+5461.9s 807 
+5461.9s 808 --- Degree Stats ---
+5461.9s 809 Degree sequence:    [10, 10, 10, 10, 10, 9, 9, 8, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 5, 5]
+5461.9s 810 Max degree:         10
+5461.9s 811 Min degree:         5
+5461.9s 812 Mean degree:        7.90
+5461.9s 813 Degree std:         1.64
+5461.9s 814 
+5461.9s 815 --- Avg Neighbor Degree ---
+5461.9s 816 Max m_v:            9.4000
+5461.9s 817 Min m_v:            7.6000
+5461.9s 818 Mean m_v:           8.2919
+5461.9s 819 
+5461.9s 820 --- Tightest Bound Vertex ---
+5461.9s 821 Vertex 15: bound_value=11.900000, d_v=5, m_v=8.8000
+5461.9s 822 mu - bound_at_v = +2.009995
+5461.9s 823 
+5461.9s 824 ------------------------------------------------------------------------
+5461.9s 825 bound33_n20 (n=20, bound=Bound 33 (OPEN, edge-max))
+5461.9s 826 ------------------------------------------------------------------------
+5461.9s 827 Best reward:        -6.729323
+5461.9s 828 Gap to violation:   6.729323
+5461.9s 829 mu (spectral rad.): 11.520677
+5461.9s 830 Bound formula:      mu <= max_{vi~vj} (2*(d_i+d_j)-(m_i+m_j))
+5461.9s 831 
+5461.9s 832 --- Graph Structure ---
+5461.9s 833 Vertices:           20
+5461.9s 834 Edges:              71
+5461.9s 835 Density:            0.3737
+5461.9s 836 Diameter:           3
+5461.9s 837 Radius:             2
+5461.9s 838 Avg clustering:     0.2895
+5461.9s 839 Transitivity:       0.2857
+5461.9s 840 
+5461.9s 841 --- Degree Stats ---
+5461.9s 842 Degree sequence:    [8, 8, 8, 8, 8, 8, 8, 8, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 5]
+5461.9s 843 Max degree:         8
+5461.9s 844 Min degree:         5
+5461.9s 845 Mean degree:        7.10
+5461.9s 846 Degree std:         0.89
+5461.9s 847 
+5461.9s 848 --- Avg Neighbor Degree ---
+5461.9s 849 Max m_v:            7.7143
+5461.9s 850 Min m_v:            6.8571
+5461.9s 851 Mean m_v:           7.2222
+5461.9s 852 
+5461.9s 853 ================================================================================
+5461.9s 854 Analysis complete.
+5461.9s 855 ================================================================================
+5466.3s 856 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+5466.3s 857 cells[i][c] = re.sub('\\\\\|', '|', cell)
+5466.5s 858 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+5466.5s 859 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+5467.3s 860 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+5467.7s 861 [NbConvertApp] Writing 883354 bytes to __notebook__.ipynb
+5470.8s 862 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+5472.3s 863 [NbConvertApp] Support files will be in __results___files/
+5472.3s 864 [NbConvertApp] Making directory __results___files
+5472.3s 865 [NbConvertApp] Making directory __results___files
+5472.3s 866 [NbConvertApp] Writing 624545 bytes to __results__.html
