@@ -1,0 +1,80 @@
+Searching for counterexample to Bound 44
+Time budget: 900s | Restart budget: 30s
+============================================================
+
+--- Restart 1 | 900s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.146124 -> -0.846068 | n=5 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.544596 -> -0.301472 | n=7 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.127781 -> -0.173691 | n=8 e=10 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.029770 -> -0.143921 | n=10 e=12 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.003224 -> -0.140697 | n=12 e=14 | depth=0 level=1
+  iter    7 | t=   0.1s | IMPROVED +0.008224 -> -0.132474 | n=14 e=16 | depth=0 level=1
+  iter    8 | t=   0.2s | IMPROVED +0.000644 -> -0.131830 | n=16 e=18 | depth=0 level=1
+  iter   10 | t=   0.4s | IMPROVED +0.002408 -> -0.129421 | n=17 e=20 | depth=0 level=1
+  iter   11 | t=   0.5s | IMPROVED +0.002341 -> -0.127081 | n=18 e=22 | depth=0 level=1
+  iter   12 | t=   0.6s | IMPROVED +0.000883 -> -0.126197 | n=20 e=24 | depth=0 level=1
+  iter   14 | t=   0.9s | IMPROVED +0.006376 -> -0.119821 | n=21 e=25 | depth=0 level=1
+  iter   17 | t=   1.5s | IMPROVED +0.000823 -> -0.118999 | n=20 e=24 | depth=0 level=1
+  iter   20 | t=   2.0s | score=-0.320019 best=-0.118999 | depth=3 level=1
+  iter   25 | t=  12.8s | IMPROVED +0.004322 -> -0.114676 | n=22 e=27 | depth=0 level=1
+  iter   26 | t=  12.9s | IMPROVED +0.000279 -> -0.114398 | n=23 e=29 | depth=0 level=1
+  iter   30 | t=  13.6s | score=-0.114398 best=-0.114398 | depth=4 level=1
+  iter   33 | t=  15.8s | IMPROVED +0.013785 -> -0.100613 | n=24 e=30 | depth=0 level=1
+  iter   40 | t=  22.9s | score=-0.100613 best=-0.100613 | depth=1 level=2
+AMCS done  | 30.0s | 43 iterations | best=-0.100613 | n=24 e=30
+
+--- Restart 2 | 870s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.3s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 2.4s | 13 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 3 | 868s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.198062 -> -0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   1.4s | score=-0.000000 best=-0.000000 | depth=2 level=2
+  iter   11 | t=   1.9s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   20 | t=   4.1s | score=0.000000 best=0.000000 | depth=3 level=2
+AMCS done  | 6.4s | 23 iterations | best=0.000000 | n=8 e=8
+
+--- Restart 4 | 861s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter   10 | t=   0.5s | score=0.000000 best=0.000000 | depth=3 level=2
+AMCS done  | 1.3s | 13 iterations | best=0.000000 | n=6 e=6
+
+--- Restart 5 | 860s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.2s | score=-0.035276 best=-0.035276 | depth=3 level=2
+  iter   12 | t=   1.8s | IMPROVED +0.000000 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   20 | t=   2.7s | score=-0.035276 best=-0.035276 | depth=2 level=2
+AMCS done  | 4.0s | 24 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 6 | 856s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.198062 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   1.4s | score=0.000000 best=0.000000 | depth=2 level=2
+  iter   13 | t=   3.4s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  *** COUNTEREXAMPLE FOUND at iter 13 ***
+AMCS done  | 3.4s | 13 iterations | best=0.000000 | n=8 e=8
+*** GLOBAL COUNTEREXAMPLE at restart 6 ***
+
+=== AMCS Multi-Restart Summary ===
+Total time: 47.5s | Restarts: 6
+Best score: 0.000000
+Best graph: n=8 e=8
+
+============================================================
+FINAL RESULT for Bound 44
+============================================================
+  mu(G) = 4.00000000
+  Bound 44 = 4.00000000
+  Gap (mu - bound) = 0.00000000
+  Graph: n=8 e=8
+  Edges: [(0, 1), (0, 3), (1, 2), (2, 6), (3, 8), (4, 6), (4, 7), (7, 8)]
+
+  *** COUNTEREXAMPLE FOUND ***

@@ -46,34 +46,41 @@ Binary classification of Invasive Ductal Carcinoma using Transfer Learning.
 | **Notebook** | [notebooks/02_breast_cancer_classification.ipynb](notebooks/02_breast_cancer_classification.ipynb) |
 | **Training Script** | [src/breast_cancer_train.py](src/breast_cancer_train.py) |
 
-### 3. RL Graph Conjecture Counterexample Search
-Using Reinforcement Learning to search for counterexamples to open mathematical conjectures on Laplacian spectral radius bounds.
+### 3. Graph Conjecture Counterexample Search
+Computational search for counterexamples to 38 open BHS (Brankov-Hansen-Stevanovic 2006) upper bounds on the Laplacian spectral radius μ(G).
 
 | | |
 |---|---|
-| **Method** | Deep Cross-Entropy Method (CEM), Ghebleh 2024 settings (Adam lr=0.003, CrossEntropyLoss, adaptive randomness, batch_size 200) |
-| **Target** | Laplacian spectral radius upper bounds (Brankov-Hansen-Stevanovic 2006) — 36 open bounds |
-| **Architecture** | MLP (128→64→4→2), Adam optimizer |
-| **Benchmark** | Bound 3 (disproved) — **5/7 counterexamples found** (n=12,14,16,18,20) |
-| **Open Bounds** | Bounds 1, 4, 9, 33 — **0/28 counterexamples** (empirical support for bounds at n≤20) |
-| **Best Result** | Bound 3, n=16: reward +0.256 (μ exceeded bound by 0.256) |
-| **Status** | **Completed** — 35 runs, ~10.4 hours on CPU |
-| **Script** | [src/rl_graph_conjecture_v2.py](src/rl_graph_conjecture_v2.py) |
-| **Notebooks** | [v1](notebooks/rl_graph_conjecture.ipynb), [v2](notebooks/rl_graph_conjecture_v2.ipynb) |
+| **Target** | Laplacian spectral radius upper bounds — 38 open bounds |
+| **Methods** | CEM (Deep Cross-Entropy), Exhaustive enumeration (nauty-geng), AMCS (Adaptive Monte Carlo Search), Tabu Search (edge-flip neighborhood) |
+| **Key Finding** | All 38 open bounds resist computational attack — **0 counterexamples found** |
+| **Closest Bound** | Bound 44: gap = +0.0096 (exhaustive n≤13, 68.5M graphs), gap = +0.053 (Tabu Search n=15) |
+| **Benchmark** | Bound 3 (known disproved) — **5/7 counterexamples found** via CEM (n=12,14,16,18,20) |
+| **Status** | **Completed** — 4 methods, exhaustive to n=13, heuristic to n=50 |
+| **Scripts** | [CEM](src/rl_graph_conjecture_v2.py), [Exhaustive](src/exhaustive_bound_search.py), [AMCS](src/amcs_bound_search.py), [Tabu](src/tabu_bound_search.py) |
 | **References** | [Wagner 2021](https://arxiv.org/abs/2104.14516), [Ghebleh et al. 2024](https://arxiv.org/abs/2403.18429), Brankov-Hansen-Stevanovic 2006 |
 
 <details>
-<summary>Benchmark Results (Bound 3, n=8-20)</summary>
+<summary>Methods and Results</summary>
 
-| n | Best Reward | Counterexample | Iterations | Time |
-|---|-------------|----------------|------------|------|
-| 8 | 0.000 | No | 5000 | 525s |
-| 10 | 0.000 | No | 5000 | 745s |
-| 12 | +0.026 | **Yes** | 325 | 26s |
-| 14 | +0.003 | **Yes** | 1552 | 408s |
-| 16 | +0.256 | **Yes** | 815 | 115s |
-| 18 | +0.030 | **Yes** | 2807 | 1236s |
-| 20 | +0.179 | **Yes** | 2267 | 550s |
+**1. Deep Cross-Entropy Method (CEM)** — MLP (128→64→4→2), Ghebleh 2024 settings
+- Benchmark Bound 3: 5/7 counterexamples at n=12,14,16,18,20
+- Open bounds: 0 counterexamples at n≤20 (35 runs, ~10.4 hours)
+- Limitation: converges to regular graph attractors
+
+**2. Exhaustive Enumeration** — nauty-geng via WSL, subquartic graphs
+- n=5 to n=13: 68.5M connected graphs tested
+- All 38 bounds hold with positive gap
+- Bound 44 closest: gap = +0.0096
+
+**3. Adaptive Monte Carlo Search (AMCS)** — Nested rollout + shrink/grow
+- Multi-restart search with adaptive depth escalation
+- Trapped at score=0 on small regular graphs (tight case attractor)
+
+**4. Tabu Search** — Edge-flip neighborhood, multi-start with diverse densities
+- Avoids scratch-build trap by modifying existing graphs
+- Best result: Bound 44 gap = +0.053 at n=15 (30 min, 5 restarts, 8920 iterations)
+- Structural analysis: edge-max bounds create robust barrier against violation
 
 </details>
 

@@ -1,0 +1,534 @@
+Tabu Search for counterexample to Bound 44
+Time budget: 1800s | Start n=15 | Restarts=5
+============================================================
+
+============================================================
+Restart 1/5 | n=15 e=21 density=0.2 | budget=360s
+============================================================
+Tabu Search start | n=15 e=21 | score=-1.198410
+  iter     1 | t=    0.0s | NEW BEST=-1.19264288 | n=15 e=21 | neighbors=1
+  iter     1 | t=    0.0s | NEW BEST=-1.16632118 | n=15 e=21 | neighbors=4
+  iter     1 | t=    0.0s | NEW BEST=-0.86415186 | n=15 e=21 | neighbors=6
+  iter     1 | t=    0.0s | NEW BEST=-0.75688054 | n=15 e=21 | neighbors=14
+  iter     1 | t=    0.1s | NEW BEST=-0.62763612 | n=15 e=21 | neighbors=177
+  iter     2 | t=    0.2s | NEW BEST=-0.56180639 | n=15 e=21 | neighbors=24
+  iter     2 | t=    0.2s | NEW BEST=-0.55564228 | n=15 e=21 | neighbors=55
+  iter     2 | t=    0.3s | NEW BEST=-0.53466229 | n=15 e=21 | neighbors=208
+  iter     3 | t=    0.4s | NEW BEST=-0.50757144 | n=15 e=21 | neighbors=159
+  iter     4 | t=    0.6s | NEW BEST=-0.44725901 | n=15 e=21 | neighbors=19
+  iter     4 | t=    0.6s | NEW BEST=-0.43602080 | n=15 e=21 | neighbors=121
+  iter     5 | t=    0.8s | NEW BEST=-0.41289824 | n=15 e=21 | neighbors=36
+  iter     5 | t=    0.8s | NEW BEST=-0.39783483 | n=15 e=21 | neighbors=117
+  iter     5 | t=    0.8s | NEW BEST=-0.39339310 | n=15 e=21 | neighbors=154
+  iter     5 | t=    0.8s | NEW BEST=-0.33362133 | n=15 e=21 | neighbors=206
+  iter     5 | t=    0.8s | NEW BEST=-0.31375097 | n=15 e=21 | neighbors=215
+  iter     5 | t=    0.9s | NEW BEST=-0.30331745 | n=15 e=21 | neighbors=229
+  iter     5 | t=    0.9s | NEW BEST=-0.29443452 | n=15 e=21 | neighbors=432
+  iter     6 | t=    1.0s | NEW BEST=-0.26231615 | n=15 e=21 | neighbors=115
+  iter     6 | t=    1.1s | NEW BEST=-0.25928377 | n=15 e=21 | neighbors=304
+  iter     6 | t=    1.1s | NEW BEST=-0.25462057 | n=15 e=21 | neighbors=398
+  iter     7 | t=    1.2s | NEW BEST=-0.17628962 | n=15 e=21 | neighbors=62
+  iter     8 | t=    1.3s | NEW BEST=-0.16884160 | n=15 e=21 | neighbors=29
+  iter     9 | t=    1.5s | NEW BEST=-0.05350956 | n=15 e=21 | neighbors=69
+  iter    10 | t=    1.7s | NEW BEST=-0.05338690 | n=15 e=21 | neighbors=100
+  iter    10 | t=    1.7s | NEW BEST=-0.05315666 | n=15 e=21 | neighbors=218
+  iter    11 | t=    1.9s | NEW BEST=-0.05315666 | n=15 e=21 | neighbors=252
+  iter    50 | t=    7.9s | current=-0.053157 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   100 | t=   15.6s | current=-0.053510 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   147 | t=   22.8s | NEW BEST=-0.05315666 | n=15 e=21 | neighbors=216
+  iter   150 | t=   23.3s | current=-0.053157 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   200 | t=   31.9s | current=-0.119081 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   250 | t=   40.1s | current=-0.122286 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   300 | t=   48.4s | current=-0.122286 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   350 | t=   56.5s | current=-0.053157 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   400 | t=   64.2s | current=-0.122348 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   450 | t=   71.9s | current=-0.053510 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   500 | t=   79.6s | current=-0.053387 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   550 | t=   87.6s | current=-0.118793 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   600 | t=   96.3s | current=-0.113278 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   650 | t=  104.7s | current=-0.053387 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   700 | t=  112.6s | current=-0.053387 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   750 | t=  120.4s | current=-0.053157 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   800 | t=  128.1s | current=-0.090243 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   850 | t=  135.8s | current=-0.090243 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   900 | t=  143.5s | current=-0.090478 best=-0.053157 | n=15 e=21 | tabu=50
+  iter   950 | t=  151.3s | current=-0.090243 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1000 | t=  159.0s | current=-0.090478 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1050 | t=  166.7s | current=-0.090478 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1100 | t=  174.4s | current=-0.090243 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1150 | t=  182.2s | current=-0.090243 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1200 | t=  190.4s | current=-0.090478 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1250 | t=  198.1s | current=-0.090243 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1300 | t=  205.9s | current=-0.090350 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1350 | t=  213.6s | current=-0.090478 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1400 | t=  221.3s | current=-0.090243 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1450 | t=  228.9s | current=-0.090320 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1500 | t=  236.9s | current=-0.090557 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1550 | t=  244.7s | current=-0.090243 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1600 | t=  252.4s | current=-0.090320 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1650 | t=  260.1s | current=-0.090478 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1700 | t=  267.8s | current=-0.090320 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1750 | t=  275.5s | current=-0.090243 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1800 | t=  283.2s | current=-0.090562 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1850 | t=  290.9s | current=-0.090320 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1900 | t=  298.6s | current=-0.090478 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  1950 | t=  306.3s | current=-0.090320 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  2000 | t=  314.0s | current=-0.090320 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  2050 | t=  321.8s | current=-0.090350 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  2100 | t=  329.5s | current=-0.090243 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  2150 | t=  337.2s | current=-0.090320 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  2200 | t=  344.9s | current=-0.090243 best=-0.053157 | n=15 e=21 | tabu=50
+  iter  2250 | t=  352.7s | current=-0.090320 best=-0.053157 | n=15 e=21 | tabu=50
+Tabu Search done | 360.1s | 2298 iterations | best=-0.05315666
+
+============================================================
+Restart 2/5 | n=15 e=31 density=0.3 | budget=360s
+============================================================
+Tabu Search start | n=15 e=31 | score=-2.212154
+  iter     1 | t=    0.0s | NEW BEST=-2.13024660 | n=15 e=31 | neighbors=1
+  iter     1 | t=    0.0s | NEW BEST=-2.12917824 | n=15 e=31 | neighbors=5
+  iter     1 | t=    0.0s | NEW BEST=-2.01431408 | n=15 e=31 | neighbors=12
+  iter     1 | t=    0.0s | NEW BEST=-1.98474031 | n=15 e=31 | neighbors=83
+  iter     1 | t=    0.1s | NEW BEST=-1.90749268 | n=15 e=31 | neighbors=237
+  iter     2 | t=    0.2s | NEW BEST=-1.86175329 | n=15 e=31 | neighbors=1
+  iter     2 | t=    0.2s | NEW BEST=-1.80729143 | n=15 e=31 | neighbors=10
+  iter     2 | t=    0.2s | NEW BEST=-1.79330828 | n=15 e=31 | neighbors=15
+  iter     2 | t=    0.2s | NEW BEST=-1.73448196 | n=15 e=31 | neighbors=18
+  iter     2 | t=    0.2s | NEW BEST=-1.65845107 | n=15 e=31 | neighbors=34
+  iter     2 | t=    0.2s | NEW BEST=-1.53125894 | n=15 e=31 | neighbors=44
+  iter     2 | t=    0.3s | NEW BEST=-1.44841307 | n=15 e=31 | neighbors=196
+  iter     3 | t=    0.4s | NEW BEST=-1.23363257 | n=15 e=31 | neighbors=56
+  iter     3 | t=    0.5s | NEW BEST=-1.19118023 | n=15 e=31 | neighbors=287
+  iter     4 | t=    0.6s | NEW BEST=-1.18282897 | n=15 e=31 | neighbors=18
+  iter     4 | t=    0.6s | NEW BEST=-1.08408738 | n=15 e=31 | neighbors=70
+  iter     4 | t=    0.7s | NEW BEST=-1.08133778 | n=15 e=31 | neighbors=210
+  iter     4 | t=    0.8s | NEW BEST=-1.01129744 | n=15 e=31 | neighbors=450
+  iter     5 | t=    0.8s | NEW BEST=-0.79931334 | n=15 e=31 | neighbors=48
+  iter     6 | t=    1.0s | NEW BEST=-0.77378237 | n=15 e=31 | neighbors=2
+  iter     6 | t=    1.0s | NEW BEST=-0.64280240 | n=15 e=31 | neighbors=24
+  iter     6 | t=    1.1s | NEW BEST=-0.62838509 | n=15 e=31 | neighbors=100
+  iter     7 | t=    1.2s | NEW BEST=-0.61257167 | n=15 e=31 | neighbors=29
+  iter     7 | t=    1.2s | NEW BEST=-0.59490453 | n=15 e=31 | neighbors=48
+  iter     7 | t=    1.3s | NEW BEST=-0.55988881 | n=15 e=31 | neighbors=69
+  iter     7 | t=    1.3s | NEW BEST=-0.54361265 | n=15 e=31 | neighbors=148
+  iter     7 | t=    1.4s | NEW BEST=-0.51095828 | n=15 e=31 | neighbors=378
+  iter     8 | t=    1.4s | NEW BEST=-0.42196997 | n=15 e=31 | neighbors=26
+  iter     8 | t=    1.4s | NEW BEST=-0.41811924 | n=15 e=31 | neighbors=34
+  iter     8 | t=    1.5s | NEW BEST=-0.41318597 | n=15 e=31 | neighbors=224
+  iter     9 | t=    1.6s | NEW BEST=-0.39934194 | n=15 e=31 | neighbors=20
+  iter     9 | t=    1.7s | NEW BEST=-0.32100283 | n=15 e=31 | neighbors=78
+  iter    10 | t=    1.9s | NEW BEST=-0.31726259 | n=15 e=31 | neighbors=118
+  iter    10 | t=    1.9s | NEW BEST=-0.28873023 | n=15 e=31 | neighbors=122
+  iter    10 | t=    2.0s | NEW BEST=-0.28149440 | n=15 e=31 | neighbors=450
+  iter    10 | t=    2.0s | NEW BEST=-0.25638604 | n=15 e=31 | neighbors=487
+  iter    12 | t=    2.3s | NEW BEST=-0.25638604 | n=15 e=31 | neighbors=196
+  iter    12 | t=    2.4s | NEW BEST=-0.24062948 | n=15 e=31 | neighbors=423
+  iter    14 | t=    2.7s | NEW BEST=-0.18050911 | n=15 e=31 | neighbors=90
+  iter    15 | t=    2.9s | NEW BEST=-0.17412386 | n=15 e=31 | neighbors=92
+  iter    15 | t=    2.9s | NEW BEST=-0.17412386 | n=15 e=31 | neighbors=285
+  iter    16 | t=    3.0s | NEW BEST=-0.17412386 | n=15 e=31 | neighbors=37
+  iter    16 | t=    3.1s | NEW BEST=-0.08952278 | n=15 e=31 | neighbors=125
+  iter    19 | t=    3.6s | NEW BEST=-0.08952278 | n=15 e=31 | neighbors=25
+  iter    24 | t=    4.6s | NEW BEST=-0.08952278 | n=15 e=31 | neighbors=227
+  iter    33 | t=    6.3s | NEW BEST=-0.08952278 | n=15 e=31 | neighbors=173
+  iter    37 | t=    7.2s | NEW BEST=-0.08952278 | n=15 e=31 | neighbors=382
+  iter    50 | t=    9.8s | current=-0.169264 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   100 | t=   19.6s | current=-0.110197 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   150 | t=   29.3s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   200 | t=   38.9s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   250 | t=   48.7s | current=-0.180509 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   300 | t=   58.5s | current=-0.110197 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   350 | t=   68.1s | current=-0.174124 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   400 | t=   77.8s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   450 | t=   87.6s | current=-0.138165 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   500 | t=   97.4s | current=-0.174124 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   550 | t=  107.2s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   600 | t=  117.0s | current=-0.180509 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   650 | t=  126.7s | current=-0.110197 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   700 | t=  136.4s | current=-0.176014 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   750 | t=  146.2s | current=-0.174124 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   800 | t=  155.9s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   850 | t=  165.6s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   900 | t=  175.2s | current=-0.110197 best=-0.089523 | n=15 e=31 | tabu=50
+  iter   950 | t=  185.1s | current=-0.169264 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1000 | t=  194.9s | current=-0.174124 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1050 | t=  204.8s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1100 | t=  214.5s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1150 | t=  224.3s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1200 | t=  234.0s | current=-0.110197 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1250 | t=  244.1s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1260 | t=  245.9s | NEW BEST=-0.08952278 | n=15 e=31 | neighbors=85
+  iter  1300 | t=  253.8s | current=-0.180509 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1350 | t=  263.5s | current=-0.110197 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1400 | t=  273.3s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1450 | t=  282.9s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1500 | t=  292.6s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1550 | t=  302.2s | current=-0.174124 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1600 | t=  311.9s | current=-0.174124 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1650 | t=  321.6s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1700 | t=  331.3s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1750 | t=  341.0s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+  iter  1800 | t=  350.7s | current=-0.089523 best=-0.089523 | n=15 e=31 | tabu=50
+Tabu Search done | 360.1s | 1849 iterations | best=-0.08952278
+
+============================================================
+Restart 3/5 | n=15 e=42 density=0.4 | budget=360s
+============================================================
+Tabu Search start | n=15 e=42 | score=-3.857631
+  iter     1 | t=    0.0s | NEW BEST=-2.90102361 | n=15 e=42 | neighbors=3
+  iter     1 | t=    0.0s | NEW BEST=-2.86815734 | n=15 e=42 | neighbors=97
+  iter     1 | t=    0.2s | NEW BEST=-2.79101281 | n=15 e=42 | neighbors=382
+  iter     2 | t=    0.2s | NEW BEST=-2.66336374 | n=15 e=42 | neighbors=2
+  iter     2 | t=    0.2s | NEW BEST=-2.55840443 | n=15 e=42 | neighbors=12
+  iter     2 | t=    0.2s | NEW BEST=-2.51720416 | n=15 e=42 | neighbors=13
+  iter     2 | t=    0.2s | NEW BEST=-2.46375323 | n=15 e=42 | neighbors=45
+  iter     2 | t=    0.2s | NEW BEST=-2.37563633 | n=15 e=42 | neighbors=46
+  iter     2 | t=    0.2s | NEW BEST=-2.36435816 | n=15 e=42 | neighbors=55
+  iter     2 | t=    0.3s | NEW BEST=-2.26240097 | n=15 e=42 | neighbors=132
+  iter     2 | t=    0.3s | NEW BEST=-2.22142252 | n=15 e=42 | neighbors=212
+  iter     2 | t=    0.3s | NEW BEST=-2.20287700 | n=15 e=42 | neighbors=265
+  iter     2 | t=    0.4s | NEW BEST=-1.95583615 | n=15 e=42 | neighbors=350
+  iter     3 | t=    0.4s | NEW BEST=-1.82034926 | n=15 e=42 | neighbors=1
+  iter     3 | t=    0.4s | NEW BEST=-1.79765343 | n=15 e=42 | neighbors=33
+  iter     3 | t=    0.5s | NEW BEST=-1.78631424 | n=15 e=42 | neighbors=114
+  iter     4 | t=    0.7s | NEW BEST=-1.77323497 | n=15 e=42 | neighbors=33
+  iter     4 | t=    0.7s | NEW BEST=-1.69900793 | n=15 e=42 | neighbors=36
+  iter     4 | t=    0.7s | NEW BEST=-1.64117128 | n=15 e=42 | neighbors=39
+  iter     4 | t=    0.7s | NEW BEST=-1.61448292 | n=15 e=42 | neighbors=105
+  iter     4 | t=    0.8s | NEW BEST=-1.50157985 | n=15 e=42 | neighbors=284
+  iter     5 | t=    0.9s | NEW BEST=-1.39920765 | n=15 e=42 | neighbors=41
+  iter     5 | t=    1.0s | NEW BEST=-1.35698060 | n=15 e=42 | neighbors=213
+  iter     5 | t=    1.0s | NEW BEST=-1.29462370 | n=15 e=42 | neighbors=258
+  iter     6 | t=    1.1s | NEW BEST=-1.25158138 | n=15 e=42 | neighbors=37
+  iter     6 | t=    1.2s | NEW BEST=-1.21439087 | n=15 e=42 | neighbors=82
+  iter     6 | t=    1.2s | NEW BEST=-1.17023954 | n=15 e=42 | neighbors=103
+  iter     6 | t=    1.3s | NEW BEST=-1.15315300 | n=15 e=42 | neighbors=427
+  iter     6 | t=    1.3s | NEW BEST=-1.13636694 | n=15 e=42 | neighbors=461
+  iter     7 | t=    1.3s | NEW BEST=-1.08577174 | n=15 e=42 | neighbors=29
+  iter     7 | t=    1.4s | NEW BEST=-1.08284647 | n=15 e=42 | neighbors=116
+  iter     7 | t=    1.4s | NEW BEST=-0.95980200 | n=15 e=42 | neighbors=266
+  iter     8 | t=    1.6s | NEW BEST=-0.93423338 | n=15 e=42 | neighbors=69
+  iter     8 | t=    1.6s | NEW BEST=-0.92348480 | n=15 e=42 | neighbors=96
+  iter     8 | t=    1.6s | NEW BEST=-0.89867469 | n=15 e=42 | neighbors=176
+  iter     8 | t=    1.6s | NEW BEST=-0.87580846 | n=15 e=42 | neighbors=205
+  iter     8 | t=    1.7s | NEW BEST=-0.86800452 | n=15 e=42 | neighbors=364
+  iter     9 | t=    1.8s | NEW BEST=-0.86678808 | n=15 e=42 | neighbors=56
+  iter     9 | t=    1.8s | NEW BEST=-0.83386690 | n=15 e=42 | neighbors=73
+  iter     9 | t=    1.8s | NEW BEST=-0.78930968 | n=15 e=42 | neighbors=85
+  iter     9 | t=    1.9s | NEW BEST=-0.75458776 | n=15 e=42 | neighbors=255
+  iter     9 | t=    1.9s | NEW BEST=-0.72108807 | n=15 e=42 | neighbors=310
+  iter    10 | t=    2.0s | NEW BEST=-0.66448519 | n=15 e=42 | neighbors=18
+  iter    10 | t=    2.1s | NEW BEST=-0.66368088 | n=15 e=42 | neighbors=270
+  iter    10 | t=    2.1s | NEW BEST=-0.62411467 | n=15 e=42 | neighbors=340
+  iter    10 | t=    2.2s | NEW BEST=-0.57997593 | n=15 e=42 | neighbors=438
+  iter    11 | t=    2.2s | NEW BEST=-0.50670877 | n=15 e=42 | neighbors=18
+  iter    11 | t=    2.2s | NEW BEST=-0.50612475 | n=15 e=42 | neighbors=126
+  iter    11 | t=    2.3s | NEW BEST=-0.50165578 | n=15 e=42 | neighbors=272
+  iter    12 | t=    2.4s | NEW BEST=-0.49247653 | n=15 e=42 | neighbors=18
+  iter    12 | t=    2.5s | NEW BEST=-0.47873266 | n=15 e=42 | neighbors=258
+  iter    12 | t=    2.5s | NEW BEST=-0.47407525 | n=15 e=42 | neighbors=310
+  iter    13 | t=    2.6s | NEW BEST=-0.45160740 | n=15 e=42 | neighbors=5
+  iter    13 | t=    2.7s | NEW BEST=-0.41676707 | n=15 e=42 | neighbors=216
+  iter    14 | t=    2.8s | NEW BEST=-0.40206961 | n=15 e=42 | neighbors=42
+  iter    14 | t=    3.0s | NEW BEST=-0.38724936 | n=15 e=42 | neighbors=487
+  iter    15 | t=    3.1s | NEW BEST=-0.32897952 | n=15 e=42 | neighbors=254
+  iter    15 | t=    3.2s | NEW BEST=-0.32897952 | n=15 e=42 | neighbors=412
+  iter    16 | t=    3.3s | NEW BEST=-0.30723938 | n=15 e=42 | neighbors=154
+  iter    16 | t=    3.4s | NEW BEST=-0.29383943 | n=15 e=42 | neighbors=440
+  iter    17 | t=    3.5s | NEW BEST=-0.24984937 | n=15 e=42 | neighbors=174
+  iter    22 | t=    4.7s | NEW BEST=-0.24984937 | n=15 e=42 | neighbors=481
+  iter    32 | t=    6.7s | NEW BEST=-0.21267197 | n=15 e=42 | neighbors=60
+  iter    32 | t=    6.7s | NEW BEST=-0.14837963 | n=15 e=42 | neighbors=164
+  iter    33 | t=    7.0s | NEW BEST=-0.14837963 | n=15 e=42 | neighbors=212
+  iter    46 | t=    9.8s | NEW BEST=-0.14287912 | n=15 e=42 | neighbors=351
+  iter    47 | t=    9.9s | NEW BEST=-0.13700998 | n=15 e=42 | neighbors=227
+  iter    47 | t=    9.9s | NEW BEST=-0.13700998 | n=15 e=42 | neighbors=239
+  iter    48 | t=   10.1s | NEW BEST=-0.12890568 | n=15 e=42 | neighbors=16
+  iter    48 | t=   10.1s | NEW BEST=-0.12890568 | n=15 e=42 | neighbors=74
+  iter    50 | t=   10.7s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter    53 | t=   11.1s | NEW BEST=-0.12890568 | n=15 e=42 | neighbors=173
+  iter    90 | t=   18.9s | NEW BEST=-0.12890568 | n=15 e=42 | neighbors=200
+  iter   100 | t=   21.0s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   150 | t=   31.4s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   161 | t=   33.5s | NEW BEST=-0.12890568 | n=15 e=42 | neighbors=125
+  iter   200 | t=   41.8s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   250 | t=   52.6s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   266 | t=   55.8s | NEW BEST=-0.12890568 | n=15 e=42 | neighbors=213
+  iter   300 | t=   63.1s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   350 | t=   74.0s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   400 | t=   84.3s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   450 | t=   94.7s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   500 | t=  105.0s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   550 | t=  115.3s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   600 | t=  125.7s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   650 | t=  136.2s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   700 | t=  146.6s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   750 | t=  157.0s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   800 | t=  167.4s | current=-0.167979 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   850 | t=  177.7s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   900 | t=  188.3s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter   950 | t=  198.6s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1000 | t=  209.0s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1050 | t=  219.5s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1100 | t=  229.9s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1150 | t=  240.3s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1200 | t=  250.8s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1250 | t=  261.1s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1300 | t=  271.5s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1350 | t=  281.8s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1400 | t=  292.1s | current=-0.137010 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1450 | t=  302.5s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1500 | t=  313.1s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1550 | t=  324.0s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1600 | t=  334.7s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1650 | t=  345.6s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+  iter  1700 | t=  356.3s | current=-0.128906 best=-0.128906 | n=15 e=42 | tabu=50
+Tabu Search done | 359.9s | 1717 iterations | best=-0.12890568
+
+============================================================
+Restart 4/5 | n=15 e=52 density=0.5 | budget=360s
+============================================================
+Tabu Search start | n=15 e=52 | score=-3.889405
+  iter     1 | t=    0.0s | NEW BEST=-3.85726314 | n=15 e=52 | neighbors=21
+  iter     1 | t=    0.0s | NEW BEST=-3.69736278 | n=15 e=52 | neighbors=34
+  iter     1 | t=    0.0s | NEW BEST=-3.65767771 | n=15 e=52 | neighbors=90
+  iter     1 | t=    0.1s | NEW BEST=-3.62618558 | n=15 e=52 | neighbors=115
+  iter     1 | t=    0.1s | NEW BEST=-3.55569757 | n=15 e=52 | neighbors=127
+  iter     1 | t=    0.1s | NEW BEST=-3.54561733 | n=15 e=52 | neighbors=269
+  iter     2 | t=    0.2s | NEW BEST=-3.44583902 | n=15 e=52 | neighbors=1
+  iter     2 | t=    0.2s | NEW BEST=-3.44405883 | n=15 e=52 | neighbors=19
+  iter     2 | t=    0.3s | NEW BEST=-3.35985150 | n=15 e=52 | neighbors=63
+  iter     2 | t=    0.3s | NEW BEST=-3.29002140 | n=15 e=52 | neighbors=108
+  iter     3 | t=    0.4s | NEW BEST=-3.20888764 | n=15 e=52 | neighbors=3
+  iter     3 | t=    0.5s | NEW BEST=-3.10406183 | n=15 e=52 | neighbors=19
+  iter     3 | t=    0.6s | NEW BEST=-3.10324726 | n=15 e=52 | neighbors=198
+  iter     4 | t=    0.7s | NEW BEST=-3.09668006 | n=15 e=52 | neighbors=2
+  iter     4 | t=    0.7s | NEW BEST=-3.05433184 | n=15 e=52 | neighbors=55
+  iter     4 | t=    0.8s | NEW BEST=-3.04245457 | n=15 e=52 | neighbors=109
+  iter     4 | t=    0.8s | NEW BEST=-3.01038959 | n=15 e=52 | neighbors=115
+  iter     4 | t=    0.8s | NEW BEST=-2.99734520 | n=15 e=52 | neighbors=125
+  iter     4 | t=    0.8s | NEW BEST=-2.91679224 | n=15 e=52 | neighbors=132
+  iter     5 | t=    0.9s | NEW BEST=-2.91666017 | n=15 e=52 | neighbors=8
+  iter     5 | t=    0.9s | NEW BEST=-2.88677453 | n=15 e=52 | neighbors=16
+  iter     5 | t=    0.9s | NEW BEST=-2.82141111 | n=15 e=52 | neighbors=36
+  iter     5 | t=    1.0s | NEW BEST=-2.79604561 | n=15 e=52 | neighbors=164
+  iter     5 | t=    1.2s | NEW BEST=-2.79107058 | n=15 e=52 | neighbors=480
+  iter     6 | t=    1.2s | NEW BEST=-2.68712790 | n=15 e=52 | neighbors=22
+  iter     6 | t=    1.2s | NEW BEST=-2.67523376 | n=15 e=52 | neighbors=39
+  iter     6 | t=    1.2s | NEW BEST=-2.66797106 | n=15 e=52 | neighbors=75
+  iter     6 | t=    1.3s | NEW BEST=-2.64702311 | n=15 e=52 | neighbors=338
+  iter     6 | t=    1.3s | NEW BEST=-2.61994788 | n=15 e=52 | neighbors=394
+  iter     7 | t=    1.4s | NEW BEST=-2.60019124 | n=15 e=52 | neighbors=1
+  iter     7 | t=    1.4s | NEW BEST=-2.59011324 | n=15 e=52 | neighbors=10
+  iter     7 | t=    1.4s | NEW BEST=-2.43099343 | n=15 e=52 | neighbors=34
+  iter     7 | t=    1.5s | NEW BEST=-2.38999530 | n=15 e=52 | neighbors=191
+  iter     7 | t=    1.5s | NEW BEST=-2.37548548 | n=15 e=52 | neighbors=345
+  iter     7 | t=    1.6s | NEW BEST=-2.31997517 | n=15 e=52 | neighbors=382
+  iter     8 | t=    1.6s | NEW BEST=-2.18384838 | n=15 e=52 | neighbors=6
+  iter     8 | t=    1.6s | NEW BEST=-2.15039093 | n=15 e=52 | neighbors=43
+  iter     8 | t=    1.7s | NEW BEST=-2.07472215 | n=15 e=52 | neighbors=172
+  iter     8 | t=    1.8s | NEW BEST=-2.03708119 | n=15 e=52 | neighbors=345
+  iter     9 | t=    1.9s | NEW BEST=-2.02374010 | n=15 e=52 | neighbors=6
+  iter     9 | t=    1.9s | NEW BEST=-1.99688006 | n=15 e=52 | neighbors=25
+  iter     9 | t=    1.9s | NEW BEST=-1.93027728 | n=15 e=52 | neighbors=101
+  iter     9 | t=    1.9s | NEW BEST=-1.88792407 | n=15 e=52 | neighbors=130
+  iter     9 | t=    2.0s | NEW BEST=-1.88434494 | n=15 e=52 | neighbors=216
+  iter     9 | t=    2.0s | NEW BEST=-1.83654753 | n=15 e=52 | neighbors=286
+  iter    10 | t=    2.1s | NEW BEST=-1.76608443 | n=15 e=52 | neighbors=19
+  iter    11 | t=    2.3s | NEW BEST=-1.71410510 | n=15 e=52 | neighbors=3
+  iter    11 | t=    2.5s | NEW BEST=-1.60106438 | n=15 e=52 | neighbors=349
+  iter    12 | t=    2.6s | NEW BEST=-1.47792695 | n=15 e=52 | neighbors=45
+  iter    12 | t=    2.8s | NEW BEST=-1.38541141 | n=15 e=52 | neighbors=482
+  iter    13 | t=    2.8s | NEW BEST=-1.38541141 | n=15 e=52 | neighbors=18
+  iter    13 | t=    2.9s | NEW BEST=-1.36530680 | n=15 e=52 | neighbors=119
+  iter    13 | t=    2.9s | NEW BEST=-1.26219552 | n=15 e=52 | neighbors=131
+  iter    14 | t=    3.2s | NEW BEST=-1.22968282 | n=15 e=52 | neighbors=364
+  iter    14 | t=    3.2s | NEW BEST=-1.22717545 | n=15 e=52 | neighbors=453
+  iter    15 | t=    3.3s | NEW BEST=-1.22185498 | n=15 e=52 | neighbors=4
+  iter    15 | t=    3.3s | NEW BEST=-1.12366740 | n=15 e=52 | neighbors=45
+  iter    15 | t=    3.3s | NEW BEST=-1.11525381 | n=15 e=52 | neighbors=134
+  iter    15 | t=    3.3s | NEW BEST=-0.99231819 | n=15 e=52 | neighbors=169
+  iter    16 | t=    3.5s | NEW BEST=-0.92489364 | n=15 e=52 | neighbors=80
+  iter    16 | t=    3.5s | NEW BEST=-0.82148295 | n=15 e=52 | neighbors=84
+  iter    17 | t=    3.8s | NEW BEST=-0.79700866 | n=15 e=52 | neighbors=54
+  iter    17 | t=    3.9s | NEW BEST=-0.77542667 | n=15 e=52 | neighbors=408
+  iter    18 | t=    4.0s | NEW BEST=-0.74164253 | n=15 e=52 | neighbors=144
+  iter    18 | t=    4.1s | NEW BEST=-0.74164253 | n=15 e=52 | neighbors=166
+  iter    18 | t=    4.1s | NEW BEST=-0.70615545 | n=15 e=52 | neighbors=186
+  iter    18 | t=    4.2s | NEW BEST=-0.70615545 | n=15 e=52 | neighbors=365
+  iter    19 | t=    4.3s | NEW BEST=-0.56162942 | n=15 e=52 | neighbors=89
+  iter    20 | t=    4.5s | NEW BEST=-0.56162942 | n=15 e=52 | neighbors=4
+  iter    21 | t=    4.9s | NEW BEST=-0.56162942 | n=15 e=52 | neighbors=435
+  iter    22 | t=    5.0s | NEW BEST=-0.56162942 | n=15 e=52 | neighbors=146
+  iter    29 | t=    6.6s | NEW BEST=-0.56162942 | n=15 e=52 | neighbors=181
+  iter    50 | t=   11.5s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter    63 | t=   14.4s | NEW BEST=-0.56162942 | n=15 e=52 | neighbors=150
+  iter   100 | t=   23.2s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   150 | t=   34.7s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   200 | t=   46.3s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   250 | t=   57.8s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   300 | t=   72.1s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   350 | t=   83.6s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   400 | t=   95.1s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   450 | t=  106.2s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   500 | t=  117.3s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   550 | t=  128.5s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   600 | t=  139.6s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   650 | t=  150.8s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   700 | t=  161.9s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   750 | t=  173.1s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   800 | t=  184.1s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   850 | t=  195.3s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   900 | t=  206.4s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter   950 | t=  217.5s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter  1000 | t=  228.5s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter  1050 | t=  239.7s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter  1100 | t=  250.9s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter  1150 | t=  262.0s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter  1200 | t=  273.2s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter  1250 | t=  284.3s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter  1300 | t=  295.4s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter  1350 | t=  307.1s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter  1400 | t=  318.3s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter  1450 | t=  329.5s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter  1500 | t=  340.7s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+  iter  1550 | t=  351.8s | current=-0.561629 best=-0.561629 | n=15 e=52 | tabu=50
+Tabu Search done | 360.0s | 1587 iterations | best=-0.56162942
+
+============================================================
+Restart 5/5 | n=15 e=63 density=0.6 | budget=360s
+============================================================
+Tabu Search start | n=15 e=63 | score=-6.300229
+  iter     1 | t=    0.0s | NEW BEST=-5.96726484 | n=15 e=63 | neighbors=1
+  iter     1 | t=    0.0s | NEW BEST=-5.92542618 | n=15 e=63 | neighbors=7
+  iter     1 | t=    0.0s | NEW BEST=-5.82156764 | n=15 e=63 | neighbors=13
+  iter     1 | t=    0.0s | NEW BEST=-5.55266852 | n=15 e=63 | neighbors=21
+  iter     1 | t=    0.1s | NEW BEST=-5.53987866 | n=15 e=63 | neighbors=121
+  iter     1 | t=    0.2s | NEW BEST=-5.38006098 | n=15 e=63 | neighbors=370
+  iter     1 | t=    0.2s | NEW BEST=-5.34340151 | n=15 e=63 | neighbors=396
+  iter     2 | t=    0.2s | NEW BEST=-5.23719708 | n=15 e=63 | neighbors=2
+  iter     2 | t=    0.2s | NEW BEST=-5.12912490 | n=15 e=63 | neighbors=10
+  iter     2 | t=    0.2s | NEW BEST=-5.06542544 | n=15 e=63 | neighbors=24
+  iter     2 | t=    0.3s | NEW BEST=-4.98775626 | n=15 e=63 | neighbors=59
+  iter     2 | t=    0.3s | NEW BEST=-4.96926518 | n=15 e=63 | neighbors=60
+  iter     2 | t=    0.3s | NEW BEST=-4.89332377 | n=15 e=63 | neighbors=131
+  iter     2 | t=    0.4s | NEW BEST=-4.87946834 | n=15 e=63 | neighbors=390
+  iter     3 | t=    0.5s | NEW BEST=-4.59393701 | n=15 e=63 | neighbors=9
+  iter     3 | t=    0.5s | NEW BEST=-4.55458472 | n=15 e=63 | neighbors=24
+  iter     4 | t=    0.7s | NEW BEST=-4.48407050 | n=15 e=63 | neighbors=3
+  iter     4 | t=    0.7s | NEW BEST=-4.34393247 | n=15 e=63 | neighbors=15
+  iter     4 | t=    0.7s | NEW BEST=-4.30728480 | n=15 e=63 | neighbors=58
+  iter     4 | t=    0.7s | NEW BEST=-4.11997219 | n=15 e=63 | neighbors=78
+  iter     5 | t=    1.0s | NEW BEST=-4.10784820 | n=15 e=63 | neighbors=47
+  iter     5 | t=    1.0s | NEW BEST=-4.01394959 | n=15 e=63 | neighbors=52
+  iter     5 | t=    1.0s | NEW BEST=-3.96390529 | n=15 e=63 | neighbors=80
+  iter     5 | t=    1.1s | NEW BEST=-3.89471586 | n=15 e=63 | neighbors=311
+  iter     6 | t=    1.2s | NEW BEST=-3.84398598 | n=15 e=63 | neighbors=3
+  iter     6 | t=    1.2s | NEW BEST=-3.80585844 | n=15 e=63 | neighbors=46
+  iter     6 | t=    1.2s | NEW BEST=-3.79798224 | n=15 e=63 | neighbors=50
+  iter     6 | t=    1.4s | NEW BEST=-3.77519889 | n=15 e=63 | neighbors=470
+  iter     7 | t=    1.4s | NEW BEST=-3.77019870 | n=15 e=63 | neighbors=12
+  iter     7 | t=    1.4s | NEW BEST=-3.76455108 | n=15 e=63 | neighbors=22
+  iter     7 | t=    1.4s | NEW BEST=-3.63968987 | n=15 e=63 | neighbors=37
+  iter     7 | t=    1.4s | NEW BEST=-3.47974131 | n=15 e=63 | neighbors=41
+  iter     7 | t=    1.5s | NEW BEST=-3.38000243 | n=15 e=63 | neighbors=200
+  iter     7 | t=    1.6s | NEW BEST=-3.35108732 | n=15 e=63 | neighbors=458
+  iter     8 | t=    1.7s | NEW BEST=-3.30595483 | n=15 e=63 | neighbors=34
+  iter     8 | t=    1.7s | NEW BEST=-3.11478159 | n=15 e=63 | neighbors=123
+  iter     9 | t=    1.9s | NEW BEST=-3.10891943 | n=15 e=63 | neighbors=64
+  iter     9 | t=    1.9s | NEW BEST=-3.10791638 | n=15 e=63 | neighbors=154
+  iter     9 | t=    2.0s | NEW BEST=-2.99962304 | n=15 e=63 | neighbors=198
+  iter     9 | t=    2.1s | NEW BEST=-2.98375571 | n=15 e=63 | neighbors=404
+  iter    10 | t=    2.2s | NEW BEST=-2.97336117 | n=15 e=63 | neighbors=191
+  iter    10 | t=    2.3s | NEW BEST=-2.94617328 | n=15 e=63 | neighbors=414
+  iter    10 | t=    2.3s | NEW BEST=-2.91978276 | n=15 e=63 | neighbors=483
+  iter    11 | t=    2.4s | NEW BEST=-2.87461063 | n=15 e=63 | neighbors=192
+  iter    12 | t=    2.6s | NEW BEST=-2.79864020 | n=15 e=63 | neighbors=65
+  iter    12 | t=    2.6s | NEW BEST=-2.57729027 | n=15 e=63 | neighbors=116
+  iter    14 | t=    3.0s | NEW BEST=-2.57729027 | n=15 e=63 | neighbors=1
+  iter    31 | t=    7.2s | NEW BEST=-2.57507816 | n=15 e=63 | neighbors=282
+  iter    33 | t=    7.5s | NEW BEST=-2.57507816 | n=15 e=63 | neighbors=50
+  iter    34 | t=    7.9s | NEW BEST=-2.57507816 | n=15 e=63 | neighbors=245
+  iter    38 | t=    8.9s | NEW BEST=-2.47836243 | n=15 e=63 | neighbors=366
+  iter    40 | t=    9.3s | NEW BEST=-2.36132782 | n=15 e=63 | neighbors=240
+  iter    42 | t=    9.7s | NEW BEST=-2.22807530 | n=15 e=63 | neighbors=113
+  iter    45 | t=   10.4s | NEW BEST=-2.22807530 | n=15 e=63 | neighbors=171
+  iter    47 | t=   10.9s | NEW BEST=-2.01932911 | n=15 e=63 | neighbors=238
+  iter    48 | t=   11.3s | NEW BEST=-2.01932911 | n=15 e=63 | neighbors=468
+  iter    50 | t=   11.8s | current=-2.298059 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   100 | t=   23.9s | current=-2.298059 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   150 | t=   35.7s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   200 | t=   47.5s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   250 | t=   59.2s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   300 | t=   71.0s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   350 | t=   82.7s | current=-2.228075 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   400 | t=   94.4s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   450 | t=  106.0s | current=-2.019329 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   500 | t=  117.8s | current=-2.228075 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   550 | t=  129.6s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   600 | t=  141.4s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   650 | t=  153.1s | current=-2.228075 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   684 | t=  160.9s | NEW BEST=-2.01932911 | n=15 e=63 | neighbors=152
+  iter   700 | t=  164.8s | current=-2.448404 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   750 | t=  176.5s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   800 | t=  188.3s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   850 | t=  200.0s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   900 | t=  211.8s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter   950 | t=  223.5s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter  1000 | t=  235.3s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter  1050 | t=  247.0s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter  1100 | t=  258.7s | current=-2.321251 best=-2.019329 | n=15 e=63 | tabu=50
+  iter  1150 | t=  270.3s | current=-2.460240 best=-2.019329 | n=15 e=63 | tabu=50
+  iter  1163 | t=  273.2s | NEW BEST=-1.89966443 | n=15 e=63 | neighbors=149
+  iter  1165 | t=  273.8s | NEW BEST=-1.89966443 | n=15 e=63 | neighbors=238
+  iter  1200 | t=  282.0s | current=-2.292518 best=-1.899664 | n=15 e=63 | tabu=50
+  iter  1224 | t=  287.6s | NEW BEST=-1.89966443 | n=15 e=63 | neighbors=282
+  iter  1250 | t=  293.7s | current=-2.292518 best=-1.899664 | n=15 e=63 | tabu=50
+  iter  1300 | t=  305.4s | current=-2.356866 best=-1.899664 | n=15 e=63 | tabu=50
+  iter  1350 | t=  317.4s | current=-2.292518 best=-1.899664 | n=15 e=63 | tabu=50
+  iter  1400 | t=  329.5s | current=-2.292518 best=-1.899664 | n=15 e=63 | tabu=50
+  iter  1450 | t=  341.3s | current=-2.292518 best=-1.899664 | n=15 e=63 | tabu=50
+  iter  1500 | t=  353.1s | current=-2.356866 best=-1.899664 | n=15 e=63 | tabu=50
+Tabu Search done | 359.9s | 1529 iterations | best=-1.89966443
+
+============================================================
+Multi-Start Tabu Summary | 1800.1s | best=-0.05315666
+Best graph: n=15 e=21
+============================================================
+
+============================================================
+FINAL RESULT for Bound 44
+============================================================
+  mu(G) = 7.60369759
+  Bound 44 = 7.65685425
+  Gap (mu - bound) = -0.05315666
+  Graph: n=15 e=21  iter  1450 | t=  345.5s | current=-3.146247 best=-3.146247 | n=15 e=63 | tabu=50
+  iter  1500 | t=  357.2s | current=-3.146247 best=-3.146247 | n=15 e=63 | tabu=50
+Tabu Search done | 360.0s | 1512 iterations | best=-3.14624720
+
+============================================================
+Multi-Start Tabu Summary | 1800.2s | best=-0.05315666
+Best graph: n=15 e=21
+============================================================
+
+============================================================
+FINAL RESULT for Bound 44
+============================================================
+  mu(G) = 7.60369759
+  Bound 44 = 7.65685425
+  Gap (mu - bound) = -0.05315666
+  Graph: n=15 e=21
+  Edges: [(0, 4), (0, 5), (0, 11), (0, 12), (1, 6), (1, 10), (2, 9), (3, 9), (4, 8), (5, 6), (5, 10), (5, 14), (6, 11), (6, 12), (7, 9), (9, 13), (10, 11), (10, 12), (11, 14), (12, 14), (13, 14)]
+
+  Tightest bound overall: #44
+  mu=7.60369759
+  Top-5 tightest bounds:
+    Bound 44: gap=+0.05315666
+    Bound 40: gap=+0.09717954
+    Bound 42: gap=+0.14226911
+    Bound 46: gap=+0.21580984
+    Bound 45: gap=+0.22725431
+
+  No counterexample found (closest gap: 0.05315666)
+
+  Total iterations: 8920
