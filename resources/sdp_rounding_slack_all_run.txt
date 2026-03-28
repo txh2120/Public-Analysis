@@ -1,0 +1,291 @@
+================================================================================
+SDP ROUNDING SLACK ANALYSIS - ALL 38 BHS BOUNDS
+================================================================================
+
+Question: Does the rounding slack phenomenon hold for ALL bounds,
+or are there bounds where weighted violations survive discretization?
+
+Bounds to analyze: 38
+  Vertex-max: [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 30]
+  Edge-max: [33, 34, 35, 37, 38, 39, 40, 42, 44, 45, 46, 47, 48, 56]
+
+  [1/38] Bound 11 [PRIORITY] (elapsed=0s)
+    n=7: D:\Public Analysis/src\exhaustive_bound_search.py:161: RuntimeWarning: invalid value encountered in divide
+  return np.where(b != 0, a / b, 0.0)
+gap=+0.00000000     n=8: gap=+0.00000000 (47s)
+  [2/38] Bound 13 [PRIORITY] (elapsed=47s)
+    n=7: gap=+0.00000000     n=8: gap=+0.00000000 (46s)
+  [3/38] Bound 5 [PRIORITY] (elapsed=93s)
+    n=7: gap=+0.18249287 (51s)
+  [4/38] Bound 7 [PRIORITY] (elapsed=144s)
+    n=7: gap=+0.37805290     n=8: gap=+0.37805290 (51s)
+  [5/38] Bound 14 [PRIORITY] (elapsed=195s)
+    n=7: gap=+0.52812240     n=8: gap=+0.12366113 (47s)
+  [6/38] Bound 16 [PRIORITY] (elapsed=241s)
+    n=7: gap=+0.54275697     n=8: gap=+0.54275697 (46s)
+  [7/38] Bound 33 [PRIORITY] (elapsed=287s)
+    n=7: gap=-0.00000000     n=8: gap=-0.00000000 (26s)
+  [8/38] Bound 34 [PRIORITY] (elapsed=313s)
+    n=7: gap=-0.00000000     n=8: gap=-0.00000000 (23s)
+  [9/38] Bound 35 [PRIORITY] (elapsed=336s)
+    n=7: gap=-0.00000000     n=8: gap=-0.00000000 (22s)
+  [10/38] Bound 42 [PRIORITY] (elapsed=359s)
+    n=7: gap=+0.00000000     n=8: gap=+0.00000000 (13s)
+  [11/38] Bound 47 [PRIORITY] (elapsed=372s)
+    n=7: gap=-0.00000000     n=8: gap=-0.00000000 (14s)
+  [12/38] Bound 44 [PRIORITY] (elapsed=385s)
+    n=7: gap=+0.00000000     n=8: gap=+0.00000000 (20s)
+  [13/38] Bound 1 (elapsed=405s)
+    n=7: gap=+0.26132551 (49s)
+  [14/38] Bound 4 (elapsed=454s)
+    n=7: gap=+0.46523972     n=8: gap=+0.25153599 (50s)
+  [15/38] Bound 6 (elapsed=504s)
+    n=7: gap=+0.00000000     n=8: gap=+0.00000000 (51s)
+  [16/38] Bound 8 (elapsed=554s)
+    n=7: D:\Public Analysis/src\exhaustive_bound_search.py:161: RuntimeWarning: divide by zero encountered in divide
+  return np.where(b != 0, a / b, 0.0)
+gap=+0.00000000 (48s)
+  [17/38] Bound 9 (elapsed=602s)
+    n=7: gap=+0.00000000     n=8: gap=+0.00000000 (46s)
+  [18/38] Bound 10 (elapsed=648s)
+    n=7: gap=-0.00000000     n=8: gap=-0.00000000 (34s)
+  [19/38] Bound 12 (elapsed=683s)
+    n=7: gap=+0.00000000     n=8: gap=+0.00000000 (48s)
+  [20/38] Bound 18 (elapsed=730s)
+    n=7: gap=-0.03182000     n=8: gap=-0.03182000 (47s)
+  [21/38] Bound 19 (elapsed=778s)
+    n=7: gap=-0.00945423     n=8: gap=-0.00945423 (47s)
+  [22/38] Bound 20 (elapsed=824s)
+    n=7: gap=-0.00638584     n=8: gap=-0.00638584 (46s)
+  [23/38] Bound 21 (elapsed=870s)
+    n=7: gap=-0.01793206     n=8: gap=-0.01793206 (46s)
+  [24/38] Bound 22 (elapsed=916s)
+    n=7: gap=+0.00000000     n=8: gap=+0.00000000 (48s)
+  [25/38] Bound 23 (elapsed=964s)
+    n=7: gap=-0.00000000     n=8: gap=-0.00000000 (37s)
+  [26/38] Bound 24 (elapsed=1001s)
+    n=7: gap=-0.01089697     n=8: gap=-0.01089697 (49s)
+  [27/38] Bound 25 (elapsed=1050s)
+    n=7: gap=-0.00000000     n=8: gap=-0.00000000 (43s)
+  [28/38] Bound 26 (elapsed=1094s)
+    n=7: gap=+0.00000000     n=8: gap=+0.00000000 (43s)
+  [29/38] Bound 27 (elapsed=1137s)
+    n=7: gap=-0.00000000     n=8: gap=-0.00000000 (43s)
+  [30/38] Bound 30 (elapsed=1180s)
+    n=7: gap=+0.00000000     n=8: gap=+0.00000000 (46s)
+  [31/38] Bound 37 (elapsed=1227s)
+    n=7: gap=+0.00000000     n=8: gap=-0.00000000 (20s)
+  [32/38] Bound 38 (elapsed=1247s)
+    n=7: gap=+0.03432624     n=8: gap=+0.00071427 (21s)
+  [33/38] Bound 39 (elapsed=1268s)
+    n=7: gap=+0.00461723     n=8: gap=+0.00442567 (25s)
+  [34/38] Bound 40 (elapsed=1293s)
+    n=7: gap=+0.00012613     n=8: gap=+0.00012613 (26s)
+  [35/38] Bound 45 (elapsed=1319s)
+    n=7: gap=+0.00000000     n=8: gap=+0.00000000 (15s)
+  [36/38] Bound 46 (elapsed=1334s)
+    n=7: gap=+0.01846471     n=8: gap=+0.00104179 (22s)
+  [37/38] Bound 48 (elapsed=1356s)
+    n=7: gap=-0.68629150     n=8: gap=-0.68629150 (21s)
+  [38/38] Bound 56 (elapsed=1376s)
+    n=7: C:\Users\taewoo.ha1\AppData\Local\Programs\Python\Python311\Lib\site-packages\scipy\optimize\_numdiff.py:686: RuntimeWarning: invalid value encountered in subtract
+  df = [f_eval - f0 for f_eval in f_evals]
+gap=+0.00138545     n=8: gap=+0.00000641 (2s)
+
+Total time: 1378.5s
+
+================================================================================
+SDP ROUNDING SLACK ANALYSIS - ALL 38 BOUNDS
+================================================================================
+
+ Bound |     Type |   Weighted gap |   Discrete gap | Rounding survives? |           Source
+-------+----------+----------------+----------------+--------------------+-----------------
+     1 |   vertex |    +0.26132551 |    +0.00000000 |                 no |    n=7,kite(3,4)
+     4 |   vertex |    +0.25153599 |    +0.00000000 |                 no |        n=8,cycle
+     5 |   vertex |    +0.18249287 |    +0.00000000 |                 no |        n=7,cycle
+     6 |   vertex |    +0.00000000 |    +0.00000000 |                 no | n=7,barbell(3,1)
+     7 |   vertex |    +0.37805290 |    +0.00000000 |                 no |        n=7,cycle
+     8 |   vertex |    +0.00000000 |           +inf |                 no |         n=7,star
+     9 |   vertex |    +0.00000000 |    +0.00000000 |                 no |     n=7,complete
+    10 |   vertex |    -0.00000000 |    +0.00000000 |                 no |      n=7,free_t0
+    11 |   vertex |    +0.00000000 |    +0.00000000 |                 no |        n=7,wheel
+    12 |   vertex |    +0.00000000 |    +0.00000000 |                 no |         n=7,path
+    13 |   vertex |    +0.00000000 |    +0.00000000 |                 no |         n=7,star
+    14 |   vertex |    +0.12366113 |    +0.00000000 |                 no |        n=8,cycle
+    16 |   vertex |    +0.54275697 |    +0.00000000 |                 no |        n=7,cycle
+    18 |   vertex |    -0.03182000 |    +0.00000000 |                 no |      n=7,free_t2
+    19 |   vertex |    -0.00945423 |    +0.00000000 |                 no |      n=7,free_t2
+    20 |   vertex |    -0.00638584 |    +0.00000000 |                 no |        n=7,wheel
+    21 |   vertex |    -0.01793206 |    +0.00000000 |                 no |         n=7,star
+    22 |   vertex |    +0.00000000 |    +0.00000000 |                 no |         n=7,star
+    23 |   vertex |    -0.00000000 |    +0.00000000 |                 no |        n=7,wheel
+    24 |   vertex |    -0.01089697 |    +0.00000000 |                 no |  n=7,double_star
+    25 |   vertex |    -0.00000000 |    +0.00000000 |                 no |      n=8,free_t1
+    26 |   vertex |    +0.00000000 |    +0.00000000 |                 no |         n=7,star
+    27 |   vertex |    -0.00000000 |    +0.00000000 |                 no |        n=7,wheel
+    30 |   vertex |    +0.00000000 |           +inf |                 no |     n=7,complete
+    33 |     edge |    -0.00000000 |    +0.00000000 |                 no |    n=7,bipartite
+    34 |     edge |    -0.00000000 |    +0.00000000 |                 no | n=7,windmill(3,3)
+    35 |     edge |    -0.00000000 |    +0.00000000 |                 no |      n=7,free_t2
+    37 |     edge |    -0.00000000 |    +0.00000000 |                 no |  n=8,double_star
+    38 |     edge |    +0.00071427 |    +0.00000000 |                 no |    n=8,bipartite
+    39 |     edge |    +0.00442567 |    +0.00000000 |                 no |    n=8,bipartite
+    40 |     edge |    +0.00012613 |    +0.00000000 |                 no | n=7,barbell(3,1)
+    42 |     edge |    +0.00000000 |    +0.00000000 |                 no |        n=7,cycle
+    44 |     edge |    +0.00000000 |    +0.00000000 |                 no |        n=7,wheel
+    45 |     edge |    +0.00000000 |    +0.00000000 |                 no |     n=7,complete
+    46 |     edge |    +0.00104179 |    +0.00000000 |                 no |        n=8,cycle
+    47 |     edge |    -0.00000000 |    +0.00000000 |                 no |      n=7,free_t2
+    48 |     edge |    -0.68629150 |    +0.00000000 |                 no |     n=7,complete
+    56 |     edge |    +0.00000641 |           +inf |                 no |      n=8,free_t2
+
+================================================================================
+SUMMARY
+================================================================================
+Total bounds analyzed: 38
+Bounds with weighted violation (gap < 0): 6
+Bounds where violation survives rounding: 0
+
+All weighted violations are eliminated by rounding.
+The rounding slack phenomenon appears universal across all 38 bounds.
+
+================================================================================
+GROUP ANALYSIS
+================================================================================
+
+  Group A (m_v-dominated):
+    Bound 11: w_gap=+0.0000000000, d_gap=+0.0000000000, survives=False
+    Bound 13: w_gap=+0.0000000000, d_gap=+0.0000000000, survives=False
+
+  Mixed (d^2/m + m, d^2/m + d):
+    Bound 5: w_gap=+0.1824928718, d_gap=+0.0000000000, survives=False
+    Bound 7: w_gap=+0.3780529031, d_gap=+0.0000000000, survives=False
+
+  d_v-dominated:
+    Bound 14: w_gap=+0.1236611304, d_gap=+0.0000000000, survives=False
+    Bound 16: w_gap=+0.5427569694, d_gap=+0.0000000000, survives=False
+
+  Edge bounds (various):
+    Bound 33: w_gap=-0.0000000000, d_gap=+0.0000000000, survives=False
+    Bound 34: w_gap=-0.0000000000, d_gap=+0.0000000000, survives=False
+    Bound 35: w_gap=-0.0000000000, d_gap=+0.0000000000, survives=False
+    Bound 42: w_gap=+0.0000000000, d_gap=+0.0000000000, survives=False
+    Bound 47: w_gap=-0.0000000000, d_gap=+0.0000000000, survives=False
+
+================================================================================
+WEIGHTED VIOLATIONS DETAIL
+================================================================================
+
+  Bound 18:
+    Weighted gap: -0.0318200046
+    Best discrete gap: +0.0000000000
+    Source: n=7,free_t2
+    Rounding thresholds:
+      t=0.10: gap=+1.2426406871, edges=2
+      t=0.20: gap=+0.0000000000, edges=1
+      t=0.30: gap=+0.0000000000, edges=1
+      t=0.35: gap=+0.0000000000, edges=1
+      t=0.40: gap=+0.0000000000, edges=1
+      t=0.45: gap=+0.0000000000, edges=1
+      t=0.50: gap=+0.0000000000, edges=1
+      t=0.55: gap=+0.0000000000, edges=1
+      t=0.60: gap=+0.0000000000, edges=1
+      t=0.65: gap=+0.0000000000, edges=1
+      t=0.70: gap=+0.0000000000, edges=1
+      t=0.80: gap=+0.0000000000, edges=1
+      t=0.90: gap=+0.0000000000, edges=1
+
+  Bound 19:
+    Weighted gap: -0.0094542324
+    Best discrete gap: +0.0000000000
+    Source: n=7,free_t2
+    Rounding thresholds:
+      t=0.10: gap=+0.1622776602, edges=2
+      t=0.20: gap=+0.0000000000, edges=1
+      t=0.30: gap=+0.0000000000, edges=1
+      t=0.35: gap=+0.0000000000, edges=1
+      t=0.40: gap=+0.0000000000, edges=1
+      t=0.45: gap=+0.0000000000, edges=1
+      t=0.50: gap=+0.0000000000, edges=1
+      t=0.55: gap=+0.0000000000, edges=1
+      t=0.60: gap=+0.0000000000, edges=1
+      t=0.65: gap=+0.0000000000, edges=1
+      t=0.70: gap=+0.0000000000, edges=1
+      t=0.80: gap=+0.0000000000, edges=1
+      t=0.90: gap=+0.0000000000, edges=1
+
+  Bound 20:
+    Weighted gap: -0.0063858419
+    Best discrete gap: +0.0000000000
+    Source: n=7,wheel
+    Rounding thresholds:
+      t=0.10: gap=+0.2787192622, edges=2
+      t=0.20: gap=+0.0000000000, edges=1
+      t=0.30: gap=+0.0000000000, edges=1
+      t=0.35: gap=+0.0000000000, edges=1
+      t=0.40: gap=+0.0000000000, edges=1
+      t=0.45: gap=+0.0000000000, edges=1
+      t=0.50: gap=+0.0000000000, edges=1
+      t=0.55: gap=+0.0000000000, edges=1
+      t=0.60: gap=+0.0000000000, edges=1
+      t=0.65: gap=+0.0000000000, edges=1
+      t=0.70: gap=+0.0000000000, edges=1
+      t=0.80: gap=+0.0000000000, edges=1
+      t=0.90: gap=+0.0000000000, edges=1
+
+  Bound 21:
+    Weighted gap: -0.0179320577
+    Best discrete gap: +0.0000000000
+    Source: n=7,star
+    Rounding thresholds:
+      t=0.10: gap=+0.5355339059, edges=2
+      t=0.20: gap=+0.0000000000, edges=1
+      t=0.30: gap=+0.0000000000, edges=1
+      t=0.35: gap=+0.0000000000, edges=1
+      t=0.40: gap=+0.0000000000, edges=1
+      t=0.45: gap=+0.0000000000, edges=1
+      t=0.50: gap=+0.0000000000, edges=1
+      t=0.55: gap=+0.0000000000, edges=1
+      t=0.60: gap=+0.0000000000, edges=1
+      t=0.65: gap=+0.0000000000, edges=1
+      t=0.70: gap=+0.0000000000, edges=1
+      t=0.80: gap=+0.0000000000, edges=1
+      t=0.90: gap=+0.0000000000, edges=1
+
+  Bound 24:
+    Weighted gap: -0.0108969660
+    Best discrete gap: +0.0000000000
+    Source: n=7,double_star
+    Rounding thresholds:
+      t=0.10: gap=+0.1752291140, edges=3
+      t=0.20: gap=+0.0000000000, edges=1
+      t=0.30: gap=+0.0000000000, edges=1
+      t=0.35: gap=+0.0000000000, edges=1
+      t=0.40: gap=+0.0000000000, edges=1
+      t=0.45: gap=+0.0000000000, edges=1
+      t=0.50: gap=+0.0000000000, edges=1
+      t=0.55: gap=+0.0000000000, edges=1
+      t=0.60: gap=+0.0000000000, edges=1
+      t=0.65: gap=+0.0000000000, edges=1
+      t=0.70: gap=+0.0000000000, edges=1
+      t=0.80: gap=+0.0000000000, edges=1
+      t=0.90: gap=+0.0000000000, edges=1
+
+  Bound 48:
+    Weighted gap: -0.6862915010
+    Best discrete gap: +0.0000000000
+    Source: n=7,complete
+    Rounding thresholds:
+      t=0.10: gap=+0.0000000000, edges=1
+      t=0.20: gap=+0.0000000000, edges=1
+      t=0.30: gap=+0.0000000000, edges=1
+      t=0.35: gap=+0.0000000000, edges=1
+      t=0.40: gap=+0.0000000000, edges=1
+      t=0.45: gap=+0.0000000000, edges=1
+      t=0.50: gap=+0.0000000000, edges=1
+      t=0.55: gap=+0.0000000000, edges=1
+
+Results saved to: D:\Public Analysis\resources\sdp_rounding_slack_all.txt
+
+All weighted violations are eliminated by rounding.
+Rounding slack appears to be universal.

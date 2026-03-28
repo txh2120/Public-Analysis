@@ -17,6 +17,8 @@ Usage:
 
 import argparse
 import copy
+import json
+import os
 import random
 import sys
 import time
@@ -546,7 +548,7 @@ def amcs_multi_restart(score_fn, time_budget: float, restart_budget: float = 30.
             global_best_score = score
             global_best_graph = G.copy()
 
-            if score > 0:
+            if score > 1e-6:
                 if verbose:
                     print(f"*** GLOBAL COUNTEREXAMPLE at restart {restart_num} ***")
                 break
@@ -554,6 +556,83 @@ def amcs_multi_restart(score_fn, time_budget: float, restart_budget: float = 30.
     if verbose:
         total_elapsed = time.time() - start_time
         print(f"\n=== AMCS Multi-Restart Summary ===")
+        print(f"Total time: {total_elapsed:.1f}s | Restarts: {restart_num}")
+        print(f"Best score: {global_best_score:.6f}")
+        if global_best_graph is not None:
+            print(f"Best graph: n={global_best_graph.number_of_nodes()} "
+                  f"e={global_best_graph.number_of_edges()}")
+
+    return global_best_graph, global_best_score, all_histories
+
+
+def amcs_multi_restart_sparse(score_fn, time_budget: float, restart_budget: float = 30.0,
+                               max_depth: int = 5, max_level: int = 2,
+                               initial_graph: nx.Graph = None, max_nodes: int = 50,
+                               verbose: bool = True, init_n_range: tuple = (40, 60)) -> tuple:
+    """Run AMCS with multiple restarts, starting from random trees at specified sizes.
+
+    This variant is optimized for finding near-miss counterexamples in sparse
+    tree-like graphs by starting from larger random trees instead of tree(5).
+
+    Args:
+        score_fn: scoring function
+        time_budget: total seconds
+        restart_budget: seconds per restart attempt
+        max_depth, max_level: AMCS parameters
+        initial_graph: warm start for first restart
+        max_nodes: max graph size
+        verbose: print progress
+        init_n_range: (min_n, max_n) for random tree initialization
+
+    Returns:
+        (best_graph, best_score, all_histories)
+    """
+    start_time = time.time()
+    deadline = start_time + time_budget
+
+    global_best_graph = None
+    global_best_score = -999.0
+    all_histories = []
+    restart_num = 0
+
+    while time.time() < deadline:
+        restart_num += 1
+        remaining = deadline - time.time()
+        this_budget = min(restart_budget, remaining)
+
+        if this_budget < 2.0:
+            break
+
+        if verbose:
+            print(f"\n--- Restart {restart_num} | {remaining:.0f}s remaining ---")
+
+        # Use warm start for first restart if provided
+        if restart_num == 1 and initial_graph is not None:
+            init = initial_graph
+        else:
+            # Random tree at random size in range
+            n_init = random.randint(init_n_range[0], init_n_range[1])
+            init = random_tree(n_init)
+            if verbose:
+                print(f"  Starting from random tree: n={init.number_of_nodes()}")
+
+        G, score, hist = amcs(score_fn, this_budget, max_depth, max_level,
+                              init, max_nodes, verbose)
+
+        all_histories.append(hist)
+
+        if score > global_best_score:
+            global_best_score = score
+            global_best_graph = G.copy()
+
+            if score > 1e-6:
+                if verbose:
+                    print(f"*** GLOBAL COUNTEREXAMPLE at restart {restart_num} ***")
+                break
+
+    if verbose:
+        total_elapsed = time.time() - start_time
+        print(f"\n=== AMCS Multi-Restart Sparse Summary ===")
         print(f"Total time: {total_elapsed:.1f}s | Restarts: {restart_num}")
         print(f"Best score: {global_best_score:.6f}")
         if global_best_graph is not None:
@@ -638,17 +717,114 @@ def run_test():
     print("=" * 60)
 
 
-def run_single_bound(bound_id: int, time_budget: float, restart_budget: float = 30.0):
-    """Search for counterexample to a specific bound."""
+def load_graph_from_json(filepath: str) -> nx.Graph:
+    """Load a graph from a JSON file (as saved by find_best_graph).
+
+    Expected JSON format:
+        {"n": int, "edges": [[i, j], ...], ...}
+
+    Returns:
+        NetworkX Graph
+    """
+    with open(filepath, 'r') as f:
+        data = json.load(f)
+
+    G = nx.Graph()
+    G.add_nodes_from(range(data['n']))
+    G.add_edges_from(data['edges'])
+
+    print(f"Loaded graph from {filepath}: n={G.number_of_nodes()} "
+          f"e={G.number_of_edges()}")
+    if 'mu' in data:
+        print(f"  Recorded: mu={data['mu']:.8f}, bound={data.get('bound_value', 'N/A')}, "
+              f"gap={data.get('gap', 'N/A')}")
+
+    return G
+
+
+def save_graph_to_json(G: nx.Graph, filepath: str, bound_id: int = None,
+                       score: float = None, extra: dict = None):
+    """Save a graph to JSON file.
+
+    Args:
+        G: NetworkX graph to save
+        filepath: output JSON file path
+        bound_id: target bound ID (optional)
+        score: best score achieved (optional)
+        extra: additional metadata to include (optional)
+    """
+    A = graph_to_adj(G)
+    mu = laplacian_spectral_radius(A)
+    dv, mv = compute_dv_mv(A)
+
+    data = {
+        'n': G.number_of_nodes(),
+        'edges': sorted([list(e) for e in G.edges()]),
+        'mu': float(mu),
+        'degree_sequence': sorted([d for _, d in G.degree()], reverse=True),
+    }
+
+    if bound_id is not None:
+        if bound_id in VERTEX_BOUND_IDS:
+            bvals = compute_vertex_bounds(dv, mv)
+        else:
+            bvals = compute_edge_bounds(A, dv, mv)
+        bound_val = bvals.get(bound_id, 0.0)
+        data['bound_id'] = bound_id
+        data['bound_value'] = float(bound_val)
+        data['gap'] = float(bound_val - mu)
+
+    if score is not None:
+        data['score'] = float(score)
+
+    if extra is not None:
+        data.update(extra)
+
+    os.makedirs(os.path.dirname(filepath) if os.path.dirname(filepath) else '.', exist_ok=True)
+    with open(filepath, 'w') as f:
+        json.dump(data, f, indent=2)
+    print(f"Saved best graph to {filepath}: n={data['n']} e={len(data['edges'])} "
+          f"mu={mu:.8f}")
+
+
+def run_single_bound(bound_id: int, time_budget: float, restart_budget: float = 30.0,
+                     start_graph: nx.Graph = None, max_nodes: int = 50,
+                     save_best: str = None, sparse_init: bool = False):
+    """Search for counterexample to a specific bound.
+
+    Args:
+        bound_id: target bound ID
+        time_budget: total seconds
+        restart_budget: seconds per restart
+        start_graph: warm start graph
+        max_nodes: maximum graph size
+        save_best: JSON filepath to save best graph (None = don't save)
+        sparse_init: if True, start from random trees at n=40-60
+    """
     print(f"Searching for counterexample to Bound {bound_id}")
     print(f"Time budget: {time_budget:.0f}s | Restart budget: {restart_budget:.0f}s")
+    print(f"Max nodes: {max_nodes}")
+    if sparse_init:
+        print(f"Sparse init: random trees at n=40-60")
+    if start_graph is not None:
+        print(f"Warm start: n={start_graph.number_of_nodes()} "
+              f"e={start_graph.number_of_edges()}")
     print("=" * 60)
 
     score_fn = lambda G: score_single_bound(G, bound_id)
 
-    G_best, best_score, histories = amcs_multi_restart(
-        score_fn, time_budget, restart_budget, verbose=True
-    )
+    if sparse_init:
+        # Override multi_restart to use sparse tree initialization
+        G_best, best_score, histories = amcs_multi_restart_sparse(
+            score_fn, time_budget, restart_budget,
+            initial_graph=start_graph, max_nodes=max_nodes, verbose=True,
+            init_n_range=(40, 60)
+        )
+    else:
+        G_best, best_score, histories = amcs_multi_restart(
+            score_fn, time_budget, restart_budget,
+            initial_graph=start_graph, max_nodes=max_nodes, verbose=True
+        )
 
     # Report results
     print("\n" + "=" * 60)
@@ -676,6 +852,10 @@ def run_single_bound(bound_id: int, time_budget: float, restart_budget: float = 
             print(f"\n  *** COUNTEREXAMPLE FOUND ***")
         else:
             print(f"\n  No counterexample found (closest gap: {-best_score:.8f})")
+
+        # Save best graph if requested
+        if save_best:
+            save_graph_to_json(G_best, save_best, bound_id=bound_id, score=best_score)
 
     return G_best, best_score
 
@@ -759,12 +939,23 @@ def main():
                         help='Random seed for reproducibility')
     parser.add_argument('--max-nodes', type=int, default=50,
                         help='Maximum graph size (default: 50)')
+    parser.add_argument('--start-graph', type=str, default=None,
+                        help='JSON file with warm-start graph (from find_best_graph)')
+    parser.add_argument('--save-best', type=str, default=None,
+                        help='Save best graph to JSON file')
+    parser.add_argument('--sparse-init', action='store_true',
+                        help='Start from random trees at n=40-60 (for sparse graph search)')
 
     args = parser.parse_args()
 
     if args.seed is not None:
         random.seed(args.seed)
         np.random.seed(args.seed)
+
+    # Load warm-start graph if specified
+    start_graph = None
+    if args.start_graph is not None:
+        start_graph = load_graph_from_json(args.start_graph)
 
     if args.test:
         run_test()
@@ -773,7 +964,9 @@ def main():
             print(f"Error: Bound {args.bound} not in known bounds.")
             print(f"Available: {ALL_BOUND_IDS}")
             sys.exit(1)
-        run_single_bound(args.bound, args.time, args.restart_time)
+        run_single_bound(args.bound, args.time, args.restart_time,
+                         start_graph=start_graph, max_nodes=args.max_nodes,
+                         save_best=args.save_best, sparse_init=args.sparse_init)
     elif args.all:
         run_all_bounds(args.time, args.restart_time)
     else:

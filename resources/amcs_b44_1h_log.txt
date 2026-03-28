@@ -1,0 +1,288 @@
+Searching for counterexample to Bound 44
+Time budget: 3600s | Restart budget: 120s
+Max nodes: 100
+Sparse init: random trees at n=40-60
+============================================================
+
+--- Restart 1 | 3600s remaining ---
+  Starting from random tree: n=60
+AMCS start | n=60 e=59 | score=-2.677395
+  iter    1 | t=   0.0s | IMPROVED +0.000022 -> -2.677373 | n=60 e=61 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.008387 -> -2.668986 | n=60 e=63 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.004076 -> -2.664910 | n=60 e=65 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.052251 -> -2.612659 | n=60 e=67 | depth=0 level=1
+  iter    5 | t=   0.0s | IMPROVED +0.047391 -> -2.565268 | n=60 e=69 | depth=0 level=1
+  iter    6 | t=   0.0s | IMPROVED +0.275904 -> -2.289364 | n=60 e=71 | depth=0 level=1
+  iter    7 | t=   0.0s | IMPROVED +0.001380 -> -2.287984 | n=60 e=73 | depth=0 level=1
+  iter    8 | t=   0.1s | IMPROVED +0.020175 -> -2.267809 | n=60 e=75 | depth=0 level=1
+  iter    9 | t=   0.1s | IMPROVED +0.086272 -> -2.181537 | n=60 e=77 | depth=0 level=1
+  iter   10 | t=   0.1s | IMPROVED +0.004009 -> -2.177527 | n=60 e=79 | depth=0 level=1
+  iter   11 | t=   0.1s | IMPROVED +0.088373 -> -2.089155 | n=61 e=81 | depth=0 level=1
+  iter   12 | t=   0.1s | IMPROVED +0.002690 -> -2.086465 | n=61 e=83 | depth=0 level=1
+  iter   13 | t=   0.1s | IMPROVED +0.025191 -> -2.061274 | n=61 e=85 | depth=0 level=1
+  iter   14 | t=   0.1s | IMPROVED +0.076513 -> -1.984761 | n=61 e=87 | depth=0 level=1
+  iter   15 | t=   0.1s | IMPROVED +0.000246 -> -1.984515 | n=62 e=89 | depth=0 level=1
+  iter   16 | t=   0.1s | IMPROVED +0.043985 -> -1.940530 | n=62 e=91 | depth=0 level=1
+  iter   17 | t=   0.1s | IMPROVED +0.132503 -> -1.808027 | n=62 e=93 | depth=0 level=1
+  iter   18 | t=   0.2s | IMPROVED +0.003472 -> -1.804555 | n=63 e=95 | depth=0 level=1
+  iter   19 | t=   0.2s | IMPROVED +0.160505 -> -1.644050 | n=63 e=97 | depth=0 level=1
+  iter   20 | t=   0.2s | IMPROVED +0.008571 -> -1.635479 | n=63 e=99 | depth=0 level=1
+  iter   21 | t=   0.2s | IMPROVED +0.000528 -> -1.634950 | n=63 e=101 | depth=0 level=1
+  iter   22 | t=   0.2s | IMPROVED +0.042064 -> -1.592887 | n=63 e=103 | depth=0 level=1
+  iter   23 | t=   0.2s | IMPROVED +0.002133 -> -1.590753 | n=63 e=105 | depth=0 level=1
+  iter   24 | t=   0.2s | IMPROVED +0.007138 -> -1.583615 | n=63 e=107 | depth=0 level=1
+  iter   25 | t=   0.2s | IMPROVED +0.001947 -> -1.581668 | n=64 e=109 | depth=0 level=1
+  iter   26 | t=   0.2s | IMPROVED +0.071831 -> -1.509836 | n=64 e=111 | depth=0 level=1
+  iter   27 | t=   0.2s | IMPROVED +0.002658 -> -1.507178 | n=64 e=113 | depth=0 level=1
+  iter   28 | t=   0.3s | IMPROVED +0.013071 -> -1.494108 | n=65 e=115 | depth=0 level=1
+  iter   29 | t=   0.3s | IMPROVED +0.018193 -> -1.475915 | n=65 e=117 | depth=0 level=1
+  iter   30 | t=   0.3s | IMPROVED +0.018856 -> -1.457058 | n=65 e=119 | depth=0 level=1
+  iter   31 | t=   0.3s | IMPROVED +0.053313 -> -1.403746 | n=65 e=121 | depth=0 level=1
+  iter   32 | t=   0.4s | IMPROVED +0.003174 -> -1.400572 | n=65 e=123 | depth=0 level=1
+  iter   33 | t=   0.4s | IMPROVED +0.017312 -> -1.383260 | n=65 e=125 | depth=0 level=1
+  iter   34 | t=   0.4s | IMPROVED +0.022935 -> -1.360325 | n=65 e=127 | depth=0 level=1
+  iter   35 | t=   0.4s | IMPROVED +0.040800 -> -1.319525 | n=65 e=129 | depth=0 level=1
+  iter   36 | t=   0.4s | IMPROVED +0.042383 -> -1.277142 | n=65 e=131 | depth=0 level=1
+  iter   37 | t=   0.5s | IMPROVED +0.000065 -> -1.277077 | n=66 e=133 | depth=0 level=1
+  iter   38 | t=   0.6s | IMPROVED +0.009492 -> -1.267585 | n=66 e=135 | depth=0 level=1
+  iter   39 | t=   0.7s | IMPROVED +0.011060 -> -1.256524 | n=66 e=137 | depth=0 level=1
+  iter   40 | t=   0.7s | IMPROVED +0.000140 -> -1.256384 | n=66 e=139 | depth=0 level=1
+  iter   41 | t=   0.8s | IMPROVED +0.009659 -> -1.246726 | n=66 e=141 | depth=0 level=1
+  iter   42 | t=   0.8s | IMPROVED +0.000616 -> -1.246110 | n=67 e=143 | depth=0 level=1
+  iter   43 | t=   1.1s | IMPROVED +0.015688 -> -1.230422 | n=68 e=145 | depth=0 level=1
+  iter   44 | t=   1.4s | IMPROVED +0.003840 -> -1.226582 | n=68 e=147 | depth=0 level=1
+  iter   45 | t=   1.6s | IMPROVED +0.020984 -> -1.205597 | n=68 e=149 | depth=0 level=1
+  iter   46 | t=   1.7s | IMPROVED +0.009205 -> -1.196392 | n=69 e=151 | depth=0 level=1
+  iter   47 | t=   2.1s | IMPROVED +0.000943 -> -1.195449 | n=70 e=153 | depth=0 level=1
+  iter   48 | t=   2.6s | IMPROVED +0.001335 -> -1.194113 | n=71 e=155 | depth=0 level=1
+  iter   49 | t=   2.9s | IMPROVED +0.008986 -> -1.185128 | n=72 e=157 | depth=0 level=1
+  iter   50 | t=   3.3s | IMPROVED +0.027909 -> -1.157218 | n=72 e=159 | depth=0 level=1
+  iter   51 | t=   3.4s | IMPROVED +0.009692 -> -1.147527 | n=74 e=161 | depth=0 level=1
+  iter   52 | t=   3.7s | IMPROVED +0.010301 -> -1.137226 | n=74 e=163 | depth=0 level=1
+  iter   53 | t=   3.8s | IMPROVED +0.002308 -> -1.134918 | n=74 e=165 | depth=0 level=1
+  iter   54 | t=   3.8s | IMPROVED +0.004148 -> -1.130770 | n=75 e=167 | depth=0 level=1
+  iter   55 | t=   5.3s | IMPROVED +0.001024 -> -1.129745 | n=75 e=169 | depth=0 level=1
+  iter   56 | t=   5.5s | IMPROVED +0.001347 -> -1.128398 | n=75 e=171 | depth=0 level=1
+  iter   57 | t=   5.9s | IMPROVED +0.002021 -> -1.126377 | n=76 e=173 | depth=0 level=1
+  iter   58 | t=   6.0s | IMPROVED +0.010191 -> -1.116185 | n=78 e=175 | depth=0 level=1
+  iter   59 | t=   6.0s | IMPROVED +0.000743 -> -1.115443 | n=78 e=177 | depth=0 level=1
+  iter   60 | t=   6.6s | IMPROVED +0.001115 -> -1.114328 | n=78 e=179 | depth=0 level=1
+  iter   61 | t=   9.2s | IMPROVED +0.000457 -> -1.113871 | n=80 e=181 | depth=0 level=1
+  iter   62 | t=   9.6s | IMPROVED +0.002519 -> -1.111352 | n=80 e=183 | depth=0 level=1
+  iter   63 | t=  10.1s | IMPROVED +0.004591 -> -1.106760 | n=82 e=185 | depth=0 level=1
+  iter   64 | t=  11.5s | IMPROVED +0.001885 -> -1.104876 | n=83 e=187 | depth=0 level=1
+  iter   65 | t=  11.8s | IMPROVED +0.000600 -> -1.104275 | n=83 e=189 | depth=0 level=1
+  iter   66 | t=  12.2s | IMPROVED +0.005619 -> -1.098656 | n=83 e=191 | depth=0 level=1
+  iter   67 | t=  13.3s | IMPROVED +0.001970 -> -1.096686 | n=83 e=193 | depth=0 level=1
+  iter   68 | t=  21.6s | IMPROVED +0.000219 -> -1.096468 | n=85 e=195 | depth=0 level=1
+  iter   69 | t=  21.8s | IMPROVED +0.001096 -> -1.095372 | n=85 e=197 | depth=0 level=1
+  iter   70 | t=  21.8s | IMPROVED +0.005102 -> -1.090270 | n=86 e=199 | depth=0 level=1
+  iter   71 | t=  22.8s | IMPROVED +0.026980 -> -1.063290 | n=88 e=201 | depth=0 level=1
+  iter   72 | t=  24.1s | IMPROVED +0.000378 -> -1.062912 | n=89 e=203 | depth=0 level=1
+  iter   73 | t=  25.9s | IMPROVED +0.003164 -> -1.059747 | n=89 e=205 | depth=0 level=1
+  iter   74 | t=  27.2s | IMPROVED +0.003162 -> -1.056585 | n=90 e=207 | depth=0 level=1
+  iter   75 | t=  35.5s | IMPROVED +0.003176 -> -1.053409 | n=90 e=209 | depth=0 level=1
+  iter   76 | t=  35.7s | IMPROVED +0.001496 -> -1.051913 | n=92 e=211 | depth=0 level=1
+  iter   77 | t=  37.5s | IMPROVED +0.005320 -> -1.046593 | n=94 e=213 | depth=0 level=1
+  iter   78 | t=  41.1s | IMPROVED +0.008215 -> -1.038378 | n=95 e=215 | depth=0 level=1
+  iter   79 | t=  43.2s | IMPROVED +0.014290 -> -1.024088 | n=96 e=217 | depth=0 level=1
+  iter   80 | t=  44.2s | IMPROVED +0.006331 -> -1.017757 | n=96 e=219 | depth=0 level=1
+  iter   81 | t=  45.2s | IMPROVED +0.002407 -> -1.015350 | n=97 e=221 | depth=0 level=1
+  iter   83 | t=  52.9s | IMPROVED +0.003720 -> -1.011630 | n=99 e=223 | depth=0 level=1
+  iter   84 | t=  55.0s | IMPROVED +0.011504 -> -1.000126 | n=100 e=225 | depth=0 level=1
+  iter   85 | t=  56.5s | IMPROVED +0.000031 -> -1.000095 | n=101 e=227 | depth=0 level=1
+  iter   90 | t=  69.1s | score=-1.009384 best=-1.000095 | depth=5 level=1
+  iter   96 | t=  91.1s | IMPROVED +0.000318 -> -0.999777 | n=100 e=226 | depth=0 level=1
+  iter   98 | t=  96.7s | IMPROVED +0.000349 -> -0.999427 | n=101 e=228 | depth=0 level=1
+  iter  100 | t= 101.4s | score=-0.999427 best=-0.999427 | depth=2 level=1
+AMCS done  | 120.0s | 106 iterations | best=-0.999427 | n=101 e=228
+
+--- Restart 2 | 3480s remaining ---
+  Starting from random tree: n=59
+AMCS start | n=59 e=58 | score=-1.593234
+  iter    1 | t=   0.0s | IMPROVED +0.340372 -> -1.252862 | n=59 e=60 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.381186 -> -0.871676 | n=59 e=62 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.000070 -> -0.871605 | n=59 e=64 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.000003 -> -0.871602 | n=59 e=66 | depth=0 level=1
+  iter    5 | t=   0.0s | IMPROVED +0.000310 -> -0.871292 | n=59 e=68 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.200341 -> -0.670952 | n=60 e=70 | depth=0 level=1
+  iter    7 | t=   0.1s | IMPROVED +0.036980 -> -0.633972 | n=60 e=72 | depth=0 level=1
+  iter    8 | t=   0.1s | IMPROVED +0.077985 -> -0.555986 | n=60 e=74 | depth=0 level=1
+  iter    9 | t=   0.1s | IMPROVED +0.000606 -> -0.555381 | n=60 e=76 | depth=0 level=1
+  iter   10 | t=   0.2s | IMPROVED +0.005477 -> -0.549904 | n=62 e=78 | depth=0 level=1
+  iter   11 | t=   0.2s | IMPROVED +0.001072 -> -0.548831 | n=62 e=80 | depth=0 level=1
+  iter   12 | t=   0.2s | IMPROVED +0.000460 -> -0.548371 | n=62 e=82 | depth=0 level=1
+  iter   13 | t=   0.3s | IMPROVED +0.001625 -> -0.546746 | n=63 e=84 | depth=0 level=1
+  iter   14 | t=   0.3s | IMPROVED +0.000429 -> -0.546317 | n=63 e=86 | depth=0 level=1
+  iter   15 | t=   0.4s | IMPROVED +0.001580 -> -0.544737 | n=63 e=88 | depth=0 level=1
+  iter   16 | t=   0.5s | IMPROVED +0.003622 -> -0.541115 | n=63 e=90 | depth=0 level=1
+  iter   17 | t=   0.6s | IMPROVED +0.014128 -> -0.526987 | n=64 e=92 | depth=0 level=1
+  iter   18 | t=   0.6s | IMPROVED +0.001447 -> -0.525540 | n=64 e=94 | depth=0 level=1
+  iter   19 | t=   0.7s | IMPROVED +0.003446 -> -0.522094 | n=65 e=96 | depth=0 level=1
+  iter   20 | t=   0.7s | IMPROVED +0.003416 -> -0.518678 | n=66 e=98 | depth=0 level=1
+  iter   21 | t=   1.4s | IMPROVED +0.001200 -> -0.517478 | n=67 e=100 | depth=0 level=1
+  iter   22 | t=   1.7s | IMPROVED +0.002925 -> -0.514553 | n=68 e=102 | depth=0 level=1
+  iter   23 | t=   1.7s | IMPROVED +0.004309 -> -0.510244 | n=69 e=104 | depth=0 level=1
+  iter   24 | t=   2.2s | IMPROVED +0.002899 -> -0.507344 | n=70 e=106 | depth=0 level=1
+  iter   25 | t=   4.0s | IMPROVED +0.005508 -> -0.501837 | n=72 e=108 | depth=0 level=1
+  iter   26 | t=   4.1s | IMPROVED +0.001582 -> -0.500254 | n=74 e=110 | depth=0 level=1
+  iter   27 | t=   4.2s | IMPROVED +0.009603 -> -0.490652 | n=74 e=112 | depth=0 level=1
+  iter   28 | t=   5.2s | IMPROVED +0.006441 -> -0.484211 | n=75 e=114 | depth=0 level=1
+  iter   29 | t=   6.5s | IMPROVED +0.000853 -> -0.483358 | n=76 e=116 | depth=0 level=1
+  iter   30 | t=   9.5s | IMPROVED +0.005051 -> -0.478307 | n=78 e=118 | depth=0 level=1
+  iter   31 | t=  11.1s | IMPROVED +0.003927 -> -0.474380 | n=80 e=120 | depth=0 level=1
+  iter   32 | t=  11.8s | IMPROVED +0.019407 -> -0.454974 | n=80 e=122 | depth=0 level=1
+  iter   33 | t=  13.2s | IMPROVED +0.002608 -> -0.452365 | n=80 e=124 | depth=0 level=1
+  iter   34 | t=  17.4s | IMPROVED +0.000059 -> -0.452306 | n=81 e=126 | depth=0 level=1
+  iter   35 | t=  19.1s | IMPROVED +0.002133 -> -0.450173 | n=82 e=128 | depth=0 level=1
+  iter   36 | t=  26.2s | IMPROVED +0.006253 -> -0.443920 | n=83 e=130 | depth=0 level=1
+  iter   37 | t=  31.2s | IMPROVED +0.000945 -> -0.442975 | n=84 e=132 | depth=0 level=1
+  iter   38 | t=  34.4s | IMPROVED +0.012595 -> -0.430380 | n=86 e=134 | depth=0 level=1
+  iter   39 | t=  41.4s | IMPROVED +0.029819 -> -0.400561 | n=87 e=136 | depth=0 level=1
+  iter   40 | t=  49.2s | score=-0.400561 best=-0.400561 | depth=1 level=1
+  iter   44 | t=  73.6s | IMPROVED +0.004673 -> -0.395888 | n=86 e=135 | depth=0 level=1
+  iter   45 | t=  73.9s | IMPROVED +0.009171 -> -0.386717 | n=87 e=137 | depth=0 level=1
+  iter   46 | t=  74.9s | IMPROVED +0.000020 -> -0.386696 | n=87 e=139 | depth=0 level=1
+  iter   47 | t=  76.0s | IMPROVED +0.001849 -> -0.384848 | n=88 e=141 | depth=0 level=1
+  iter   50 | t=  91.0s | score=-0.384848 best=-0.384848 | depth=3 level=1
+  iter   56 | t= 120.0s | IMPROVED +0.004085 -> -0.380762 | n=89 e=142 | depth=0 level=1
+AMCS done  | 120.0s | 56 iterations | best=-0.380762 | n=89 e=142
+
+--- Restart 3 | 3360s remaining ---
+  Starting from random tree: n=44
+AMCS start | n=44 e=43 | score=-2.257167
+  iter    1 | t=   0.0s | IMPROVED +0.000071 -> -2.257096 | n=44 e=45 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.000005 -> -2.257091 | n=44 e=47 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.016941 -> -2.240150 | n=45 e=49 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.017943 -> -2.222207 | n=45 e=51 | depth=0 level=1
+  iter    5 | t=   0.0s | IMPROVED +0.187114 -> -2.035092 | n=46 e=53 | depth=0 level=1
+  iter    6 | t=   0.0s | IMPROVED +0.012927 -> -2.022165 | n=46 e=55 | depth=0 level=1
+  iter    7 | t=   0.0s | IMPROVED +0.009265 -> -2.012900 | n=46 e=57 | depth=0 level=1
+  iter    8 | t=   0.0s | IMPROVED +0.062511 -> -1.950389 | n=46 e=59 | depth=0 level=1
+  iter    9 | t=   0.0s | IMPROVED +0.103874 -> -1.846515 | n=47 e=61 | depth=0 level=1
+  iter   10 | t=   0.0s | IMPROVED +0.097425 -> -1.749091 | n=47 e=63 | depth=0 level=1
+  iter   11 | t=   0.0s | IMPROVED +0.134973 -> -1.614118 | n=48 e=65 | depth=0 level=1
+  iter   12 | t=   0.1s | IMPROVED +0.120888 -> -1.493229 | n=48 e=67 | depth=0 level=1
+  iter   13 | t=   0.1s | IMPROVED +0.070489 -> -1.422740 | n=48 e=69 | depth=0 level=1
+  iter   14 | t=   0.1s | IMPROVED +0.008488 -> -1.414253 | n=48 e=71 | depth=0 level=1
+  iter   15 | t=   0.1s | IMPROVED +0.078061 -> -1.336192 | n=48 e=73 | depth=0 level=1
+  iter   16 | t=   0.1s | IMPROVED +0.028018 -> -1.308174 | n=48 e=75 | depth=0 level=1
+  iter   17 | t=   0.1s | IMPROVED +0.000759 -> -1.307416 | n=48 e=77 | depth=0 level=1
+  iter   18 | t=   0.1s | IMPROVED +0.065786 -> -1.241629 | n=48 e=79 | depth=0 level=1
+  iter   19 | t=   0.2s | IMPROVED +0.007793 -> -1.233836 | n=48 e=81 | depth=0 level=1
+  iter   20 | t=   0.2s | IMPROVED +0.027396 -> -1.206441 | n=49 e=83 | depth=0 level=1
+  iter   21 | t=   0.2s | IMPROVED +0.005593 -> -1.200848 | n=49 e=85 | depth=0 level=1
+  iter   22 | t=   0.2s | IMPROVED +0.006001 -> -1.194847 | n=49 e=87 | depth=0 level=1
+  iter   23 | t=   0.2s | IMPROVED +0.000557 -> -1.194290 | n=50 e=89 | depth=0 level=1
+  iter   24 | t=   0.3s | IMPROVED +0.013240 -> -1.181050 | n=50 e=91 | depth=0 level=1
+  iter   25 | t=   0.3s | IMPROVED +0.002922 -> -1.178128 | n=51 e=93 | depth=0 level=1
+  iter   26 | t=   0.3s | IMPROVED +0.018262 -> -1.159865 | n=52 e=95 | depth=0 level=1
+  iter   27 | t=   0.4s | IMPROVED +0.051720 -> -1.108145 | n=52 e=97 | depth=0 level=1
+  iter   28 | t=   0.5s | IMPROVED +0.004918 -> -1.103227 | n=53 e=99 | depth=0 level=1
+  iter   29 | t=   0.8s | IMPROVED +0.001985 -> -1.101242 | n=54 e=101 | depth=0 level=1
+  iter   30 | t=   0.9s | IMPROVED +0.000236 -> -1.101006 | n=55 e=103 | depth=0 level=1
+  iter   31 | t=   1.2s | IMPROVED +0.001180 -> -1.099826 | n=56 e=105 | depth=0 level=1
+  iter   32 | t=   1.6s | IMPROVED +0.000391 -> -1.099435 | n=56 e=107 | depth=0 level=1
+  iter   33 | t=   1.9s | IMPROVED +0.038555 -> -1.060881 | n=57 e=109 | depth=0 level=1
+  iter   34 | t=   1.9s | IMPROVED +0.002157 -> -1.058724 | n=58 e=111 | depth=0 level=1
+  iter   35 | t=   1.9s | IMPROVED +0.005501 -> -1.053223 | n=59 e=113 | depth=0 level=1
+  iter   36 | t=   2.2s | IMPROVED +0.005011 -> -1.048212 | n=60 e=115 | depth=0 level=1
+  iter   37 | t=   2.2s | IMPROVED +0.000377 -> -1.047835 | n=60 e=117 | depth=0 level=1
+  iter   38 | t=   2.4s | IMPROVED +0.001079 -> -1.046756 | n=61 e=119 | depth=0 level=1
+  iter   39 | t=   4.1s | IMPROVED +0.000468 -> -1.046288 | n=61 e=121 | depth=0 level=1
+  iter   40 | t=   4.1s | IMPROVED +0.001621 -> -1.044667 | n=62 e=123 | depth=0 level=1
+  iter   41 | t=   4.9s | IMPROVED +0.000006 -> -1.044661 | n=63 e=125 | depth=0 level=1
+  iter   42 | t=   6.1s | IMPROVED +0.003056 -> -1.041605 | n=64 e=127 | depth=0 level=1
+  iter   43 | t=   6.4s | IMPROVED +0.009421 -> -1.032185 | n=65 e=129 | depth=0 level=1
+  iter   44 | t=   7.3s | IMPROVED +0.000885 -> -1.031300 | n=65 e=131 | depth=0 level=1
+  iter   45 | t=   7.6s | IMPROVED +0.000818 -> -1.030482 | n=67 e=133 | depth=0 level=1
+  iter   46 | t=   9.9s | IMPROVED +0.003391 -> -1.027091 | n=68 e=135 | depth=0 level=1
+  iter   47 | t=  10.4s | IMPROVED +0.005169 -> -1.021922 | n=69 e=137 | depth=0 level=1
+  iter   48 | t=  10.7s | IMPROVED +0.012706 -> -1.009216 | n=71 e=139 | depth=0 level=1
+  iter   49 | t=  13.8s | IMPROVED +0.001472 -> -1.007744 | n=72 e=141 | depth=0 level=1
+  iter   50 | t=  14.4s | IMPROVED +0.016953 -> -0.990791 | n=74 e=143 | depth=0 level=1
+  iter   51 | t=  14.6s | IMPROVED +0.004684 -> -0.986108 | n=75 e=145 | depth=0 level=1
+  iter   52 | t=  14.7s | IMPROVED +0.003819 -> -0.982289 | n=75 e=147 | depth=0 level=1
+  iter   53 | t=  16.7s | IMPROVED +0.009650 -> -0.972639 | n=77 e=149 | depth=0 level=1
+  iter   54 | t=  17.5s | IMPROVED +0.001876 -> -0.970762 | n=77 e=151 | depth=0 level=1
+  iter   55 | t=  17.6s | IMPROVED +0.011602 -> -0.959160 | n=78 e=153 | depth=0 level=1
+  iter   56 | t=  17.6s | IMPROVED +0.000412 -> -0.958748 | n=80 e=155 | depth=0 level=1
+  iter   57 | t=  18.7s | IMPROVED +0.001444 -> -0.957304 | n=81 e=157 | depth=0 level=1
+  iter   58 | t=  18.9s | IMPROVED +0.009252 -> -0.948052 | n=82 e=159 | depth=0 level=1
+  iter   59 | t=  20.8s | IMPROVED +0.001999 -> -0.946053 | n=83 e=161 | depth=0 level=1
+  iter   60 | t=  21.6s | IMPROVED +0.023662 -> -0.922391 | n=83 e=163 | depth=0 level=1
+  iter   61 | t=  23.2s | IMPROVED +0.000782 -> -0.921609 | n=84 e=165 | depth=0 level=1
+  iter   63 | t=  37.3s | IMPROVED +0.012131 -> -0.909478 | n=85 e=167 | depth=0 level=1
+  iter   64 | t=  40.0s | IMPROVED +0.000066 -> -0.909412 | n=85 e=169 | depth=0 level=1
+  iter   65 | t=  41.1s | IMPROVED +0.000227 -> -0.909185 | n=87 e=171 | depth=0 level=1
+  iter   66 | t=  41.3s | IMPROVED +0.003584 -> -0.905601 | n=87 e=173 | depth=0 level=1
+  iter   67 | t=  42.9s | IMPROVED +0.002734 -> -0.902867 | n=87 e=175 | depth=0 level=1
+  iter   68 | t=  44.0s | IMPROVED +0.000075 -> -0.902792 | n=89 e=177 | depth=0 level=1
+  iter   69 | t=  45.9s | IMPROVED +0.000588 -> -0.902204 | n=91 e=179 | depth=0 level=1
+  iter   70 | t=  48.0s | IMPROVED +0.000522 -> -0.901682 | n=92 e=181 | depth=0 level=1
+  iter   71 | t=  54.0s | IMPROVED +0.000281 -> -0.901400 | n=92 e=183 | depth=0 level=1
+  iter   72 | t=  54.8s | IMPROVED +0.001562 -> -0.899838 | n=93 e=185 | depth=0 level=1
+  iter   73 | t=  54.9s | IMPROVED +0.000242 -> -0.899596 | n=95 e=187 | depth=0 level=1
+  iter   74 | t=  60.8s | IMPROVED +0.001669 -> -0.897927 | n=96 e=189 | depth=0 level=1
+  iter   76 | t=  67.7s | IMPROVED +0.000295 -> -0.897631 | n=96 e=191 | depth=0 level=1
+  iter   78 | t=  75.6s | IMPROVED +0.007586 -> -0.890046 | n=96 e=193 | depth=0 level=1
+  iter   80 | t=  83.0s | IMPROVED +0.003405 -> -0.886640 | n=97 e=194 | depth=0 level=1
+  iter   81 | t=  85.0s | IMPROVED +0.002226 -> -0.884415 | n=98 e=196 | depth=0 level=1
+  iter   82 | t=  85.1s | IMPROVED +0.000005 -> -0.884410 | n=99 e=198 | depth=0 level=1
+  iter   83 | t=  86.7s | IMPROVED +0.001974 -> -0.882435 | n=100 e=200 | depth=0 level=1
+  iter   90 | t= 120.0s | score=-0.882435 best=-0.882435 | depth=1 level=2
+AMCS done  | 120.0s | 90 iterations | best=-0.882435 | n=100 e=200
+
+--- Restart 4 | 3240s remaining ---
+  Starting from random tree: n=55
+AMCS start | n=55 e=54 | score=-2.304498
+  iter    1 | t=   0.0s | IMPROVED +0.540041 -> -1.764457 | n=55 e=56 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.030183 -> -1.734274 | n=55 e=58 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.047665 -> -1.686609 | n=55 e=60 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.008036 -> -1.678574 | n=55 e=62 | depth=0 level=1
+  iter    5 | t=   0.0s | IMPROVED +0.011885 -> -1.666689 | n=56 e=64 | depth=0 level=1
+  iter    6 | t=   0.0s | IMPROVED +0.007048 -> -1.659640 | n=56 e=66 | depth=0 level=1
+  iter    7 | t=   0.0s | IMPROVED +0.019321 -> -1.640320 | n=56 e=68 | depth=0 level=1
+  iter    8 | t=   0.0s | IMPROVED +0.143124 -> -1.497196 | n=56 e=70 | depth=0 level=1
+  iter    9 | t=   0.1s | IMPROVED +0.040110 -> -1.457086 | n=56 e=72 | depth=0 level=1
+  iter   10 | t=   0.1s | IMPROVED +0.086241 -> -1.370845 | n=56 e=74 | depth=0 level=1
+  iter   11 | t=   0.1s | IMPROVED +0.033554 -> -1.337291 | n=56 e=76 | depth=0 level=1
+  iter   12 | t=   0.1s | IMPROVED +0.021237 -> -1.316054 | n=56 e=78 | depth=0 level=1
+  iter   13 | t=   0.1s | IMPROVED +0.096553 -> -1.219501 | n=56 e=80 | depth=0 level=1
+  iter   14 | t=   0.1s | IMPROVED +0.009212 -> -1.210289 | n=56 e=82 | depth=0 level=1
+  iter   15 | t=   0.2s | IMPROVED +0.031626 -> -1.178663 | n=56 e=84 | depth=0 level=1
+  iter   16 | t=   0.2s | IMPROVED +0.073870 -> -1.104793 | n=57 e=86 | depth=0 level=1
+  iter   17 | t=   0.2s | IMPROVED +0.002377 -> -1.102416 | n=58 e=88 | depth=0 level=1
+  iter   18 | t=   0.2s | IMPROVED +0.024204 -> -1.078213 | n=58 e=90 | depth=0 level=1
+  iter   19 | t=   0.2s | IMPROVED +0.046110 -> -1.032103 | n=58 e=92 | depth=0 level=1
+  iter   20 | t=   0.2s | IMPROVED +0.024006 -> -1.008097 | n=59 e=94 | depth=0 level=1
+  iter   21 | t=   0.2s | IMPROVED +0.003910 -> -1.004187 | n=59 e=96 | depth=0 level=1
+  iter   22 | t=   0.3s | IMPROVED +0.004021 -> -1.000166 | n=59 e=98 | depth=0 level=1
+  iter   23 | t=   0.3s | IMPROVED +0.055194 -> -0.944973 | n=59 e=100 | depth=0 level=1
+  iter   24 | t=   0.3s | IMPROVED +0.017153 -> -0.927820 | n=59 e=102 | depth=0 level=1
+  iter   25 | t=   0.4s | IMPROVED +0.016261 -> -0.911559 | n=60 e=104 | depth=0 level=1
+  iter   26 | t=   0.4s | IMPROVED +0.012222 -> -0.899338 | n=61 e=106 | depth=0 level=1
+  iter   27 | t=   0.5s | IMPROVED +0.027685 -> -0.871653 | n=62 e=108 | depth=0 level=1
+  iter   28 | t=   0.5s | IMPROVED +0.017172 -> -0.854481 | n=63 e=110 | depth=0 level=1
+  iter   29 | t=   1.1s | IMPROVED +0.011985 -> -0.842497 | n=64 e=112 | depth=0 level=1
+  iter   30 | t=   1.2s | IMPROVED +0.002640 -> -0.839857 | n=65 e=114 | depth=0 level=1
+  iter   31 | t=   1.3s | IMPROVED +0.012777 -> -0.827080 | n=66 e=116 | depth=0 level=1
+  iter   32 | t=   1.8s | IMPROVED +0.000062 -> -0.827018 | n=66 e=118 | depth=0 level=1
+  iter   33 | t=   2.0s | IMPROVED +0.007946 -> -0.819072 | n=66 e=120 | depth=0 level=1
+  iter   34 | t=   2.4s | IMPROVED +0.005964 -> -0.813108 | n=68 e=122 | depth=0 level=1
+  iter   35 | t=   2.8s | IMPROVED +0.006202 -> -0.806906 | n=68 e=124 | depth=0 level=1
+  iter   36 | t=   3.0s | IMPROVED +0.001189 -> -0.805717 | n=68 e=126 | depth=0 level=1
+  iter   37 | t=   4.8s | IMPROVED +0.005554 -> -0.800163 | n=69 e=128 | depth=0 level=1
+  iter   38 | t=   9.7s | IMPROVED +0.002183 -> -0.797981 | n=71 e=130 | depth=0 level=1
+  iter   39 | t=  10.0s | IMPROVED +0.000196 -> -0.797784 | n=71 e=132 | depth=0 level=1
+  iter   40 | t=  10.3s | IMPROVED +0.003469 -> -0.794315 | n=72 e=134 | depth=0 level=1
+  iter   41 | t=  11.5s | IMPROVED +0.011427 -> -0.782888 | n=72 e=136 | depth=0 level=1
+  iter   42 | t=  11.7s | IMPROVED +0.000404 -> -0.782485 | n=72 e=138 | depth=0 level=1
+  iter   43 | t=  13.9s | IMPROVED +0.013493 -> -0.768992 | n=72 e=140 | depth=0 level=1
+  iter   44 | t=  14.1s | IMPROVED +0.007411 -> -0.761581 | n=72 e=142 | depth=0 level=1
+  iter   45 | t=  14.3s | IMPROVED +0.001817 -> -0.759763 | n=73 e=144 | depth=0 level=1
+  iter   46 | t=  14.7s | IMPROVED +0.006123 -> -0.753640 | n=73 e=146 | depth=0 level=1
+  iter   47 | t=  14.8s | IMPROVED +0.006598 -> -0.747042 | n=73 e=148 | depth=0 level=1
+  iter   48 | t=  15.9s | IMPROVED +0.003000 -> -0.744041 | n=74 e=150 | depth=0 level=1
+  iter   49 | t=  16.9s | IMPROVED +0.003027 -> -0.741015 | n=75 e=152 | depth=0 level=1
+  iter   50 | t=  17.0s | IMPROVED +0.003355 -> -0.737660 | n=76 e=154 | depth=0 level=1

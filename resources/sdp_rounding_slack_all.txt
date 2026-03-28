@@ -1,0 +1,196 @@
+
+================================================================================
+SDP ROUNDING SLACK ANALYSIS - ALL 38 BOUNDS
+================================================================================
+
+ Bound |     Type |   Weighted gap |   Discrete gap | Rounding survives? |           Source
+-------+----------+----------------+----------------+--------------------+-----------------
+     1 |   vertex |    +0.26132551 |    +0.00000000 |                 no |    n=7,kite(3,4)
+     4 |   vertex |    +0.46524806 |    +0.00000000 |                 no |        n=7,cycle
+     5 |   vertex |    +0.18249287 |    +0.00000000 |                 no |        n=7,cycle
+     6 |   vertex |    +0.00000322 |    +0.00000000 |                 no |  n=7,double_star
+     7 |   vertex |    +0.37805290 |    +0.00000000 |                 no |        n=7,cycle
+     8 |   vertex |    +0.00000000 |           +inf |                 no |         n=7,star
+     9 |   vertex |    +0.00000000 |    +0.00000000 |                 no |     n=7,complete
+    10 |   vertex |    -0.00000000 |    +0.00000000 |                 no |      n=7,free_t0
+    11 |   vertex |    +0.00000000 |    +0.00000000 |                 no |        n=7,wheel
+    12 |   vertex |    +0.00000000 |    +0.00000000 |                 no |         n=7,path
+    13 |   vertex |    +0.00000000 |    +0.00000000 |                 no |         n=7,star
+    14 |   vertex |    +0.12366113 |    +0.00000000 |                 no |        n=8,cycle
+    16 |   vertex |    +0.54275697 |    +0.00000000 |                 no |        n=7,cycle
+    18 |   vertex |    -0.03182000 |    +0.00000000 |                 no |      n=7,free_t2
+    19 |   vertex |    -0.00945423 |    +0.00000000 |                 no |      n=7,free_t2
+    20 |   vertex |    -0.00638584 |    +0.00000000 |                 no |        n=7,wheel
+    21 |   vertex |    -0.01793206 |    +0.00000000 |                 no |         n=7,star
+    22 |   vertex |    +0.00000000 |    +0.00000000 |                 no |         n=7,star
+    23 |   vertex |    -0.00000000 |    +0.00000000 |                 no |        n=7,wheel
+    24 |   vertex |    -0.01089697 |    +0.00000000 |                 no |  n=7,double_star
+    25 |   vertex |    -0.00000000 |    +0.00000000 |                 no |      n=8,free_t1
+    26 |   vertex |    +0.00000000 |    +0.00000000 |                 no |         n=7,star
+    27 |   vertex |    -0.00000000 |    +0.00000000 |                 no |        n=7,wheel
+    30 |   vertex |    +0.00000000 |           +inf |                 no |     n=7,complete
+    33 |     edge |    -0.00000000 |    +0.00000000 |                 no |    n=7,bipartite
+    34 |     edge |    -0.00000000 |    +0.00000000 |                 no | n=7,windmill(3,3)
+    35 |     edge |    -0.00000000 |    +0.00000000 |                 no |      n=7,free_t2
+    37 |     edge |    -0.00000000 |    +0.00000000 |                 no |  n=8,double_star
+    38 |     edge |    +0.00071427 |    +0.00000000 |                 no |    n=8,bipartite
+    39 |     edge |    +0.00442567 |    +0.00000000 |                 no |    n=8,bipartite
+    40 |     edge |    +0.00012613 |    +0.00000000 |                 no | n=7,barbell(3,1)
+    42 |     edge |    +0.00000000 |    +0.00000000 |                 no |        n=7,cycle
+    44 |     edge |    +0.00000000 |    +0.00000000 |                 no |        n=7,wheel
+    45 |     edge |    +0.00000000 |    +0.00000000 |                 no |     n=7,complete
+    46 |     edge |    +0.00104179 |    +0.00000000 |                 no |        n=8,cycle
+    47 |     edge |    -0.00000000 |    +0.00000000 |                 no |      n=7,free_t2
+    48 |     edge |    -0.68629150 |    +0.00000000 |                 no |     n=7,complete
+    56 |     edge |    +0.00000641 |           +inf |                 no |      n=8,free_t2
+
+================================================================================
+SUMMARY
+================================================================================
+Total bounds analyzed: 38
+Bounds with weighted violation (gap < 0): 6
+Bounds where violation survives rounding: 0
+
+All weighted violations are eliminated by rounding.
+The rounding slack phenomenon appears universal across all 38 bounds.
+
+================================================================================
+GROUP ANALYSIS
+================================================================================
+
+  Group A (m_v-dominated):
+    Bound 11: w_gap=+0.0000000000, d_gap=+0.0000000000, survives=False
+    Bound 13: w_gap=+0.0000000000, d_gap=+0.0000000000, survives=False
+
+  Mixed (d^2/m + m, d^2/m + d):
+    Bound 5: w_gap=+0.1824928718, d_gap=+0.0000000000, survives=False
+    Bound 7: w_gap=+0.3780529031, d_gap=+0.0000000000, survives=False
+
+  d_v-dominated:
+    Bound 14: w_gap=+0.1236611304, d_gap=+0.0000000000, survives=False
+    Bound 16: w_gap=+0.5427569694, d_gap=+0.0000000000, survives=False
+
+  Edge bounds (various):
+    Bound 33: w_gap=-0.0000000000, d_gap=+0.0000000000, survives=False
+    Bound 34: w_gap=-0.0000000000, d_gap=+0.0000000000, survives=False
+    Bound 35: w_gap=-0.0000000000, d_gap=+0.0000000000, survives=False
+    Bound 42: w_gap=+0.0000000000, d_gap=+0.0000000000, survives=False
+    Bound 47: w_gap=-0.0000000000, d_gap=+0.0000000000, survives=False
+
+================================================================================
+WEIGHTED VIOLATIONS DETAIL
+================================================================================
+
+  Bound 18:
+    Weighted gap: -0.0318200046
+    Best discrete gap: +0.0000000000
+    Source: n=7,free_t2
+    Rounding thresholds:
+      t=0.10: gap=+1.2426406871, edges=2
+      t=0.20: gap=+0.0000000000, edges=1
+      t=0.30: gap=+0.0000000000, edges=1
+      t=0.35: gap=+0.0000000000, edges=1
+      t=0.40: gap=+0.0000000000, edges=1
+      t=0.45: gap=+0.0000000000, edges=1
+      t=0.50: gap=+0.0000000000, edges=1
+      t=0.55: gap=+0.0000000000, edges=1
+      t=0.60: gap=+0.0000000000, edges=1
+      t=0.65: gap=+0.0000000000, edges=1
+      t=0.70: gap=+0.0000000000, edges=1
+      t=0.80: gap=+0.0000000000, edges=1
+      t=0.90: gap=+0.0000000000, edges=1
+
+  Bound 19:
+    Weighted gap: -0.0094542324
+    Best discrete gap: +0.0000000000
+    Source: n=7,free_t2
+    Rounding thresholds:
+      t=0.10: gap=+0.1622776602, edges=2
+      t=0.20: gap=+0.0000000000, edges=1
+      t=0.30: gap=+0.0000000000, edges=1
+      t=0.35: gap=+0.0000000000, edges=1
+      t=0.40: gap=+0.0000000000, edges=1
+      t=0.45: gap=+0.0000000000, edges=1
+      t=0.50: gap=+0.0000000000, edges=1
+      t=0.55: gap=+0.0000000000, edges=1
+      t=0.60: gap=+0.0000000000, edges=1
+      t=0.65: gap=+0.0000000000, edges=1
+      t=0.70: gap=+0.0000000000, edges=1
+      t=0.80: gap=+0.0000000000, edges=1
+      t=0.90: gap=+0.0000000000, edges=1
+
+  Bound 20:
+    Weighted gap: -0.0063858419
+    Best discrete gap: +0.0000000000
+    Source: n=7,wheel
+    Rounding thresholds:
+      t=0.10: gap=+0.2787192622, edges=2
+      t=0.20: gap=+0.0000000000, edges=1
+      t=0.30: gap=+0.0000000000, edges=1
+      t=0.35: gap=+0.0000000000, edges=1
+      t=0.40: gap=+0.0000000000, edges=1
+      t=0.45: gap=+0.0000000000, edges=1
+      t=0.50: gap=+0.0000000000, edges=1
+      t=0.55: gap=+0.0000000000, edges=1
+      t=0.60: gap=+0.0000000000, edges=1
+      t=0.65: gap=+0.0000000000, edges=1
+      t=0.70: gap=+0.0000000000, edges=1
+      t=0.80: gap=+0.0000000000, edges=1
+      t=0.90: gap=+0.0000000000, edges=1
+
+  Bound 21:
+    Weighted gap: -0.0179320577
+    Best discrete gap: +0.0000000000
+    Source: n=7,star
+    Rounding thresholds:
+      t=0.10: gap=+0.5355339059, edges=2
+      t=0.20: gap=+0.0000000000, edges=1
+      t=0.30: gap=+0.0000000000, edges=1
+      t=0.35: gap=+0.0000000000, edges=1
+      t=0.40: gap=+0.0000000000, edges=1
+      t=0.45: gap=+0.0000000000, edges=1
+      t=0.50: gap=+0.0000000000, edges=1
+      t=0.55: gap=+0.0000000000, edges=1
+      t=0.60: gap=+0.0000000000, edges=1
+      t=0.65: gap=+0.0000000000, edges=1
+      t=0.70: gap=+0.0000000000, edges=1
+      t=0.80: gap=+0.0000000000, edges=1
+      t=0.90: gap=+0.0000000000, edges=1
+
+  Bound 24:
+    Weighted gap: -0.0108969660
+    Best discrete gap: +0.0000000000
+    Source: n=7,double_star
+    Rounding thresholds:
+      t=0.10: gap=+0.1752291140, edges=3
+      t=0.20: gap=+0.0000000000, edges=1
+      t=0.30: gap=+0.0000000000, edges=1
+      t=0.35: gap=+0.0000000000, edges=1
+      t=0.40: gap=+0.0000000000, edges=1
+      t=0.45: gap=+0.0000000000, edges=1
+      t=0.50: gap=+0.0000000000, edges=1
+      t=0.55: gap=+0.0000000000, edges=1
+      t=0.60: gap=+0.0000000000, edges=1
+      t=0.65: gap=+0.0000000000, edges=1
+      t=0.70: gap=+0.0000000000, edges=1
+      t=0.80: gap=+0.0000000000, edges=1
+      t=0.90: gap=+0.0000000000, edges=1
+
+  Bound 48:
+    Weighted gap: -0.6862915010
+    Best discrete gap: +0.0000000000
+    Source: n=7,complete
+    Rounding thresholds:
+      t=0.10: gap=+0.0000000000, edges=1
+      t=0.20: gap=+0.0000000000, edges=1
+      t=0.30: gap=+0.0000000000, edges=1
+      t=0.35: gap=+0.0000000000, edges=1
+      t=0.40: gap=+0.0000000000, edges=1
+      t=0.45: gap=+0.0000000000, edges=1
+      t=0.50: gap=+0.0000000000, edges=1
+      t=0.55: gap=+0.0000000000, edges=1
+
+
+
+Generated: 2026-03-27 15:30:56
+Total analysis time: 1317.9s

@@ -967,6 +967,139 @@ def save_counterexamples(counterexamples, n):
     print(f"  Saved {len(counterexamples)} counterexamples to {filepath}")
 
 
+def find_best_graph(bound_id, n):
+    """Find and save the best near-miss graph for a specific bound at vertex count n.
+
+    Enumerates all connected subquartic graphs on n vertices, finds the one
+    with the smallest gap (mu - bound_value) for the target bound, and saves
+    it as a JSON adjacency list.
+
+    Args:
+        bound_id: target bound ID (e.g., 44)
+        n: number of vertices
+
+    Returns:
+        (best_graph6, best_gap, best_mu, best_bound_val, adjacency_list)
+    """
+    import json
+
+    print(f"\n{'=' * 70}")
+    print(f"FIND BEST GRAPH: Bound {bound_id}, n={n}")
+    print(f"{'=' * 70}")
+
+    try:
+        proc = subprocess.Popen(
+            ['wsl', 'nauty-geng', '-c', '-D4', str(n)],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+            bufsize=65536
+        )
+    except FileNotFoundError:
+        print("ERROR: WSL or nauty-geng not found.")
+        return None
+
+    best_g6 = None
+    best_gap = float('inf')
+    best_mu = 0.0
+    best_bval = 0.0
+    best_A = None
+    graph_count = 0
+    t_start = time.time()
+
+    for line in proc.stdout:
+        line = line.strip()
+        if not line or line.startswith(b'>'):
+            continue
+
+        try:
+            A = graph6_to_adjacency(line)
+        except (ValueError, IndexError):
+            continue
+
+        mu = laplacian_spectral_radius(A)
+        dv, mv = compute_dv_mv(A)
+
+        if bound_id in VERTEX_BOUND_IDS:
+            bvals = compute_vertex_bounds(dv, mv)
+        elif bound_id in EDGE_BOUND_IDS:
+            bvals = compute_edge_bounds(A, dv, mv)
+        else:
+            continue
+
+        bval = bvals.get(bound_id, 0.0)
+        if bval == 0.0:
+            continue
+
+        gap = bval - mu  # positive = bound holds; we want smallest
+        graph_count += 1
+
+        if gap < best_gap:
+            best_gap = gap
+            best_mu = mu
+            best_bval = bval
+            best_g6 = line.decode('ascii', errors='replace')
+            best_A = A.copy()
+
+            if graph_count % 10000 == 0 or gap < 0.1:
+                elapsed = time.time() - t_start
+                print(f"  [{graph_count:,} graphs, {elapsed:.1f}s] "
+                      f"New best: gap={gap:+.8f} mu={mu:.6f} bound={bval:.6f} "
+                      f"g6='{best_g6}'")
+
+        if graph_count % 100000 == 0:
+            elapsed = time.time() - t_start
+            rate = graph_count / elapsed if elapsed > 0 else 0
+            print(f"  Progress: {graph_count:,} graphs, {elapsed:.1f}s, "
+                  f"{rate:.0f}/s, best_gap={best_gap:+.8f}")
+
+    proc.wait()
+    stderr_output = proc.stderr.read().decode('ascii', errors='replace').strip()
+    if stderr_output:
+        print(f"  geng info: {stderr_output}")
+
+    elapsed = time.time() - t_start
+    print(f"\n  Completed: {graph_count:,} graphs in {elapsed:.1f}s")
+
+    if best_A is None:
+        print("  No valid graphs found.")
+        return None
+
+    print(f"\n  BEST GRAPH for Bound {bound_id} at n={n}:")
+    print(f"    graph6: '{best_g6}'")
+    print(f"    mu = {best_mu:.10f}")
+    print(f"    bound = {best_bval:.10f}")
+    print(f"    gap = {best_gap:+.10f}")
+
+    # Convert adjacency matrix to edge list and save as JSON
+    edges = []
+    nn = best_A.shape[0]
+    for i in range(nn):
+        for j in range(i + 1, nn):
+            if best_A[i, j] > 0:
+                edges.append([i, j])
+
+    result = {
+        'bound_id': bound_id,
+        'n': int(nn),
+        'graph6': best_g6,
+        'mu': float(best_mu),
+        'bound_value': float(best_bval),
+        'gap': float(best_gap),
+        'edges': edges,
+    }
+
+    resources_dir = Path(__file__).parent.parent / "resources"
+    resources_dir.mkdir(exist_ok=True)
+    filepath = resources_dir / f"nearmiss_b{bound_id}_n{n}.json"
+
+    with open(filepath, 'w') as f:
+        json.dump(result, f, indent=2)
+
+    print(f"  Saved to {filepath}")
+    print(f"{'=' * 70}")
+
+    return result
+
+
 # ─────────────────────────────────────────────────────────────────────
 # 8. CLI Interface
 # ─────────────────────────────────────────────────────────────────────
@@ -983,12 +1116,15 @@ def main():
                         help="Exhaustive subquartic enumeration for vertex count N")
     parser.add_argument('--count', type=int, metavar='N',
                         help="Count subquartic graphs for vertex count N")
+    parser.add_argument('--find-best', nargs=2, type=int, metavar=('BOUND', 'N'),
+                        help="Find best near-miss graph for BOUND at vertex count N")
 
     args = parser.parse_args()
 
     # If no args, run full pipeline
     if not any([args.test_bounds, args.extremal,
-                args.enumerate is not None, args.count is not None]):
+                args.enumerate is not None, args.count is not None,
+                args.find_best is not None]):
         print("Running full pipeline (test-bounds + extremal + enumerate)...\n")
         test_bounds()
         test_extremal_families()
@@ -1007,6 +1143,14 @@ def main():
 
     if args.enumerate is not None:
         enumerate_subquartic(args.enumerate)
+
+    if args.find_best is not None:
+        bound_id, n = args.find_best
+        if bound_id not in ALL_BOUND_IDS:
+            print(f"Error: Bound {bound_id} not in known bounds.")
+            print(f"Available: {ALL_BOUND_IDS}")
+            sys.exit(1)
+        find_best_graph(bound_id, n)
 
 
 if __name__ == '__main__':

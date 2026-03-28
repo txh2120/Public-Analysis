@@ -1,0 +1,1462 @@
+Loaded graph from resources/nearmiss_b44_n10.json: n=10 e=20
+  Recorded: mu=8.00000000, bound=8.0, gap=-3.552713678800501e-15
+Searching for counterexample to Bound 44
+Time budget: 1800s | Restart budget: 30s
+Warm start: n=10 e=20
+============================================================
+
+--- Restart 1 | 1800s remaining ---
+AMCS start | n=10 e=20 | score=0.000000
+  iter   10 | t=   9.7s | score=0.000000 best=0.000000 | depth=4 level=2
+AMCS done  | 16.9s | 12 iterations | best=0.000000 | n=10 e=20
+
+--- Restart 2 | 1783s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.115092 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.064575 -> -0.202299 | n=7 e=8 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.009046 -> -0.193254 | n=9 e=11 | depth=0 level=1
+  iter    9 | t=   0.1s | IMPROVED +0.013149 -> -0.180105 | n=10 e=13 | depth=0 level=1
+  iter   10 | t=   0.1s | IMPROVED +0.007204 -> -0.172901 | n=12 e=15 | depth=0 level=1
+  iter   12 | t=   0.2s | IMPROVED +0.098563 -> -0.074338 | n=13 e=16 | depth=0 level=1
+  iter   13 | t=   0.3s | IMPROVED +0.020270 -> -0.054067 | n=14 e=18 | depth=0 level=1
+  iter   15 | t=   0.4s | IMPROVED +0.000552 -> -0.053515 | n=16 e=20 | depth=0 level=1
+  iter   16 | t=   0.5s | IMPROVED +0.000101 -> -0.053414 | n=17 e=22 | depth=0 level=1
+  iter   17 | t=   0.6s | IMPROVED +0.004631 -> -0.048783 | n=18 e=24 | depth=0 level=1
+  iter   20 | t=   1.0s | score=-0.049574 best=-0.048783 | depth=3 level=1
+  iter   24 | t=   6.6s | IMPROVED +0.003646 -> -0.045137 | n=20 e=27 | depth=0 level=1
+  iter   30 | t=   8.0s | score=-0.045475 best=-0.045137 | depth=0 level=2
+  iter   31 | t=  13.0s | IMPROVED +0.001399 -> -0.043738 | n=21 e=28 | depth=0 level=1
+  iter   33 | t=  13.2s | IMPROVED +0.007375 -> -0.036363 | n=22 e=30 | depth=0 level=1
+  iter   40 | t=  20.0s | score=-0.036363 best=-0.036363 | depth=1 level=2
+AMCS done  | 27.8s | 45 iterations | best=-0.036363 | n=22 e=30
+
+--- Restart 3 | 1755s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter    9 | t=   0.8s | IMPROVED +0.000000 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   0.8s | score=-0.035276 best=-0.035276 | depth=1 level=1
+  iter   20 | t=   2.5s | score=-0.035276 best=-0.035276 | depth=5 level=2
+AMCS done  | 2.9s | 21 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 4 | 1752s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.077448 -> -0.120615 | n=9 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.039601 -> -0.081014 | n=11 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.022898 -> -0.058116 | n=13 e=12 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.014412 -> -0.043705 | n=15 e=14 | depth=0 level=1
+  iter    6 | t=   0.2s | IMPROVED +0.009651 -> -0.034054 | n=17 e=16 | depth=0 level=1
+  iter    8 | t=   0.4s | IMPROVED +0.003669 -> -0.030384 | n=18 e=17 | depth=0 level=1
+  iter    9 | t=   0.5s | IMPROVED +0.005761 -> -0.024623 | n=20 e=19 | depth=0 level=1
+  iter   10 | t=   0.6s | IMPROVED +0.004266 -> -0.020357 | n=22 e=21 | depth=0 level=1
+  iter   11 | t=   0.7s | IMPROVED +0.003247 -> -0.017110 | n=24 e=23 | depth=0 level=1
+  iter   12 | t=   0.9s | IMPROVED +0.002528 -> -0.014582 | n=26 e=25 | depth=0 level=1
+  iter   13 | t=   0.9s | IMPROVED +0.002007 -> -0.012576 | n=28 e=27 | depth=0 level=1
+  iter   14 | t=   1.2s | IMPROVED +0.000851 -> -0.011724 | n=29 e=29 | depth=0 level=1
+  iter   15 | t=   1.3s | IMPROVED +0.001463 -> -0.010261 | n=31 e=31 | depth=0 level=1
+  iter   17 | t=   1.8s | IMPROVED +0.010261 -> 0.000000 | n=32 e=32 | depth=0 level=1
+  iter   20 | t=   3.7s | score=0.000000 best=0.000000 | depth=3 level=1
+AMCS done  | 30.0s | 29 iterations | best=0.000000 | n=32 e=32
+
+--- Restart 5 | 1722s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.346690 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.0s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 2.4s | 13 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 6 | 1720s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.077448 -> -0.120615 | n=9 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.039601 -> -0.081014 | n=11 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.081014 -> -0.000000 | n=12 e=12 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.000000 -> 0.000000 | n=14 e=14 | depth=0 level=1
+  iter    6 | t=   0.2s | IMPROVED +0.000000 -> 0.000000 | n=16 e=16 | depth=0 level=1
+  iter   10 | t=   0.6s | score=-0.043705 best=0.000000 | depth=4 level=1
+AMCS done  | 30.0s | 18 iterations | best=0.000000 | n=16 e=16
+
+--- Restart 7 | 1690s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.0s | IMPROVED +0.000000 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   18 | t=   1.7s | IMPROVED +0.000000 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   20 | t=   1.8s | score=-0.035276 best=-0.035276 | depth=2 level=1
+  iter   30 | t=   4.1s | score=-0.035276 best=-0.035276 | depth=0 level=3
+AMCS done  | 4.1s | 30 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 8 | 1686s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.0s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 2.1s | 13 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 9 | 1684s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.120615 best=0.000000 | depth=5 level=1
+AMCS done  | 12.5s | 17 iterations | best=0.000000 | n=10 e=10
+
+--- Restart 10 | 1671s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter    7 | t=   0.1s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   10 | t=   0.3s | score=0.000000 best=0.000000 | depth=3 level=1
+AMCS done  | 25.5s | 19 iterations | best=0.000000 | n=12 e=12
+
+--- Restart 11 | 1646s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.346690 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.2s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 2.6s | 13 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 12 | 1643s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.291035 -> -0.701156 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.311012 -> -0.390144 | n=8 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.082955 -> -0.307189 | n=9 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.036233 -> -0.270955 | n=11 e=12 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.151005 -> -0.119951 | n=12 e=14 | depth=0 level=1
+  iter   10 | t=   0.3s | score=-0.466342 best=-0.119951 | depth=5 level=1
+  iter   12 | t=   4.0s | IMPROVED +0.038292 -> -0.081659 | n=12 e=17 | depth=0 level=1
+  iter   19 | t=   8.0s | IMPROVED +0.021463 -> -0.060196 | n=15 e=20 | depth=0 level=1
+  iter   20 | t=   8.1s | score=-0.060196 best=-0.060196 | depth=1 level=1
+  iter   21 | t=   8.1s | IMPROVED +0.000647 -> -0.059549 | n=15 e=21 | depth=0 level=1
+  iter   22 | t=   8.2s | IMPROVED +0.003600 -> -0.055948 | n=17 e=23 | depth=0 level=1
+  iter   24 | t=   8.4s | IMPROVED +0.000090 -> -0.055858 | n=17 e=24 | depth=0 level=1
+  iter   25 | t=   8.5s | IMPROVED +0.001350 -> -0.054508 | n=18 e=26 | depth=0 level=1
+  iter   28 | t=   8.9s | IMPROVED +0.000982 -> -0.053526 | n=17 e=25 | depth=0 level=1
+  iter   29 | t=   9.0s | IMPROVED +0.000909 -> -0.052617 | n=19 e=27 | depth=0 level=1
+  iter   30 | t=   9.1s | IMPROVED +0.006966 -> -0.045651 | n=20 e=29 | depth=0 level=1
+  iter   31 | t=   9.3s | IMPROVED +0.001465 -> -0.044186 | n=22 e=31 | depth=0 level=1
+  iter   33 | t=   9.6s | IMPROVED +0.000808 -> -0.043378 | n=23 e=33 | depth=0 level=1
+  iter   35 | t=  10.0s | IMPROVED +0.001470 -> -0.041909 | n=24 e=34 | depth=0 level=1
+  iter   36 | t=  10.1s | IMPROVED +0.001762 -> -0.040147 | n=25 e=36 | depth=0 level=1
+  iter   38 | t=  10.4s | IMPROVED +0.000691 -> -0.039456 | n=27 e=38 | depth=0 level=1
+  iter   39 | t=  10.7s | IMPROVED +0.004768 -> -0.034689 | n=28 e=40 | depth=0 level=1
+  iter   40 | t=  11.0s | IMPROVED +0.000691 -> -0.033998 | n=29 e=42 | depth=0 level=1
+  iter   41 | t=  11.1s | IMPROVED +0.000076 -> -0.033922 | n=31 e=44 | depth=0 level=1
+  iter   42 | t=  11.4s | IMPROVED +0.002104 -> -0.031818 | n=32 e=46 | depth=0 level=1
+  iter   47 | t=  15.7s | IMPROVED +0.000441 -> -0.031377 | n=31 e=45 | depth=0 level=1
+  iter   50 | t=  17.5s | score=-0.033210 best=-0.031377 | depth=3 level=1
+  iter   54 | t=  23.6s | IMPROVED +0.002394 -> -0.028983 | n=33 e=48 | depth=0 level=1
+  iter   55 | t=  24.2s | IMPROVED +0.000570 -> -0.028413 | n=35 e=50 | depth=0 level=1
+  iter   56 | t=  24.2s | IMPROVED +0.000032 -> -0.028381 | n=35 e=52 | depth=0 level=1
+  iter   58 | t=  25.7s | IMPROVED +0.000164 -> -0.028217 | n=34 e=51 | depth=0 level=1
+  iter   60 | t=  27.1s | score=-0.028217 best=-0.028217 | depth=2 level=1
+AMCS done  | 30.0s | 63 iterations | best=-0.028217 | n=34 e=51
+
+--- Restart 13 | 1613s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.019032 -> -0.247842 | n=8 e=8 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.198173 -> -0.049669 | n=8 e=10 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.002956 -> -0.046713 | n=10 e=12 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.000695 -> -0.046019 | n=12 e=14 | depth=0 level=1
+  iter    7 | t=   0.1s | IMPROVED +0.000157 -> -0.045862 | n=13 e=16 | depth=0 level=1
+  iter    8 | t=   0.2s | IMPROVED +0.001871 -> -0.043991 | n=14 e=18 | depth=0 level=1
+  iter   10 | t=   0.3s | IMPROVED +0.003695 -> -0.040296 | n=15 e=20 | depth=0 level=1
+  iter   17 | t=   5.9s | IMPROVED +0.001287 -> -0.039009 | n=17 e=23 | depth=0 level=1
+  iter   20 | t=   6.2s | score=-0.039009 best=-0.039009 | depth=3 level=1
+AMCS done  | 30.0s | 28 iterations | best=-0.039009 | n=17 e=23
+
+--- Restart 14 | 1583s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.064575 -> -0.202299 | n=7 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.152630 -> -0.049669 | n=8 e=10 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.000918 -> -0.048752 | n=9 e=11 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.000256 -> -0.048495 | n=11 e=13 | depth=0 level=1
+  iter    7 | t=   0.1s | IMPROVED +0.003123 -> -0.045372 | n=12 e=15 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.045372 best=-0.045372 | depth=3 level=1
+  iter   14 | t=   4.1s | IMPROVED +0.045372 -> -0.000000 | n=12 e=18 | depth=0 level=1
+  iter   20 | t=   4.4s | score=-0.000000 best=-0.000000 | depth=0 level=2
+AMCS done  | 30.0s | 26 iterations | best=-0.000000 | n=12 e=18
+
+--- Restart 15 | 1553s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter   10 | t=   0.8s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   20 | t=   6.6s | score=0.000000 best=0.000000 | depth=4 level=2
+AMCS done  | 11.7s | 22 iterations | best=0.000000 | n=10 e=10
+
+--- Restart 16 | 1541s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.291035 -> -0.701156 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.453314 -> -0.247842 | n=8 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.107145 -> -0.140697 | n=8 e=10 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.016608 -> -0.124089 | n=10 e=12 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.004152 -> -0.119938 | n=12 e=14 | depth=0 level=1
+  iter    8 | t=   0.2s | IMPROVED +0.002960 -> -0.116978 | n=12 e=15 | depth=0 level=1
+  iter   10 | t=   0.3s | IMPROVED +0.000144 -> -0.116834 | n=14 e=17 | depth=0 level=1
+  iter   11 | t=   0.3s | IMPROVED +0.033025 -> -0.083809 | n=15 e=19 | depth=0 level=1
+  iter   18 | t=   5.9s | IMPROVED +0.007113 -> -0.076696 | n=16 e=20 | depth=0 level=1
+  iter   20 | t=   6.1s | score=-0.083809 best=-0.076696 | depth=2 level=1
+AMCS done  | 30.0s | 29 iterations | best=-0.076696 | n=16 e=20
+
+--- Restart 17 | 1511s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.146124 -> -0.846068 | n=5 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.665963 -> -0.180105 | n=6 e=8 | depth=0 level=1
+  iter    9 | t=   0.3s | IMPROVED +0.180105 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   10 | t=   0.3s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   20 | t=   1.9s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 2.4s | 21 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 18 | 1509s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.291035 -> -0.701156 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.453314 -> -0.247842 | n=8 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.050945 -> -0.196897 | n=9 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.080746 -> -0.116151 | n=10 e=12 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.542966 best=-0.116151 | depth=0 level=2
+  iter   11 | t=   1.9s | IMPROVED +0.062586 -> -0.053565 | n=11 e=15 | depth=0 level=1
+  iter   19 | t=   6.6s | IMPROVED +0.000000 -> -0.053565 | n=11 e=15 | depth=0 level=1
+  iter   20 | t=   6.7s | score=-0.053565 best=-0.053565 | depth=1 level=1
+  iter   26 | t=  10.0s | IMPROVED +0.043959 -> -0.009607 | n=13 e=18 | depth=0 level=1
+  iter   30 | t=  10.3s | score=-0.416918 best=-0.009607 | depth=4 level=1
+  iter   35 | t=  25.3s | IMPROVED +0.000000 -> -0.009607 | n=13 e=18 | depth=0 level=1
+  iter   40 | t=  25.6s | score=-0.416918 best=-0.009607 | depth=5 level=1
+AMCS done  | 30.0s | 42 iterations | best=-0.009607 | n=13 e=18
+
+--- Restart 19 | 1479s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.346690 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.2s | score=-0.035276 best=-0.035276 | depth=3 level=2
+  iter   11 | t=   1.5s | IMPROVED +0.000000 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   20 | t=   2.7s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 3.8s | 23 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 20 | 1475s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.219688 -> -0.162278 | n=5 e=6 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.053151 -> -0.109126 | n=6 e=7 | depth=0 level=1
+  iter   10 | t=   0.3s | IMPROVED +0.027310 -> -0.081816 | n=8 e=10 | depth=0 level=1
+  iter   19 | t=   2.4s | IMPROVED +0.000000 -> -0.081816 | n=8 e=10 | depth=0 level=1
+  iter   20 | t=   2.4s | score=-0.081816 best=-0.081816 | depth=1 level=1
+  iter   27 | t=   3.6s | IMPROVED +0.081816 -> 0.000000 | n=8 e=12 | depth=0 level=1
+  iter   30 | t=   3.7s | score=0.000000 best=0.000000 | depth=3 level=1
+AMCS done  | 9.9s | 39 iterations | best=0.000000 | n=8 e=12
+
+--- Restart 21 | 1465s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.086770 -> -0.180105 | n=6 e=8 | depth=0 level=1
+  iter    9 | t=   0.3s | IMPROVED +0.180105 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   10 | t=   0.3s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   20 | t=   2.2s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 2.9s | 21 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 22 | 1462s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.037133 -> -0.229741 | n=7 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.056050 -> -0.173691 | n=8 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.035156 -> -0.138535 | n=9 e=12 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.138535 best=-0.138535 | depth=0 level=2
+  iter   11 | t=   1.4s | IMPROVED +0.084970 -> -0.053565 | n=11 e=15 | depth=0 level=1
+  iter   20 | t=   9.4s | IMPROVED +0.000000 -> -0.053565 | n=11 e=15 | depth=0 level=1
+  iter   30 | t=  19.6s | score=-0.053565 best=-0.053565 | depth=4 level=2
+AMCS done  | 27.6s | 32 iterations | best=-0.053565 | n=11 e=15
+
+--- Restart 23 | 1435s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.829914 -> -0.162278 | n=5 e=6 | depth=0 level=1
+  iter    8 | t=   0.2s | IMPROVED +0.162278 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   10 | t=   0.2s | score=0.000000 best=0.000000 | depth=2 level=1
+  iter   20 | t=   2.3s | score=0.000000 best=0.000000 | depth=0 level=3
+AMCS done  | 2.3s | 20 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 24 | 1433s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.3s | score=-0.035276 best=-0.035276 | depth=3 level=2
+  iter   11 | t=   1.7s | IMPROVED +0.000000 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   20 | t=   2.9s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 3.9s | 23 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 25 | 1429s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.260140 -> -0.732051 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.051059 -> -0.680992 | n=8 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.360950 -> -0.320042 | n=10 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.006173 -> -0.313869 | n=12 e=12 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.092844 -> -0.221024 | n=12 e=14 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.094192 -> -0.126832 | n=13 e=16 | depth=0 level=1
+  iter    8 | t=   0.2s | IMPROVED +0.001940 -> -0.124892 | n=15 e=18 | depth=0 level=1
+  iter   10 | t=   0.4s | IMPROVED +0.001026 -> -0.123867 | n=14 e=17 | depth=0 level=1
+  iter   11 | t=   0.4s | IMPROVED +0.014191 -> -0.109676 | n=16 e=19 | depth=0 level=1
+  iter   18 | t=   6.1s | IMPROVED +0.021897 -> -0.087779 | n=16 e=22 | depth=0 level=1
+  iter   20 | t=   6.3s | score=-0.087779 best=-0.087779 | depth=2 level=1
+  iter   25 | t=  11.9s | IMPROVED +0.033227 -> -0.054552 | n=17 e=23 | depth=0 level=1
+  iter   30 | t=  12.5s | score=-0.424239 best=-0.054552 | depth=5 level=1
+  iter   33 | t=  22.7s | IMPROVED +0.013553 -> -0.041000 | n=18 e=24 | depth=0 level=1
+  iter   40 | t=  28.7s | score=-0.041000 best=-0.041000 | depth=1 level=2
+AMCS done  | 30.0s | 41 iterations | best=-0.041000 | n=18 e=24
+
+--- Restart 26 | 1399s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   1.2s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   20 | t=   8.2s | score=0.000000 best=0.000000 | depth=4 level=2
+AMCS done  | 12.1s | 22 iterations | best=0.000000 | n=10 e=10
+
+--- Restart 27 | 1387s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.0s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 2.1s | 13 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 28 | 1385s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.1s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 2.5s | 13 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 29 | 1382s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   10 | t=   1.8s | score=0.000000 best=0.000000 | depth=1 level=2
+AMCS done  | 10.8s | 15 iterations | best=0.000000 | n=10 e=10
+
+--- Restart 30 | 1371s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.077448 -> -0.120615 | n=9 e=8 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.120615 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   10 | t=   0.3s | score=-0.120615 best=0.000000 | depth=0 level=2
+  iter   16 | t=  10.7s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   20 | t=  10.8s | score=-0.120615 best=0.000000 | depth=4 level=1
+AMCS done  | 22.2s | 28 iterations | best=0.000000 | n=10 e=10
+
+--- Restart 31 | 1349s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter    8 | t=   0.3s | IMPROVED +0.000000 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   10 | t=   0.3s | score=0.000000 best=0.000000 | depth=2 level=1
+  iter   20 | t=   2.4s | score=0.000000 best=0.000000 | depth=0 level=3
+AMCS done  | 2.4s | 20 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 32 | 1347s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.291035 -> -0.701156 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.453314 -> -0.247842 | n=8 e=8 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.166026 -> -0.081816 | n=8 e=10 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.081816 best=-0.081816 | depth=0 level=2
+  iter   12 | t=   1.3s | IMPROVED +0.000000 -> -0.081816 | n=8 e=10 | depth=0 level=1
+  iter   20 | t=   2.5s | score=-0.081816 best=-0.081816 | depth=2 level=2
+  iter   23 | t=   5.1s | IMPROVED +0.000000 -> -0.081816 | n=8 e=10 | depth=0 level=1
+  iter   30 | t=   6.0s | score=-0.081816 best=-0.081816 | depth=1 level=2
+AMCS done  | 9.8s | 35 iterations | best=-0.081816 | n=8 e=10
+
+--- Restart 33 | 1337s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.291035 -> -0.701156 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.471415 -> -0.229741 | n=7 e=8 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.147925 -> -0.081816 | n=8 e=10 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.494678 best=-0.081816 | depth=0 level=2
+  iter   12 | t=   1.3s | IMPROVED +0.000000 -> -0.081816 | n=8 e=10 | depth=0 level=1
+  iter   20 | t=   2.6s | score=-0.081816 best=-0.081816 | depth=2 level=2
+AMCS done  | 5.7s | 24 iterations | best=-0.081816 | n=8 e=10
+
+--- Restart 34 | 1331s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.0s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 2.1s | 13 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 35 | 1329s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.346690 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.2s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 2.2s | 13 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 36 | 1327s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.077448 -> -0.120615 | n=9 e=8 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.022728 -> -0.097887 | n=10 e=9 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.029739 -> -0.068148 | n=12 e=11 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.018004 -> -0.050144 | n=14 e=13 | depth=0 level=1
+  iter    7 | t=   0.2s | IMPROVED +0.011715 -> -0.038429 | n=16 e=15 | depth=0 level=1
+  iter    8 | t=   0.3s | IMPROVED +0.008045 -> -0.030384 | n=18 e=17 | depth=0 level=1
+  iter    9 | t=   0.4s | IMPROVED +0.005761 -> -0.024623 | n=20 e=19 | depth=0 level=1
+  iter   10 | t=   0.5s | IMPROVED +0.004266 -> -0.020357 | n=22 e=21 | depth=0 level=1
+  iter   11 | t=   0.5s | IMPROVED +0.003247 -> -0.017110 | n=24 e=23 | depth=0 level=1
+  iter   12 | t=   0.6s | IMPROVED +0.002528 -> -0.014582 | n=26 e=25 | depth=0 level=1
+  iter   13 | t=   0.8s | IMPROVED +0.002007 -> -0.012576 | n=28 e=27 | depth=0 level=1
+  iter   14 | t=   1.0s | IMPROVED +0.001619 -> -0.010956 | n=30 e=29 | depth=0 level=1
+  iter   15 | t=   1.1s | IMPROVED +0.001326 -> -0.009631 | n=32 e=31 | depth=0 level=1
+  iter   16 | t=   1.1s | IMPROVED +0.001099 -> -0.008532 | n=34 e=33 | depth=0 level=1
+  iter   17 | t=   1.2s | IMPROVED +0.000921 -> -0.007611 | n=36 e=35 | depth=0 level=1
+  iter   18 | t=   1.9s | IMPROVED +0.000780 -> -0.006831 | n=38 e=37 | depth=0 level=1
+  iter   19 | t=   2.4s | IMPROVED +0.000666 -> -0.006165 | n=40 e=39 | depth=0 level=1
+  iter   20 | t=   3.5s | score=-0.006165 best=-0.006165 | depth=1 level=1
+  iter   21 | t=   3.9s | IMPROVED +0.000297 -> -0.005868 | n=41 e=40 | depth=0 level=1
+  iter   22 | t=   4.1s | IMPROVED +0.000533 -> -0.005335 | n=43 e=42 | depth=0 level=1
+  iter   23 | t=   4.6s | IMPROVED +0.000464 -> -0.004872 | n=45 e=44 | depth=0 level=1
+  iter   24 | t=   4.8s | IMPROVED +0.000406 -> -0.004466 | n=47 e=46 | depth=0 level=1
+  iter   25 | t=   6.0s | IMPROVED +0.000357 -> -0.004109 | n=49 e=48 | depth=0 level=1
+  iter   26 | t=   6.7s | IMPROVED +0.000316 -> -0.003793 | n=51 e=50 | depth=0 level=1
+  iter   30 | t=  11.7s | score=-0.003947 best=-0.003793 | depth=4 level=1
+AMCS done  | 30.0s | 37 iterations | best=-0.003793 | n=51 e=50
+
+--- Restart 37 | 1297s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.086770 -> -0.180105 | n=6 e=8 | depth=0 level=1
+  iter    5 | t=   0.0s | IMPROVED +0.006414 -> -0.173691 | n=8 e=10 | depth=0 level=1
+  iter    7 | t=   0.1s | IMPROVED +0.029770 -> -0.143921 | n=10 e=12 | depth=0 level=1
+  iter    8 | t=   0.1s | IMPROVED +0.006888 -> -0.137033 | n=12 e=14 | depth=0 level=1
+  iter   10 | t=   0.2s | IMPROVED +0.013563 -> -0.123470 | n=13 e=16 | depth=0 level=1
+  iter   11 | t=   0.2s | IMPROVED +0.113863 -> -0.009607 | n=13 e=18 | depth=0 level=1
+  iter   19 | t=  10.6s | IMPROVED +0.009607 -> 0.000000 | n=14 e=21 | depth=0 level=1
+  iter   20 | t=  10.7s | score=0.000000 best=0.000000 | depth=1 level=1
+AMCS done  | 30.0s | 29 iterations | best=0.000000 | n=14 e=21
+
+--- Restart 38 | 1267s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.086770 -> -0.180105 | n=6 e=8 | depth=0 level=1
+  iter    9 | t=   0.3s | IMPROVED +0.180105 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   10 | t=   0.3s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   20 | t=   2.0s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 2.4s | 21 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 39 | 1264s remaining ---
+AMCS start | n=5 e=4 | score=-1.242641
+  iter    2 | t=   0.0s | IMPROVED +0.242641 -> -1.000000 | n=5 e=6 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.414214 -> -0.585786 | n=7 e=8 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.010211 -> -0.575575 | n=7 e=10 | depth=0 level=1
+  iter    7 | t=   0.1s | IMPROVED +0.476556 -> -0.099020 | n=7 e=12 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.099020 best=-0.099020 | depth=3 level=1
+  iter   14 | t=   0.6s | IMPROVED +0.076879 -> -0.022141 | n=8 e=15 | depth=0 level=1
+  iter   20 | t=   0.8s | score=-0.022141 best=-0.022141 | depth=0 level=2
+  iter   21 | t=   1.5s | IMPROVED +0.022141 -> 0.000000 | n=8 e=16 | depth=0 level=1
+  iter   30 | t=   4.2s | score=0.000000 best=0.000000 | depth=3 level=2
+AMCS done  | 8.3s | 33 iterations | best=0.000000 | n=8 e=16
+
+--- Restart 40 | 1256s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter   10 | t=   0.7s | IMPROVED +0.000000 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   20 | t=   1.9s | score=0.000000 best=0.000000 | depth=4 level=2
+AMCS done  | 2.8s | 22 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 41 | 1253s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.037133 -> -0.229741 | n=7 e=8 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.179853 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.741657 best=-0.049888 | depth=0 level=2
+  iter   12 | t=   0.8s | IMPROVED +0.000000 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   20 | t=   1.8s | score=-0.049888 best=-0.049888 | depth=2 level=2
+  iter   22 | t=   2.6s | IMPROVED +0.000000 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   30 | t=   3.4s | score=-0.049888 best=-0.049888 | depth=2 level=2
+AMCS done  | 4.9s | 34 iterations | best=-0.049888 | n=7 e=9
+
+--- Restart 42 | 1248s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.2s | IMPROVED +0.000000 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   20 | t=   2.5s | IMPROVED +0.000000 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   29 | t=   3.7s | IMPROVED +0.035276 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   30 | t=   3.7s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   40 | t=   5.3s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 5.8s | 41 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 43 | 1243s remaining ---
+AMCS start | n=5 e=4 | score=-1.242641
+  iter    2 | t=   0.0s | IMPROVED +0.242641 -> -1.000000 | n=5 e=6 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.414214 -> -0.585786 | n=7 e=8 | depth=0 level=1
+  iter    8 | t=   0.1s | IMPROVED +0.158211 -> -0.427576 | n=9 e=13 | depth=0 level=1
+  iter    9 | t=   0.1s | IMPROVED +0.333477 -> -0.094099 | n=9 e=15 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.094099 best=-0.094099 | depth=1 level=1
+  iter   16 | t=   1.7s | IMPROVED +0.001404 -> -0.092695 | n=12 e=18 | depth=0 level=1
+  iter   17 | t=   1.7s | IMPROVED +0.002263 -> -0.090432 | n=13 e=20 | depth=0 level=1
+  iter   18 | t=   1.8s | IMPROVED +0.004186 -> -0.086246 | n=14 e=22 | depth=0 level=1
+  iter   19 | t=   1.9s | IMPROVED +0.000270 -> -0.085976 | n=14 e=24 | depth=0 level=1
+  iter   20 | t=   2.0s | IMPROVED +0.000281 -> -0.085695 | n=16 e=26 | depth=0 level=1
+  iter   21 | t=   2.2s | IMPROVED +0.000019 -> -0.085676 | n=17 e=28 | depth=0 level=1
+  iter   22 | t=   2.3s | IMPROVED +0.000067 -> -0.085609 | n=19 e=30 | depth=0 level=1
+  iter   23 | t=   2.5s | IMPROVED +0.001296 -> -0.084313 | n=21 e=32 | depth=0 level=1
+  iter   24 | t=   2.6s | IMPROVED +0.000131 -> -0.084182 | n=22 e=34 | depth=0 level=1
+  iter   25 | t=   2.6s | IMPROVED +0.000284 -> -0.083898 | n=22 e=36 | depth=0 level=1
+  iter   26 | t=   2.6s | IMPROVED +0.000081 -> -0.083817 | n=23 e=38 | depth=0 level=1
+  iter   27 | t=   2.6s | IMPROVED +0.000089 -> -0.083728 | n=24 e=40 | depth=0 level=1
+  iter   28 | t=   2.7s | IMPROVED +0.000148 -> -0.083579 | n=25 e=42 | depth=0 level=1
+  iter   29 | t=   2.7s | IMPROVED +0.000072 -> -0.083508 | n=26 e=44 | depth=0 level=1
+  iter   30 | t=   2.8s | IMPROVED +0.000467 -> -0.083040 | n=26 e=46 | depth=0 level=1
+  iter   31 | t=   3.0s | IMPROVED +0.000242 -> -0.082798 | n=27 e=48 | depth=0 level=1
+  iter   32 | t=   3.0s | IMPROVED +0.000010 -> -0.082788 | n=29 e=50 | depth=0 level=1
+  iter   33 | t=   3.2s | IMPROVED +0.000900 -> -0.081888 | n=29 e=52 | depth=0 level=1
+  iter   34 | t=   3.4s | IMPROVED +0.000456 -> -0.081432 | n=30 e=54 | depth=0 level=1
+  iter   36 | t=   4.3s | IMPROVED +0.000027 -> -0.081405 | n=31 e=56 | depth=0 level=1
+  iter   38 | t=   5.0s | IMPROVED +0.000143 -> -0.081261 | n=33 e=58 | depth=0 level=1
+  iter   39 | t=   5.1s | IMPROVED +0.000001 -> -0.081260 | n=34 e=60 | depth=0 level=1
+  iter   40 | t=   5.2s | IMPROVED +0.000001 -> -0.081259 | n=35 e=62 | depth=0 level=1
+  iter   41 | t=   5.4s | IMPROVED +0.000011 -> -0.081248 | n=36 e=64 | depth=0 level=1
+  iter   42 | t=   5.5s | IMPROVED +0.000576 -> -0.080672 | n=37 e=66 | depth=0 level=1
+  iter   44 | t=   7.1s | IMPROVED +0.000028 -> -0.080645 | n=37 e=67 | depth=0 level=1
+  iter   48 | t=  12.3s | IMPROVED +0.000001 -> -0.080643 | n=36 e=66 | depth=0 level=1
+  iter   49 | t=  12.9s | IMPROVED +0.000022 -> -0.080621 | n=38 e=68 | depth=0 level=1
+  iter   50 | t=  13.7s | IMPROVED +0.000015 -> -0.080606 | n=38 e=70 | depth=0 level=1
+  iter   58 | t=  30.0s | IMPROVED +0.000010 -> -0.080597 | n=39 e=71 | depth=0 level=1
+AMCS done  | 30.0s | 58 iterations | best=-0.080597 | n=39 e=71
+
+--- Restart 44 | 1213s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.219688 -> -0.162278 | n=5 e=6 | depth=0 level=1
+  iter    8 | t=   0.2s | IMPROVED +0.112390 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.049888 best=-0.049888 | depth=2 level=1
+  iter   19 | t=   2.0s | IMPROVED +0.000000 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   20 | t=   2.0s | score=-0.049888 best=-0.049888 | depth=1 level=1
+  iter   30 | t=   4.0s | score=-0.049888 best=-0.049888 | depth=5 level=2
+AMCS done  | 4.5s | 31 iterations | best=-0.049888 | n=7 e=9
+
+--- Restart 45 | 1208s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.3s | score=-0.035276 best=-0.035276 | depth=3 level=2
+  iter   11 | t=   1.7s | IMPROVED +0.000000 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   20 | t=   2.8s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 4.2s | 23 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 46 | 1204s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.1s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 2.5s | 13 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 47 | 1201s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.0s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 2.0s | 13 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 48 | 1199s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.077448 -> -0.120615 | n=9 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.039601 -> -0.081014 | n=11 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.022898 -> -0.058116 | n=13 e=12 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.058116 -> 0.000000 | n=14 e=14 | depth=0 level=1
+  iter   10 | t=   0.5s | score=-0.058116 best=0.000000 | depth=5 level=1
+AMCS done  | 30.0s | 17 iterations | best=0.000000 | n=14 e=14
+
+--- Restart 49 | 1169s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter   10 | t=   0.8s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   19 | t=   5.6s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   20 | t=   5.6s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   30 | t=  13.2s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 15.2s | 31 iterations | best=0.000000 | n=10 e=10
+
+--- Restart 50 | 1154s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   10 | t=   0.3s | score=-0.081014 best=0.000000 | depth=4 level=1
+AMCS done  | 25.1s | 18 iterations | best=0.000000 | n=12 e=12
+
+--- Restart 51 | 1129s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter    9 | t=   0.4s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   0.4s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   20 | t=   3.7s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 5.0s | 21 iterations | best=0.000000 | n=8 e=8
+
+--- Restart 52 | 1124s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.064575 -> -0.202299 | n=7 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.152630 -> -0.049669 | n=8 e=10 | depth=0 level=1
+  iter   10 | t=   0.8s | IMPROVED +0.003164 -> -0.046505 | n=11 e=13 | depth=0 level=1
+  iter   12 | t=   0.9s | IMPROVED +0.000057 -> -0.046448 | n=12 e=15 | depth=0 level=1
+  iter   13 | t=   0.9s | IMPROVED +0.000224 -> -0.046224 | n=13 e=17 | depth=0 level=1
+  iter   20 | t=   6.3s | IMPROVED +0.015327 -> -0.030897 | n=15 e=20 | depth=0 level=1
+  iter   28 | t=  16.9s | IMPROVED +0.000000 -> -0.030897 | n=15 e=20 | depth=0 level=1
+  iter   30 | t=  17.0s | score=-0.030897 best=-0.030897 | depth=2 level=1
+  iter   35 | t=  22.5s | IMPROVED +0.001403 -> -0.029494 | n=16 e=21 | depth=0 level=1
+  iter   40 | t=  23.0s | score=-0.029494 best=-0.029494 | depth=5 level=1
+  iter   42 | t=  28.2s | IMPROVED +0.000156 -> -0.029338 | n=17 e=22 | depth=0 level=1
+  iter   43 | t=  28.3s | IMPROVED +0.000044 -> -0.029294 | n=19 e=24 | depth=0 level=1
+  iter   50 | t=  30.0s | score=-0.029294 best=-0.029294 | depth=1 level=2
+AMCS done  | 30.0s | 50 iterations | best=-0.029294 | n=19 e=24
+
+--- Restart 53 | 1094s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   1.5s | score=0.000000 best=0.000000 | depth=2 level=2
+AMCS done  | 3.9s | 14 iterations | best=0.000000 | n=8 e=8
+
+--- Restart 54 | 1090s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.198062 -> -0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   1.2s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   20 | t=   7.6s | score=0.000000 best=0.000000 | depth=4 level=2
+AMCS done  | 11.5s | 22 iterations | best=0.000000 | n=10 e=10
+
+--- Restart 55 | 1079s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.146124 -> -0.846068 | n=5 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.665963 -> -0.180105 | n=6 e=8 | depth=0 level=1
+  iter    9 | t=   0.3s | IMPROVED +0.180105 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   10 | t=   0.3s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   20 | t=   2.1s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 2.5s | 21 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 56 | 1076s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.115092 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.086770 -> -0.180105 | n=6 e=8 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.130217 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.741013 best=-0.049888 | depth=0 level=2
+  iter   11 | t=   0.6s | IMPROVED +0.049888 -> -0.000000 | n=8 e=12 | depth=0 level=1
+  iter   20 | t=   3.1s | score=-0.000000 best=-0.000000 | depth=3 level=2
+AMCS done  | 7.0s | 23 iterations | best=-0.000000 | n=8 e=12
+
+--- Restart 57 | 1069s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.077448 -> -0.120615 | n=9 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.039601 -> -0.081014 | n=11 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.022898 -> -0.058116 | n=13 e=12 | depth=0 level=1
+  iter    6 | t=   0.2s | IMPROVED +0.014412 -> -0.043705 | n=15 e=14 | depth=0 level=1
+  iter    7 | t=   0.2s | IMPROVED +0.009651 -> -0.034054 | n=17 e=16 | depth=0 level=1
+  iter    8 | t=   0.4s | IMPROVED +0.034054 -> -0.000000 | n=18 e=18 | depth=0 level=1
+  iter   10 | t=   0.6s | score=-0.027277 best=-0.000000 | depth=2 level=1
+  iter   11 | t=   0.7s | IMPROVED +0.000000 -> 0.000000 | n=20 e=20 | depth=0 level=1
+  iter   20 | t=  17.1s | score=0.000000 best=0.000000 | depth=3 level=2
+  iter   21 | t=  22.1s | IMPROVED +0.000000 -> 0.000000 | n=20 e=20 | depth=0 level=1
+AMCS done  | 30.0s | 29 iterations | best=0.000000 | n=20 e=20
+
+--- Restart 58 | 1039s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter   10 | t=   0.7s | score=0.000000 best=0.000000 | depth=3 level=2
+  iter   13 | t=   1.3s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   20 | t=   5.1s | score=0.000000 best=0.000000 | depth=1 level=2
+  iter   22 | t=  11.7s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   30 | t=  18.4s | score=0.000000 best=0.000000 | depth=2 level=2
+  iter   32 | t=  25.4s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   40 | t=  30.0s | score=0.000000 best=0.000000 | depth=2 level=2
+AMCS done  | 30.0s | 40 iterations | best=0.000000 | n=12 e=12
+
+--- Restart 59 | 1009s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.037133 -> -0.229741 | n=7 e=8 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.120615 -> -0.109126 | n=6 e=7 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.109126 best=-0.109126 | depth=0 level=2
+  iter   11 | t=   0.3s | IMPROVED +0.027310 -> -0.081816 | n=8 e=10 | depth=0 level=1
+  iter   20 | t=   2.3s | score=-0.081816 best=-0.081816 | depth=3 level=2
+AMCS done  | 4.5s | 23 iterations | best=-0.081816 | n=8 e=10
+
+--- Restart 60 | 1005s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.157748 -> -0.109126 | n=6 e=7 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.059238 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.677799 best=-0.049888 | depth=0 level=2
+AMCS done  | 2.6s | 16 iterations | best=-0.049888 | n=7 e=9
+
+--- Restart 61 | 1002s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.0s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 2.1s | 13 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 62 | 1000s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.198062 -> -0.000000 | n=8 e=8 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.120615 best=0.000000 | depth=0 level=2
+  iter   12 | t=   2.9s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   20 | t=   9.2s | score=0.000000 best=0.000000 | depth=2 level=2
+AMCS done  | 25.2s | 24 iterations | best=0.000000 | n=12 e=12
+
+--- Restart 63 | 975s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.291035 -> -0.701156 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.498857 -> -0.202299 | n=7 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.003267 -> -0.199033 | n=9 e=10 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.000040 -> -0.198993 | n=10 e=11 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.152280 -> -0.046713 | n=10 e=13 | depth=0 level=1
+  iter    7 | t=   0.1s | IMPROVED +0.000628 -> -0.046085 | n=11 e=15 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.046085 best=-0.046085 | depth=3 level=1
+  iter   14 | t=   2.9s | IMPROVED +0.003065 -> -0.043020 | n=12 e=16 | depth=0 level=1
+  iter   20 | t=   3.2s | score=-0.046085 best=-0.043020 | depth=0 level=2
+  iter   21 | t=   6.8s | IMPROVED +0.008454 -> -0.034567 | n=14 e=19 | depth=0 level=1
+  iter   23 | t=   7.0s | IMPROVED +0.024960 -> -0.009607 | n=13 e=18 | depth=0 level=1
+  iter   30 | t=  12.4s | score=-0.009607 best=-0.009607 | depth=1 level=2
+AMCS done  | 30.0s | 34 iterations | best=-0.009607 | n=13 e=18
+
+--- Restart 64 | 945s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.198062 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   1.5s | score=0.000000 best=0.000000 | depth=2 level=2
+  iter   13 | t=   3.3s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   20 | t=   4.0s | score=0.000000 best=0.000000 | depth=1 level=2
+AMCS done  | 7.4s | 25 iterations | best=0.000000 | n=8 e=8
+
+--- Restart 65 | 937s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.086770 -> -0.180105 | n=6 e=8 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.130217 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.508366 best=-0.049888 | depth=0 level=2
+  iter   14 | t=   1.7s | IMPROVED +0.000000 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   20 | t=   1.7s | score=-0.741271 best=-0.049888 | depth=0 level=2
+  iter   21 | t=   2.2s | IMPROVED +0.049888 -> 0.000000 | n=8 e=12 | depth=0 level=1
+  iter   30 | t=   4.7s | score=0.000000 best=0.000000 | depth=3 level=2
+AMCS done  | 8.3s | 33 iterations | best=0.000000 | n=8 e=12
+
+--- Restart 66 | 929s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.198062 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   1.5s | score=0.000000 best=0.000000 | depth=2 level=2
+  iter   12 | t=   2.9s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   20 | t=   4.3s | score=0.000000 best=0.000000 | depth=2 level=2
+AMCS done  | 7.3s | 24 iterations | best=0.000000 | n=8 e=8
+
+--- Restart 67 | 922s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.089642 -> -0.902549 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.486948 -> -0.415601 | n=8 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.166046 -> -0.249555 | n=10 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.006256 -> -0.243299 | n=11 e=12 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.123348 -> -0.119951 | n=12 e=14 | depth=0 level=1
+  iter   10 | t=   0.3s | score=-0.121823 best=-0.119951 | depth=5 level=1
+  iter   12 | t=   4.0s | IMPROVED +0.004153 -> -0.115797 | n=14 e=17 | depth=0 level=1
+  iter   13 | t=   4.1s | IMPROVED +0.023015 -> -0.092782 | n=14 e=19 | depth=0 level=1
+  iter   20 | t=   9.6s | IMPROVED +0.005011 -> -0.087771 | n=15 e=22 | depth=0 level=1
+  iter   22 | t=   9.7s | IMPROVED +0.087771 -> 0.000000 | n=14 e=21 | depth=0 level=1
+  iter   30 | t=  20.2s | score=0.000000 best=0.000000 | depth=2 level=2
+AMCS done  | 30.0s | 32 iterations | best=0.000000 | n=14 e=21
+
+--- Restart 68 | 892s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.829914 -> -0.162278 | n=5 e=6 | depth=0 level=1
+  iter    7 | t=   0.1s | IMPROVED +0.000000 -> -0.162278 | n=10 e=12 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.162278 best=-0.162278 | depth=3 level=1
+  iter   14 | t=   1.9s | IMPROVED +0.045609 -> -0.116669 | n=12 e=15 | depth=0 level=1
+  iter   16 | t=   2.0s | IMPROVED +0.023774 -> -0.092895 | n=14 e=17 | depth=0 level=1
+  iter   20 | t=   2.3s | score=-0.092895 best=-0.092895 | depth=4 level=1
+  iter   23 | t=   7.5s | IMPROVED +0.018019 -> -0.074876 | n=16 e=20 | depth=0 level=1
+  iter   30 | t=  13.2s | IMPROVED +0.003279 -> -0.071597 | n=17 e=21 | depth=0 level=1
+  iter   38 | t=  24.0s | IMPROVED +0.000554 -> -0.071043 | n=20 e=24 | depth=0 level=1
+  iter   40 | t=  24.3s | IMPROVED +0.000134 -> -0.070909 | n=20 e=25 | depth=0 level=1
+AMCS done  | 30.0s | 47 iterations | best=-0.070909 | n=20 e=25
+
+--- Restart 69 | 862s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter    9 | t=   0.4s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   0.4s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   20 | t=   3.8s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 4.5s | 21 iterations | best=0.000000 | n=8 e=8
+
+--- Restart 70 | 857s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.198062 best=0.000000 | depth=0 level=2
+  iter   12 | t=   1.2s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   20 | t=   4.1s | score=0.000000 best=0.000000 | depth=2 level=2
+AMCS done  | 12.8s | 24 iterations | best=0.000000 | n=10 e=10
+
+--- Restart 71 | 844s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.2s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 2.3s | 13 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 72 | 842s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter   10 | t=   0.8s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   11 | t=   0.8s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   20 | t=  11.3s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   30 | t=  26.8s | score=0.000000 best=0.000000 | depth=4 level=2
+AMCS done  | 30.0s | 31 iterations | best=0.000000 | n=12 e=12
+
+--- Restart 73 | 812s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter    9 | t=   0.4s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   0.4s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   20 | t=   4.1s | score=0.000000 best=0.000000 | depth=5 level=2
+  iter   21 | t=   4.8s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   30 | t=   6.8s | score=0.000000 best=0.000000 | depth=3 level=2
+AMCS done  | 9.8s | 33 iterations | best=0.000000 | n=8 e=8
+
+--- Restart 74 | 802s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.077448 -> -0.120615 | n=9 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.039601 -> -0.081014 | n=11 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.081014 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   10 | t=   0.4s | score=-0.081014 best=0.000000 | depth=0 level=2
+  iter   12 | t=   6.3s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   20 | t=  13.5s | score=0.000000 best=0.000000 | depth=2 level=2
+AMCS done  | 30.0s | 24 iterations | best=0.000000 | n=12 e=12
+
+--- Restart 75 | 772s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.077448 -> -0.120615 | n=9 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.039601 -> -0.081014 | n=11 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.081014 -> -0.000000 | n=12 e=12 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.000000 -> -0.000000 | n=14 e=14 | depth=0 level=1
+  iter    6 | t=   0.2s | IMPROVED +0.000000 -> 0.000000 | n=16 e=16 | depth=0 level=1
+  iter   10 | t=   0.6s | score=-0.043705 best=0.000000 | depth=4 level=1
+  iter   14 | t=  10.9s | IMPROVED +0.000000 -> 0.000000 | n=16 e=16 | depth=0 level=1
+  iter   15 | t=  11.0s | IMPROVED +0.000000 -> 0.000000 | n=18 e=18 | depth=0 level=1
+  iter   20 | t=  11.7s | score=0.000000 best=0.000000 | depth=5 level=1
+AMCS done  | 30.0s | 25 iterations | best=0.000000 | n=18 e=18
+
+--- Restart 76 | 742s remaining ---
+AMCS start | n=5 e=4 | score=-1.242641
+  iter    2 | t=   0.0s | IMPROVED +0.497251 -> -0.745389 | n=5 e=5 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.494188 -> -0.251202 | n=7 e=7 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.201314 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.741657 best=-0.049888 | depth=0 level=2
+AMCS done  | 3.1s | 16 iterations | best=-0.049888 | n=7 e=9
+
+--- Restart 77 | 739s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.829914 -> -0.162278 | n=5 e=6 | depth=0 level=1
+  iter    8 | t=   0.2s | IMPROVED +0.162278 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   10 | t=   0.2s | score=0.000000 best=0.000000 | depth=2 level=1
+  iter   20 | t=   2.3s | score=0.000000 best=0.000000 | depth=0 level=3
+AMCS done  | 2.3s | 20 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 78 | 737s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.829914 -> -0.162278 | n=5 e=6 | depth=0 level=1
+  iter    8 | t=   0.2s | IMPROVED +0.112390 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.173691 best=-0.049888 | depth=2 level=1
+  iter   20 | t=   2.6s | score=-0.049888 best=-0.049888 | depth=0 level=3
+AMCS done  | 2.6s | 20 iterations | best=-0.049888 | n=7 e=9
+
+--- Restart 79 | 734s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.829914 -> -0.162278 | n=5 e=6 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.112390 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.049888 best=-0.049888 | depth=0 level=2
+  iter   15 | t=   1.8s | IMPROVED +0.000000 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   20 | t=   1.8s | score=-0.049888 best=-0.049888 | depth=5 level=1
+AMCS done  | 4.1s | 27 iterations | best=-0.049888 | n=7 e=9
+
+--- Restart 80 | 730s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   10 | t=   1.8s | score=0.000000 best=0.000000 | depth=1 level=2
+  iter   11 | t=   2.9s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   20 | t=  13.1s | score=0.000000 best=0.000000 | depth=3 level=2
+AMCS done  | 26.6s | 23 iterations | best=0.000000 | n=12 e=12
+
+--- Restart 81 | 704s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.291035 -> -0.701156 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.367743 -> -0.333413 | n=7 e=8 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.077563 -> -0.255850 | n=9 e=10 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.012551 -> -0.243299 | n=11 e=12 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.123348 -> -0.119951 | n=12 e=14 | depth=0 level=1
+  iter   10 | t=   0.3s | score=-0.119951 best=-0.119951 | depth=4 level=1
+  iter   13 | t=   3.9s | IMPROVED +0.035693 -> -0.084258 | n=13 e=17 | depth=0 level=1
+  iter   20 | t=   9.3s | IMPROVED +0.009400 -> -0.074858 | n=14 e=18 | depth=0 level=1
+  iter   27 | t=  14.9s | IMPROVED +0.008478 -> -0.066380 | n=17 e=21 | depth=0 level=1
+  iter   28 | t=  15.0s | IMPROVED +0.010631 -> -0.055749 | n=18 e=23 | depth=0 level=1
+  iter   30 | t=  15.2s | score=-0.055815 best=-0.055749 | depth=2 level=1
+  iter   35 | t=  20.9s | IMPROVED +0.000006 -> -0.055743 | n=19 e=24 | depth=0 level=1
+  iter   36 | t=  21.1s | IMPROVED +0.014998 -> -0.040745 | n=20 e=26 | depth=0 level=1
+  iter   40 | t=  21.8s | score=-0.040745 best=-0.040745 | depth=4 level=1
+  iter   43 | t=  27.5s | IMPROVED +0.000405 -> -0.040340 | n=21 e=27 | depth=0 level=1
+  iter   45 | t=  27.8s | IMPROVED +0.002370 -> -0.037970 | n=21 e=28 | depth=0 level=1
+  iter   50 | t=  28.9s | score=-0.336437 best=-0.037970 | depth=5 level=1
+AMCS done  | 30.0s | 52 iterations | best=-0.037970 | n=21 e=28
+
+--- Restart 82 | 674s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.077448 -> -0.120615 | n=9 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.039601 -> -0.081014 | n=11 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.022898 -> -0.058116 | n=13 e=12 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.014412 -> -0.043705 | n=15 e=14 | depth=0 level=1
+  iter    6 | t=   0.2s | IMPROVED +0.043705 -> 0.000000 | n=16 e=16 | depth=0 level=1
+  iter   10 | t=   0.6s | score=-0.043705 best=0.000000 | depth=4 level=1
+AMCS done  | 30.0s | 18 iterations | best=0.000000 | n=16 e=16
+
+--- Restart 83 | 644s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.077448 -> -0.120615 | n=9 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.039601 -> -0.081014 | n=11 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.022898 -> -0.058116 | n=13 e=12 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.014412 -> -0.043705 | n=15 e=14 | depth=0 level=1
+  iter    6 | t=   0.2s | IMPROVED +0.009651 -> -0.034054 | n=17 e=16 | depth=0 level=1
+  iter    7 | t=   0.3s | IMPROVED +0.034054 -> 0.000000 | n=18 e=18 | depth=0 level=1
+  iter   10 | t=   0.7s | score=0.000000 best=0.000000 | depth=3 level=1
+  iter   15 | t=  11.3s | IMPROVED +0.000000 -> 0.000000 | n=20 e=20 | depth=0 level=1
+  iter   20 | t=  12.2s | score=-0.027277 best=0.000000 | depth=5 level=1
+AMCS done  | 30.0s | 25 iterations | best=0.000000 | n=20 e=20
+
+--- Restart 84 | 614s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.060960 -> -0.205914 | n=8 e=8 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.156026 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.741657 best=-0.049888 | depth=0 level=2
+  iter   12 | t=   0.8s | IMPROVED +0.000000 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   20 | t=   1.5s | score=-0.049888 best=-0.049888 | depth=2 level=2
+AMCS done  | 3.1s | 24 iterations | best=-0.049888 | n=7 e=9
+
+--- Restart 85 | 611s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.120615 best=0.000000 | depth=4 level=1
+  iter   15 | t=   4.8s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   20 | t=   4.9s | score=-0.120615 best=0.000000 | depth=5 level=1
+AMCS done  | 15.1s | 27 iterations | best=0.000000 | n=10 e=10
+
+--- Restart 86 | 596s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.115092 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.064575 -> -0.202299 | n=7 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.152630 -> -0.049669 | n=8 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.000997 -> -0.048672 | n=10 e=12 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.000007 -> -0.048665 | n=11 e=13 | depth=0 level=1
+  iter    7 | t=   0.1s | IMPROVED +0.003293 -> -0.045372 | n=12 e=15 | depth=0 level=1
+  iter    8 | t=   0.2s | IMPROVED +0.000997 -> -0.044375 | n=13 e=17 | depth=0 level=1
+  iter    9 | t=   0.2s | IMPROVED +0.005642 -> -0.038733 | n=14 e=19 | depth=0 level=1
+  iter   10 | t=   0.3s | score=-0.038733 best=-0.038733 | depth=1 level=1
+  iter   20 | t=  25.8s | score=-0.038733 best=-0.038733 | depth=5 level=2
+AMCS done  | 30.0s | 21 iterations | best=-0.038733 | n=14 e=19
+
+--- Restart 87 | 566s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.829914 -> -0.162278 | n=5 e=6 | depth=0 level=1
+  iter    7 | t=   0.0s | IMPROVED +0.032590 -> -0.129687 | n=9 e=11 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.129687 best=-0.129687 | depth=3 level=1
+  iter   14 | t=   1.3s | IMPROVED +0.017173 -> -0.112515 | n=10 e=12 | depth=0 level=1
+  iter   20 | t=   1.5s | score=-0.129687 best=-0.112515 | depth=0 level=2
+  iter   21 | t=   3.3s | IMPROVED +0.060387 -> -0.052128 | n=11 e=15 | depth=0 level=1
+  iter   30 | t=  10.8s | score=-0.052128 best=-0.052128 | depth=3 level=2
+AMCS done  | 20.0s | 33 iterations | best=-0.052128 | n=11 e=15
+
+--- Restart 88 | 546s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.037133 -> -0.229741 | n=7 e=8 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.120615 -> -0.109126 | n=6 e=7 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.109126 best=-0.109126 | depth=4 level=1
+  iter   13 | t=   0.4s | IMPROVED +0.059457 -> -0.049669 | n=8 e=10 | depth=0 level=1
+  iter   14 | t=   0.4s | IMPROVED +0.002956 -> -0.046713 | n=10 e=12 | depth=0 level=1
+  iter   20 | t=   0.6s | score=-0.048752 best=-0.046713 | depth=0 level=2
+  iter   21 | t=   2.3s | IMPROVED +0.001342 -> -0.045372 | n=12 e=15 | depth=0 level=1
+  iter   28 | t=   6.3s | IMPROVED +0.045372 -> 0.000000 | n=12 e=18 | depth=0 level=1
+  iter   30 | t=   6.4s | score=0.000000 best=0.000000 | depth=2 level=1
+  iter   40 | t=  30.0s | score=0.000000 best=0.000000 | depth=0 level=3
+AMCS done  | 30.0s | 40 iterations | best=0.000000 | n=12 e=18
+
+--- Restart 89 | 516s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    9 | t=   0.4s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   0.4s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   20 | t=   4.1s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 4.9s | 21 iterations | best=0.000000 | n=8 e=8
+
+--- Restart 90 | 511s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.089642 -> -0.902549 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.569135 -> -0.333413 | n=7 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.251598 -> -0.081816 | n=8 e=10 | depth=0 level=1
+  iter   10 | t=   0.9s | score=-0.081816 best=-0.081816 | depth=1 level=2
+  iter   13 | t=   3.0s | IMPROVED +0.000000 -> -0.081816 | n=8 e=10 | depth=0 level=1
+  iter   20 | t=   3.9s | score=-0.081816 best=-0.081816 | depth=1 level=2
+AMCS done  | 8.6s | 25 iterations | best=-0.081816 | n=8 e=10
+
+--- Restart 91 | 502s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.077448 -> -0.120615 | n=9 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.039601 -> -0.081014 | n=11 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.022898 -> -0.058116 | n=13 e=12 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.014412 -> -0.043705 | n=15 e=14 | depth=0 level=1
+  iter    6 | t=   0.2s | IMPROVED +0.009651 -> -0.034054 | n=17 e=16 | depth=0 level=1
+  iter    7 | t=   0.3s | IMPROVED +0.034054 -> 0.000000 | n=18 e=18 | depth=0 level=1
+  iter    8 | t=   0.4s | IMPROVED +0.000000 -> 0.000000 | n=20 e=20 | depth=0 level=1
+  iter   10 | t=   0.7s | score=-0.027277 best=0.000000 | depth=2 level=1
+  iter   16 | t=  11.7s | IMPROVED +0.000000 -> 0.000000 | n=22 e=22 | depth=0 level=1
+  iter   20 | t=  12.5s | score=-0.022338 best=0.000000 | depth=4 level=1
+AMCS done  | 30.0s | 28 iterations | best=0.000000 | n=22 e=22
+
+--- Restart 92 | 472s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.037133 -> -0.229741 | n=7 e=8 | depth=0 level=1
+  iter    5 | t=   0.0s | IMPROVED +0.032844 -> -0.196897 | n=9 e=10 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.003643 -> -0.193254 | n=10 e=12 | depth=0 level=1
+  iter    7 | t=   0.1s | IMPROVED +0.040147 -> -0.153106 | n=12 e=14 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.153106 best=-0.153106 | depth=3 level=1
+  iter   14 | t=   4.0s | IMPROVED +0.049726 -> -0.103380 | n=13 e=17 | depth=0 level=1
+  iter   20 | t=   4.4s | score=-0.499616 best=-0.103380 | depth=0 level=2
+  iter   21 | t=   9.4s | IMPROVED +0.006532 -> -0.096848 | n=14 e=18 | depth=0 level=1
+  iter   28 | t=  14.9s | IMPROVED +0.000703 -> -0.096145 | n=15 e=19 | depth=0 level=1
+  iter   30 | t=  15.0s | score=-0.096145 best=-0.096145 | depth=2 level=1
+  iter   31 | t=  15.1s | IMPROVED +0.024335 -> -0.071809 | n=16 e=22 | depth=0 level=1
+  iter   32 | t=  15.2s | IMPROVED +0.014139 -> -0.057670 | n=18 e=24 | depth=0 level=1
+  iter   33 | t=  15.3s | IMPROVED +0.001899 -> -0.055771 | n=19 e=26 | depth=0 level=1
+  iter   34 | t=  15.5s | IMPROVED +0.004027 -> -0.051744 | n=21 e=28 | depth=0 level=1
+  iter   35 | t=  15.6s | IMPROVED +0.000186 -> -0.051558 | n=23 e=30 | depth=0 level=1
+  iter   36 | t=  15.7s | IMPROVED +0.001375 -> -0.050183 | n=24 e=32 | depth=0 level=1
+  iter   37 | t=  15.8s | IMPROVED +0.012716 -> -0.037468 | n=25 e=34 | depth=0 level=1
+  iter   39 | t=  16.2s | IMPROVED +0.000421 -> -0.037047 | n=26 e=36 | depth=0 level=1
+  iter   40 | t=  16.5s | IMPROVED +0.000075 -> -0.036971 | n=28 e=38 | depth=0 level=1
+  iter   41 | t=  16.8s | IMPROVED +0.001346 -> -0.035625 | n=29 e=40 | depth=0 level=1
+  iter   42 | t=  17.0s | IMPROVED +0.000068 -> -0.035557 | n=31 e=42 | depth=0 level=1
+  iter   43 | t=  17.2s | IMPROVED +0.000023 -> -0.035534 | n=33 e=44 | depth=0 level=1
+  iter   44 | t=  17.2s | IMPROVED +0.001156 -> -0.034378 | n=33 e=46 | depth=0 level=1
+  iter   45 | t=  17.6s | IMPROVED +0.001019 -> -0.033360 | n=34 e=48 | depth=0 level=1
+  iter   50 | t=  23.1s | score=-0.033360 best=-0.033360 | depth=5 level=1
+  iter   52 | t=  26.7s | IMPROVED +0.000348 -> -0.033012 | n=36 e=51 | depth=0 level=1
+  iter   53 | t=  27.0s | IMPROVED +0.000550 -> -0.032461 | n=37 e=53 | depth=0 level=1
+  iter   54 | t=  27.6s | IMPROVED +0.000551 -> -0.031910 | n=39 e=55 | depth=0 level=1
+  iter   55 | t=  28.3s | IMPROVED +0.000003 -> -0.031908 | n=41 e=57 | depth=0 level=1
+  iter   56 | t=  28.6s | IMPROVED +0.000422 -> -0.031486 | n=42 e=59 | depth=0 level=1
+  iter   57 | t=  29.7s | IMPROVED +0.001799 -> -0.029686 | n=43 e=61 | depth=0 level=1
+AMCS done  | 30.0s | 58 iterations | best=-0.029686 | n=43 e=61
+
+--- Restart 93 | 442s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.198062 -> -0.000000 | n=8 e=8 | depth=0 level=1
+  iter    7 | t=   0.1s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   10 | t=   0.2s | score=0.000000 best=0.000000 | depth=3 level=1
+  iter   16 | t=  10.4s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   20 | t=  10.5s | score=0.000000 best=0.000000 | depth=4 level=1
+AMCS done  | 30.0s | 28 iterations | best=0.000000 | n=12 e=12
+
+--- Restart 94 | 412s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    9 | t=   0.5s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   0.5s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   20 | t=   3.7s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 4.5s | 21 iterations | best=0.000000 | n=8 e=8
+
+--- Restart 95 | 407s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   1.2s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   20 | t=   4.1s | score=0.000000 best=0.000000 | depth=4 level=2
+AMCS done  | 6.0s | 22 iterations | best=0.000000 | n=8 e=8
+
+--- Restart 96 | 401s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.198062 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   10 | t=   1.9s | score=0.000000 best=0.000000 | depth=1 level=2
+  iter   12 | t=   5.6s | IMPROVED +0.000000 -> 0.000000 | n=14 e=14 | depth=0 level=1
+  iter   20 | t=  16.1s | score=0.000000 best=0.000000 | depth=2 level=2
+AMCS done  | 30.0s | 23 iterations | best=0.000000 | n=14 e=14
+
+--- Restart 97 | 371s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter    9 | t=   0.5s | IMPROVED +0.000000 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter   10 | t=   0.5s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   20 | t=   1.7s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 2.2s | 21 iterations | best=0.000000 | n=6 e=6
+
+--- Restart 98 | 369s remaining ---
+AMCS start | n=5 e=4 | score=-1.242641
+  iter    2 | t=   0.0s | IMPROVED +0.497251 -> -0.745389 | n=5 e=5 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.636263 -> -0.109126 | n=6 e=7 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.059238 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.049888 best=-0.049888 | depth=0 level=2
+  iter   12 | t=   1.1s | IMPROVED +0.049888 -> 0.000000 | n=8 e=12 | depth=0 level=1
+  iter   20 | t=   2.7s | score=0.000000 best=0.000000 | depth=2 level=2
+AMCS done  | 7.2s | 24 iterations | best=0.000000 | n=8 e=12
+
+--- Restart 99 | 362s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.291035 -> -0.701156 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.367743 -> -0.333413 | n=7 e=8 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.199724 -> -0.133690 | n=9 e=11 | depth=0 level=1
+  iter    8 | t=   0.1s | IMPROVED +0.051874 -> -0.081816 | n=8 e=10 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.081816 best=-0.081816 | depth=2 level=1
+  iter   16 | t=   1.4s | IMPROVED +0.000000 -> -0.081816 | n=8 e=10 | depth=0 level=1
+  iter   20 | t=   1.5s | score=-0.081816 best=-0.081816 | depth=4 level=1
+AMCS done  | 6.6s | 28 iterations | best=-0.081816 | n=8 e=10
+
+--- Restart 100 | 355s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter   10 | t=   0.7s | score=0.000000 best=0.000000 | depth=3 level=2
+AMCS done  | 1.3s | 13 iterations | best=0.000000 | n=6 e=6
+
+--- Restart 101 | 354s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.2s | score=-0.035276 best=-0.035276 | depth=3 level=2
+  iter   13 | t=   2.3s | IMPROVED +0.000000 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   20 | t=   2.9s | score=-0.035276 best=-0.035276 | depth=1 level=2
+AMCS done  | 4.7s | 25 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 102 | 349s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter    9 | t=   0.8s | IMPROVED +0.000000 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   0.8s | score=-0.035276 best=-0.035276 | depth=1 level=1
+  iter   20 | t=   2.5s | score=-0.035276 best=-0.035276 | depth=5 level=2
+AMCS done  | 2.9s | 21 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 103 | 346s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter    8 | t=   0.3s | IMPROVED +0.000000 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   10 | t=   0.3s | score=0.000000 best=0.000000 | depth=2 level=1
+  iter   20 | t=   2.5s | score=0.000000 best=0.000000 | depth=0 level=3
+AMCS done  | 2.5s | 20 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 104 | 344s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.829914 -> -0.162278 | n=5 e=6 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.112390 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.741657 best=-0.049888 | depth=0 level=2
+  iter   11 | t=   0.5s | IMPROVED +0.049888 -> 0.000000 | n=8 e=12 | depth=0 level=1
+  iter   20 | t=   3.1s | score=0.000000 best=0.000000 | depth=3 level=2
+AMCS done  | 6.8s | 23 iterations | best=0.000000 | n=8 e=12
+
+--- Restart 105 | 337s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter    8 | t=   0.3s | IMPROVED +0.000000 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   10 | t=   0.4s | score=0.000000 best=0.000000 | depth=2 level=1
+  iter   20 | t=   2.5s | score=0.000000 best=0.000000 | depth=0 level=3
+AMCS done  | 2.5s | 20 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 106 | 335s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter   10 | t=   0.7s | IMPROVED +0.000000 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter   19 | t=   1.2s | IMPROVED +0.000000 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   20 | t=   1.2s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   30 | t=   2.8s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 3.3s | 31 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 107 | 331s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   0.8s | score=0.000000 best=0.000000 | depth=1 level=2
+  iter   11 | t=   1.2s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   20 | t=   5.9s | score=0.000000 best=0.000000 | depth=3 level=2
+AMCS done  | 12.2s | 23 iterations | best=0.000000 | n=10 e=10
+
+--- Restart 108 | 319s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.086770 -> -0.180105 | n=6 e=8 | depth=0 level=1
+  iter    9 | t=   0.3s | IMPROVED +0.180105 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   10 | t=   0.3s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   20 | t=   1.9s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 2.4s | 21 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 109 | 317s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   10 | t=   1.8s | score=0.000000 best=0.000000 | depth=1 level=2
+AMCS done  | 11.3s | 15 iterations | best=0.000000 | n=10 e=10
+
+--- Restart 110 | 305s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.198062 -> -0.000000 | n=8 e=8 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   10 | t=   0.3s | score=-0.043705 best=0.000000 | depth=4 level=1
+  iter   15 | t=  11.9s | IMPROVED +0.000000 -> 0.000000 | n=16 e=16 | depth=0 level=1
+  iter   20 | t=  12.4s | score=0.000000 best=0.000000 | depth=5 level=1
+AMCS done  | 30.0s | 25 iterations | best=0.000000 | n=16 e=16
+
+--- Restart 111 | 275s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.086770 -> -0.180105 | n=6 e=8 | depth=0 level=1
+  iter    5 | t=   0.0s | IMPROVED +0.130435 -> -0.049669 | n=8 e=10 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.318669 best=-0.049669 | depth=5 level=1
+  iter   12 | t=   0.8s | IMPROVED +0.001004 -> -0.048665 | n=11 e=13 | depth=0 level=1
+  iter   13 | t=   0.9s | IMPROVED +0.002385 -> -0.046280 | n=12 e=15 | depth=0 level=1
+  iter   15 | t=   0.9s | IMPROVED +0.000195 -> -0.046085 | n=11 e=14 | depth=0 level=1
+  iter   16 | t=   1.0s | IMPROVED +0.000834 -> -0.045251 | n=12 e=16 | depth=0 level=1
+  iter   20 | t=   1.1s | score=-0.269376 best=-0.045251 | depth=4 level=1
+  iter   23 | t=   4.8s | IMPROVED +0.002898 -> -0.042353 | n=14 e=19 | depth=0 level=1
+  iter   25 | t=   4.9s | IMPROVED +0.032747 -> -0.009607 | n=13 e=18 | depth=0 level=1
+  iter   30 | t=   5.2s | score=-0.171573 best=-0.009607 | depth=5 level=1
+  iter   34 | t=  20.0s | IMPROVED +0.000000 -> -0.009607 | n=13 e=18 | depth=0 level=1
+  iter   40 | t=  20.4s | score=-0.009607 best=-0.009607 | depth=0 level=2
+AMCS done  | 30.0s | 42 iterations | best=-0.009607 | n=13 e=18
+
+--- Restart 112 | 245s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.219688 -> -0.162278 | n=5 e=6 | depth=0 level=1
+  iter    8 | t=   0.2s | IMPROVED +0.162278 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   10 | t=   0.2s | score=0.000000 best=0.000000 | depth=2 level=1
+  iter   20 | t=   2.2s | score=0.000000 best=0.000000 | depth=0 level=3
+AMCS done  | 2.2s | 20 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 113 | 243s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.260140 -> -0.732051 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.430579 -> -0.301472 | n=7 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.127781 -> -0.173691 | n=8 e=10 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.029770 -> -0.143921 | n=10 e=12 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.010487 -> -0.133434 | n=12 e=14 | depth=0 level=1
+  iter   10 | t=   0.3s | score=-0.133434 best=-0.133434 | depth=5 level=1
+  iter   12 | t=   3.9s | IMPROVED +0.017586 -> -0.115847 | n=13 e=17 | depth=0 level=1
+  iter   14 | t=   4.0s | IMPROVED +0.006906 -> -0.108942 | n=14 e=19 | depth=0 level=1
+  iter   20 | t=   4.5s | score=-0.242637 best=-0.108942 | depth=0 level=2
+  iter   21 | t=   9.5s | IMPROVED +0.029327 -> -0.079615 | n=15 e=20 | depth=0 level=1
+  iter   28 | t=  15.1s | IMPROVED +0.011310 -> -0.068305 | n=16 e=21 | depth=0 level=1
+  iter   30 | t=  15.2s | score=-0.068305 best=-0.068305 | depth=2 level=1
+AMCS done  | 30.0s | 37 iterations | best=-0.068305 | n=16 e=21
+
+--- Restart 114 | 213s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.157748 -> -0.109126 | n=6 e=7 | depth=0 level=1
+  iter    6 | t=   0.0s | IMPROVED +0.059238 -> -0.049888 | n=7 e=9 | depth=0 level=1
+  iter   10 | t=   0.1s | score=-0.143921 best=-0.049888 | depth=4 level=1
+  iter   13 | t=   0.5s | IMPROVED +0.049888 -> -0.000000 | n=8 e=12 | depth=0 level=1
+  iter   20 | t=   1.4s | score=-0.000000 best=-0.000000 | depth=1 level=2
+AMCS done  | 6.6s | 25 iterations | best=-0.000000 | n=8 e=12
+
+--- Restart 115 | 207s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.064575 -> -0.202299 | n=7 e=8 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.061602 -> -0.140697 | n=8 e=10 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.786299 best=-0.140697 | depth=0 level=2
+  iter   11 | t=   0.8s | IMPROVED +0.025490 -> -0.115207 | n=9 e=11 | depth=0 level=1
+  iter   15 | t=   0.9s | IMPROVED +0.040355 -> -0.074853 | n=11 e=14 | depth=0 level=1
+  iter   17 | t=   1.0s | IMPROVED +0.000515 -> -0.074338 | n=13 e=16 | depth=0 level=1
+  iter   18 | t=   1.0s | IMPROVED +0.014510 -> -0.059827 | n=14 e=18 | depth=0 level=1
+  iter   19 | t=   1.1s | IMPROVED +0.011102 -> -0.048725 | n=15 e=20 | depth=0 level=1
+  iter   20 | t=   1.2s | score=-0.048725 best=-0.048725 | depth=1 level=1
+  iter   26 | t=   6.7s | IMPROVED +0.003448 -> -0.045277 | n=16 e=21 | depth=0 level=1
+  iter   28 | t=   6.8s | IMPROVED +0.001427 -> -0.043850 | n=18 e=23 | depth=0 level=1
+  iter   30 | t=   7.1s | score=-0.043850 best=-0.043850 | depth=2 level=1
+  iter   35 | t=  12.9s | IMPROVED +0.000112 -> -0.043738 | n=19 e=24 | depth=0 level=1
+  iter   36 | t=  13.0s | IMPROVED +0.000639 -> -0.043099 | n=20 e=26 | depth=0 level=1
+  iter   40 | t=  13.7s | score=-0.311374 best=-0.043099 | depth=4 level=1
+  iter   43 | t=  19.3s | IMPROVED +0.000071 -> -0.043028 | n=20 e=27 | depth=0 level=1
+  iter   50 | t=  25.7s | score=-0.043028 best=-0.043028 | depth=1 level=2
+AMCS done  | 30.0s | 51 iterations | best=-0.043028 | n=20 e=27
+
+--- Restart 116 | 177s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.198062 -> -0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   1.4s | score=-0.000000 best=-0.000000 | depth=2 level=2
+  iter   11 | t=   1.9s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   20 | t=   3.8s | score=0.000000 best=0.000000 | depth=3 level=2
+  iter   21 | t=   4.4s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   30 | t=   6.0s | score=0.000000 best=0.000000 | depth=3 level=2
+AMCS done  | 8.0s | 33 iterations | best=0.000000 | n=8 e=8
+
+--- Restart 117 | 169s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.1s | score=-0.035276 best=-0.035276 | depth=3 level=2
+AMCS done  | 2.2s | 13 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 118 | 167s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter    9 | t=   0.7s | IMPROVED +0.000000 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   0.7s | score=-0.035276 best=-0.035276 | depth=1 level=1
+  iter   20 | t=   2.5s | score=-0.035276 best=-0.035276 | depth=5 level=2
+AMCS done  | 3.2s | 21 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 119 | 163s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   1.2s | score=0.000000 best=0.000000 | depth=2 level=2
+AMCS done  | 4.0s | 14 iterations | best=0.000000 | n=8 e=8
+
+--- Restart 120 | 159s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.829914 -> -0.162278 | n=5 e=6 | depth=0 level=1
+  iter    8 | t=   0.2s | IMPROVED +0.162278 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   10 | t=   0.2s | score=0.000000 best=0.000000 | depth=2 level=1
+  iter   20 | t=   2.2s | score=0.000000 best=0.000000 | depth=0 level=3
+AMCS done  | 2.2s | 20 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 121 | 157s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter   10 | t=   0.7s | score=0.000000 best=0.000000 | depth=3 level=2
+AMCS done  | 1.4s | 13 iterations | best=0.000000 | n=6 e=6
+
+--- Restart 122 | 156s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.956915 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.1s | IMPROVED +0.000000 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   20 | t=   2.6s | score=-0.035276 best=-0.035276 | depth=4 level=2
+AMCS done  | 3.4s | 22 iterations | best=-0.035276 | n=7 e=6
+
+--- Restart 123 | 152s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   1.2s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   20 | t=   8.2s | score=0.000000 best=0.000000 | depth=4 level=2
+AMCS done  | 12.0s | 22 iterations | best=0.000000 | n=10 e=10
+
+--- Restart 124 | 140s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.086770 -> -0.180105 | n=6 e=8 | depth=0 level=1
+  iter    9 | t=   0.3s | IMPROVED +0.180105 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   10 | t=   0.3s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   20 | t=   1.9s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 2.4s | 21 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 125 | 138s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.725317 -> -0.266874 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.064575 -> -0.202299 | n=7 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.003267 -> -0.199033 | n=9 e=10 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.150361 -> -0.048672 | n=10 e=12 | depth=0 level=1
+  iter    5 | t=   0.1s | IMPROVED +0.002199 -> -0.046473 | n=11 e=14 | depth=0 level=1
+  iter    7 | t=   0.1s | IMPROVED +0.000027 -> -0.046446 | n=13 e=16 | depth=0 level=1
+  iter    8 | t=   0.2s | IMPROVED +0.000281 -> -0.046165 | n=14 e=18 | depth=0 level=1
+  iter   10 | t=   0.3s | IMPROVED +0.001647 -> -0.044518 | n=15 e=20 | depth=0 level=1
+  iter   12 | t=   0.4s | IMPROVED +0.000855 -> -0.043663 | n=14 e=19 | depth=0 level=1
+  iter   19 | t=   5.9s | IMPROVED +0.001206 -> -0.042458 | n=15 e=20 | depth=0 level=1
+  iter   20 | t=   6.0s | score=-0.042458 best=-0.042458 | depth=1 level=1
+  iter   27 | t=  16.5s | IMPROVED +0.006434 -> -0.036024 | n=17 e=23 | depth=0 level=1
+  iter   30 | t=  16.8s | score=-0.041195 best=-0.036024 | depth=3 level=1
+  iter   34 | t=  22.3s | IMPROVED +0.004477 -> -0.031547 | n=18 e=24 | depth=0 level=1
+  iter   40 | t=  23.2s | score=-0.036024 best=-0.031547 | depth=0 level=2
+AMCS done  | 30.0s | 42 iterations | best=-0.031547 | n=18 e=24
+
+--- Restart 126 | 108s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.346690 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   10 | t=   1.1s | IMPROVED +0.000000 -> -0.035276 | n=7 e=6 | depth=0 level=1
+  iter   19 | t=   2.3s | IMPROVED +0.035276 -> 0.000000 | n=6 e=9 | depth=0 level=1
+  iter   20 | t=   2.3s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   30 | t=   3.9s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 4.3s | 31 iterations | best=0.000000 | n=6 e=9
+
+--- Restart 127 | 104s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.291035 -> -0.701156 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.311012 -> -0.390144 | n=8 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.134293 -> -0.255850 | n=9 e=10 | depth=0 level=1
+  iter    4 | t=   0.1s | IMPROVED +0.139699 -> -0.116151 | n=10 e=12 | depth=0 level=1
+  iter   10 | t=   0.3s | score=-0.133690 best=-0.116151 | depth=0 level=2
+  iter   11 | t=   1.9s | IMPROVED +0.062586 -> -0.053565 | n=11 e=15 | depth=0 level=1
+  iter   20 | t=   9.5s | score=-0.053565 best=-0.053565 | depth=3 level=2
+AMCS done  | 18.4s | 23 iterations | best=-0.053565 | n=11 e=15
+
+--- Restart 128 | 85s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.183904 -> -0.198062 | n=7 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.198062 -> -0.000000 | n=8 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   10 | t=   1.9s | score=0.000000 best=0.000000 | depth=1 level=2
+  iter   11 | t=   2.9s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   19 | t=   8.9s | IMPROVED +0.000000 -> 0.000000 | n=14 e=14 | depth=0 level=1
+  iter   20 | t=   9.0s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   30 | t=  30.0s | score=0.000000 best=0.000000 | depth=5 level=2
+AMCS done  | 30.0s | 30 iterations | best=0.000000 | n=14 e=14
+
+--- Restart 129 | 55s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    9 | t=   0.4s | IMPROVED +0.000000 -> 0.000000 | n=6 e=6 | depth=0 level=1
+  iter   10 | t=   0.4s | score=0.000000 best=0.000000 | depth=1 level=1
+  iter   14 | t=   0.4s | IMPROVED +0.000000 -> 0.000000 | n=10 e=10 | depth=0 level=1
+  iter   20 | t=   0.6s | score=-0.120615 best=0.000000 | depth=0 level=2
+AMCS done  | 11.6s | 26 iterations | best=0.000000 | n=10 e=10
+
+--- Restart 130 | 44s remaining ---
+AMCS start | n=5 e=4 | score=-1.242641
+  iter    3 | t=   0.0s | IMPROVED +0.541484 -> -0.701156 | n=6 e=6 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.453314 -> -0.247842 | n=8 e=8 | depth=0 level=1
+  iter    6 | t=   0.1s | IMPROVED +0.041928 -> -0.205914 | n=8 e=9 | depth=0 level=1
+  iter    7 | t=   0.1s | IMPROVED +0.072225 -> -0.133690 | n=9 e=11 | depth=0 level=1
+  iter   10 | t=   0.1s | IMPROVED +0.051874 -> -0.081816 | n=8 e=10 | depth=0 level=1
+  iter   18 | t=   1.3s | IMPROVED +0.000000 -> -0.081816 | n=8 e=10 | depth=0 level=1
+  iter   20 | t=   1.4s | score=-0.133690 best=-0.081816 | depth=2 level=1
+  iter   30 | t=   5.1s | score=-0.081816 best=-0.081816 | depth=0 level=3
+AMCS done  | 5.1s | 30 iterations | best=-0.081816 | n=8 e=10
+
+--- Restart 131 | 38s remaining ---
+AMCS start | n=5 e=4 | score=-0.992191
+  iter    1 | t=   0.0s | IMPROVED +0.260140 -> -0.732051 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.430579 -> -0.301472 | n=7 e=8 | depth=0 level=1
+  iter    3 | t=   0.0s | IMPROVED +0.127781 -> -0.173691 | n=8 e=10 | depth=0 level=1
+  iter    4 | t=   0.0s | IMPROVED +0.035156 -> -0.138535 | n=9 e=12 | depth=0 level=1
+  iter   10 | t=   0.2s | score=-0.503223 best=-0.138535 | depth=0 level=2
+  iter   11 | t=   1.3s | IMPROVED +0.084970 -> -0.053565 | n=11 e=15 | depth=0 level=1
+  iter   19 | t=   5.7s | IMPROVED +0.000000 -> -0.053565 | n=11 e=15 | depth=0 level=1
+  iter   20 | t=   5.7s | score=-0.053565 best=-0.053565 | depth=1 level=1
+  iter   30 | t=  17.8s | score=-0.053565 best=-0.053565 | depth=5 level=2
+AMCS done  | 22.8s | 31 iterations | best=-0.053565 | n=11 e=15
+
+--- Restart 132 | 16s remaining ---
+AMCS start | n=5 e=4 | score=-0.381966
+  iter    1 | t=   0.0s | IMPROVED +0.381966 -> -0.000000 | n=6 e=6 | depth=0 level=1
+  iter    2 | t=   0.0s | IMPROVED +0.000000 -> 0.000000 | n=8 e=8 | depth=0 level=1
+  iter   10 | t=   1.4s | score=0.000000 best=0.000000 | depth=2 level=2
+  iter   11 | t=   2.2s | IMPROVED +0.000000 -> 0.000000 | n=12 e=12 | depth=0 level=1
+  iter   20 | t=  12.5s | score=0.000000 best=0.000000 | depth=3 level=2
+AMCS done  | 15.7s | 21 iterations | best=0.000000 | n=12 e=12
+
+=== AMCS Multi-Restart Summary ===
+Total time: 1800.0s | Restarts: 132
+Best score: 0.000000
+Best graph: n=10 e=20
+
+============================================================
+FINAL RESULT for Bound 44
+============================================================
+  mu(G) = 8.00000000
+  Bound 44 = 8.00000000
+  Gap (mu - bound) = 0.00000000
+  Graph: n=10 e=20
+  Edges: [(0, 5), (0, 6), (0, 7), (0, 8), (1, 5), (1, 6), (1, 7), (1, 9), (2, 5), (2, 6), (2, 8), (2, 9), (3, 5), (3, 7), (3, 8), (3, 9), (4, 6), (4, 7), (4, 8), (4, 9)]
+
+  No counterexample found (closest gap: -0.00000000)
